@@ -1,0 +1,133 @@
+% \&latex
+
+\documentclass[11pt]{article}
+\usepackage{hyperref}
+
+\oddsidemargin 0.0in 
+\evensidemargin 0.0in 
+\topmargin -0.5in 
+\footskip 0.5in 
+\textheight 9.0in 
+\textwidth 6.0in 
+\renewcommand{\baselinestretch}{1.20}
+\special{papersize=8.5in,11in}
+%\pagestyle{empty}
+
+\begin{document} 
+\begin{center} {\large \textbf{Experimental design and hierarchical model building \\ with Bayesian inference --- Winter 2020}}\\ [10pt] % 507C 202
+Class: Thursdays 13:00-14:30 PST -- FSC 3003  \\ 
+Leader: Elizabeth Wolkovich (e.wolkovich@ubc.ca) \\
+\end{center} 
+\renewcommand{\baselinestretch}{1.10}
+
+\begin{center}
+\begin{tabular}{p{1.2cm} p{3.5cm}  p{3.5cm}  p{2.5cm}  p{3cm} }
+   \textbf{Date}
+   & \textbf{Topic}
+      & \textbf{Reading (pp)}
+        & \textbf{ARM (optional)}
+         & \textbf{Leader}  \\ 
+\hline \hline
+Jan 9  & Intro/organizing &           &    & \\ % Reproducibility `crisis'  and discuss syllabus .. Loken & Gelman 2017; read at home: Hasley \emph{et al.} 2015
+% https://www.youtube.com/watch?v=fc1hkFC2c1E
+Jan 16 & Small world \& sampling       &     Ch 1-3  (1-69)  & Ch 7-8 & Faith \& Mira, Projects (all) \\ % 68 pp (really ~60 as some are blank or are assigned problems) ... % Tell us what your project will be in 3 minutes or less
+Jan 23 &  Linear models        &       Ch 4 (71-117) & Ch 3-4  & Mira \&  Geoff, Dan presenting\\ 
+Jan 30 & Projects & & & Cat \& Faith\\
+Feb 6  & Overfitting etc.      &   Ch 5-6 (119-188)\footnotemark[1] & & Cat \& Dan  \\ % 69 pp Skip end of Ch. 6 (last two sections)
+Feb 13 & Projects & & & Mira \& Geoff \\
+\emph{17-21}  &    \emph{Break}     &               &        & \\
+Feb 27   & Interactions, MCMC &  Ch 7-8 (209-263) & Ch 9; BDA3: Ch 11-12&  Faith \& Mira\\ % 49 pp in-class presentations of fake data?
+Mar 5   & GLM, counts to mixtures               &    Ch 9-11 (267-352) & Ch 6 & Geoff \& Mira \\ % 85 pp
+Mar 12 & Projects & & &  Dan \& Faith\\
+Mar 19  & Multi-level models          &  Ch 12 (355-384)    &  Ch 11-15   & Dan \& Cat \\
+Mar 26 & Projects & & & Mira \& Geoff \\
+Apr 2  & Covariance &        Ch 13 (387-419)   & & Faith \& Mira \\ % 32 pp Ch 14 is on your own
+Apr 9 & Projects & & & Open (for now) \\
+\hline
+\end{tabular}
+\end{center}
+\footnotetext[1]{Chapter 6: You can skip information theory if you want (though it comes up more in the book so you may want to skim it).} 
+% Simulating data, knowing about your model fitting issues.
+
+\begin{large}
+{\raggedright \textbf{Course materials:}}
+\end{large}
+\noindent There is one course textbook: \emph{Statistical Rethinking} by MacElreath \href{http://xcelab.net/rm/statistical-rethinking/}{(more info here)}. Another book you might consider purchasing for reference: \emph{Data Analysis Using Regression and Multilevel/Hierarchical Models} by Gelman \& Hill \href{http://www.stat.columbia.edu/~gelman/arm/}{(more info here)}; note that I refer to this book as {\bf ARM} or Gelman \& Hill. Finally, \emph{Bayesian Data Analysis}, sometimes called the `Bible' for Bayesian stats has a lot in it and has several editions (BDA3 means the third edition).  \\ % \emph{The Statistical Sleuth} by Ramsey \& Schafer \href{http://www.statisticalsleuth.com/}{(more info here)}.
+
+\begin{large} 
+{\raggedright \textbf{Where do I find the data/code/etc. from the book?}}
+\end{large} Info on the book (including the author's lectures, and the book's code) can be found at: \url{http://xcelab.net/rm/statistical-rethinking/}. To install the \verb|rethinking| package in R, you must install from git following the instructions here: \url{https://github.com/rmcelreath/rethinking}.\\
+
+\begin{large} 
+{\raggedright \textbf{What is this whole leader thing?}}
+\end{large} Most reading class periods will have a team of leaders. This means the week you are leader you will be in charge of highlighting the main points of the reading through one or two practice problems that you walk through the class with. These can be ones you develop yourself (e.g., using your own data) or can be from the problems at the end of the chapters(s). Whatever you do, you will have up to {\bf 30 minutes of class time}. \\
+
+\begin{large} 
+{\raggedright \textbf{Project description}}
+\end{large}
+Build simulated data for a hierarchical model including at least two grouping factors (e.g., year and vineyard or vineyard and block), then fit a hierarchical model in R and Stan. Then using winegrape phenology data, clean and visualize data and fit a model to it. Evaluate model output both in terms of how well the model fits and what it tells us biologically. \\
+
+\begin{large} 
+{\raggedright \textbf{Missing classes:}}
+\end{large}
+You can miss up to one class without it impacting your grade. You cannot miss a class where you are a named `leader' or where you are presenting. Note that we will cover a lot in each class and you are responsible for catching up on what you miss.\\
+
+\begin{large} 
+{\raggedright \textbf{University Policies}}
+\end{large}
+UBC provides resources to support student learning and to maintain healthy lifestyles but recognizes that sometimes crises arise and so there are additional resources to access including those for survivors of sexual violence. UBC values respect for the person and ideas of all members of the academic community. Harassment and discrimination are not tolerated nor is suppression of academic freedom. UBC provides appropriate accommodation for students with disabilities and for religious observances. UBC values academic honesty and students are expected to acknowledge the ideas generated by others and to uphold the highest academic standards in all of their actions. Details of the policies and how to access support are available \href {https://senate.ubc.ca/policies-resources-guide-students-success}{here}.\\
+
+\begin{large} 
+{\raggedright \textbf{Grading:}}
+\end{large}
+
+\begin{tabular}{lcr}
+& & \\ [-12pt]
+In-class participation* & \hspace{14pt} 60 points\\ % Should divide this up next time to include small assignments like dummy data etc.
+Final code and simple write-up of project & \hspace{14pt} 40 points\\ 
+Total & \hspace{14pt} 100 points
+\end{tabular}
+\vspace{2ex}\\
+*Note that a good grade for in-class participation means: Meet weekly and show proficiency in reading though answering questions, asking questions and presenting modeling progress related to the chapter 
+
+\end{document}
+
+
+\begin{large} 
+{\raggedright \textbf{What is this whole video report thing?}}
+\end{large} You have to watch a video and report on it in-class that week (just like the reading you should know what was covered and ask questions \emph{in-class} as needed). The videos are generally hyperlinked to `Video report' in the online PDF of the syllabus. I will also aim to post them on the Canvas site, but to repeat: the videos are generally hyperlinked to `Video report' in the online PDF of the syllabus. \\
+
+
+
+\noindent {\bf What's due in each class?} 
+\vspace{1pt}
+
+
+\vspace{6pt}
+\vspace{18pt}
+\renewcommand{\baselinestretch}{1.20}
+
+\renewcommand{\baselinestretch}{1.10}
+\begin{center}
+\begin{tabular}{p{4cm}  p{8cm} p{3cm}}
+\textbf{Topic}
+     & \textbf{Tasks (in addition to your book reading!)}
+     & \textbf{Book problems}\\ 
+\hline \hline
+Reproducibility `crisis' &  In-class reading & \\\hline % and discuss syllabus
+Why learn statistics (and coding)? & Bring your laptop and vague project ideas to class! \href{https://www.youtube.com/watch?v=fc1hkFC2c1E}{Video report 1}, \href{https://www.youtube.com/watch?v=rUwZriT-bRs}{Video report 2}; finish p-value readings & 2.7: 1-4; 4.5: 4 \\\hline 
+Linear regression basics & \href{https://www.youtube.com/watch?v=iiFIzM4tU_M}{Video report}; survey & Example \& ARM: 3.9: 4; Bonus: 7.10: 2\\\hline
+Student project discussion & Short talk on your possible project & \\\hline 
+Linear regression plus & Stats in the news & 8.10: 2; 9.9: 4\\\hline
+Generalized linear regression &   & 10.10: 1\\\hline
+Design \& sample sizes & Stats in the news & 13.6: 3; 14.8: 2\\\hline
+Understanding your model &  & PPC problem (see Canvas) \\\hline % me away?
+Causal inference  & Causal inference in the news & ARM: 9.10: 1\\\hline 
+Catch-up on topics; review & Project check-in & \\\hline 
+Multilevel models & \href{https://www.youtube.com/watch?v=ObS1hkOxyPA}{Video report} & \\\hline
+\emph{Thanksgiving break}  & Celebrate traditional American holiday in a manner of your choosing & \\\hline
+Final presentations!  &  Final project is due!\\\hline
+\hline
+\end{tabular}
+\end{center}
+\vspace{2ex}
