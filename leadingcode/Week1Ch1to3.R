@@ -44,42 +44,69 @@ library(rethinking)
 #Chapter 3 - sampling the imaginery 
 #------------------------------------------
 
+
+
+
 #go through hard practice problem 
-
-
 data(homeworkch3)
+#data indicate if the first and second child (birth 1 and birth 2 respectively)
+# were male (1)or female (2)
+
+#explore data 
 birth1
 birth2
-
-sumBoys <- sum(birth1) + sum(birth2)
+sumBoys <- sum(birth1) + sum(birth2) # total number of boys and girls born 
 sumBairns <- sum(length(birth1)+ length(birth2))
 sum1stLassies <- 100 - sum(birth1) 
 
 #3H1
-birth_p_grid <- seq(from = 0, to = 1, length.out = 1000) #same grid
-birth_prior <- seq(1, 1000)
-birth_likelihood <- dbinom(sumBoys, size = sumBairns, prob = birth_p_grid )
-birth_posterior2 <- birth_likelihood * birth_prior
+#posterior distribution for the probability of being a boy 
+birth_p_grid <- seq(from = 0, to = 1, length.out = 1000) #same grid as chapter examples
+plot(birth_p_grid)
+birth_prior <- seq(1, 1000)# uniform prior 
+birth_likelihood <- dbinom(sumBoys, size = sumBairns, prob = birth_p_grid )# binomial likelyhood 
+birth_posterior2 <- birth_likelihood * birth_prior # posterior takes two steps to compute  
 birth_posterior <- birth_posterior2 / sum(birth_posterior2 )
-birth_p_grid[which.max(birth_posterior )]
-
+plot(birth_posterior ~ birth_p_grid)#probability of being a boy probably between 0.4 and 0.7
 
 #3H2 
+#its really important to summarise and interpret the posterior distribution 
+#for example, we can sum probability that proportion of water is less than 0.5
+#we start exploring teh posterior distribution by sampling from the grid of all possible
+#probabilities of being a boy, but takes far more samples of that probability if the posterior
+#distribution probability values is high. So 0.5 for instance is samples a lot. 
 birth_samples <- sample(birth_p_grid, prob = birth_posterior, size = 1e4, replace = TRUE)
+#what does it look like?
+plot(birth_samples)
+dens(birth_samples)
 
-
-HPDI(birth_samples, prob = 0.50)
+#Highest posterior desnity interval (avoid 95 because of baggage)
+rethinking::HPDI(birth_samples, prob = 0.50)#narrowest interval containing 50% of probability mass
 HPDI(birth_samples, prob = 0.89)
 HPDI(birth_samples, prob = c(0.5, 89, 0.97))
+#percentile intervales - probabilities falling within 50% confidence interval 
+rethinking::PI(birth_samples,prob =0.5)
+#point estimate - maximum a posteriori (MAP). But a single ponit isnt a good way of describing 
+# a distribution 
+birth_p_grid[which.max(birth_posterior )]# which parameter value (prob of being a boy) 
+#maximises the posterior probability?
 
-plot( birth_p_grid, birth_posterior)
+#samples from teh posterior are also useful for simulating model's implied observations. This
+#is good for:
+#* model checking - does teh modle tell us what we expect?
+#* software validation 
+#* Research design 
+#* forcasting 
 
 #3H3
-birth_w <- rbinom(1e4, size = 200, prob = birth_samples)
+#out of 200 babies, how many do we expect to be boys based on our model posterior?
+#make a posterior predictive destribution that includes uncertainty around probability (birth_samples)
+#rather than just using the most likely probability of being a boy for teh prob value of rbinom
+birth_w <- rbinom(1e4, size = 200, prob = birth_samples)#somewhere between 80 and 140 boys
 dens(birth_w)
 mean(birth_w)
 median(birth_w)
-#model estimates the numvber of boys overall well
+#model estimates the numvber of boys overall well (111 boys)
 
 #3H4
 birth_w1 <- rbinom(1e4, size = 100, prob = birth_samples)
@@ -97,6 +124,6 @@ mean(birth_w1f)#28
 median(birth_w1f)
 #model is underestiamting the number of boys born after girls. 
 #why?
-#teh probability of getting a boy is probably higher once 
+#the probability of getting a boy is probably higher once 
 #you have had one girl, because a boy and a girl are the most likely 
 #combination?
