@@ -103,6 +103,8 @@ birth_p_grid[which.max(birth_posterior )]# which parameter value (prob of being 
 #make a posterior predictive destribution that includes uncertainty around probability (birth_samples)
 #rather than just using the most likely probability of being a boy for teh prob value of rbinom
 birth_w <- rbinom(1e4, size = 200, prob = birth_samples)#somewhere between 80 and 140 boys
+birth_w1 <- rbinom(1e4, size = 200, prob = 0.6)
+dens(birth_w1)
 dens(birth_w)
 mean(birth_w)
 median(birth_w)
@@ -122,6 +124,8 @@ birth_w1f <- rbinom(1e4, size = 51, prob = birth_samples)
 dens(birth_w1f)#28.5
 mean(birth_w1f)#28
 median(birth_w1f)
+afterGirls <- birth2[birth1 == 0]
+sum(afterGirls)
 #model is underestiamting the number of boys born after girls. 
 #why?
 #the probability of getting a boy is probably higher once 
