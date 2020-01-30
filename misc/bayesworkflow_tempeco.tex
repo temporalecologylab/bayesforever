@@ -1,0 +1,48 @@
+\documentclass[11pt,letter]{article}
+\usepackage[top=1.00in, bottom=1.0in, left=1.1in, right=1.1in]{geometry}
+\renewcommand{\baselinestretch}{1.1}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{amsmath}
+
+\def\labelitemi{--}
+\parindent=0pt
+
+\begin{document}
+\bibliographystyle{/Users/Lizzie/Documents/EndnoteRelated/Bibtex/styles/besjournals}
+\renewcommand{\refname}{\CHead{}}
+
+{\bf One Bayesian Workflow:} \\
+\emph{Note that you might need to start simple and build up to get all these steps to work, but this is my recommended approach to the basic workflow.}
+
+\begin{enumerate}
+\item Check your code. Write down your model -- I recommend as basic math, then write it in \verb|Stan| and simulate one set of test data (often in \verb|R|). I recommend you do this first because it will flesh out any issues in your simulated data (\verb|R|) code, which you need right away (but you don't need the \verb|Stan| code until step 3).
+\begin{enumerate}
+\item Write your \verb|Stan| code.
+\item In \verb|R|, write simulated data where you {\bf write out all your parameters}, write $x$ and generate $y$ from your model. So, if I am doing simple regression ($y=mx+b$, with error $\epsilon$) then I would have to assign values to $m, b$ and $\epsilon$ and I would generate a vector of $x$ values, then I would simulate $y$ from those values.
+\item Run your \verb|Stan| code on your simulated data. Check that your \verb|Stan| code returns your model parameters, if not, check your code, set your error lower and/or sample size higher. Keep checking until your \verb|Stan| output matches your parameters (note check your \verb|Stan| code and your simulated data code) and you trust both.
+\end{enumerate}
+\item Prior predictive checks: Check yo' priors.
+\begin{enumerate}
+\item Take your aforementioned \verb|R| code and set up priors for each parameter (e.g., distributions for $m, b, \epsilon$). {\bf In contrast to above, where you just set each parameter to one value, here you you want to draw multiple values for each parameter and visually check the output.} 
+\item How do I check the output? Just like posterior predictive checks, this is up to you! At a minimum I recommend thinking of plots you will make with your model in the end (for publications) and plotting that given different prior values.
+\item Your goal here is to check that your priors are reasonable, if they are not, adjust them. 
+\item Unlike in Step 1, you do {\bf not} need to run \verb|Stan|---you have your parameters so you can just simulate data from them, and then plot, examine etc.. No \verb|Stan| at this step. 
+\end{enumerate}
+\item Now you can run your model on your real data!
+\begin{enumerate}
+\item Check the output, if you have divergent transitions, you need to re-parameterize your model (may tried a non-centered model or such).
+\item I recommend ShinyStan here.
+\end{enumerate}
+\item Posterior predictive checks: How good or bad does your model do compared to your data?
+\begin{enumerate}
+\item Grab the parameter values from your fitted \verb|Stan| model. In posterior predictive checks \emph{these are the parameter values you use to simulate new data.}  
+\item You can adapt your \verb|R| code for simulating data above, but use your estimated parameters from your fitted model. 
+\item What should I look at? Ah, just like in prior predictive checks, you need to decide. Classic things are to look at the mean of 100 or so simulations of new data you generate versus your {\bf real} data. Also try the SD. Plot things! Look at the distribution. If you use the generated quantities block in \verb|Stan| ShinyStan will automatically generate a few plots but think hard about more.
+\item When does this get hard? In hierarchical models (and other models with hyperparameters) as you have multiple levels you can generate---you can use \emph{your estimated parameters from your fitted model at all levels or generate your lower-level parameters} (for example, you can generate species means using your species $\mu$ and $\sigma$). You have to think about what you want your model to predict.
+\item See how it is---do you see obvious problems caused by the distribution you selected or a grouping factor you're missing? If so, add it. And go back to Step 1. 
+\item (No \verb|Stan| at this step.)
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
