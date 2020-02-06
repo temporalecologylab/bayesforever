@@ -141,6 +141,19 @@ data=foxes
 precis(mod.foodgroup)
 
 
+mod.foodarea <- map(alist(
+  weight ~ dnorm(mu , sigma),
+  mu <- intercept + b_terr*area + b_food*avgfood,
+  intercept ~ dnorm(0,10),
+  b_terr ~ dnorm(0,10),
+  b_food ~ dnorm(0,10),
+  sigma ~ dunif(0,5)
+),
+data=foxes
+)
+precis(mod.foodarea)
+
+
 ## And now all three!
 mod.all <- map(alist(
   weight ~ dnorm(mu , sigma),
