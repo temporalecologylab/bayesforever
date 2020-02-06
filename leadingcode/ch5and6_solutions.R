@@ -23,7 +23,7 @@ mod.terr <- map(
     b_terr ~ dnorm(0,10),
     sigma ~ dunif(0,5)
   ),
-data=foxes
+  data=foxes
 )
 precis(mod.terr)
 
@@ -124,35 +124,85 @@ shade(mod.both.group.PI, group.seq, col = col.alpha("blue",0.5))
 dev.off()
 
 
-# 5H3
-# quick check
-d <- mutate(d, 
-            avgfood.s = normalise(avgfood),
-            area.s = normalise(area),
-            groupsize.s=normalise(groupsize))
-
-m.fd.gs <- lm(weight ~ avgfood.s + groupsize.s, d)
-summary(m.fd.gs)
-precis(m.fd.gs, digits=3)
-
-m.fd.gs.a <- lm(weight ~ avgfood.s + groupsize.s + area.s, d)
-summary(m.fd.gs.a)
-precis(m.fd.gs.a, digits=3)
-
-m.gs.a <- lm(weight ~  groupsize.s + area.s, d)
-summary(m.gs.a)
-precis(m.gs.a, digits=3)
+########################## 5H3 ################################
+# So we start with body size as an additive function of avgfood and groupsize, per Richard's request
+mod.foodgroup <- map(alist(
+  weight ~ dnorm(mu , sigma),
+  mu <- intercept + b_group*groupsize + b_food*avgfood,
+  intercept ~ dnorm(0,10),
+  b_group ~ dnorm(0,10),
+  b_food ~ dnorm(0,10),
+  sigma ~ dunif(0,5)
+),
+data=foxes
+)
+precis(mod.foodgroup)
 
 
-# group size from area and food
-m.f.a <- lm(groupsize ~ avgfood.s + area.s, d)
-summary(m.f.a)
-precis(m.f.a, digits=3)
+## And now all three!
+mod.all <- map(alist(
+  weight ~ dnorm(mu , sigma),
+  mu <- intercept + b_group*groupsize + b_terr*area + b_food*avgfood,
+  intercept ~ dnorm(0,10),
+  b_group ~ dnorm(0,10),
+  b_terr ~ dnorm(0,10),
+  b_food ~ dnorm(0,10),
+  sigma ~ dunif(0,5)
+),
+data=foxes
+)
+precis(mod.all)
 
-gd <- mutate(gd, 
-             avgfood.s = normalise(avgfood),
-             area.s = normalise(area),
-             groupsize.s=normalise(groupsize))
-m.f.a2 <- lm(groupsize ~ avgfood.s + area.s, gd)
-summary(m.f.a2)
-precis(m.f.a2, digits=3)
+## What's a better predictor of weight? avgfood or area?
+mod.all.group <- link(mod.all, data=data.frame(area=mean(foxes$area), avgfood=mean(foxes$avgfood), groupsize=group.seq))
+mod.all.group.mean <- apply(mod.all.group, 2, mean)
+mod.all.group.PI <- apply(mod.all.group, 2, PI, .89)
+
+food.seq <- seq(0,1.5,0.1)
+mod.all.food <- link(mod.all, data=data.frame(area=mean(foxes$area), groupsize=mean(foxes$groupsize), avgfood=food.seq))
+mod.all.food.mean <- apply(mod.all.food, 2, mean)
+mod.all.food.PI <- apply(mod.all.food, 2, PI, .89)
+
+mod.all.area <- link(mod.all, data=data.frame(avgfood=mean(foxes$avgfood), groupsize=mean(foxes$groupsize), area=terr.seq))
+mod.all.area.mean <- apply(mod.all.area, 2, mean)
+mod.all.area.PI <- apply(mod.all.area, 2, PI, .89)
+
+par(mfrow=c(2,3))
+
+plot.new()
+
+plot(precis(mod.all))
+abline(v=0, col="gray", lty=2, lwd=3)
+
+plot.new()
+
+plot(weight~groupsize, foxes, col='red')
+lines(group.seq, mod.all.group.mean, col='blue')
+shade(mod.all.group.PI, group.seq, col = col.alpha("blue",0.5))
+
+plot(weight~avgfood, foxes, col='red')
+lines(food.seq, mod.all.food.mean, col='blue')
+shade(mod.all.food.PI, food.seq, col = col.alpha("blue",0.5))
+
+plot(weight~area, foxes, col='red')
+lines(terr.seq, mod.all.area.mean, col='blue')
+shade(mod.all.area.PI, terr.seq, col = col.alpha("blue",0.5))
+
+dev.off()
+
+
+
+
+#### okay so let's just do a quick collinearity check for fun...
+# For question 2, we look at fox weight as a function of groupsize and territory size. We'll start here.
+
+plot(groupsize ~ area, data=foxes)
+
+## and then we look at average food variable
+par(mfrow=c(1, 3))
+plot(groupsize ~ area, data=foxes)
+plot(groupsize ~ avgfood, data=foxes)
+plot(avgfood ~ area, data=foxes)
+dev.off()
+
+## And it all makes sense.
