@@ -4,6 +4,7 @@
 # housekeeping
 rm(list=ls()) 
 options(stringsAsFactors = FALSE)
+dev.off()
 
 ## Load libraries
 library(ggplot2)
@@ -66,7 +67,7 @@ shade(mu.modgroup.PI, group.seq)
 plot(precis(mod.group))
 abline(v=0, col="gray", lty=3, lwd=3)
 
-### AND NEITHER IS GROUP SIZE... INTERESTING!
+### AND NEITHER IS GROUP SIZE BUT SLIGHTLY MORE THAN TERRITORY SIZE... INTERESTING!
 
 par(mfrow=c(1,2))
 plot(precis(mod.terr))
@@ -74,6 +75,7 @@ abline(v=0, col="gray", lty=3, lwd=3)
 
 plot(precis(mod.group))
 abline(v=0, col="gray", lty=3, lwd=3)
+
 dev.off()
 
 
