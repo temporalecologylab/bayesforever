@@ -72,10 +72,22 @@ for (i in 1:1000){ #repeat what you did for the simulated data 1000 times
   alpha <- rep(rnorm(n.var,moo.sim[i], sig.sim), each = 20)
   e <- rnorm(length(alpha), 0, sigma)
   y <- alpha + e
-  df <- data.frame(varname, alpha, e, y)
+  icol <- rep(i, length(y))
+  df <- data.frame(icol, varname, alpha, e, y)
   priorList[[i]]<- df
-  all.df <- do.call("rbind", priorList)
 }
+
+all.df <- do.call("rbind", priorList)
+
 # for each variety, take all the y and make a boxplot
 ggplot(all.df, aes(x= varname, y= y))+
   geom_boxplot()
+
+#subset ggplot
+numz <- sample(1:1000, 20)
+mini.all.df <- all.df[which(all.df$icol %in% numz), ]
+ggplot(mini.all.df, aes(x= varname, y= y))+
+  geom_boxplot() + facet_wrap(~ icol)
+
+# prior predictive check with year. Subtract 1900 from the year number
+# run rstanarm on simulated data and return parameters
