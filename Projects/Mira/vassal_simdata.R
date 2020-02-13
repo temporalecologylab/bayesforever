@@ -52,10 +52,13 @@ sig.dat <- rnorm(length(here.dat), 0, sigma)
 # y = a + sigma
 final.dat <- here.dat + sig.dat
 # combine these lists into a dataframe
-vardat <- data.frame(cbind(names.df, here.dat, sig.dat, final.dat))
+vardat <- data.frame(names.df, here.dat, sig.dat, final.dat)
 
 # plot simulated observations
-plot(vardat$names.df ~ vardat$final.dat, xlabel = "variety", ylabel = "bb-fl")
+ggplot(vardat, aes(x= names.df, y= final.dat))+
+  geom_point() #as points
+ggplot(vardat, aes(x=names.df, y = final.dat))+
+  geom_boxplot()
 
 # then for prior predictive check:
 
@@ -63,14 +66,16 @@ moo.sim <- rnorm(1000, 70, 15) #prior for variety means
 sig.sim <- runif(1000, 0, 20) # prior for vareity sigma
 sig.all <- runif(1000, 0, 30) # prior for model sigma
 
-priorList <- List() #make list to put each dataframe in
+priorList <- list() #make list to put each dataframe in
 for (i in 1:1000){ #repeat what you did for the simulated data 1000 times
   varname<- rep(bbfl.cc$variety, each = 20)
   alpha <- rep(rnorm(n.var,moo.sim[i], sig.sim), each = 20)
   e <- rnorm(length(alpha), 0, sigma)
   y <- alpha + e
-  df <- data.frame(cbind(varname, alpha, e, y))
+  df <- data.frame(varname, alpha, e, y)
   priorList[[i]]<- df
   all.df <- do.call("rbind", priorList)
 }
 # for each variety, take all the y and make a boxplot
+ggplot(all.df, aes(x= varname, y= y))+
+  geom_boxplot()
