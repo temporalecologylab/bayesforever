@@ -228,7 +228,7 @@ ntot = 100 # numbers of obs per species.
 sample_a <- list(site.env = rbinom(1000, 1, 0.5))
 
 model.parameters <- list(intercept = 700,
-                         urban.coef = 50)
+                         urban.coef = 75)
 
 #  2) Now, we will make varying intercepts
 env.samples <- sapply(sample_a, FUN = function(x){
@@ -243,10 +243,10 @@ random.regex <- grep(pattern = paste(c("intercept", "urban.coef"), collapse = "|
 # Generate random parameters (by species)
 for(i in 1:length(random.regex)){
   parameters.temp[, i] <- sapply(1:nsp, FUN = function(x){
-    rep(rnorm(n = 1, mean = model.parameters[[random.regex[i]]], sd = 200), ntot)})}
+    rep(rnorm(n = 1, mean = model.parameters[[random.regex[i]]], sd = 50), ntot)})}
 # Calculate response
 response <- sapply(1:nrow(env.samples), FUN = function(x){
-    rnorm(n = 1, mean = mm[x, ] %*% parameters.temp[x, ], sd = 200)})
+    rnorm(n = 1, mean = mm[x, ] %*% parameters.temp[x, ], sd = 10)})
 
 fakedata_ws_urb <- cbind(data.frame(species = as.vector(sapply(1:nsp, FUN = function(x) rep(x, ntot))),
                                 gdd = response, urban = env.samples[,1]))
@@ -254,27 +254,27 @@ fakedata_ws_urb <- cbind(data.frame(species = as.vector(sapply(1:nsp, FUN = func
 write.csv(fakedata_ws_urb, file="output/fakedata_ws_urb.csv", row.names = FALSE)
 
 #  7) Let's do a quick lmer model to test the fake data
-modtest <- lmer(gdd ~ urban + (urban|species), data=fakedata_ws) ## Quick look looks good!
+modtest <- lmer(gdd ~ urban + (urban|species), data=fakedata_ws_urb) ## Quick look looks good!
 
 my.pal <- rep(brewer.pal(n = 10, name = "Paired"), 2)
 my.pch <- rep(15:16, each=10)
-plot(gdd ~ species, col=my.pal[species], pch=my.pch[species], data = fakedata_ws)
-abline(h=mean(fakedata_ws$gdd), lwd=3)
+plot(gdd ~ species, col=my.pal[species], pch=my.pch[species], data = fakedata_ws_urb)
+abline(h=mean(fakedata_ws_urb$gdd), lwd=3)
 
-plot(density(fakedata_ws$gdd))
-abline(v = mean(fakedata_ws$gdd), lwd = 2, col = "blue")
+plot(density(fakedata_ws_urb$gdd))
+abline(v = mean(fakedata_ws_urb$gdd), lwd = 2, col = "blue")
 
 ## PRIOR PREDICTIVE CHECK time!!
 # Now I will follow the workflow from the Gabry et al., 2019 paper
 ## Using vague priors
-nsims <- length(fakedata_ws$species)
-alpha <- rnorm(20, 700, 200)
-beta <- rnorm(20, 50, 10)
-sigma <- runif(20, 0, 50)
+nsims <- length(fakedata_ws_urb$species)
+alpha <- rnorm(20, 600, 100)
+beta <- rnorm(20, 100, 20)
+sigma <- runif(20, 0, 20)
 
 data1 <- data.frame(
-  gdd = fakedata_ws$gdd,
-  sim = alpha[fakedata_ws$species] + (beta + beta[fakedata_ws$species]) +
+  gdd = fakedata_ws_urb$gdd,
+  sim = alpha[fakedata_ws_urb$species] + (beta + beta[fakedata_ws_urb$species]) +
     rnorm(nsims, mean = 0, sd = sigma)
 )
 
@@ -283,14 +283,14 @@ ggplot(data1, aes(x = gdd, y = sim)) +
   xysim_labs + coord_cartesian(xlim=c(250, 1000), ylim=c(250,1000)) + geom_abline(intercept=0, slope=1)
 
 ## Using weakly informative priors
-nsims <- length(fakedata_ws$species)
-alpha <- rnorm(20, 0, 1)
-beta <- rnorm(20, 0, 1)
-sigma <- runif(20, 0, 1)
+nsims <- length(fakedata_ws_urb$species)
+alpha <- rnorm(20, 1000, 200)
+beta <- rnorm(20, 200, 50)
+sigma <- runif(20, 0, 100)
 
 data2 <- data.frame(
-  gdd = fakedata_ws$gdd,
-  sim = alpha[fakedata_ws$species] + (beta + beta[fakedata_ws$species]) +
+  gdd = fakedata_ws_urb$gdd,
+  sim2 = alpha[fakedata_ws_urb$species] + (beta + beta[fakedata_ws_urb$species]) +
     rnorm(nsims, mean = 0, sd = sigma)
 )
 
@@ -299,8 +299,8 @@ ggplot(data2, aes(x = gdd, y = sim2)) +
   xysim_labs + coord_cartesian(xlim=c(0, 1000), ylim=c(0,1000)) + geom_abline(intercept=0, slope=1)
 
 data3 <- data.frame(
-  gdd = fakedata_ws$gdd, 
-  wip = data2$sim, 
+  gdd = fakedata_ws_urb$gdd, 
+  wip = data2$sim2, 
   vague = data1$sim
 )
 ggplot(data3, aes(x=gdd, y=wip)) + 
