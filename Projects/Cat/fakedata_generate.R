@@ -227,8 +227,8 @@ ntot = 100 # numbers of obs per species.
 
 sample_a <- list(site.env = rbinom(1000, 1, 0.5))
 
-model.parameters <- list(intercept = 700,
-                         urban.coef = 75)
+model.parameters <- list(intercept = 300,
+                         urban.coef = 50)
 
 #  2) Now, we will make varying intercepts
 env.samples <- sapply(sample_a, FUN = function(x){
@@ -246,7 +246,7 @@ for(i in 1:length(random.regex)){
     rep(rnorm(n = 1, mean = model.parameters[[random.regex[i]]], sd = 50), ntot)})}
 # Calculate response
 response <- sapply(1:nrow(env.samples), FUN = function(x){
-    rnorm(n = 1, mean = mm[x, ] %*% parameters.temp[x, ], sd = 10)})
+    rnorm(n = 1, mean = mm[x, ] %*% parameters.temp[x, ], sd = 20)})
 
 fakedata_ws_urb <- cbind(data.frame(species = as.vector(sapply(1:nsp, FUN = function(x) rep(x, ntot))),
                                 gdd = response, urban = env.samples[,1]))
@@ -324,8 +324,8 @@ ntot = 100 # numbers of obs per species.
 
 sample_a <- list(site.env = rbinom(1000, 1, 0.5))
 
-model.parameters <- list(intercept = 600,
-                         urban.coef = 50)
+model.parameters <- list(intercept = 250,
+                         urban.coef = 40)
 
 #  2) Now, we will make varying intercepts
 env.samples <- sapply(sample_a, FUN = function(x){
@@ -340,10 +340,10 @@ random.regex <- grep(pattern = paste(c("intercept", "urban.coef"), collapse = "|
 # Generate random parameters (by species)
 for(i in 1:length(random.regex)){
   parameters.temp[, i] <- sapply(1:nsp, FUN = function(x){
-    rep(rnorm(n = 1, mean = model.parameters[[random.regex[i]]], sd = 50), ntot)})}
+    rep(rnorm(n = 1, mean = model.parameters[[random.regex[i]]], sd = 30), ntot)})}
 # Calculate response
 response <- sapply(1:nrow(env.samples), FUN = function(x){
-  rnorm(n = 1, mean = mm[x, ] %*% parameters.temp[x, ], sd = 50)})
+  rnorm(n = 1, mean = mm[x, ] %*% parameters.temp[x, ], sd = 10)})
 
 fakedata_hl_urb <- cbind(data.frame(species = as.vector(sapply(1:nsp, FUN = function(x) rep(x, ntot))),
                                 gdd = response, urban = env.samples[,1]))
