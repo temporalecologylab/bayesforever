@@ -138,7 +138,7 @@ m_partpool_full <- map2stan(
 
 par(mfrow=c(1,2))
 plot(precis(m_nopool_full))
-plot(precis(m_partpool_full789epth=2))
+plot(precis(m_partpool_full, depth=2))
 
 m_partpool_wstudy_full <- map2stan(
   alist(
