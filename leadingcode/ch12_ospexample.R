@@ -132,7 +132,9 @@ m_partpool_full <- map2stan(
   control=list(max_treedepth = 15,adapt_delta = 0.99)
 )
 
-m_partpool_full <- map2stan(
+
+
+m_partpool_wstudy_full <- map2stan(
   alist(
     resp ~ dnorm(mu, sigma),
     mu <- a + a_species[species] + a_study[study] + bf*force + bp*photo + bc*chill,
