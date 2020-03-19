@@ -1,5 +1,9 @@
 ## Cat decides she doesn't like the questions from Chapter 12 so we're going to make up a new question
 
+# Links for class:
+# http://mfviz.com/hierarchical-models/
+# https://www.tjmahr.com/plotting-partial-pooling-in-mixed-effects-models/
+
 # housekeeping
 rm(list=ls()) 
 options(stringsAsFactors = FALSE)
@@ -86,8 +90,8 @@ m_partpool_wstudy <- map2stan(
 dev.new()
 postpartpool <- extract.samples(m_partpool)
 postpartpool_study <- extract.samples(m_partpool_wstudy)
-dens(postpartpool$sigma, xlab="sigma", xlim=c(15, 25))
-dens(postpartpool_study$sigma, col="blue", lwd=2, add=TRUE)
+dens(postpartpool_study$sigma, xlab="sigma", xlim=c(13, 22))
+dens(postpartpool$sigma, col="blue", lwd=2, add=TRUE)
 
 dev.new()
 par(mfrow=c(1,2))
@@ -132,7 +136,9 @@ m_partpool_full <- map2stan(
   control=list(max_treedepth = 15,adapt_delta = 0.99)
 )
 
-
+par(mfrow=c(1,2))
+plot(precis(m_nopool_full))
+plot(precis(m_partpool_full789epth=2))
 
 m_partpool_wstudy_full <- map2stan(
   alist(
