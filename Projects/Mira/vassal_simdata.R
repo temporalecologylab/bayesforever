@@ -106,10 +106,9 @@ sigma_yr <- 5
 yr_per_var <- round(runif(n.var, 5, 40)) #number of years of data for each variety
 var_yr <- rep(1:n.var, yr_per_var) # replicate each variety name the number of years of observations (yr_per_sp)
 len.yr <- length(var_yr)
-y.dat <- data.frame(names2.df, a2, b1, yr2, sig2.dat, fin2.dat)
 year <- rep(NA, len.yr)
 for (v in 1:n.var){
-  year[var_yr == v] <- rev(2020 - 1:(yr_per_sp[v])) - year_0
+  year[var_yr == v] <- rev(2020 - 1:(yr_per_var[v])) - year_0
 }
 dat <- data.frame(var_yr, year)
 
@@ -132,12 +131,12 @@ fin2.dat <- a2 + b1*year + sig2.dat
 
 # combine these lists into a dataframe
 y.dat <- cbind(dat, a2, b1, sig2.dat, fin2.dat)
-y.dat <- data.frame(var_yr, a2, b1, year, sig2.dat, fin2.dat)
+#y.dat <- data.frame(var_yr, a2, b1, year, sig2.dat, fin2.dat)
 
 # plot simulated observations
 #plot(x = y.dat$yr2, y = y.dat$fin2.dat, xlab = "Year", ylab = "Duration", col = ???)
 library(ggplot2)
-ggplot( data = y.dat, aes(x= yr2, y= fin2.dat, col = names2.df))+
+ggplot( data = y.dat, aes(x= year, y= fin2.dat, col = var_yr))+
   geom_point() #as points
 
 # then for prior predictive check:
