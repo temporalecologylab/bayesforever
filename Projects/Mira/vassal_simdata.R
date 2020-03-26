@@ -1,8 +1,6 @@
 ## Simulating data and prior predictive check for Vassal interpheno phases.
 ## 10 Feb 2020 MG
 
-
-
 # make dataframe with only complete cases to remove NAs - try to do this in a more controlled way later on
 bbfl.cc <- variety.mean.bud.flow[complete.cases(variety.mean.bud.flow$`mean Bud-Flow`, variety.mean.bud.flow$`sd Bud-Flow`), ]
 
@@ -79,9 +77,9 @@ ggplot(mini.all.df, aes(x= varname, y= y))+
 d2 <- vassal.clean[which(vassal.clean$DiffBudFlow != "NA days"), ]
 
 # Subtract 1980 from the year number to create hinge.
-yr.hinge <- d2$year - 1980
-d2.h <- cbind(d2, yr.hinge)
-head(d2.h)
+#yr.hinge <- d2$year - 1980
+#d2.h <- cbind(d2, yr.hinge)
+#head(d2.h)
 
 # model
 #  y2 ~ N(u, sigma)
@@ -98,9 +96,22 @@ sig.B <- 5
 e2 <- 20
 
 # Simulating Data
-n.var <- 50 #number of simulations/varieties
-n.obs <- 20 #give each variety 20 observations
-len <- n.var*n.obs
+
+n.var <- length(unique(d2$variety)) #number of simulations/varieties #Mar2020 = 50
+#n.obs <- 20 #give each variety 20 observations
+#len <- n.var*n.obs
+# list of years
+year_0 <- 1980 #hinge year
+sigma_yr <- 5
+yr_per_var <- round(runif(n.var, 5, 40)) #number of years of data for each variety
+var_yr <- rep(1:n.var, yr_per_var) # replicate each variety name the number of years of observations (yr_per_sp)
+len.yr <- length(var_yr)
+y.dat <- data.frame(names2.df, a2, b1, yr2, sig2.dat, fin2.dat)
+year <- rep(NA, len.yr)
+for (v in 1:n.var){
+  year[var_yr == v] <- rev(2020 - 1:(yr_per_sp[v])) - year_0
+}
+dat <- data.frame(var_yr, year)
 
 # make empty dataframe to put simulated data in
 names2.df <- c()
@@ -108,19 +119,20 @@ vardat2 <- c()
 
 # for each variety, simulate 20 observations
 # make list of each variety repeated 20 times (20 observations per variety)
-names2.df <- rep(unique(d2.h$variety), each = 20)
-# make list of alpha for each variety - this alpha repeats 20 times (one for each observation (20 per variety))
-a2 <- rep(rnorm(n.var, mu2.var, sig2.var), each = 20)
+#names2.df <- rep(unique(d2$variety), each = 20)
+# make list of alpha for each variety - this alpha repeats for the number of years of observations
+list.a2 <- round(rnorm(n.var, mu2.var, sig2.var))
+a2 <- rep(list.a2, yr_per_var)
 # make similar list of beta
-b1 <- rep(rnorm(1, mu.B, sig.B), len)
+b1 <- rep(rnorm(1, mu.B, sig.B), len.yr)
 # from error distribution of model, pull a sigma for each individual alpha (20 different sigma values for each variety)
-sig2.dat <- rnorm(len, 0, e2)
+sig2.dat <- rnorm(len.yr, 0, e2)
 # y = a + B*yr sigma
-fin2.dat <- a2 + b1 + sig2.dat
-# make list of years
-yr2 <- rep(1:40, (1000/40))
+fin2.dat <- a2 + b1*year + sig2.dat
+
 # combine these lists into a dataframe
-y.dat <- data.frame(names2.df, a2, b1, yr2, sig2.dat, fin2.dat)
+y.dat <- cbind(dat, a2, b1, sig2.dat, fin2.dat)
+y.dat <- data.frame(var_yr, a2, b1, year, sig2.dat, fin2.dat)
 
 # plot simulated observations
 #plot(x = y.dat$yr2, y = y.dat$fin2.dat, xlab = "Year", ylab = "Duration", col = ???)
