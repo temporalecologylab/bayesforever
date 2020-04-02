@@ -8,6 +8,8 @@ library(MASS)
 library(ellipse)
 library(rethinking)
 library(rstan)
+library(bayesplot)# nice posterior check plots 
+library(shinystan)
 
 #You can partially pool slopes like you do intercepts, and correlate the effects on slope and intercept  
 #pool information accross  parameters 
@@ -36,9 +38,9 @@ meanTemp <- 2 #the mean winter temperature
 sigmaTemp <- 5 # The varation (standard error) around that mean winter temperature 
 simTemps <- rnorm(nrep, meanTemp,sigmaTemp) # simulating winter temperatures 
 
-nvariety <- 20 #number of winegrape varieties 
+nvariety <- 40 #number of winegrape varieties 
 varNames <- as.factor(c(1:nvariety)) # make 20 "varieties" named "1" to "20"
-nyear <- 20 # there are 20 years of data
+nyear <- 40 # there are 20 years of data
 yearNames <- as.factor(1:20) #name of each year (year is treted like a factor rather than a continuous variable)
 
 #parameters
@@ -52,7 +54,8 @@ betag <- 0.5 # overall grand mean beta
 muAB <- c(alpha, betag)#combine two gran effects
 
 #Year
-alphaYear <- rep(rnorm(nyear, 0, 0.5), times = nvariety) # random effect of year, 20 years and each year has a each variety in it 
+sigma_year <- 0.5 # effect of year 
+alphaYear <- rep(rnorm(nyear, 0, sigma_year), times = nvariety) # random effect of year, 20 years and each year has a each variety in it 
 alphaYearObs <- rep(alphaYear, each = nrep) 
 
 #variety
@@ -67,19 +70,6 @@ Sigma_var <- diag(sigmas_var) %*% Rho_var %*% diag(sigmas_var) # this does some 
 diag(sigmas_var)#diags puts the two values diagnally from each other and fills extra space with 0s 
 varEffects <- MASS::mvrnorm(nyear, muAB, Sigma_var)#get overall slopes and intercepts for each year 
 
-#plotting data
-#-------------------
-
-plot(alphaVar, betaVar) # how the effect of variety on alpha and beta realate. Varieies with a lower
-#alphavar (intercept) have steeper slopes. This means that a variety that is hardy to a really low temperature
-#when the air temperature is 0 will also get more/less cold hardy quicker. My theory behind this setup was that 
-#varieties that get really cold hardy midwinter need to be able to get un-hardy quicker so they are still 
-#ready to "spring" into action in the spring.
-
-# overlay population distribution
-for ( l in c(0.1,0.3,0.5,0.8,0.99) )
-lines(ellipse::ellipse(Sigma_var,centre=muAB,level=l),col=col.alpha("black",0.2)) 
-points(muAB[1], muAB[2], col = "red", pch = 3)#grand mean and slope 
 
 #simulating individual observations
 #-----------------------------------------------
@@ -103,9 +93,9 @@ yearNamesObs <- rep(YearNameRep, each = nrep)
 
 #sigma <- sqrt(sigma2)
 
-meanTemp <- mean(bhclim$meanC)
-sigmaTemp <- sd(bhclim$meanC)
-simTemps <- rnorm(nObs , meanTemp , sigmaTemp)
+meanTemp <- 2 #the mean winter temperature 
+sigmaTemp <- 5 # The varation (standard error) around that mean winter temperature 
+simTemps <- rnorm(nrep, meanTemp,sigmaTemp) 
 
 
 simLTEVar <- alphaVarObs + alphaYearObs + betaVarObs * simTemps + eps
@@ -122,18 +112,34 @@ simVarData$yearNamesObs <- as.factor(simVarData$yearNamesObs )
 #Note: in this example, everything is ballanced, but it doesnt need to be in real life 
 
 
+#plotting data
+#-------------------
+
+plot(alphaVar, betaVar) # how the effect of variety on alpha and beta realate. Varieies with a lower
+#alphavar (intercept) have steeper slopes. This means that a variety that is hardy to a really low temperature
+#when the air temperature is 0 will also get more/less cold hardy quicker. My theory behind this setup was that 
+#varieties that get really cold hardy midwinter need to be able to get un-hardy quicker so they are still 
+#ready to "spring" into action in the spring.
+
+# overlay population distribution
+for ( l in c(0.1,0.3,0.5,0.8,0.99) )
+lines(ellipse::ellipse(Sigma_var,centre=muAB,level=l),col=col.alpha("black",0.2)) 
+points(muAB[1], muAB[2], col = "red", pch = 3)#grand mean and slope 
+
+
 #prior predictive checks 
 #---------------------------------------------
-
-#how do i chose a prior for the covarience structure???? I guess that it needs to be a negative number. Normal as well?
-R <- rlkjcorr(1e4, K = 2, eta = 2)
-plot(density(rlkjcorr(Ni, K = 2, eta = 2)[,1,2]))#what this prior looks like 
 
 
 #range of temperatures to simulate over
 Ni <- 10 #number of repeat runs of the model 
 nObs <- 30 # number fo temperature observations per simulation 
 preTemps <- rnorm(30, -15, 20) # i think this is a sensible range of winter temps
+
+#how do i chose a prior for the covarience structure????
+R <- rlkjcorr(1e4, K = 2, eta = 2)
+
+plot(density(rlkjcorr(Ni, K = 2, eta = 2)[,1,2]))#what this prior looks like 
 
 #1st level parameters 
 alpha_g <-  rnorm(Ni, -15, 12)
@@ -146,8 +152,8 @@ Sigma_vara <- rnorm(Ni, 0, 1) # standard deviation in intercepts for variety
 Sigma_varb <- rnorm(Ni, 0, 1) # standard deviation in slopes for variety
 
 #make a dataframe for the outputs of random effects 
-n_vars  <- 20 # number of random effects 
-n_year <- 20
+n_vars  <- 40 # number of random effects 
+n_year <- 40
 varietySim <- rep(as.factor(c(1:n_vars)), each = n_year)
 yearSim <- rep(as.factor(c(1:n_year)), times = n_vars)
 raneffectV <- rep(varietySim, times = Ni )
@@ -424,6 +430,8 @@ generated quantities {
 
 "
 
+#Faith's attempt at a non cented model of Hardiness 
+#-------------------------------------------------------
 
 write("//
 // This Stan program defines a linear model predicting LTE50 from temperature, with partial pooling of variety and year 
@@ -463,7 +471,7 @@ parameters {
 	vector[n_vars] zb_variety;					// z score of beta for effect of variety 
 
 
-	real <lower = 0> sigma_k; 					// variation of intercept amoung varieties  
+	real <lower = 0> sigma_k; 					// variation of intercept amoung years
 	real yearmu[K];
 
 }
@@ -502,7 +510,7 @@ model{
 	var_sigma ~ normal(0, 3); 					// prior for the variety effect that gets multiplied with rho (correlation)
 	Rho ~ lkj_corr_lpdf(2); 					// prior for teh correlation between alpha and beta effect of variety 
 
-	target += multi_normal_lpdf(v_variety | rep_vector(0, 2), Rho);
+	v_variety ~ multi_normal(rep_vector(0, 2), Rho); // multinormal distribution of z values. mu = 0.  
 
 	//---Linear model
 	for(j in 1:n_vars){
@@ -542,7 +550,7 @@ stan_modelMulti7 <- "slope_nonCentre.stan"
 
 
 fit7 <- stan(file = stan_modelMulti7, data = stan_data3, warmup = 1000, 
-	iter = 2000, chains = 2, cores = 2, thin = 1, , control = list(max_treedepth = 15, adapt_delta = 0.80))
+	iter = 2000, chains = 2, cores = 2, thin = 1, control = list(max_treedepth = 15, adapt_delta = 0.80))
 
 
 #interpreting the model
@@ -556,3 +564,24 @@ fit7 <- stan(file = stan_modelMulti7, data = stan_data3, warmup = 1000,
 #unlikely, then it will also increase the intercept because they are negatively correlated.
 
 #I am not sure what is meant by the parameter shrincage bit (p.107). WHy does more shrinkage mean fewer effective parameters? 
+
+launch_shinystan(fit7)
+
+post7 <- extract.samples(fit7)
+str(post7)
+
+dens(post7$Rho)
+#it looks like both Rho numbers are accedentally(?) ending up in the same density plot. Why?
+
+dens(post7$var_sigma)#not estimated correctly at all 
+#how should i give a prior to two parameters held together? 
+
+dens(post7$sigma_y) # should be 2, so overestimating  
+
+dens(post7$sigma_k) # seems fine (0.5)
+
+dens(post7$alpha_g)# seems fine (-21)
+
+dens(post7$beta_g)# should be 0.5, so underestimating a bit
+
+mcmc_intervals(post7)
