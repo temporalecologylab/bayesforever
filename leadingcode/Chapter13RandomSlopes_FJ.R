@@ -433,6 +433,7 @@ generated quantities {
 #Faith's attempt at a non cented model of Hardiness 
 #-------------------------------------------------------
 
+
 write("//
 // This Stan program defines a linear model predicting LTE50 from temperature, with partial pooling of variety and year 
 //
@@ -465,14 +466,13 @@ parameters {
 
 	//level 2				  
 
-	real <lower = 0> var_sigma_a; 				// a vector of standard deviations, one for alpha and one for beta (overall effect of variety)
-	real <lower = 0> var_sigma_b;			
+	vector<lower = 0>[2] var_sigma; 			// a vector of standard deviations, one for alpha and one for beta (overall effect of variety)
 	corr_matrix[2] Rho; 	
 	vector[n_vars] za_variety;					// z score of alpha for effect of variety 
 	vector[n_vars] zb_variety;					// z score of beta for effect of variety 
 
 
-	real <lower = 0> sigma_k; 					// variation of intercept amoung years
+	real <lower = 0> sigma_k; 					// variation of intercept amoung varieties  
 	real yearmu[K];
 
 }
@@ -508,17 +508,16 @@ model{
 	sigma_k ~ normal(0, 3); 					// prior for the variety around levels of random factor. Same as sigma_y
 
 	//Level 2 - variety
-	var_sigma_a ~ normal(0, 3); 					// prior for the variety effect that gets multiplied with rho (correlation)
-	var_sigma_b ~ normal(0, 3);
+	var_sigma ~ normal(0, 3); 					// prior for the variety effect that gets multiplied with rho (correlation)
 	Rho ~ lkj_corr_lpdf(2); 					// prior for teh correlation between alpha and beta effect of variety 
 
-	v_variety ~ multi_normal(rep_vector(0, 2), Rho); // multinormal distribution of z values. mu = 0.  
+	target += multi_normal_lpdf(v_variety | rep_vector(0, 2), Rho);
 
 	//---Linear model
 	for(j in 1:n_vars){
 
-		var_alpha[j] = alpha_g + za_variety[j] * var_sigma_a; // get an alpha for each variety 
-		var_beta[j] = beta_g + zb_variety[j] * var_sigma_b; // get a beta for each variety  
+		var_alpha[j] = alpha_g + za_variety[j] * var_sigma[1]; // get an alpha for each variety 
+		var_beta[j] = beta_g + zb_variety[j] * var_sigma[2]; // get a beta for each variety  
 
 	}
 
@@ -537,8 +536,8 @@ generated quantities {
   vector[N] var_beta;
   vector[N] ymu;
   
-  var_alpha = alpha_g + za_variety[variety] * var_sigma_a; // get an alpha for each variety 
-	var_beta = beta_g + zb_variety[variety] * var_sigma_b; // get a beta for each variety  
+  var_alpha = alpha_g + za_variety[variety] * var_sigma[1]; // get an alpha for each variety 
+	var_beta = beta_g + zb_variety[variety] * var_sigma[2]; // get a beta for each variety  
 
   for (i in 1:N){
 		ymu[i] = var_alpha[variety[i]] + yearmu[year[i]] + var_beta[variety[i]] * x[i];
@@ -549,7 +548,6 @@ generated quantities {
 "slope_nonCentre.stan")
 
 stan_modelMulti7 <- "slope_nonCentre.stan"
-
 
 fit7 <- stan(file = stan_modelMulti7, data = stan_data3, warmup = 1000, 
 	iter = 2000, chains = 2, cores = 2, thin = 1, control = list(max_treedepth = 15, adapt_delta = 0.80))
