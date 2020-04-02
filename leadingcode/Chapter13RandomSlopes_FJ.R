@@ -38,9 +38,9 @@ meanTemp <- 2 #the mean winter temperature
 sigmaTemp <- 5 # The varation (standard error) around that mean winter temperature 
 simTemps <- rnorm(nrep, meanTemp,sigmaTemp) # simulating winter temperatures 
 
-nvariety <- 40 #number of winegrape varieties 
+nvariety <- 20 #number of winegrape varieties 
 varNames <- as.factor(c(1:nvariety)) # make 20 "varieties" named "1" to "20"
-nyear <- 40 # there are 20 years of data
+nyear <- 20 # there are 20 years of data
 yearNames <- as.factor(1:20) #name of each year (year is treted like a factor rather than a continuous variable)
 
 #parameters
@@ -465,7 +465,8 @@ parameters {
 
 	//level 2				  
 
-	vector<lower = 0>[2] var_sigma; 			// a vector of standard deviations, one for alpha and one for beta (overall effect of variety)
+	real <lower = 0> var_sigma_a; 				// a vector of standard deviations, one for alpha and one for beta (overall effect of variety)
+	real <lower = 0> var_sigma_b;			
 	corr_matrix[2] Rho; 	
 	vector[n_vars] za_variety;					// z score of alpha for effect of variety 
 	vector[n_vars] zb_variety;					// z score of beta for effect of variety 
@@ -507,7 +508,8 @@ model{
 	sigma_k ~ normal(0, 3); 					// prior for the variety around levels of random factor. Same as sigma_y
 
 	//Level 2 - variety
-	var_sigma ~ normal(0, 3); 					// prior for the variety effect that gets multiplied with rho (correlation)
+	var_sigma_a ~ normal(0, 3); 					// prior for the variety effect that gets multiplied with rho (correlation)
+	var_sigma_b ~ normal(0, 3);
 	Rho ~ lkj_corr_lpdf(2); 					// prior for teh correlation between alpha and beta effect of variety 
 
 	v_variety ~ multi_normal(rep_vector(0, 2), Rho); // multinormal distribution of z values. mu = 0.  
@@ -515,8 +517,8 @@ model{
 	//---Linear model
 	for(j in 1:n_vars){
 
-		var_alpha[j] = alpha_g + za_variety[j] * var_sigma[1]; // get an alpha for each variety 
-		var_beta[j] = beta_g + zb_variety[j] * var_sigma[2]; // get a beta for each variety  
+		var_alpha[j] = alpha_g + za_variety[j] * var_sigma_a; // get an alpha for each variety 
+		var_beta[j] = beta_g + zb_variety[j] * var_sigma_b; // get a beta for each variety  
 
 	}
 
@@ -535,8 +537,8 @@ generated quantities {
   vector[N] var_beta;
   vector[N] ymu;
   
-  var_alpha = alpha_g + za_variety[variety] * var_sigma[1]; // get an alpha for each variety 
-	var_beta = beta_g + zb_variety[variety] * var_sigma[2]; // get a beta for each variety  
+  var_alpha = alpha_g + za_variety[variety] * var_sigma_a; // get an alpha for each variety 
+	var_beta = beta_g + zb_variety[variety] * var_sigma_b; // get a beta for each variety  
 
   for (i in 1:N){
 		ymu[i] = var_alpha[variety[i]] + yearmu[year[i]] + var_beta[variety[i]] * x[i];
@@ -571,9 +573,9 @@ post7 <- extract.samples(fit7)
 str(post7)
 
 dens(post7$Rho)
-#it looks like both Rho numbers are accedentally(?) ending up in the same density plot. Why?
+#thsi plot looks wierd. It seems to have two peaks. Why?
 
-dens(post7$var_sigma)#not estimated correctly at all 
+dens(post7$var_sigma_a)#not estimated correctly at all 
 #how should i give a prior to two parameters held together? 
 
 dens(post7$sigma_y) # should be 2, so overestimating  
@@ -584,4 +586,3 @@ dens(post7$alpha_g)# seems fine (-21)
 
 dens(post7$beta_g)# should be 0.5, so underestimating a bit
 
-mcmc_intervals(post7)
