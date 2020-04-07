@@ -1,10 +1,13 @@
 ## Simulating data and prior predictive check for Vassal interpheno phases.
 ## 10 Feb 2020 MG
 
+# Get data from merging script - need clean.vassal with different times calculated
+
+#-------------- INTERCEPT ONLY model --------------------#
+
 # make dataframe with only complete cases to remove NAs - try to do this in a more controlled way later on
 bbfl.cc <- variety.mean.bud.flow[complete.cases(variety.mean.bud.flow$`mean Bud-Flow`, variety.mean.bud.flow$`sd Bud-Flow`), ]
 
-# Simple, intercept-only model: 
 # y.bbfl ~ N(u, sigma)
 # u = a.var #the model = for each variety, predict the budburst
 # so y.bbfl = a.var + sigma
@@ -71,15 +74,8 @@ ggplot(mini.all.df, aes(x= varname, y= y))+
 #sigma priors too wide, too many samples?
 # prior predictive check with year. 
 
+#------------------------ HINGE MODEL -------------------------#
 # hinge model with year, slope does not vary by variety
-
-# make dataframe with only rows that have budburst - flower difference calculated
-d2 <- vassal.clean[which(vassal.clean$DiffBudFlow != "NA days"), ]
-
-# Subtract 1980 from the year number to create hinge.
-#yr.hinge <- d2$year - 1980
-#d2.h <- cbind(d2, yr.hinge)
-#head(d2.h)
 
 # model
 #  y2 ~ N(u, sigma)
@@ -89,41 +85,44 @@ d2 <- vassal.clean[which(vassal.clean$DiffBudFlow != "NA days"), ]
 # B ~ N(0,5)
 # e ~ U(0,20)
 
+# make dataframe with only rows that have budburst - flower difference calculated
+d2 <- vassal.clean[which(vassal.clean$DiffBudFlow != "NA days"), ]
+
+#priors
+
 mu2.var <- 70
 sig2.var <- 5
 mu.B <- 0
-sig.B <- 5
-e2 <- 20
+sig.B <- 0.1
+e2 <- 10
 
 # Simulating Data
 
 n.var <- length(unique(d2$variety)) #number of simulations/varieties #Mar2020 = 50
+n.var
 #n.obs <- 20 #give each variety 20 observations
 #len <- n.var*n.obs
+
 # list of years
+# data in d2 starts 1956, ends 2013
 year_0 <- 1980 #hinge year
 sigma_yr <- 5
-yr_per_var <- round(runif(n.var, 5, 40)) #number of years of data for each variety
-var_yr <- rep(1:n.var, yr_per_var) # replicate each variety name the number of years of observations (yr_per_sp)
-len.yr <- length(var_yr)
+yr_per_var <- round(runif(n.var, 5, 57)) #number of years of data for each variety
+variety <- rep(1:n.var, yr_per_var) # replicate each variety name the number of years of observations (yr_per_sp)
+len.yr <- length(variety)
 year <- rep(NA, len.yr)
 for (v in 1:n.var){
-  year[var_yr == v] <- rev(2020 - 1:(yr_per_var[v])) - year_0
+  year[variety == v] <- rev(runif(1, 1961, 2013) - 1:(yr_per_var[v])) - year_0
 }
-dat <- data.frame(var_yr, year)
+dat.yrs <- data.frame(variety, year)
 
-# make empty dataframe to put simulated data in
-names2.df <- c()
-vardat2 <- c()
 
-# for each variety, simulate 20 observations
-# make list of each variety repeated 20 times (20 observations per variety)
-#names2.df <- rep(unique(d2$variety), each = 20)
 # make list of alpha for each variety - this alpha repeats for the number of years of observations
 list.a2 <- round(rnorm(n.var, mu2.var, sig2.var))
 a2 <- rep(list.a2, yr_per_var)
 # make similar list of beta
 b1 <- rep(rnorm(1, mu.B, sig.B), len.yr)
+unique(b1)
 # from error distribution of model, pull a sigma for each individual alpha (20 different sigma values for each variety)
 sig2.dat <- rnorm(len.yr, 0, e2)
 # y = a + B*yr sigma
@@ -131,46 +130,61 @@ fin2.dat <- a2 + b1*year + sig2.dat
 
 # combine these lists into a dataframe
 y.dat <- cbind(dat, a2, b1, sig2.dat, fin2.dat)
-#y.dat <- data.frame(var_yr, a2, b1, year, sig2.dat, fin2.dat)
 
 # plot simulated observations
-#plot(x = y.dat$yr2, y = y.dat$fin2.dat, xlab = "Year", ylab = "Duration", col = ???)
 library(ggplot2)
-ggplot( data = y.dat, aes(x= year, y= fin2.dat, col = var_yr))+
+ggplot( data = y.dat, aes(x= year, y= fin2.dat, col = variety))+
   geom_point() #as points
+ggplot( data = y.dat, aes(x= year, y= fin2.dat, group = variety, col = variety))+
+  geom_line() #as lines
 
-# then for prior predictive check:
+#subset ggplot
+numz <- sample(1:50, 10)
+mini.y.dat <- y.dat[which(y.dat$variety %in% numz), ]
+ggplot(mini.y.dat, aes(x= year, y= fin2.dat))+
+  geom_line() + facet_wrap(~ variety)
 
-moo2.sim <- rnorm(500, 70, 5) #prior for alpha_variety means
-sig2.sim <- runif(500, 0, 5) # prior for alpha_variety sigma
-b2.moo <- rnorm(500, 0, 10) # prior for beta means
-b2.sig <- rnorm(500, 0, 10) # prior for beta sigma
-sig2.all <- runif(500, 0, 30) # prior for model error
+#-------------then for prior predictive check ----------------#
+
+a2.moo <- rnorm(500, 70, 2) #prior for alpha_variety means
+a2.sig <- runif(500, 0, 2) # prior for alpha_variety sigma
+b2.moo <- rnorm(500, 0, 0.1) # prior for beta means
+b2.sig <- runif(500, 0, 0.1) # prior for beta sigma
+e2.all <- runif(500, 0, 10) # prior for model error
 
 priorList <- list() #make list to put each dataframe in
 for (i in 1:500){ #repeat what you did for the simulated data 500 times
-  varname<- rep(bunique(d2.h$variety), each = 20)
-  alpha <- rep(rnorm(n.var,moo2.sim[i], sig2.sim), each = 20)
-  beta <- rep(rnorm(1, b2.moo, b2.sig), len)
-  year # sample 5 consecutive years from vector of 1:40
-  e <- rnorm(len, 0, sig2.all) #simulate error
-  y <- alpha +  beta + e
+  year_0 <- 1980 #hinge year
+  yr_per <- round(runif(n.var, 5, 57)) #number of years of data for each variety
+  var.sim <- rep(1:n.var, yr_per) # replicate each variety name the number of years of observations (yr_per_sp)
+  len <- length(var.sim)
+  yr.sim <- rep(NA, len)
+    for (v in 1:n.var){
+    yr.sim[var.sim == v] <- rev(runif(1, 1961, 2013) - 1:(yr_per[v])) - year_0
+    }
+  dat.yrsim <- data.frame(var.sim, yr.sim)
+  
+  list.alpha <- round(rnorm(n.var, a2.moo[i], a2.sig[i]))
+  alpha <- round(rep(list.alpha, yr_per))
+  beta <- rep(rnorm(1, b2.moo[i], b2.sig[i]), len)
+  e <- rnorm(len, 0, e2.all[i]) #simulate error
+  y <- alpha +  beta*yr.sim + e
   icol <- rep(i, length(y)) #add what number i is to a new column so datasets can be ID'ed
-  df <- data.frame(icol, varname, alpha, beta, year e, y)
+  df <- data.frame(icol, var.sim, alpha, beta, yr.sim, e, y)
   priorList[[i]]<- df
 }
 
 all.df <- do.call("rbind", priorList)
 
 # for each variety, take all the y and make a boxplot
-ggplot(all.df, aes(x= varname, y= y))+
-  geom_boxplot()
+ggplot(all.df, aes(x= yr.sim, y= y, group = var.sim, col = var.sim))+
+  geom_line()
 
 #subset ggplot
-numz <- sample(1:1000, 20)
+numz <- sample(1:500, 20)
 mini.all.df <- all.df[which(all.df$icol %in% numz), ]
-ggplot(mini.all.df, aes(x= varname, y= y))+
-  geom_boxplot() + facet_wrap(~ icol)
+ggplot(mini.all.df, aes(x= yr.sim, y= y, group = var.sim, col = var.sim))+
+  geom_line() + facet_wrap(~ icol)
 
 # model with year and slope for each variety
 # y.bbfl ~ N(u, sigma)
