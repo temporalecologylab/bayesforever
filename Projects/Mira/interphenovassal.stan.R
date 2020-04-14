@@ -11,7 +11,11 @@ library(ggplot2)
 library(dplyr)
 library(bayesplot)
 
-setwd("~/Documents/git/bayes2020/Projects/Mira/")
+#setting working directory
+if(length(grep("miragarner", getwd()))>0) { 
+  setwd("~/Documents/git/bayes2020/Projects/Mira/")
+} else setwd("~/Documents/git/bayes2020/Projects/Mira")
+
 
 # read in simulated data
 sim <- read.csv("simdata1.csv", header=T)
@@ -40,17 +44,12 @@ write("//
         real alpha;
         real beta;
         real<lower=0> sigma;
-      }
-      transformed parameters{
-        a.var;
+    
       }
       model{
         // likelihood
         for (n in 1:N)
         y[n] ~ normal(alpha + beta * x[n], sigma);
-      }
-      generated quantities{
-
       }",
       "vassal_bb_fl.stan")
 

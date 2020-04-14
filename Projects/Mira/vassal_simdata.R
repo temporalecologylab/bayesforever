@@ -1,7 +1,11 @@
 ## Simulating data and prior predictive check for Vassal interpheno phases.
 ## 10 Feb 2020 MG
 
-# Get data from merging script - need clean.vassal with different times calculated
+#housekeeping
+
+
+# set working directory
+setwd("~/Documents/git/bayes2020/Projects/Mira/")
 
 #-------------- INTERCEPT ONLY model --------------------#
 
@@ -74,7 +78,7 @@ ggplot(mini.all.df, aes(x= varname, y= y))+
 #sigma priors too wide, too many samples?
 # prior predictive check with year. 
 
-#------------------------ HINGE MODEL -------------------------#
+####------------------------ HINGE MODEL -------------------------####
 # hinge model with year, slope does not vary by variety
 
 # model
@@ -88,9 +92,12 @@ ggplot(mini.all.df, aes(x= varname, y= y))+
 # make dataframe with only rows that have budburst - flower difference calculated
 d2 <- vassal.clean[which(vassal.clean$DiffBudFlow != "NA days"), ]
 
-#priors
+# looking at the data (with limits)
+ggplot(d2, aes(x=year, y=DiffBudFlow, col = variety)) + geom_point() + ylim(0, 100) + theme(legend.position = "none")
 
-mu2.var <- 70
+
+#priors
+mu2.var <- 65
 sig2.var <- 5
 mu.B <- 0
 sig.B <- 0.1
@@ -146,10 +153,11 @@ ggplot(mini.y.dat, aes(x= year, y= fin2.dat))+
 
 #-------------then for prior predictive check ----------------#
 
-a2.moo <- rnorm(500, 70, 2) #prior for alpha_variety means
+a2.moo <- rnorm(500, 65, 2) #prior for alpha_variety means
 a2.sig <- runif(500, 0, 2) # prior for alpha_variety sigma
-b2.moo <- rnorm(500, 0, 0.1) # prior for beta means
-b2.sig <- runif(500, 0, 0.1) # prior for beta sigma
+# should just have on b ~ N(moo, sig)
+#b2.moo <- rnorm(500, 0, 0.1) # prior for beta means
+#b2.sig <- runif(500, 0, 0.1) # prior for beta sigma
 e2.all <- runif(500, 0, 10) # prior for model error
 
 priorList <- list() #make list to put each dataframe in
@@ -185,6 +193,7 @@ numz <- sample(1:500, 20)
 mini.all.df <- all.df[which(all.df$icol %in% numz), ]
 ggplot(mini.all.df, aes(x= yr.sim, y= y, group = var.sim, col = var.sim))+
   geom_line() + facet_wrap(~ icol)
+
 
 # model with year and slope for each variety
 # y.bbfl ~ N(u, sigma)
