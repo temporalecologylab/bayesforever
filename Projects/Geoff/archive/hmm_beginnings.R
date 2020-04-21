@@ -108,3 +108,8 @@ legend("topleft", c("Observed","Predicted"), lty = "solid", col = c("black", "re
 quants <- sapply(1:N, FUN = function(X){
     quantile(obs.sample[, X], probs = c(0.025, 0.975))
 })
+
+
+## Check this: https://github.com/imadmali/bball-hmm
+## and: https://mc-stan.org/users/documentation/case-studies/bball-hmm.html
+## and: https://mc-stan.org/docs/2_18/stan-users-guide/hmms-section.html
