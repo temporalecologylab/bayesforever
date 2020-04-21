@@ -54,14 +54,17 @@ summary(fit.stanmarg, pars = c("shape1", "shape2", "D_new"))$summary
 extract.stanmarg <- extract(fit.stanmarg)
 
 # Shape1
-plot(density(extract.stanmarg$shape1))
+plot(density(extract.stanmarg$shape1), main = "Shape1")
+abline(v = 2, col = "blue")
 
 # Shape2
-plot(density(extract.stanmarg$shape2))
+plot(density(extract.stanmarg$shape2), main = "Shape2")
+abline(v = 7, col = "blue")
 
 # Day (last day of budburst)
-table(extract.stanmarg$D_new)
-
+tab1 <- table(extract.stanmarg$D_new)
+plot(as.vector(tab1) ~ c(10:17), main = c("Last day"))
+     
 ## ## Plot simulated data with predictions
 ## plot(NA,
 ##      xlim = c(0, param[["trials"]]),
