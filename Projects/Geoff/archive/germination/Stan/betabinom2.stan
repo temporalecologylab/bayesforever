@@ -16,8 +16,8 @@ transformed parameters {
 model {
   G ~ beta_binomial(D, shape1, shape2);
 
-  shape1 ~ uniform(0, 1000);
-  shape2 ~ uniform(0, 1000);
+  shape1 ~ normal(30, 10);
+  shape2 ~ normal(250, 10);
 }
 
 generated quantities {
