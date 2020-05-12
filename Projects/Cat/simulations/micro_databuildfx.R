@@ -45,10 +45,10 @@ if(use.provenance==TRUE){
 # Step 2: find GDDs
 arbmicromeans <- rnorm(nmicros, cc.arb, mean.microarb)
 arbmicrosigmas <- rnorm(nmicros, sigma.arb, sigma.microarb)
-arbclim <- data.frame(site=rep(c(1:nmicros), each=daysperyr), means=rep(arbmicromeans, each=daysperyr), 
+arbclim <- data.frame(site=rep(c(1:nmicros), each=daysperyr), means=rnorm(arbmicromeans, each=daysperyr), ### FIX THIS!!! 
                       sigmas=rep(arbmicrosigmas, each=daysperyr), day=rep(c(1:daysperyr), nmicros))
 
-arbclim$tmean <- rnorm(arbclim$day, arbclim$means, arbclim$sigmas)
+arbclim$tmean <- ave(arbclim$day, arbclim$means, arbclim$sigmas) #### Need to fix to mean of hobos
 
 
 hfmicromeans <- rnorm(nmicros, cc.hf, mean.microhf)
@@ -56,9 +56,10 @@ hfmicrosigmas <- rnorm(nmicros, sigma.hf, sigma.microhf)
 hfclim <- data.frame(site=rep(c(1:nmicros), each=daysperyr), means=rep(hfmicromeans, each=daysperyr), 
                      sigmas=rep(hfmicrosigmas, each=daysperyr), day=rep(c(1:daysperyr), nmicros))
 
-hfclim$tmean <- rnorm(hfclim$day, hfclim$means, hfclim$sigmas)
+hfclim$tmean <- ave(hfclim$day, hfclim$means, hfclim$sigmas)
 
 # Step 3: Make a data frame and get the mean temp per year (to double check the data)
+### Could also expand via an apply command
 df.arb <- data.frame(cbind(doy=dayz, tmean=round(arbclim$tmean, digits=2), 
                            species=as.character(rep(1:nspps, each=daysperyr)),
                            ind=as.character(rep(1:ninds, each=daysperyr*nspps)),

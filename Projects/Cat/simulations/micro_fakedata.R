@@ -41,8 +41,8 @@ if(use.urban == FALSE & use.provenance == FALSE){
 
 
 # Step 1: Set up years, days per year, temperatures, sampling frequency, required GDD (fstar)
-daysperyr <- 250 #### just to make sure we don't get any NAs
-nspps <- 12 
+daysperyr <- 200 #### just to make sure we don't get any NAs
+nspps <- 30 
 ninds <- 10 
 nobs <- nspps*ninds
 nsites <- 2
@@ -57,9 +57,9 @@ if(use.provenance==TRUE){
 proveffect <- -10
 }
 
-fstar <- 250
-fstarspeciessd <- 20
-fstarindsd <- 10
+fstar <- 150
+fstarspeciessd <- 20  ### Not doing this well, try boosting species number and see if helps
+fstarindsd <- 10   ### Code it more obviously
   
 dayz <- rep(1:daysperyr, nobs)
 cc.arb <- 11 ## based off weather station data
@@ -135,6 +135,10 @@ sjPlot::tab_model(modtest, modtest.hl)
 }
  
 
+### Measurement error model in stan guidebook - joint phen model issue
+## tell model y value is imprecisely calculated - just try simple data, hobo loggers for one species, intercept only model
+## Alt approach: estimate a true temp value and then the GDD and then the full model - to capture variation per day
+
 #####And finally... it's modelling time!
 if(use.urban==TRUE){
 bball$urban <- ifelse(bball$site=="arb", 1, 0)
@@ -160,9 +164,9 @@ ws_urb_fake.sum[grep("sigma_", rownames(ws_urb_fake.sum)),]
 
 #save(ws_urb_buildfake, file="~/Documents/git/microclimates/analyses/stan/ws_urban_stan_builtsims_ncp.Rdata")
 
+}
 
-
-
+if(use.urban==TRUE){
 datalist.gdd <- with(bball, 
                      list(y = bbhl.gdd, 
                           tx = urban,
