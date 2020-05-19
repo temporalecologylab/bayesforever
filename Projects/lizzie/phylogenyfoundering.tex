@@ -35,7 +35,19 @@ S = \sigma^2(I*\lambda)
 \end{align}
 So many models set $\lambda$ to 1, but it's definitely best to ask the model to estimate it (rather than assume the phylogenetic correlation strutcure if how you want to structure the residuals). \\
 
-\emph{PMM (phylogenetic mixed model):} I want to add details here ...\\
+\emph{PMM (phylogenetic mixed model):} Here's my understanding:\\
+
+\begin{align}
+y & = \alpha + \beta x + a + e\\
+a & \sim normal(0, \sigma_P^2\Sigma)\\
+e & \sim normal(0, \sigma_R^2I)\\
+\text{PGLS: }y & \sim normal(\mu + \beta x, \sigma_P^2\Sigma)
+\end{align}
+... where $\alpha$ and $\beta$, respectively, are the intercept and the slope for the co-factor x, $a$ is the phylogenetic random effect, and $e$ is the residual error. Now, the two last terms are assumed to be normally distributed, with $\Sigma$ as a phylogenetic correlation matrix , $I$ stands for the relevant identity matrix. Our model, thus, assumes that phylogenetic effects are correlated according to the phylogenetic correlation matrix $\Sigma$. Note also that our model is estimating two variances: $V_P$ is the variance of the phylogenetic effect and $V_R$ is the residual error (environment effects, intraspecific variance, measurement error, etc.). [This text here is copied from Chapter 11: General Quantitative Genetic Methods for Comparative Biology, by Villemereuil \& Nakagawa.]\\
+
+The multiple-values-per-species version of this just involves within-group centering, which I don't see as necessary. \\
+
+One interesting thing I noticed about this model is that it estimates a {\bf separate} intercept for the $y = \alpha + \beta x$ part of the model and I wonder if we need this?\\
 
 \emph{My underlying model:} I think the phylogeny is a better option for partial pooling that treating species as under-ordered categories. I would ideally like a model that fits mainly the phylogeny, but also allows me to assess the strength of the phylogeny in the analysis. I sort of doubt we'll be able to manage this though. So I am searching for the best alternative option. \\
 
@@ -43,7 +55,7 @@ So many models set $\lambda$ to 1, but it's definitely best to ask the model to 
 \begin{enumerate}
 \item Fit the models with traditional partial pooling then estimate Pagel's $\lambda$ on species-level estimates of forcing, chilling, photoperiod. {\bf What's wrong with this?} We partially pool based on no structure among species (species with noisy and/or low sample size data will pool towards data-rich, low-noise species) so we could obliterate any signal. Plus it seems poor form to apply two different versions of species across analyses.
 \item Try to fit PMM with brms. {\bf What's wrong with this?} I have no idea what brms is doing really.
-\item Wrote my own Stan code that is not yet working.  
+\item Wrote my own Stan code that is not yet working (runs great, but does not estimate the phylogenetic effect correctly).  
 \end{enumerate}
 
 \begin{figure}[h!]
