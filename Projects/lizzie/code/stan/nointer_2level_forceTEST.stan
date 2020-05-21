@@ -23,6 +23,7 @@ parameters {
   real<lower=0> sigma_y; 
   real<lower=0,upper=100> null_intercepts;       
   real<lower=0,upper=100> lam_intercepts;       
+  real a; // grand mean
   vector[n_sp] a_sp; // intercept for species
   real b_force; // slope of forcing effect 
 	}
@@ -30,7 +31,7 @@ parameters {
 model {
        real yhat[N];
        	for(i in 1:N){
-            yhat[i] = a_sp[sp[i]] + // indexed with species
+            yhat[i] = a + a_sp[sp[i]] + // indexed with species
 		b_force * force[i];
 			     	}
 
@@ -42,9 +43,9 @@ model {
         //mu_a_sp ~ normal(0, 50);
         // sigma_a_sp ~ normal(0, 10);
 	b_force ~ normal(0, 10);
-	
+        a ~ normal(10, 20);
+        null_intercepts ~ normal(0, 20);
+	lam_intercepts ~ normal(0, 20);
 	y ~ normal(yhat, sigma_y);
 
 }
-
-
