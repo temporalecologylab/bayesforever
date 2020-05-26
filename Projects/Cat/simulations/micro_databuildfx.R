@@ -1,116 +1,177 @@
 ### Started 23 April 2020 by Cat
 ## Source file to build fake data simulations for urban versus provenance lat effects
 
-# Maybe I should use estimates for fstar from real models?
+library(dplyr)
+library(tidyr)
 
 set.seed(12321)
 
 if(use.urban==TRUE){
   
-  provenance.arb <- round(rnorm(nobs, 42.5, 8), digits=2)
+  spind <- paste(rep(1:nspps, each=10), rep(1:ninds, 20), sep="_")
   provenance.hf <- 42.5
+  provenance.arb <- round(rnorm(nobs, provenance.hf, 5), digits=2)
+  
+  df.prov <- as.data.frame(cbind(sp_ind = rep(spind, nsites), 
+                           site = rep(c("arb", "hf"), each=nobs),
+                           provenance = c(provenance.arb, rep(provenance.hf, 200))))
   
   fstar <- round(rnorm(nspps, fstar, fstarspeciessd), digits=0)
-  df.fstar <- as.data.frame(cbind(species=rep(1:nspps, each=ninds*nsites), inds=1:ninds, fstar=rep(fstar, each=ninds*nsites),
-                                site=rep(c("arb", "hf"), each=ninds)))
+  df.fstar <- as.data.frame(cbind(species=rep(1:nspps, each=ninds*nsites*nmethods), inds=rep(1:ninds, nmethods), 
+                                  fstar=rep(fstar, each=ninds*nsites*nmethods),
+                                site=rep(c("arb", "hf"), each=ninds*nmethods),
+                                method=rep(rep(c("ws", "hobo"), each=ninds), nsites*nspps)))
+  
   df.fstar$fstar <- as.numeric(df.fstar$fstar)
   df.fstar$sp_ind <- paste(df.fstar$species, df.fstar$inds, sep="_")
-
-  df.fstar$fstar.new <- round(ifelse(df.fstar$site=="hf", rnorm(df.fstar$inds, df.fstar$fstar, fstarindsd), 
-                                   rnorm(df.fstar$inds, df.fstar$fstar+urbeffect, fstarindsd)), digits=0)
-
+  
+  df.fstar <- full_join(df.fstar, df.prov)
+  
+  urbeffectall <- rnorm(df.fstar$inds[df.fstar$site=="arb" & df.fstar$method=="hobo"], urbeffect, urbsd)
+  methodeffectall <- rnorm(df.fstar$inds[df.fstar$method=="ws" & df.fstar$site=="hf"], methodeffect, methodsd)
+  urbandmethod <- rnorm(df.fstar$inds[df.fstar$method=="ws" & df.fstar$site=="arb"], methodeffect + urbeffect, methodsd + urbsd)
+  
+  for(i in c(1:nrow(df.fstar))){
+    if(df.fstar$site[i]=="hf" && df.fstar$method[i]=="hobo") {
+    
+      df.fstar$fstar.new[df.fstar$site=="hf" & df.fstar$method=="hobo"] <- 
+          rnorm(df.fstar$inds[df.fstar$site=="hf" & df.fstar$method=="hobo"], 
+              df.fstar$fstar[df.fstar$site=="hf" & df.fstar$method=="hobo"], fstarindsd)
+    
+    } else if (df.fstar$site[i]=="arb" && df.fstar$method[i]=="hobo") {
+    
+      df.fstar$fstar.new[df.fstar$site=="arb" & df.fstar$method=="hobo"] <- 
+          rnorm(df.fstar$inds[df.fstar$site=="arb" & df.fstar$method=="hobo"], 
+              df.fstar$fstar[df.fstar$site=="arb" & df.fstar$method=="hobo"] + urbeffectall, fstarindsd)
+    
+    } else if (df.fstar$site[i]=="hf" && df.fstar$method[i]=="ws") {
+    
+      df.fstar$fstar.new[df.fstar$site=="hf" & df.fstar$method=="ws"] <- 
+          rnorm(df.fstar$inds[df.fstar$site=="hf" & df.fstar$method=="ws"], 
+              df.fstar$fstar[df.fstar$site=="hf" & df.fstar$method=="ws"] + methodeffectall, fstarindsd)
+    
+    } else if (df.fstar$site[i]=="arb" && df.fstar$method[i]=="ws") {
+    
+      df.fstar$fstar.new[df.fstar$site=="arb" & df.fstar$method=="ws"] <- 
+          rnorm(df.fstar$inds[df.fstar$site=="arb" & df.fstar$method=="ws"], 
+              df.fstar$fstar[df.fstar$site=="arb" & df.fstar$method=="ws"] + urbandmethod, fstarindsd)
+    
+    }
+  }
+  
 }
 
-if(use.provenance==TRUE){
+if(use.provenance==TRUE){ ##### NEED TO REVAMP!!!
   
-  provenance.arb <- round(rnorm(nobs, 42.5, 10), digits=2)
+  spind <- paste(rep(1:nspps, each=10), rep(1:ninds, 20), sep="_")
   provenance.hf <- 42.5
+  provenance.arb <- round(rnorm(nobs, provenance.hf, 5), digits=2)
+  
+  df.prov <- as.data.frame(cbind(sp_ind = rep(spind, nsites), 
+                                 site = rep(c("arb", "hf"), each=nobs),
+                                 provenance = c(provenance.arb, rep(provenance.hf, 200))))
   
   fstar <- round(rnorm(nspps, fstar, fstarspeciessd), digits=0)
-  df.fstar <- as.data.frame(cbind(species=rep(1:nspps, each=ninds*nsites), inds=1:ninds, fstar=rep(fstar, each=ninds*nsites),
-                                  site=rep(c("arb", "hf"), each=ninds)))
+  df.fstar <- as.data.frame(cbind(species=rep(1:nspps, each=ninds*nsites*nmethods), inds=rep(1:ninds, nmethods), 
+                                  fstar=rep(fstar, each=ninds*nsites*nmethods),
+                                  site=rep(c("arb", "hf"), each=ninds*nmethods),
+                                  method=rep(rep(c("ws", "hobo"), each=ninds), nsites*nspps)))
+  
   df.fstar$fstar <- as.numeric(df.fstar$fstar)
   df.fstar$sp_ind <- paste(df.fstar$species, df.fstar$inds, sep="_")
   
-  df.fstar$provenance <- ifelse(df.fstar$site=="hf", provenance.hf, provenance.arb)
-  df.fstar$prov.adj <- ifelse(df.fstar$provenance!=provenance.hf, df.fstar$provenance-provenance.hf, 0)
+  df.fstar <- full_join(df.fstar, df.prov)
   
-  df.fstar$fstar.new <- round(ifelse(df.fstar$site=="hf", rnorm(df.fstar$inds, df.fstar$fstar, fstarindsd), 
-                                     rnorm(df.fstar$inds, df.fstar$fstar+(df.fstar$prov.adj*proveffect), fstarindsd)), digits=0)
+  df.fstar$provenance <- as.numeric(df.fstar$provenance)
+  #lowlat <- min(df.fstar$provenance)
+  df.fstar$prov.adj <- ifelse(df.fstar$site!=provenance.hf, df.fstar$provenance-provenance.hf, 0)
   
+  proveffectall <- rnorm(df.fstar$inds[df.fstar$site=="arb" & df.fstar$method=="hobo"], 
+                         (proveffect*df.fstar$prov.adj[df.fstar$site=="arb" & df.fstar$method=="hobo"]), provsd)
+  methodeffectall <- rnorm(df.fstar$inds[df.fstar$method=="ws" & df.fstar$site=="hf"], methodeffect, methodsd)
+  provandmethod <- rnorm(df.fstar$inds[df.fstar$method=="ws" & df.fstar$site=="arb"], methodeffect + 
+                           (proveffect*df.fstar$prov.adj[df.fstar$method=="ws" & df.fstar$site=="arb"]), methodsd + provsd)
+  
+  for(i in c(1:nrow(df.fstar))){
+    if(df.fstar$site[i]=="hf" && df.fstar$method[i]=="hobo") {
+      
+      df.fstar$fstar.new[df.fstar$site=="hf" & df.fstar$method=="hobo"] <- 
+        rnorm(df.fstar$inds[df.fstar$site=="hf" & df.fstar$method=="hobo"], 
+              df.fstar$fstar[df.fstar$site=="hf" & df.fstar$method=="hobo"], fstarindsd)
+      
+    } else if (df.fstar$site[i]=="arb" && df.fstar$method[i]=="hobo") {
+      
+      df.fstar$fstar.new[df.fstar$site=="arb" & df.fstar$method=="hobo"] <- 
+        rnorm(df.fstar$inds[df.fstar$site=="arb" & df.fstar$method=="hobo"], 
+              df.fstar$fstar[df.fstar$site=="arb" & df.fstar$method=="hobo"] + proveffectall, fstarindsd)
+      
+    } else if (df.fstar$site[i]=="hf" && df.fstar$method[i]=="ws") {
+      
+      df.fstar$fstar.new[df.fstar$site=="hf" & df.fstar$method=="ws"] <- 
+        rnorm(df.fstar$inds[df.fstar$site=="hf" & df.fstar$method=="ws"], 
+              df.fstar$fstar[df.fstar$site=="hf" & df.fstar$method=="ws"] + methodeffect, fstarindsd)
+      
+    } else if (df.fstar$site[i]=="arb" && df.fstar$method[i]=="ws") {
+      
+      df.fstar$fstar.new[df.fstar$site=="arb" & df.fstar$method=="ws"] <- 
+        rnorm(df.fstar$inds[df.fstar$site=="arb" & df.fstar$method=="ws"], 
+              df.fstar$fstar[df.fstar$site=="arb" & df.fstar$method=="ws"] + provandmethod, fstarindsd)
+      
+    }
+  }
   
 }
 
 
 # Step 2: find GDDs
-arbmicromeans <- rnorm(nmicros, cc.arb, mean.microarb)
-arbmicrosigmas <- rnorm(nmicros, sigma.arb, sigma.microarb)
-arbclim <- data.frame(site=rep(c(1:nmicros), each=daysperyr), means=rnorm(arbmicromeans, each=daysperyr), ### FIX THIS!!! 
-                      sigmas=rep(arbmicrosigmas, each=daysperyr), day=rep(c(1:daysperyr), nmicros))
 
-arbclim$tmean <- ave(arbclim$day, arbclim$means, arbclim$sigmas) #### Need to fix to mean of hobos
+  ## 2a) Arboretum climate data
+arbclim <- data.frame(microsite=rep(rep(c(1:nmicros), each=daysperyr*nmethods),nspps), ind=rep(rep(c(1:ninds), each=daysperyr*nmethods), nspps),
+                      species = as.character(rep(c(1:nspps), each=daysperyr*nmicros*nmethods)), 
+                      day=rep(c(1:daysperyr), nmicros*nspps*nmethods),
+                      method=rep(rep(c("ws", "hobo"), each=daysperyr),nspps*ninds),
+                      site = as.character("arb"))
 
 
-hfmicromeans <- rnorm(nmicros, cc.hf, mean.microhf)
-hfmicrosigmas <- rnorm(nmicros, sigma.hf, sigma.microhf)
-hfclim <- data.frame(site=rep(c(1:nmicros), each=daysperyr), means=rep(hfmicromeans, each=daysperyr), 
-                     sigmas=rep(hfmicrosigmas, each=daysperyr), day=rep(c(1:daysperyr), nmicros))
+arbclim$tmean <- ifelse(arbclim$method=="hobo", rnorm(arbclim$day, cc.arb + microarb.effect, sigma.arb + microsigmaarb.effect), rnorm(arbclim$day, cc.arb, sigma.arb)) ### and now we draw from mean and sigma for each day to find daily temp for each microsite
 
-hfclim$tmean <- ave(hfclim$day, hfclim$means, hfclim$sigmas)
+
+  ## 2b) Harvard Forest climate data
+hfclim <- data.frame(microsite=rep(rep(c(1:nmicros), each=daysperyr*nmethods),nspps), ind=rep(rep(c(1:ninds), each=daysperyr*nmethods), nspps),
+                     species = as.character(rep(c(1:nspps), each=daysperyr*nmicros*nmethods)), 
+                     day=rep(c(1:daysperyr), nmicros*nspps*nmethods),
+                     method=rep(rep(c("ws", "hobo"), each=daysperyr),nspps*ninds),
+                     site = as.character("hf"))
+
+
+hfclim$tmean <- ifelse(hfclim$method=="hobo", rnorm(hfclim$day, cc.hf + microhf.effect, sigma.hf + microsigmahf.effect), rnorm(hfclim$day, cc.hf, sigma.hf)) ### and now we draw from mean and sigma for each day to find daily temp for each microsite
 
 # Step 3: Make a data frame and get the mean temp per year (to double check the data)
-### Could also expand via an apply command
-df.arb <- data.frame(cbind(doy=dayz, tmean=round(arbclim$tmean, digits=2), 
-                           species=as.character(rep(1:nspps, each=daysperyr)),
-                           ind=as.character(rep(1:ninds, each=daysperyr*nspps)),
-                           site="arb",
-                           provenance = rep(provenance.arb, each=daysperyr)))
-
-df.hf <- data.frame(cbind(doy=dayz, tmean=round(hfclim$tmean, digits=2), 
-                          species=as.character(rep(1:nspps, each=daysperyr)),
-                          ind=as.character(rep(1:ninds, each=daysperyr*nspps)),
-                          site="hf",
-                          provenance = provenance.hf))
-
-df <- full_join(df.arb, df.hf)
+df <- full_join(arbclim, hfclim)
 df$tmean <- as.numeric(df$tmean)
 
 df$microsite <- paste0(df$site, df$ind)
-df$tmean.ws <- ave(df$tmean, df$doy, df$site)
-
 
 df$sp_ind <- paste(df$species, df$ind, sep="_")
 
-df$gdd.ws <- ave(df$tmean.ws, df$sp_ind, df$site, FUN=cumsum)
-df$gdd.hl <- ave(df$tmean, df$sp_ind, df$microsite, FUN=cumsum)
+df$gdd <- ave(df$tmean, df$sp_ind, df$site, df$method, FUN=cumsum)
 
-df.fstar.sub <- subset(df.fstar, select=c("site", "sp_ind", "fstar.new"))
+df.fstar.sub <- subset(df.fstar, select=c("site", "method", "provenance", "sp_ind", "fstar.new"))
 df <- full_join(df.fstar.sub, df)
 
+#### Now we find budburst day..
+df$group <- paste(df$site, df$method, df$sp_ind)
+grouplist <- 1:length(unique(df$group))
+grouplist <- data.frame(grouplist, group=unique(df$group))
+df <- left_join(df, grouplist)
 
-#### Now we find budburst day...
-# Step 4: Now, in a very slow, painful way I get the BB date
-df$bb.ws <- ifelse(df$gdd.ws>=df$fstar.new, "Y", "N")
-df$bb.hl <- ifelse(df$gdd.hl>=df$fstar.new, "Y", "N")
+df$doybb <- NA
+for(i in 1:length(unique(df$grouplist))){ #i=1
+  df$doybb[df$grouplist==i] <- which(df$gdd[df$grouplist==i] >= df$fstar.new[df$grouplist==i])[1]
+}
 
-df$doy <- as.numeric(df$doy)
+bball <- df[(df$day==df$doybb),]
 
-bbws <- df[(df$bb.ws=="Y"),]
-bbws <- subset(bbws, select=c("species", "ind", "sp_ind", "site", "microsite", "doy", "gdd.ws", "bb.ws", "provenance"))
-bbws$bbws.doy <- ave(bbws$doy, bbws$sp_ind, bbws$site, FUN=min)
-bbws$bbws.gdd <- ave(bbws$gdd.ws, bbws$sp_ind, bbws$site, FUN=min)
-bbws$doy <- NULL
-bbws$gdd.ws <- NULL
-bbws$bb.ws <- NULL
-bbws <- bbws[!duplicated(bbws),]
+bball <- subset(bball, select=c("site", "microsite", "method", "ind", "species", "provenance", "day", "gdd"))
+colnames(bball) <- c("site", "microsite", "method", "ind", "species", "provenance", "bb", "gdd")
 
-bbhl <- df[(df$bb.hl=="Y"),]
-bbhl <- subset(bbhl, select=c("species", "ind", "sp_ind", "site", "microsite", "doy", "gdd.hl", "bb.hl", "provenance"))
-bbhl$bbhl.doy <- ave(bbhl$doy, bbhl$sp_ind, bbhl$microsite, FUN=min)
-bbhl$bbhl.gdd <- ave(bbhl$gdd.hl, bbhl$sp_ind, bbhl$microsite, FUN=min)
-bbhl$doy <- NULL
-bbhl$gdd.hl <- NULL
-bbhl$bb.hl <- NULL
-bbhl <- bbhl[!duplicated(bbhl),]
-
-bball <- full_join(bbws, bbhl)

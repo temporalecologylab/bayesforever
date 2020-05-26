@@ -36,8 +36,6 @@ mean(ws$budburst[ws$type=="Treespotters"]) ## 112.45
 
 use.urban = TRUE
 use.provenance = FALSE
-use.fstar = FALSE
-use.doy = TRUE
 
 if(use.urban == TRUE & use.provenance == TRUE){
   print("Error has occurred. Can't have both urban and provenance equal TRUE!")
@@ -49,7 +47,7 @@ if(use.urban == FALSE & use.provenance == FALSE){
 
 
 # Step 1: Set up years, days per year, temperatures, sampling frequency, required GDD (fstar)
-daysperyr <- 365 #### just to make sure we don't get any NAs
+daysperyr <- 200 #### just to make sure we don't get any NAs
 nspps <- 20 
 ninds <- 10 
 nobs <- nspps*ninds
@@ -57,64 +55,42 @@ nsites <- 2
 nmicros <- 10
 nmethods <- 2 ## weather station and hobo logger to start (want to eventually add in gridded climate data)
 
-if(use.urban==TRUE & use.fstar==TRUE){
+if(use.urban==TRUE){
 urbeffect <- -50  ### mu_b_tx_sp
-urbsd <- 10 ## sigma_b_tx_sp
-methodeffect <- 100 ## mu_b_method_sp
-methodsd <- 20 ## sigma_b_method_sp
-}
-
-if(use.urban==TRUE & use.doy==TRUE){
-  urbeffect <- -5  ### mu_b_tx_sp
-  urbsd <- 2 ## sigma_b_tx_sp
-  methodeffect <- 10 ## mu_b_method_sp
-  methodsd <- 5 ## sigma_b_method_sp
-}
-
-if(use.provenance==TRUE){
-proveffect <- -5
-provsd <- 0 ## sigma_b_tx_sp
+urbsd <- 0 ## sigma_b_tx_sp
 methodeffect <- 100 ## mu_b_method_sp
 methodsd <- 0 ## sigma_b_method_sp
 }
 
-if(use.fstar==TRUE){
+if(use.provenance==TRUE){
+proveffect <- -5
+provsd <- 2 ## sigma_b_tx_sp
+methodeffect <- 100 ## mu_b_method_sp
+methodsd <- 20 ## sigma_b_method_sp
+}
+
 fstar <- 400 ## day of budburst now (this should be mu_a_sp)
 fstarspeciessd <- 50 ### sigma_a_sp
 fstarindsd <- 20 ## sigma_y
-}
 
-if(use.doy==TRUE){
-doybb <- 120 ## day of budburst now (this should be mu_a_sp)
-doybbspeciessd <- 10 ### sigma_a_sp
-doybbindsd <- 5 ## sigma_y
-}
-  
 dayz <- rep(1:daysperyr, nobs)
 cc.arb <- 11 ## based off weather station data
-microarb.effect <- -2
+microarb.effect <- -5
 sigma.arb <- 2 
-microsigmaarb.effect <- 1   #### by keeping the sigmas the same for the microsites (line 76 & 81) we assume that the microclimatic effects are the same across sites
+microsigmaarb.effect <- 4   #### by keeping the sigmas the same for the microsites (line 76 & 81) we assume that the microclimatic effects are the same across sites
 
 cc.hf <- 9  ## based off weather station data
-microhf.effect <- -4
+microhf.effect <- -5
 sigma.hf <- 2  
 microsigmahf.effect <- 4  #### by keeping the sigmas the same for the microsites (line 76 & 81) we assume that the microclimatic effects are the same across sites
 
-#source("simulations/micro_databuildfx.R") 
-source("simulations/micro_databuildfx_doy.R") 
+source("simulations/micro_databuildfx.R") 
 
 cols <-viridis_pal(option="viridis")(3)
 ## Just a quick check on GDDs
 quartz(width=4, height=4)
-if(use.fstar==TRUE){
 ggplot(df.fstar, aes(x=fstar.new)) + geom_histogram(aes(fill=site)) + theme_classic() +
   scale_fill_manual(name="Site", values=cols, labels=sort(unique(df$site)))
-}
-if(use.doy==TRUE){
-  ggplot(df.doybb, aes(x=doybb.new)) + geom_histogram(aes(fill=site)) + theme_classic() +
-    scale_fill_manual(name="Site", values=cols, labels=sort(unique(df$site)))
-}
 
 
 ### Okay, first let's check on site level varition in temperature
@@ -204,7 +180,7 @@ if(use.provenance==TRUE){
   bball$type <- ifelse(bball$method=="ws", 1, 0)
   
   datalist.gdd <- with(bball, 
-                       list(y = bbws.gdd, 
+                       list(y = gdd, 
                             prov = provenance,
                             method = type,
                             sp = as.numeric(as.factor(species)),
@@ -216,13 +192,13 @@ if(use.provenance==TRUE){
   
 if(use.provenance==TRUE){
   provmethod_fake = stan('stan/provmethod_stan_normal_ncp.stan', data = datalist.gdd,
-                          iter = 4000, warmup=2000, control=list(adapt_delta = 0.99)) ### BAD MODEL!!!
+                         iter = 1000, warmup=500, chains=2)#, control=list(adapt_delta=0.99)) ### 
   
   #check_all_diagnostics(ws_prov_buildfake)
   
   provmethod_fake.sum <- summary(provmethod_fake)$summary
   provmethod_fake.sum[grep("mu_", rownames(provmethod_fake.sum)),]
-  provmethod_fake.sum[grep("sigma_", rownames(provmethod_fake.sum)),]
+  provmethod_fake.sum[grep("sigma_", rownames(provmethod_fake.sum))[1:4],]
   
   #save(ws_prov_buildfake, file="~/Documents/git/microclimates/analyses/stan/ws_prov_stan_builtsims_ncp.Rdata")
 }  
