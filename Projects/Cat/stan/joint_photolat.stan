@@ -78,8 +78,8 @@ model{
   
   a_photo ~ normal(0, sigma_yphoto);
   
-  mu_bphotomin ~ normal(-2, sigma_aphotomin);
-  mu_bphotomax ~ normal(-2, sigma_aphotomax);
+  mu_bphotomin ~ normal(0, sigma_aphotomin);
+  mu_bphotomax ~ normal(0, sigma_aphotomax);
 
   mua_sp ~ normal(0, sigma_sp);
   sigma_sp ~ normal(0, 2);
@@ -95,7 +95,7 @@ model{
   
 }
 
-/*generated quantities {
+generated quantities {
    real y_ppmin[N];
    real y_ppmax[N];
    real y_ppphoto[Npheno];
@@ -111,23 +111,12 @@ model{
    
    for(i in 1:Npheno){
      
-   y_ppphoto[i] = a_photo[speciespheno[i]] + mu_bphotomin[speciespheno[i]]*a_mins_sp[speciespheno[i]] + 
-	                mu_bphotomax[speciespheno[i]]*a_maxs_sp[speciespheno[i]];
-	                
-   y_ppforce[i] = a_force[speciespheno[i]] + mu_bforcemin[speciespheno[i]]*a_mins_sp[speciespheno[i]] + 
-	                mu_bforcemax[speciespheno[i]]*a_maxs_sp[speciespheno[i]];
-	                
-   y_ppchill[i] = a_chill[speciespheno[i]] + mu_bchillmin[speciespheno[i]]*a_mins_sp[speciespheno[i]] + 
-	                mu_bchillmax[speciespheno[i]]*a_maxs_sp[speciespheno[i]];
+   y_ppphoto[i] =  a_photo[speciespheno[i]] + b_photomin[speciespheno[i]]*photoperiod[i] +  
+	                b_photomax[speciespheno[i]]*photoperiod[i];
    
    }
    
-   //y_pp = agrand + y_ppphoto + y_ppforce + y_ppchill;
-   
    y_ppphoto = normal_rng(y_ppphoto, sigma_yphoto);
-   y_ppforce = normal_rng(y_ppforce, sigma_yforce);
-   y_ppchill = normal_rng(y_ppchill, sigma_ychill);
+
    
-   //y_pp = normal_rng(y_pp, sigma_y);
-   
-}*/ 
+} 

@@ -86,9 +86,58 @@ latstanpheno <- list(mindat = simlat$minlat, maxdat = simlat$maxlat,
                      Npheno = Npheno, nsppheno = nsp,
                      speciespheno = simpheno$sp, photoperiod = simpheno$P, 
                      latmins = simlat$a_min, latmaxs = simlat$a_max)
-
-jointfit <- stan(file = "/n/wolkovich_lab/Lab/Cat/joint_photolat.stan", data = latstanpheno, warmup = 500, iter = 1000,
+#/n/wolkovich_lab/Lab/Cat/
+jointfit <- stan(file = "~/Documents/git/bayes2020/Projects/Cat/stan/joint_photolat.stan", data = latstanpheno, warmup = 500, iter = 1000,
                  chains = 1, cores = 4,  control=list(max_treedepth = 15)) 
 
 save(jointfit, file="/n/wolkovich_lab/Lab/Cat/jointphotolat.Rda")
 
+
+if(!runfullmodel){
+  load("~/Desktop/jointphotolat.Rda")
+}
+
+# Checking against sim data
+bigfitpost <- rstan::extract(jointfit)
+bigfitsum <- rstan::summary(jointfit)$summary
+
+sd(simpheno$photo) ## 22.6
+mean(bigfitsum[grep("sigma_yphoto", rownames(bigfitsum)),"mean"]) ### 22.4
+
+mean(simpheno$a_photo) ## -2.13
+mean(bigfitsum[grep("a_photo", rownames(bigfitsum)),"mean"]) ## -1.39
+
+mean(simlat$minlat) ## 0.16
+mean(bigfitsum[grep("a_mins_sp", rownames(bigfitsum)),"mean"]) # 0.09
+mean(simlat$maxlat) ## 0.07
+mean(bigfitsum[grep("a_maxs_sp", rownames(bigfitsum)),"mean"]) # 0.05
+
+
+bigfitsum[grep("a_mins_sp\\[", rownames(bigfitsum)),"mean"]
+plot(bigfitsum[grep("a_mins_sp\\[", rownames(bigfitsum)),"mean"]~unique(ave(simlat$minlat, simlat$sp))) # great
+
+bigfitsum[grep("a_maxs_sp\\[", rownames(bigfitsum)),"mean"]
+plot(bigfitsum[grep("a_maxs_sp\\[", rownames(bigfitsum)),"mean"]~unique(ave(simlat$maxlat, simlat$sp))) # great
+
+# Trait model
+sigma_y  ## 2
+mean(bigfitpost[["sigma_y"]]) ## 2.01
+a_min ## 0
+mean(bigfitpost[["a_mins_sp"]]) ## 0.09
+a_max ## 0
+mean(bigfitpost[["a_maxs_sp"]]) ## 0.05
+
+# Hyperparameters
+a_photo
+bigfitsum[grep("a_photo\\[", rownames(bigfitsum)),"mean"]
+plot(bigfitsum[grep("a_photo\\[", rownames(bigfitsum)),"mean"]~a_photo) ### this okay...
+
+bphoto_min
+bigfitsum[grep("b_photomin\\[", rownames(bigfitsum)),"mean"]
+plot(bigfitsum[grep("b_photomin\\[", rownames(bigfitsum)),"mean"]~bphoto_min) ### bad!!!!
+bphoto_max
+bigfitsum[grep("b_photomax\\[", rownames(bigfitsum)),"mean"]
+plot(bigfitsum[grep("b_photomax\\[", rownames(bigfitsum)),"mean"]~bphoto_max) ### bad
+
+
+yphotos <- simpheno$photodat
