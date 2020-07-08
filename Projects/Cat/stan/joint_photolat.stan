@@ -39,25 +39,20 @@ parameters{
   
 	real <lower=0> sigma_yphoto; // overall variation accross observations for photo
 
-	real mu_aphotomin[nsppheno]; // mean of the alpha value for species for pheno
-	real <lower = 0> sigma_aphotomin; // variation of intercept amoung species for pheno
-	
-	real mu_aphotomax[nsppheno]; // mean of the alpha value for species for pheno
-	real <lower = 0> sigma_aphotomax; // variation of intercept amoung species for pheno
+	//real mub_grand[nsppheno]; // mean of the alpha value for species for pheno
+	//real <lower = 0> sigmab_grand; // variation of intercept amoung species for pheno
 }
 
-transformed parameters{
-  real b_photomin[nsppheno]; 
-  real b_photomax[nsppheno];
+/*transformed parameters{
+  real b_photo[nsppheno]; 
   
   for(i in 1:nsppheno){
     
-    b_photomin[i] =  mu_aphotomin[i] + mu_bphotomin[i] * a_mins_sp[i]; // ideally I would want latmins here?
-    b_photomax[i] =  mu_aphotomax[i] + mu_bphotomax[i] * a_maxs_sp[i];
+    b_photo[i] = mu_bphotomin[i] * a_mins_sp[i] + mu_bphotomax[i] * a_maxs_sp[i];
 	  
 	}
 	  
-}
+}*/
 
 model{ 
   real ypredphoto[Npheno];
@@ -66,31 +61,31 @@ model{
 	real latmins[N] = a_mins_sp[species]; 
 	real latmaxs[N] = a_maxs_sp[species]; 
 	
-	mindat ~ normal(latmins, sigma_y);
-  maxdat ~ normal(latmaxs, sigma_y);
-	
 	for(i in 1:Npheno){
 	  
-	ypredphoto[i] = a_photo[speciespheno[i]] + b_photomin[speciespheno[i]]*photoperiod[i] +  
-	                b_photomax[speciespheno[i]]*photoperiod[i];
+	ypredphoto[i] = a_photo[speciespheno[i]] + mub_grand[speciespheno[i]]*photoperiod[i] +
+	      (mu_bphotomin[speciespheno[i]]*a_mins_sp[speciespheno[i]])*photoperiod[i] + 
+	      (mu_bphotomax[speciespheno[i]]*a_maxs_sp[speciespheno[i]])*photoperiod[i];
 	
 	}
   
-  a_photo ~ normal(0, sigma_yphoto);
+  a_photo ~ normal(0, 10);
+  mub_grand ~ normal(0, sigmab_grand);
   
-  mu_bphotomin ~ normal(0, sigma_aphotomin);
-  mu_bphotomax ~ normal(0, sigma_aphotomax);
+  mu_bphotomin ~ normal(0, 5);
+  mu_bphotomax ~ normal(0, 5);
 
   mua_sp ~ normal(0, sigma_sp);
-  sigma_sp ~ normal(0, 2);
+  sigma_sp ~ normal(0, 3);
   
-  sigma_y ~ normal(0, 3);
-  sigma_yphoto ~ normal(0, 2);
+  sigma_y ~ normal(0, 5);
+  sigma_yphoto ~ normal(0, 5);
   
-  sigma_aphotomin ~ normal(0, 2);
-  sigma_aphotomax ~ normal(0, 2);
+  //sigmab_grand ~ normal(0, 5);
 
 	// likelihoods 
+	mindat ~ normal(latmins, sigma_y);
+  maxdat ~ normal(latmaxs, sigma_y);
   photodat ~ normal(ypredphoto, sigma_yphoto);
   
 }
@@ -99,23 +94,20 @@ generated quantities {
    real y_ppmin[N];
    real y_ppmax[N];
    real y_ppphoto[Npheno];
-   real y_ppforce[Npheno];
-   real y_ppchill[Npheno];
-   //real y_pp[N]
    
    y_ppmin = a_mins_sp[species];
    y_ppmax = a_maxs_sp[species];
    
-   y_ppmin = normal_rng(y_ppmin, sigma_y);
-   y_ppmax = normal_rng(y_ppmax, sigma_y);
-   
    for(i in 1:Npheno){
      
-   y_ppphoto[i] =  a_photo[speciespheno[i]] + b_photomin[speciespheno[i]]*photoperiod[i] +  
-	                b_photomax[speciespheno[i]]*photoperiod[i];
+   y_ppphoto[i] =  a_photo[speciespheno[i]] + mub_grand[speciespheno[i]]*photoperiod[i] +
+	      (mu_bphotomin[speciespheno[i]]*a_mins_sp[speciespheno[i]])*photoperiod[i] + 
+	      (mu_bphotomax[speciespheno[i]]*a_maxs_sp[speciespheno[i]])*photoperiod[i];
    
    }
    
+   y_ppmin = normal_rng(y_ppmin, sigma_y);
+   y_ppmax = normal_rng(y_ppmax, sigma_y);
    y_ppphoto = normal_rng(y_ppphoto, sigma_yphoto);
 
    

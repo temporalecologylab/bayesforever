@@ -2,6 +2,10 @@
 ## By Lizzie, pulling some from JointModelSim_fj.R ##
 ## Converted by Cat for the cluster
 
+# housekeeping
+rm(list=ls()) 
+options(stringsAsFactors = FALSE)
+
 library(rstan)
 
 rstan_options(auto_write = TRUE)
@@ -13,8 +17,8 @@ options(mc.cores = parallel::detectCores())
 # bphoto[sp] ~ aphoto[sp] + betaMinLatxPhoto*mua_sp + betaMaxLatxPhoto*mua_sp
 
 # Parameters for pheno
-sigma_yphoto <- 1
-sigma_y <- 2 ## for latitude model
+sigma_yphoto <- 3
+sigma_y <- 3 ## for latitude model
 
 ### Okay do we actually want to know what the influence of "more northern than normal" 
 ## lats is rather than the actual latitude?
@@ -25,9 +29,6 @@ a_max <- 0
 
 sigma_bphotomin <- 2
 sigma_bphotomax <- 2
-
-beta_photomin <- 1
-beta_photomax <- 0.5
 
 n <- 10 # number of replicates per sp x study (may eventually want to draw this from a distribution to make data more realistic)
 nsp <- 30 # number of species
@@ -47,15 +48,14 @@ simlat$maxlat <- a_max*simlat$mua_sp + rnorm(nrow(simlat), 0, sigma_y)
 nsp # Same as above (you could vary it but would be a little trickier) 
 mua_sp # this is the effect of species trait differences from the trait model (above)
 
-sigma_aphoto <- 1
+sigma_aphoto <- 3
 
 a_photo <- rnorm(nsp, -2, sigma_aphoto)
+beta_photomin <- rnorm(nsp, 1, sigma_bphotomin)
+beta_photomax <- rnorm(nsp, 0.5, sigma_bphotomax)
 
-mua_photomin <- -1
-mua_photomax <- -0.5
-
-sigma_aphotomin <- 2
-sigma_aphotomax <- 2
+sigmab_grand <- 2
+mub_grand <- rnorm(nsp, 0, sigmab_grand)
 
 Pmean <- 6
 Psigma <- 2
@@ -72,10 +72,13 @@ for (sp in 1:nsp){
 }
 
 
-bphoto_min <- mua_photomin + beta_photomin * simlat$minlat + rnorm(nrow(simpheno), 0, sigma_aphotomin)
-bphoto_max <- mua_photomax + beta_photomax * simlat$maxlat + rnorm(nrow(simpheno), 0, sigma_aphotomax)
+#bphoto <- beta_photomin * simlat$minlat + beta_photomax * simlat$maxlat
 
-simpheno$photodat <- simpheno$a_photo + simpheno$P*bphoto_min + simpheno$P*bphoto_max + rnorm(nrow(simpheno), 0, sigma_yphoto)
+#simpheno$photodat <- simpheno$a_photo + bphoto*simpheno$P + rnorm(nrow(simpheno), 0, sigma_yphoto)
+
+simpheno$photodat <- simpheno$a_photo + mub_grand * simpheno$P +
+  (beta_photomin * simlat$minlat)*simpheno$P + 
+  (beta_photomax * simlat$maxlat)*simpheno$P + rnorm(nrow(simpheno), 0, sigma_yphoto) 
 
 N <- length(simlat$minlat)
 
@@ -87,12 +90,12 @@ latstanpheno <- list(mindat = simlat$minlat, maxdat = simlat$maxlat,
                      speciespheno = simpheno$sp, photoperiod = simpheno$P, 
                      latmins = simlat$a_min, latmaxs = simlat$a_max)
 #/n/wolkovich_lab/Lab/Cat/
-jointfit <- stan(file = "~/Documents/git/bayes2020/Projects/Cat/stan/joint_photolat.stan", data = latstanpheno, warmup = 500, iter = 1000,
-                 chains = 1, cores = 4,  control=list(max_treedepth = 15)) 
+jointfit <- stan(file = "~/Documents/git/bayes2020/Projects/Cat/stan/joint_photolat.stan", data = latstanpheno, warmup = 1000, iter = 2000,
+                 chains = 4, cores = 4,  control=list(max_treedepth = 15)) 
 
-save(jointfit, file="/n/wolkovich_lab/Lab/Cat/jointphotolat.Rda")
+save(jointfit, file="~/Desktop/jointphotolat.Rda")
 
-
+if(FALSE){
 if(!runfullmodel){
   load("~/Desktop/jointphotolat.Rda")
 }
@@ -128,16 +131,25 @@ a_max ## 0
 mean(bigfitpost[["a_maxs_sp"]]) ## 0.05
 
 # Hyperparameters
+mub_grand
+bigfitsum[grep("mub_grand\\[", rownames(bigfitsum)),"mean"]
+plot(bigfitsum[grep("mub_grand\\[", rownames(bigfitsum)),"mean"]~mub_grand) ### this okay...
+
 a_photo
 bigfitsum[grep("a_photo\\[", rownames(bigfitsum)),"mean"]
 plot(bigfitsum[grep("a_photo\\[", rownames(bigfitsum)),"mean"]~a_photo) ### this okay...
 
-bphoto_min
-bigfitsum[grep("b_photomin\\[", rownames(bigfitsum)),"mean"]
-plot(bigfitsum[grep("b_photomin\\[", rownames(bigfitsum)),"mean"]~bphoto_min) ### bad!!!!
-bphoto_max
-bigfitsum[grep("b_photomax\\[", rownames(bigfitsum)),"mean"]
-plot(bigfitsum[grep("b_photomax\\[", rownames(bigfitsum)),"mean"]~bphoto_max) ### bad
+beta_photomin
+bigfitsum[grep("mu_bphotomin\\[", rownames(bigfitsum)),"mean"]
+plot(bigfitsum[grep("mu_bphotomin\\[", rownames(bigfitsum)),"mean"]~beta_photomin) ### bad!!!!
+beta_photomax
+bigfitsum[grep("mu_bphotomax\\[", rownames(bigfitsum)),"mean"]
+plot(bigfitsum[grep("mu_bphotomax\\[", rownames(bigfitsum)),"mean"]~beta_photomax) ### bad
 
 
 yphotos <- simpheno$photodat
+ypp_photos <- bigfitsum[grep("y_ppphoto\\[", rownames(bigfitsum)),"mean"]
+
+plot(ypp_photos~yphotos)
+
+}
