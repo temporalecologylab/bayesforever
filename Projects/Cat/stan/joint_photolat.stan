@@ -8,7 +8,7 @@ data {
 	int < lower = 1 > nsp; // number of random effect levels (species) 
 	int < lower = 1, upper = nsp > species[N]; // id of random effect (species)
 	real mindat[N]; // y min lat data 
-  real maxdat[N]; // y max lat data 
+  //real maxdat[N]; // y max lat data 
   
   // Model of pheno
   int < lower = 1 > Npheno; // Sample size for pheno data 
@@ -26,21 +26,21 @@ parameters{
 	//real agrand; // grand mean for trait
 	
   real a_mins_sp[nsp]; // lower 10% of min latitudes per species
-  real a_maxs_sp[nsp]; // upper 10% of max latitudes per species
+  //real a_maxs_sp[nsp]; // upper 10% of max latitudes per species
 	
   // Model of pheno
-  real mua_sp[nsp]; // mean of the alpha value for species
+  real mua_sp[nsppheno]; // mean of the alpha value for species
   real <lower = 0> sigma_sp; // variation of intercept amoung species
   
   real a_photo[nsppheno]; // mean of the alpha value for species for photo
   
   vector[nsppheno] mu_bphotomin;
-  vector[nsppheno] mu_bphotomax;
+  //vector[nsppheno] mu_bphotomax;
   
 	real <lower=0> sigma_yphoto; // overall variation accross observations for photo
 
 	real mub_grand[nsppheno]; // mean of the alpha value for species for pheno
-	real <lower = 0> sigmab_grand; // variation of intercept amoung species for pheno
+	//real <lower = 0> sigmab_grand; // variation of intercept amoung species for pheno
 	
 }
 
@@ -49,33 +49,33 @@ model{
   real b_photo[nsppheno];
 	
 	real latmins[N] = a_mins_sp[species]; 
-	real latmaxs[N] = a_maxs_sp[species]; 
+	//real latmaxs[N] = a_maxs_sp[species]; 
 	
 	for(i in 1:nsppheno){
-    b_photo[i] = mub_grand[i] + mu_bphotomin[i] * latmins[i] + mu_bphotomax[i] * latmaxs[i];
+    b_photo[i] = mub_grand[i] + mu_bphotomin[i] * latmins[i]; //+ mu_bphotomax[i] * latmaxs[i];
 	}
 	
 	for(i in 1:Npheno){
 	  ypredphoto[i] = a_photo[speciespheno[i]] + b_photo[speciespheno[i]] * photoperiod[i];
 	}
   
-  a_photo ~ normal(-2, 10);
-  mub_grand ~ normal(1, sigmab_grand);
+  a_photo ~ normal(mua_sp, sigma_sp); // needs partial pooling - should this (mua_sp, sigma_sp)
+  mub_grand ~ normal(0, 10); //should this be partially pooled? regular prior skip sigmab_grand
   
-  mu_bphotomin ~ normal(1, 10);
-  mu_bphotomax ~ normal(1, 10);
+  mu_bphotomin ~ normal(1, 10); //should this be partially pooled?
+  //mu_bphotomax ~ normal(1, 10);
 
-  mua_sp ~ normal(0, sigma_sp);
-  sigma_sp ~ normal(0, 30);
+  mua_sp ~ normal(-2, sigma_sp);
+  sigma_sp ~ normal(0, 10);
   
   sigma_y ~ normal(0, 10);
   sigma_yphoto ~ normal(0, 30);
   
-  sigmab_grand ~ normal(0, 20);
+  //sigmab_grand ~ normal(0, 20); removed
 
 	// likelihoods 
 	mindat ~ normal(latmins, sigma_y);
-  maxdat ~ normal(latmaxs, sigma_y);
+  //maxdat ~ normal(latmaxs, sigma_y);
   photodat ~ normal(ypredphoto, sigma_yphoto);
   
 }
@@ -83,14 +83,14 @@ model{
 generated quantities {
    real b_photo[nsppheno];
    real y_ppmin[N];
-   real y_ppmax[N];
+   //real y_ppmax[N];
    real y_ppphoto[Npheno];
    
    y_ppmin = a_mins_sp[species];
-   y_ppmax = a_maxs_sp[species];
+   //y_ppmax = a_maxs_sp[species];
    
    for(i in 1:nsppheno){
-      b_photo[i] = mub_grand[i] + mu_bphotomin[i] * y_ppmin[i] + mu_bphotomax[i] * y_ppmax[i];
+      b_photo[i] = mub_grand[i] + mu_bphotomin[i] * y_ppmin[i]; //+ mu_bphotomax[i] * y_ppmax[i];
 	 }
    
    for(i in 1:Npheno){
@@ -98,7 +98,7 @@ generated quantities {
    }
    
    y_ppmin = normal_rng(y_ppmin, sigma_y);
-   y_ppmax = normal_rng(y_ppmax, sigma_y);
+   //y_ppmax = normal_rng(y_ppmax, sigma_y);
    y_ppphoto = normal_rng(y_ppphoto, sigma_yphoto);
 
    

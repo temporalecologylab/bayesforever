@@ -25,10 +25,10 @@ sigma_y <- 3 ## for latitude model
 # So maybe we should center the data?
 # Parameters
 a_min <- 0
-a_max <- 0
+#a_max <- 0
 
 sigma_bphotomin <- 2
-sigma_bphotomax <- 2
+#sigma_bphotomax <- 2
 
 n <- 10 # number of replicates per sp x study (may eventually want to draw this from a distribution to make data more realistic)
 nsp <- 30 # number of species
@@ -42,7 +42,7 @@ mua_sp <- rnorm(nsp, 0, sigma_asp)
 simlat <- data.frame(sp=rep(1:nsp, each=10), mua_sp=rep(mua_sp, each=10))
 
 simlat$minlat <- a_min*simlat$mua_sp + rnorm(nrow(simlat), 0, sigma_y)
-simlat$maxlat <- a_max*simlat$mua_sp + rnorm(nrow(simlat), 0, sigma_y)
+#simlat$maxlat <- a_max*simlat$mua_sp + rnorm(nrow(simlat), 0, sigma_y)
 
 
 nsp # Same as above (you could vary it but would be a little trickier) 
@@ -52,7 +52,7 @@ sigma_aphoto <- 3
 
 a_photo <- rnorm(nsp, -2, sigma_aphoto)
 beta_photomin <- rnorm(nsp, 1, sigma_bphotomin)
-beta_photomax <- rnorm(nsp, 0.5, sigma_bphotomax)
+##beta_photomax <- rnorm(nsp, 0.5, sigma_bphotomax)
 
 sigmab_grand <- 2
 mub_grand <- rnorm(nsp, 0, sigmab_grand)
@@ -76,14 +76,13 @@ for (sp in 1:nsp){
 
 #simpheno$photodat <- simpheno$a_photo + bphoto*simpheno$P + rnorm(nrow(simpheno), 0, sigma_yphoto)
 
-simpheno$photodat <- simpheno$a_photo + mub_grand * simpheno$P + 
-  (beta_photomin * simlat$minlat)*simpheno$P + 
-  (beta_photomax * simlat$maxlat)*simpheno$P + rnorm(nrow(simpheno), 0, sigma_yphoto) 
+simpheno$photodat <- simpheno$a_photo*simlat$mua_sp + mub_grand * simpheno$P + 
+  (beta_photomin * simlat$minlat)*simpheno$P + rnorm(nrow(simpheno), 0, sigma_yphoto) ## + (beta_photomax * simlat$maxlat)*simpheno$P
 
 N <- length(simlat$minlat)
 
 Npheno <- length(simpheno$photodat)
-latstanpheno <- list(mindat = simlat$minlat, maxdat = simlat$maxlat,
+latstanpheno <- list(mindat = simlat$minlat, #maxdat = simlat$maxlat,
                      photodat = simpheno$photodat,
                      N = N, nsp = nsp, species = simlat$sp, 
                      Npheno = Npheno, nsppheno = nsp,
@@ -154,3 +153,4 @@ plot(ypp_photos~yphotos)
 
 }
 
+shinystan::launch_shinystan(jointfit)
