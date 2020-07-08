@@ -76,7 +76,7 @@ for (sp in 1:nsp){
 
 #simpheno$photodat <- simpheno$a_photo + bphoto*simpheno$P + rnorm(nrow(simpheno), 0, sigma_yphoto)
 
-simpheno$photodat <- simpheno$a_photo + mub_grand * simpheno$P +
+simpheno$photodat <- simpheno$a_photo + mub_grand * simpheno$P + 
   (beta_photomin * simlat$minlat)*simpheno$P + 
   (beta_photomax * simlat$maxlat)*simpheno$P + rnorm(nrow(simpheno), 0, sigma_yphoto) 
 
@@ -153,3 +153,4 @@ ypp_photos <- bigfitsum[grep("y_ppphoto\\[", rownames(bigfitsum)),"mean"]
 plot(ypp_photos~yphotos)
 
 }
+
