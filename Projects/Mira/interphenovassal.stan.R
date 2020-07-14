@@ -24,10 +24,10 @@ head(sim)
 # STAN model
 
 x <- sim$year
-y <- sim$fin2.dat
-variety <- sim$var_yr
-N <- length(sim$fin2.dat)
-Nv <- length(sim$variety)
+y <- sim$fin3.dat
+variety <- sim$variety
+N <- nrow(sim)
+Nv <- length(unique(sim$variety))
 
 # data to stan
 stan.data <- list(x=x, y=y, variety=variety, N=N, Nv=Nv)
@@ -73,7 +73,13 @@ write("//
 # if we had stan
 #bbfl <- stan("vassal_bb_fl.stan", data = stan.data, iter = 2000, warmup = 1000)
 #sum.bbfl <- summary(bbfl)
+sum.bbfl <- summary(bbfl)$summary
+sum.bbfl[grep("mu_", rownames(sum.bbfl)),] 
+sum.bbfl[grep("s\\_", rownames(sum.bbfl)),] 
+sum.bbfl[grep("sigma_y", rownames(sum.bbfl)),] 
 #precis(bbfl)
+
+#shinystan::launch_shinystan(bbfl)
 
 # CmdStanR - also not working
 #library(cmdstanr)
