@@ -4,29 +4,33 @@
       data{
         int<lower=0> N;       //all the samples
         vector[N] x;          // year predictor
-        vector[N} y;          // predicted duration of interphenophase
+        vector[N] y;          // predicted duration of interphenophase
         int<lower=1> Nv;      // number of varieties
         int<lower=1, upper=Nv> variety[N]; // what does this do?
       }
       
       parameters{
-        real a_var;               // mu, one per var
-        real b_var;               // mu, one per var
+        vector[Nv] a_var;               // mu, one per var
+        vector[Nv] b_var;               // mu, one per var
+        real mu_a;
+        real mu_b;
         real<lower=0> s_avar;     // for alpha, one per var
-        real<lower=0> s_avar;     // for beta, one per var
+        real<lower=0> s_bvar;     // for beta, one per var
         real<lower=0> sigma_y;    // big sig
-        
-        //priors
-        a_var ~ normal(65,5);
-        b_var ~ normal(0,1);
-        s_avar ~ normal(0,10);
-        s_bvar ~ normal(0,0.2);
-        sigma_y ~ normal(0,10);
     
       }
       
       model{
         // likelihood
         for (n in 1:N)
-        y[n] ~ normal(a_var + b_var * x[n], sigma);
+        y[n] ~ normal(a_var[variety[n]] + b_var[variety[n]] * x[n], sigma_y);
+        
+        //priors
+        a_var ~ normal(mu_a,s_avar);
+        b_var ~ normal(mu_b,s_bvar);
+        mu_a ~ normal(65,5);
+        mu_b ~ normal(0,1);
+        s_avar ~ normal(0,10);
+        s_bvar ~ normal(0,0.2);
+        sigma_y ~ normal(0,10);
       }
