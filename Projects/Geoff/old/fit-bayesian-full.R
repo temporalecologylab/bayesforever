@@ -16,7 +16,7 @@ param <- list(s1 = 2,
 
 ## Generate samples from (unshifted) beta-binomial distribution
 set.seed(20200329) # set seed for reproducibility
-nsamples <- 2000 # how many samples?
+nsamples <- 500 # how many samples?
 sim.stor <- rbetabinom.ab(n = nsamples, # use VGAM generator
                           size = param[["trials"]],
                           shape1 = param[["s1"]],
@@ -53,6 +53,7 @@ fit.stanmarg <- stan("betabinom-marg.stan",
 summary(fit.stanmarg, pars = c("shape1", "shape2", "D_new"))$summary
 extract.stanmarg <- extract(fit.stanmarg)
 
+par(mfrow = c(1, 2))
 # Shape1
 plot(density(extract.stanmarg$shape1), main = "Shape1")
 abline(v = 2, col = "blue")

@@ -30,3 +30,5 @@ fit.stanmarg <- stan("leaf-marg.stan",
 summary(fit.stanmarg, pars = c("mu_fresh", "mu_dried", "sigma_fresh", "sigma_dried", "p"))$summary
 
 extract.stanmarg <- extract(fit.stanmarg)
+
+launch_shinystan(fit.stanmarg)
