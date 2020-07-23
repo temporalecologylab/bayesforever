@@ -76,7 +76,7 @@ for (sp in 1:nsp){
 
 #simpheno$photodat <- simpheno$a_photo + bphoto*simpheno$P + rnorm(nrow(simpheno), 0, sigma_yphoto)
 
-simpheno$photodat <- simpheno$a_photo*simlat$mua_sp + mub_grand * simpheno$P + 
+simpheno$photodat <- simpheno$a_photo*simlat$mua_sp + #mub_grand * simpheno$P + 
   (beta_photomin * simlat$minlat)*simpheno$P + rnorm(nrow(simpheno), 0, sigma_yphoto) ## + (beta_photomax * simlat$maxlat)*simpheno$P
 
 N <- length(simlat$minlat)
@@ -131,16 +131,16 @@ mean(bigfitpost[["a_maxs_sp"]]) ## 0.05
 
 # Hyperparameters
 mub_grand
-bigfitsum[grep("mub_grand\\[", rownames(bigfitsum)),"mean"]
-plot(bigfitsum[grep("mub_grand\\[", rownames(bigfitsum)),"mean"]~mub_grand) ### this okay...
+bigfitsum[grep("agrand\\[", rownames(bigfitsum)),"mean"]
+plot(bigfitsum[grep("agrand\\[", rownames(bigfitsum)),"mean"]~mub_grand) ### this okay...
 
 a_photo
 bigfitsum[grep("a_photo\\[", rownames(bigfitsum)),"mean"]
 plot(bigfitsum[grep("a_photo\\[", rownames(bigfitsum)),"mean"]~a_photo) ### this okay...
 
 beta_photomin
-bigfitsum[grep("mu_bphotomin\\[", rownames(bigfitsum)),"mean"]
-plot(bigfitsum[grep("mu_bphotomin\\[", rownames(bigfitsum)),"mean"]~beta_photomin) ### bad!!!!
+bigfitsum[grep("a_photomin\\[", rownames(bigfitsum)),"mean"]
+plot(bigfitsum[grep("a_photomin\\[", rownames(bigfitsum)),"mean"]~beta_photomin) ### bad!!!!
 beta_photomax
 bigfitsum[grep("mu_bphotomax\\[", rownames(bigfitsum)),"mean"]
 plot(bigfitsum[grep("mu_bphotomax\\[", rownames(bigfitsum)),"mean"]~beta_photomax) ### bad
