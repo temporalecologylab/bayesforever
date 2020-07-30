@@ -57,8 +57,8 @@ model{
 	//}
 	
 	for(i in 1:Npheno){
-	  ypredphoto[i] = a_photo[speciespheno[i]] + 
-	                  (a_photomin[speciespheno[i]] * latmins[speciespheno[i]]) * photoperiod[i];
+	  ypredphoto[i] = (a_photo[speciespheno[i]] * photoperiod[i]) + 
+	                  (a_photomin[speciespheno[i]] * latmins[speciespheno[i]]) ;
 	}
   
   a_photo ~ normal(mua_sp, sigma_sp); // needs partial pooling - should this (mua_sp, sigma_sp)
@@ -76,8 +76,8 @@ model{
   //mub_grand ~ normal(0, 30);
   //sigmab_grand ~ normal(0, 10); //removed
   
-  mu_bphotomin ~ normal(0, 20);
-  sigma_bphotomin ~ normal(0, 10); //removed
+  mu_bphotomin ~ normal(0, 10);
+  sigma_bphotomin ~ normal(0, 5); //removed
 
 	// likelihoods 
 	mindat ~ normal(latmins, sigma_y);

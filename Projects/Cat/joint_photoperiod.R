@@ -27,7 +27,7 @@ sigma_y <- 3 ## for latitude model
 a_min <- 0
 #a_max <- 0
 
-sigma_bphotomin <- 2
+sigma_bphotomin <- 5
 #sigma_bphotomax <- 2
 
 n <- 10 # number of replicates per sp x study (may eventually want to draw this from a distribution to make data more realistic)
@@ -35,27 +35,29 @@ nsp <- 30 # number of species
 
 ### This will be a fixed effects model but I think we need some mua_sp to create some variation around our species estimates
 ## And now let's add a greater sigma since our data is centered
-sigma_asp <- 2
+sigma_asp <- 10
 mua_sp <- rnorm(nsp, 0, sigma_asp)
 
 # Set up the data ...
 simlat <- data.frame(sp=rep(1:nsp, each=10), mua_sp=rep(mua_sp, each=10))
 
-simlat$minlat <- a_min*simlat$mua_sp + rnorm(nrow(simlat), 0, sigma_y)
+simlat$minlat <- a_min + simlat$mua_sp + rnorm(nrow(simlat), 0, sigma_y)
 #simlat$maxlat <- a_max*simlat$mua_sp + rnorm(nrow(simlat), 0, sigma_y)
 
 
 nsp # Same as above (you could vary it but would be a little trickier) 
 mua_sp # this is the effect of species trait differences from the trait model (above)
 
-sigma_aphoto <- 3
+sigma_aphoto <- 5
 
 a_photo <- rnorm(nsp, -2, sigma_aphoto)
-beta_photomin <- rnorm(nsp, 1, sigma_bphotomin)
+beta_photomin <- rnorm(nsp, 0, sigma_bphotomin)
 ##beta_photomax <- rnorm(nsp, 0.5, sigma_bphotomax)
 
-sigmab_grand <- 2
-mub_grand <- rnorm(nsp, 0, sigmab_grand)
+mua_photo_sp <- rnorm(nsp, 0, 5)
+
+#sigmab_grand <- 2
+#mub_grand <- rnorm(nsp, 0, sigmab_grand)
 
 Pmean <- 6
 Psigma <- 2
@@ -67,7 +69,7 @@ Nph <- nsp * nph # obervations per species for phenological event and photoperio
 
 for (sp in 1:nsp){
   Phere <- rnorm(nph, Pmean, Psigma)
-  simphenoadd <- data.frame(sp=rep(sp, nph), a_photo=rep(a_photo[sp], nph), P=Phere)
+  simphenoadd <- data.frame(sp=rep(sp, nph), a_photo=rep(a_photo[sp], nph), P=Phere, mua_photo_sp=rep(mua_photo_sp[sp], each=nph))
   simpheno <- rbind(simpheno, simphenoadd)
 }
 
@@ -76,8 +78,8 @@ for (sp in 1:nsp){
 
 #simpheno$photodat <- simpheno$a_photo + bphoto*simpheno$P + rnorm(nrow(simpheno), 0, sigma_yphoto)
 
-simpheno$photodat <- simpheno$a_photo*simlat$mua_sp + #mub_grand * simpheno$P + 
-  (beta_photomin * simlat$minlat)*simpheno$P + rnorm(nrow(simpheno), 0, sigma_yphoto) ## + (beta_photomax * simlat$maxlat)*simpheno$P
+simpheno$photodat <- (simpheno$a_photo + simpheno$mua_photo_sp)*simpheno$P + #mub_grand * simpheno$P + 
+  (beta_photomin * simlat$minlat) + rnorm(nrow(simpheno), 0, sigma_yphoto) ## + (beta_photomax * simlat$maxlat)*simpheno$P
 
 N <- length(simlat$minlat)
 
