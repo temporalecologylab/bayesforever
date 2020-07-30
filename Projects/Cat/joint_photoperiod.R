@@ -56,8 +56,8 @@ beta_photomin <- rnorm(nsp, 0, sigma_bphotomin)
 
 mua_photo_sp <- rnorm(nsp, 0, 5)
 
-#sigmab_grand <- 2
-#mub_grand <- rnorm(nsp, 0, sigmab_grand)
+sigmab_grand <- 10
+mub_grand <- rnorm(nsp, 0, sigmab_grand)
 
 Pmean <- 6
 Psigma <- 2
@@ -69,7 +69,8 @@ Nph <- nsp * nph # obervations per species for phenological event and photoperio
 
 for (sp in 1:nsp){
   Phere <- rnorm(nph, Pmean, Psigma)
-  simphenoadd <- data.frame(sp=rep(sp, nph), a_photo=rep(a_photo[sp], nph), P=Phere, mua_photo_sp=rep(mua_photo_sp[sp], each=nph))
+  simphenoadd <- data.frame(sp=rep(sp, nph), mub_grand=rep(mub_grand[sp], nph), a_photo=rep(a_photo[sp], nph), 
+                            P=Phere, mua_photo_sp=rep(mua_photo_sp[sp], each=nph))
   simpheno <- rbind(simpheno, simphenoadd)
 }
 
@@ -78,7 +79,7 @@ for (sp in 1:nsp){
 
 #simpheno$photodat <- simpheno$a_photo + bphoto*simpheno$P + rnorm(nrow(simpheno), 0, sigma_yphoto)
 
-simpheno$photodat <- (simpheno$a_photo + simpheno$mua_photo_sp)*simpheno$P + #mub_grand * simpheno$P + 
+simpheno$photodat <- simpheno$mub_grand + (simpheno$a_photo + simpheno$mua_photo_sp)*simpheno$P +  #* simpheno$P + 
   (beta_photomin * simlat$minlat) + rnorm(nrow(simpheno), 0, sigma_yphoto) ## + (beta_photomax * simlat$maxlat)*simpheno$P
 
 N <- length(simlat$minlat)
