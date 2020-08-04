@@ -39,9 +39,9 @@ parameters{
   
 	real <lower=0> sigma_yphoto; // overall variation accross observations for photo
 
-  //real agrand[nsppheno]; // grand mean for trait
-	//real mub_grand[nsppheno]; // mean of the alpha value for species for pheno
-	//real <lower = 0> sigmab_grand; // variation of intercept amoung species for pheno
+  real agrand[nsppheno]; // grand mean for trait
+	real mub_grand[nsppheno]; // mean of the alpha value for species for pheno
+	real <lower = 0> sigmab_grand; // variation of intercept amoung species for pheno
 	
 }
 
@@ -57,27 +57,27 @@ model{
 	//}
 	
 	for(i in 1:Npheno){
-	  ypredphoto[i] = a_photo[speciespheno[i]] + 
-	                  (a_photomin[speciespheno[i]] * latmins[speciespheno[i]]) * photoperiod[i];
+	  ypredphoto[i] = agrand[speciespheno[i]] +  (a_photo[speciespheno[i]] * photoperiod[i]) + 
+	                  (a_photomin[speciespheno[i]] * latmins[speciespheno[i]]) ;
 	}
   
   a_photo ~ normal(mua_sp, sigma_sp); // needs partial pooling - should this (mua_sp, sigma_sp)
-  //agrand ~ normal(mub_grand, sigmab_grand); //should this be partially pooled? regular prior skip sigmab_grand
+  agrand ~ normal(mub_grand, sigmab_grand); //should this be partially pooled? regular prior skip sigmab_grand
   
   a_photomin ~ normal(mu_bphotomin, sigma_bphotomin); //should this be partially pooled?
   //mu_bphotomax ~ normal(1, 10);
 
   mua_sp ~ normal(-2, 10);
-  sigma_sp ~ normal(0, 10);
+  sigma_sp ~ normal(0, 5);
   
   sigma_y ~ normal(0, 10);
   sigma_yphoto ~ normal(0, 30);
   
-  //mub_grand ~ normal(0, 30);
-  //sigmab_grand ~ normal(0, 10); //removed
+  mub_grand ~ normal(0, 10);
+  sigmab_grand ~ normal(0, 5); //removed
   
-  mu_bphotomin ~ normal(0, 20);
-  sigma_bphotomin ~ normal(0, 10); //removed
+  mu_bphotomin ~ normal(0, 10);
+  sigma_bphotomin ~ normal(0, 5); //removed
 
 	// likelihoods 
 	mindat ~ normal(latmins, sigma_y);
