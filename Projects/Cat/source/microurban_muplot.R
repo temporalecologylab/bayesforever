@@ -2,7 +2,7 @@
 # Based off Lizzie's code for BB manuscript
 
 muplotfx <- function(modelhere, nameforfig, width, height, ylim, xlim, leg1, leg2){
-spnum <- length(unique(ws_urb.stan$spp))
+spnum <- length(unique(bball$spp))
 pdf(file.path(figpath, paste("muplot", nameforfig, figpathmore, ".pdf", sep="")),
     width = width, height = height)
 par(xpd=FALSE)
@@ -30,7 +30,7 @@ for(spsi in 1:spnum){
 }
 }
 par(xpd=TRUE) # so I can plot legend outside
-legend(leg1, leg2, sort(unique(gsub("_", " ", ws_urb.stan$spp))), pch=my.pch[1:spnum],
+legend(leg1, leg2, sort(unique(gsub("_", " ", bball$spp))), pch=my.pch[1:spnum],
    col=alpha(my.pal[1:spnum], alphahere),
    cex=0.75, bty="n", text.font=3)
 dev.off()
