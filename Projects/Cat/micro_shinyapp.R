@@ -184,6 +184,7 @@ server <- function(input, output) {
   
   #ntext <- eventReactive(input$goButton, {
   # 
+  if(FALSE){
   output$muplot <- renderPlot({
     input$go
     use.urban <- use.urban()[1]
@@ -209,7 +210,7 @@ server <- function(input, output) {
     modelhere <- urbmethod_fake
     bball.stan <- get.data()[[1]]
     muplotfx(modelhere, "", 7, 7, c(0,3), c(-150, 50), 60, 3)
-  })
+  })}
   
   
 }
