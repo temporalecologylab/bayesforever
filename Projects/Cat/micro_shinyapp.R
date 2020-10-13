@@ -18,10 +18,8 @@ library(gridExtra)
 library(rstan)
 library(shiny)
 
-#source("~/Documents/git/microclimates/analyses/source/shinyapp_sourcedata.R")
-#source("~/Documents/git/microclimates/analyses/source/microurban_muplot.R")
-source("~/Documents/git/bayes2020/Projects/Cat/source/shinyapp_sourcedata.R")
-source("~/Documents/git/bayes2020/Projects/Cat/source/microurban_muplot.R")
+source("~/Documents/git/microclimates/analyses/source/shinyapp_sourcedata.R")
+#source("~/Documents/git/bayes2020/Projects/Cat/source/shinyapp_sourcedata.R")
 
 
 ui <- fluidPage(
@@ -45,11 +43,15 @@ ui <- fluidPage(
            
            sliderInput(inputId = "UrbanEffect",
                        label = "Urban Effect",
-                       value = -50, min = -100, max = 100),
+                       value = -20, min = -100, max = 100),
            
            sliderInput(inputId = "MethodEffect",
                        label = "Method Effect",
-                       value = -30, min = -100, max = 100),
+                       value = -25, min = -100, max = 100),
+           
+           sliderInput(inputId = "UrbMethod",
+                       label = "Urban x Method Effect",
+                       value = -50, min = -100, max = 100),
            
            sliderInput(inputId = "ArbClimate",
                        label = "Arb Climate",
@@ -66,18 +68,21 @@ ui <- fluidPage(
            sliderInput(inputId = "HFMicroEffect",
                        label = "HF Micro Effect",
                        value = 0, min = -10, max = 10),
-           submitButton("View Plots")
+           actionButton("run", "View Plots",
+                        style="color: #fff; background-color: #337ab7; border-color: #2e6da4"),
+           actionButton("go" ,"Run Model and View muplot")
          )       
   ),
   
   mainPanel(
     tabsetPanel(
-      tabPanel("Climate Data", plotOutput("climtypes")),#, verbatimTextOutput("use.urban")), 
+      tabPanel("Climate Data", plotOutput("climtypes"), 
+               plotOutput("hist")),#, verbatimTextOutput("use.urban")), 
       tabPanel("GDDs across Species", plotOutput("gddsites")), 
       tabPanel("Method Accuracy", plotOutput("gdd_accuracy")),
       tabPanel("Site Accuracy", plotOutput("site_accuracy")),
       tabPanel("Site x Method", plotOutput("interaction")),
-      tabPanel("Model Output", actionButton("go" ,"Run Model and View muplot"), plotOutput("muplot"))
+      tabPanel("Model Output", plotOutput("muplot"))
     )
   )
   
@@ -86,8 +91,8 @@ ui <- fluidPage(
 
 server <- function(input, output) {
   
-  get.data <- reactive({
-    bbfunc(if(input$Hypothesis=="Hypothesis A: more variation in hobo loggers with same climate" |
+  
+    get.data <- eventReactive(input$run, {bbfunc(if(input$Hypothesis=="Hypothesis A: more variation in hobo loggers with same climate" |
               input$Hypothesis=="---Choose One---")
     {TRUE}else{FALSE}, 
     if(input$Question=="Urban Model: Arb vs HF"|
@@ -95,12 +100,13 @@ server <- function(input, output) {
     as.numeric(input$UrbanEffect), as.numeric(input$MethodEffect), 
     as.numeric(input$ArbClimate), as.numeric(input$ArbMicroEffect), 
     as.numeric(input$HFClimate), as.numeric(input$HFMicroEffect))
-  })
+    })
   
   #output$print_data <- renderPrint(get.data())
   #output$strdata <- renderPrint(str(get.data()))
   
-  output$gdd_accuracy <- renderPlot({
+  #observeEvent(input$run, {
+    output$gdd_accuracy <- renderPlot({
     bball <- get.data()[[1]]
     xtext <- seq(1, 2, by=1)
     cols <-viridis_pal(option="viridis")(3)
@@ -111,11 +117,13 @@ server <- function(input, output) {
            col=cols[as.factor(bball$method)],
            cex=1, bty="n")
   })
+  #})
   
-  output$site_accuracy <- renderPlot({
+  #observeEvent(input$run, {
+    output$site_accuracy <- renderPlot({
     bball <- get.data()[[1]]
     xtext <- seq(1, 2, by=1)
-    cols <-viridis_pal(option="viridis")(3)
+    cols <-viridis_pal(option="plasma")(3)
     plot(as.numeric(as.factor(bball$site)), as.numeric(bball$gdd_accuracy), 
          col=cols[as.factor(bball$site)], xlab="", ylab="GDD accuracy", xaxt="none")
     axis(side=1, at=xtext, labels = c("Arnold Arboretum", "Harvard Forest"))
@@ -123,8 +131,10 @@ server <- function(input, output) {
            col=cols[as.factor(bball$site)],
            cex=1, bty="n")
   })
+  #})
   
-  output$gddsites <- renderPlot({
+  #observeEvent(input$run, {
+    output$gddsites <- renderPlot({
     bball <- get.data()[[1]]
     #quartz(width=6, height=5)
     par(mfrow=c(1,2))
@@ -140,8 +150,10 @@ server <- function(input, output) {
          ylab="GDD", ylim=c(0, 600), xlab="Species")
     abline(h=mean(bball$gdd[bball$method=="hobo"]), lwd=3)
   })
+  #})
   
-  output$climtypes <- renderPlot({
+  #observeEvent(input$run, {
+    output$climtypes <- renderPlot({
     clim <- get.data()[[2]]
     cols <-viridis_pal(option="viridis")(3)
     ws <- ggplot(clim[(clim$method=="ws"),], aes(x=tmean)) + geom_histogram(aes(fill=site)) + theme_classic() +
@@ -155,8 +167,24 @@ server <- function(input, output) {
     #quartz(width=6, height=4)
     grid.arrange(ws, hl, ncol=2)
   })
+  #})
   
-  output$interaction <- renderPlot({
+  #observeEvent(input$run, {
+    output$hist <- renderPlot({
+      bball <- get.data()[[1]]
+      cols <-viridis_pal(option="plasma")(3)
+      ggplot(bball, aes(x=bb)) + geom_histogram(aes(fill=site)) + theme_classic() + theme(legend.position = "none") +
+        scale_fill_manual(name="Site", values=cols, labels=sort(unique(bball$site))) +
+        coord_cartesian(xlim=c(0, 100)) + xlab("Day of budburst (C)") + ylab("") +
+        geom_text(label=paste0("Arb obs:",nrow(bball[bball$site=="arb",])), col=cols[[1]], aes(x = 80, y = 100)) +
+        geom_text(label=paste0("Arb NAs:",nrow(bball[is.na(bball$site=="arb"),])), col=cols[[1]], aes(x = 79, y = 90)) +
+        geom_text(label=paste0("HF obs:",nrow(bball[bball$site=="hf",])), col=cols[[2]], aes(x = 80, y = 80)) +
+      geom_text(label=paste0("HF NAs:",nrow(bball[is.na(bball$site=="hf"),])), col=cols[[2]], aes(x = 79, y = 70)) 
+    })
+  #})
+  
+  #observeEvent(input$run, {
+    output$interaction <- renderPlot({
     bball.site <- get.data()[[1]]
     bball.site$methodtype <- ifelse(bball.site$method=="ws", "\nWeather \nStation", "\nHobo \nLogger")
     
@@ -177,16 +205,13 @@ server <- function(input, output) {
     
     gddcomparebb
   })
+  #})
   
-  use.urban<-reactive({if(input$Question=="Urban Model: Arb vs HF"|
+  use.urban <- eventReactive(input$go,{if(input$Question=="Urban Model: Arb vs HF"|
                           input$Question=="---Choose One---"){TRUE}else{FALSE}})
   
-  
-  #ntext <- eventReactive(input$goButton, {
-  # 
-  if(FALSE){
-  output$muplot <- renderPlot({
-    input$go
+  #observeEvent(input$go, {
+    output$muplot <- renderPlot({
     use.urban <- use.urban()[1]
     if(use.urban==TRUE){
       bball <- get.data()[[1]]
@@ -207,15 +232,118 @@ server <- function(input, output) {
     urbmethod_fake = stan('~/Documents/git/microclimates/analyses/stan/urbanmethod_normal_ncp_inter.stan', data = datalist.gdd,
                           iter = 1000, warmup=500, chains=4)#, control=list(adapt_delta=0.99)) ### 
     
+    cols <- adjustcolor("indianred3", alpha.f = 0.3) 
+    my.pal <-rep(viridis_pal(option="viridis")(9),2)
+    my.pch <- rep(15:18, each=10)
+    alphahere = 0.4
+    
+    
     modelhere <- urbmethod_fake
-    bball.stan <- get.data()[[1]]
-    muplotfx(modelhere, "", 7, 7, c(0,3), c(-150, 50), 60, 3)
-  })}
-  
+    bball <- isolate(get.data()[[1]])
+    spnum <- length(unique(bball$species))
+    par(xpd=FALSE)
+    par(mar=c(5,10,3,10))
+    plot(x=NULL,y=NULL, xlim=c(-150,50), yaxt='n', ylim=c(0,6),
+         xlab="Model estimate change in growing degree days to budburst", ylab="")
+    axis(2, at=1:6, labels=rev(c("Arboretum", "Weather Station", "Arboretum x\nWeather Station",
+                                 "Sigma Arboretum", "Sigma \nWeather Station", 
+                                 "Sigma Interaction")), las=1)
+    abline(v=0, lty=2, col="darkgrey")
+    rownameshere <- c("mu_b_urban_sp", "mu_b_method_sp", "mu_b_um_sp", "sigma_b_urban_sp",
+                      "sigma_b_method_sp", "sigma_b_um_sp")
+    ppeffects <- c("b_urban", "b_method", "b_um")
+    for(i in 1:6){
+      pos.y<-(1:6)[i]
+      pos.x<-summary(modelhere)$summary[rownameshere[i],"mean"]
+      lines(summary(modelhere)$summary[rownameshere[i],c("25%","75%")],rep(pos.y,2),col="darkgrey")
+      points(pos.x,pos.y,cex=1.5,pch=19,col="darkblue")
+      for(spsi in 1:spnum){
+        pos.sps.i<-which(grepl(paste("[",spsi,"]",sep=""),rownames(summary(modelhere)$summary),fixed=TRUE))[6:11]#[c(2:3,8,5:6,10)]
+        jitt<-(spsi/40) + 0.08
+        pos.y.sps.i<-pos.y-jitt
+        pos.x.sps.i<-summary(modelhere)$summary[pos.sps.i[i],"mean"]
+        lines(summary(modelhere)$summary[pos.sps.i[i],c("25%","75%")],rep(pos.y.sps.i,2),
+              col=alpha(my.pal[spsi], alphahere))
+        points(pos.x.sps.i,pos.y.sps.i,cex=0.8, pch=my.pch[spsi], col=alpha(my.pal[spsi], alphahere))
+        
+      }
+    }
+    par(xpd=TRUE) # so I can plot legend outside
+    legend(60, 6, sort(unique(gsub("_", " ", bball$species))), pch=my.pch[1:spnum],
+           col=alpha(my.pal[1:spnum], alphahere),
+           cex=1, bty="n", text.font=3)
+  })
+  #})
+    
+    
+    output$muplot <- renderPlot({
+      use.urban <- use.urban()[1]
+      if(use.urban==FALSE){
+        bball <- get.data()[[1]]
+        bball$type <- ifelse(bball$method=="ws", 1, 0)
+        
+        datalist.gdd <- with(bball, 
+                             list(y = gdd, 
+                                  prov = provenance,
+                                  method = type,
+                                  sp = as.numeric(as.factor(species)),
+                                  N = nrow(bball),
+                                  n_sp = length(unique(species))
+                             )
+        )
+        
+        
+        provmethod_fake = stan('~/Documents/git/microclimates/analyses/stan/provmethod_normal_ncp_inter.stan', data = datalist.gdd,
+                                      iter = 1000, warmup=500)#, control=list(adapt_delta=0.99)) ### 
+        
+      
+      cols <- adjustcolor("indianred3", alpha.f = 0.3) 
+      my.pal <-rep(viridis_pal(option="viridis")(9),2)
+      my.pch <- rep(15:18, each=10)
+      alphahere = 0.4
+      
+      
+      modelhere <- provmethod_fake
+      bball <- get.data()[[1]]
+      spnum <- length(unique(bball$species))
+      par(xpd=FALSE)
+      par(mar=c(5,10,3,10))
+      plot(x=NULL,y=NULL, xlim=c(-150,100), yaxt='n', ylim=c(0,6),
+           xlab="Model estimate change in growing degree days to budburst", ylab="")
+      axis(2, at=1:6, labels=rev(c("Provenance \nLatitude", "Weather Station", "Provenance x\nWeather Station",
+                                   "Sigma Provenance", "Sigma \nWeather Station", 
+                                   "Sigma Interaction")), las=1)
+      abline(v=0, lty=2, col="darkgrey")
+      rownameshere <- c("mu_b_prov_sp", "mu_b_method_sp", "mu_b_pm_sp", "sigma_b_prov_sp",
+                        "sigma_b_method_sp", "sigma_b_pm_sp")
+      ppeffects <- c("b_urban", "b_method", "b_um")
+      for(i in 1:6){
+        pos.y<-(1:6)[i]
+        pos.x<-summary(modelhere)$summary[rownameshere[i],"mean"]
+        lines(summary(modelhere)$summary[rownameshere[i],c("25%","75%")],rep(pos.y,2),col="darkgrey")
+        points(pos.x,pos.y,cex=1.5,pch=19,col="darkblue")
+        for(spsi in 1:spnum){
+          pos.sps.i<-which(grepl(paste("[",spsi,"]",sep=""),rownames(summary(modelhere)$summary),fixed=TRUE))[2:7]
+          jitt<-(spsi/40) + 0.08
+          pos.y.sps.i<-pos.y-jitt
+          pos.x.sps.i<-summary(modelhere)$summary[pos.sps.i[i],"mean"]
+          lines(summary(modelhere)$summary[pos.sps.i[i],c("25%","75%")],rep(pos.y.sps.i,2),
+                col=alpha(my.pal[spsi], alphahere))
+          points(pos.x.sps.i,pos.y.sps.i,cex=0.8, pch=my.pch[spsi], col=alpha(my.pal[spsi], alphahere))
+          
+        }
+      }
+      par(xpd=TRUE) # so I can plot legend outside
+      legend(120, 6, sort(unique(gsub("_", " ", bball$species))), pch=my.pch[1:spnum],
+             col=alpha(my.pal[1:spnum], alphahere),
+             cex=1, bty="n", text.font=3)
+      }
+    })
   
 }
 
 
 
 shinyApp(ui = ui, server = server)
+
 
