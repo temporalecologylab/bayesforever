@@ -93,6 +93,7 @@ dat.nodups$yr1981 <- dat.nodups$newyear-1981
 hk<-subset(dat.nodups, datasource=="kharouba")
 names(hk)
 
+specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species","studyid")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
 
 hk <- hk[,c("year", "doy", "species", "phenophase", "studyid", "datasource", "yr1981","intid")]
 unique(hk$intid)
@@ -165,7 +166,7 @@ launch_shinystan(ssm)
 length(unique(hk$species))
 
 # trying to make a pairs plot with just a subset of the variables
-mcmc_pairs(mdl, pars=c("mu_a","mu_b_sp","sigma_a","sigma_b_sp","sigma_y", "a[1]","b[1]"))
+pairs(mdl, pars=c("mu_a","mu_b_sp","sigma_a","sigma_b_sp","sigma_y", "a[1]","b[1]"))
 
 # Saving the stan output
 #saveRDS(mdl, "singlesp_randslope.rds")
@@ -362,7 +363,7 @@ mdlco<-stan("Stan/singlesp_randslopes_goo.stan",
 
 print(mdlco, pars = c("mu_b_sp","sigma_b_sp", "sigma_y", "mu_a", "b", "sigma_a")) 
 
-mcmc_pairs(mdlco, pars=c("mu_a","mu_b_sp","sigma_a","sigma_b_sp","sigma_y", "a[1]","b[1]"))
+pairs(mdlco, pars=c("mu_a","mu_b_sp","sigma_a","sigma_b_sp","sigma_y", "a[1]","b[1]"))
 
 co_sm_sum <- summary(mdlco)$summary
 
