@@ -43,29 +43,29 @@ e_bforce <- rnorm(n = ntot, mean = 0, sd = sigma_b)
 sigma_a   <- 3
 e_int <- rnorm(n = ntot, mean = 0, sd = sigma_a)
 
-## Level-2 errors (species)
+## Level-2 errors (population)
 sigma_pop <- 10
 e_pop <- rnorm(n = npop * nsp, mean = 0, sd = sigma_pop)
 sigma_bpop <- 5
 e_bpop <- rnorm(n = npop * nsp, mean = 0, sd = sigma_bpop)
 
-## Level-3 errors (population)
+## Level-3 errors (species)
 sigma_sp <- 3
 e_sp <- rnorm(n = nsp, mean = 0, sd = sigma_sp)
 sigma_bsp <- 2
 e_bsp <- rnorm(n = nsp, mean = 0, sd = sigma_bsp)
 
 ## Varying intercepts
-## Level 2 (repeat for level 3)
-a_pop   <- rep(intercept + e_pop, each = npop)
-## Level 3
-a_sppop  <- rep(a_sp + e_sp, each = npop)
+## Level 3 
+a_sp   <- rep(intercept + e_sp, each = nsp)
+## Level 2
+a_sppop  <- rep(a_sp + e_pop, each = npop)
 
 ## Varying slopes
-## Level 2 (repeat for level 3)
-b_forcesp   <- rep(b_force + e_bpop, nsp)
-## Level 3
-b_forcesppop  <- rep(b_forcesp + e_bsp, nsp)
+## Level 3 
+b_forcesp   <- rep(b_force + e_bsp, each = nsp)
+## Level 2
+b_forcesppop  <- rep(b_forcesp + e_bpop, each = npop)
 
 ## Predictor
 force   <- rnorm(n = ntot, 5, 2)
