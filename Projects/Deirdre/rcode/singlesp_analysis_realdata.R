@@ -25,7 +25,7 @@ if(length(grep("deirdreloughnan", getwd())>0)) {
 source("Rcode/combiningallphenodata.R")
 
 # Get the cleaned data (relative path version)
-source("combiningallphenodata.R")
+#source("combiningallphenodata.R")
 
 
 require(rstan)
@@ -93,7 +93,7 @@ dat.nodups$yr1981 <- dat.nodups$newyear-1981
 hk<-subset(dat.nodups, datasource=="kharouba")
 names(hk)
 
-specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species","studyid")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
+specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species", "intid")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
 
 hk <- hk[,c("year", "doy", "species", "phenophase", "studyid", "datasource", "yr1981","intid")]
 unique(hk$intid)
@@ -109,6 +109,8 @@ hk<-hk[complete.cases(hk),]
 hk$species.fact<-as.numeric(as.factor(hk$species))
 
 hk
+specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species","intid")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
+
 # specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species", "type.of.action", "spp")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
 
  datalist<-with(hk,
@@ -117,11 +119,14 @@ hk
                      ypred = doy,
                     species =species.fact,
                     year = yr1981
+                   # ,K=2,
+                   # Imat=matrix(c(rep(1, nrow(hk)), scale(hk$year)), ncol=2)
                     ))
+
 # For adding in the covariance matrix, also have to define the no. varibales and the covariance matrix
 # Having some issues with this, it doesn't seem to like the datalist and it is not clear to me why...
 no.Vars <- 1
-matrix<-diag(1,nVars)
+matrix<-diag(1,no.Vars)
  
  datalist_cov<-with(hk,
                 list( N = nrow(hk),
@@ -141,6 +146,7 @@ y <- hk$doy
 J <- nrow(specieschar.hin)
 species <- hk$species.fact
 year <- hk$yr1981
+
 nVars <-1
 Imat <- diag(1, nVars)
 ###################################################
@@ -154,9 +160,10 @@ mdl<-stan("Stan/singlesp_randslopes_goo.stan",
 #mdl_cov<- stan("Stan/synchrony1_notype_randslops_wcovar.stan", data=c("N","J","y","species","year","nVars","Imat"), iter=2000, chains=1)
 
 #Running my data files with Lizzie and Heathers code works though, so it must be a coding issue
-#mdl_cov<-stan("Stan/synchrony1_notype_randslops_wcovar.stan", data=datalist_cov, iter=2000, chains=1)
+mdl_cov<-stan("Stan/singlesp_randslopes_goo_wcov.stan", data=datalist, iter=2000, chains=1)
 
-print(mdl, pars = c("mu_b_sp","sigma_b_sp", "sigma_y", "mu_a", "b", "sigma_a","ypred_new")) # emw -- suggest you ask Faith for her pairs plot code! See if she has a command that pulls out indiviudal plots
+print(mdl, pars = c("mu_b","sigma_b", "sigma_y", "b","ypred_new"
+                    )) 
 
 sm.sum <- summary(mdl)$summary
 
@@ -166,7 +173,7 @@ launch_shinystan(ssm)
 length(unique(hk$species))
 
 # trying to make a pairs plot with just a subset of the variables
-pairs(mdl, pars=c("mu_a","mu_b_sp","sigma_a","sigma_b_sp","sigma_y", "a[1]","b[1]"))
+pairs(mdl, pars=c("mu_a","mu_b","sigma_a","sigma_b","sigma_y", "a[1]","b[1]", "a[50]","b[50]"))
 
 # Saving the stan output
 #saveRDS(mdl, "singlesp_randslope.rds")
@@ -176,10 +183,11 @@ pairs(mdl, pars=c("mu_a","mu_b_sp","sigma_a","sigma_b_sp","sigma_y", "a[1]","b[1
 # Plotting predicted vs observed 
 extracted<-rstan::extract(mdl)
 
-head(extracted$a) # this matrix is the esti intercepts for each species
-extracted$a[,86] #this should give you 4000 intercepts for species 86
+#head(extracted$a) # this matrix is the esti intercepts for each species
+#extracted$a[,86] #this should give you 4000 intercepts for species 86
 #if did the same thing for the slopes, would get 4000
 
+#extracted$ypred_new[,86]
 # # Working with estimates for species 1
 # pred<-vector()
 # 
@@ -197,16 +205,19 @@ extracted$a[,86] #this should give you 4000 intercepts for species 86
 # pred<-as.data.frame(pred)
 # head(pred)
 
-hist(extracted$ypred_new[,1])
-study1<-hk[which(hk$species.fact== '1'),]
-temp<-mean(study1$doy)
 
-library(bayesplot)
-ypred<-extracted$ypred_new[,1]
-ppc_dens_overlay(study1$doy, ypred)
+# PPC based on the vingette from https://cran.r-project.org/web/packages/bayesplot/vignettes/graphical-ppcs.html 
 
-hkmean<-aggregate(hk, summarise(.hk$doy, studyid))
-plot(extracted$ypred_new ~ hk$doy)
+library("bayesplot")
+library("ggplot2")
+
+
+y<-hk$doy
+
+yrep<-extracted$ypred_new # I want this to be a matrix, which it is, with one element for each data point in y
+
+ppc_dens_overlay(y, yrep[1:50, ])
+# oh, it doesn't look great. The model is under predicting
 
 ####################################################
 # Thinking about whether to add covariance matrix, statistical rethinking suggests there should be a correlation between slopes and intercept that you might be able to see in a scatterplot
@@ -223,30 +234,32 @@ plot(mdl_int, mdl_slopes, xlab="sp intercepts", ylab="sp slopes")
 ids.list <- unique(hk$intid)
 interact.stor <- matrix(NA, ncol = 2, nrow = length(ids.list))
 for(i in 1:length(ids.list)){
-    temp <- subset(hk, intid == ids.list[i])
-    temp2 <- unique(temp$species.fact)
-    if(length(temp2) == 2){
+    temp <- subset(hk, intid == ids.list[i]) #creates new subset for every pair
+    temp2 <- unique(temp$species.fact) # no. sp share the same id number
+    if(length(temp2) == 2){ #if= 2, then add the species names to i row in storage, creating col 1 = sp 1, col 2- sp2
         interact.stor[i, ] <- unique(temp$species.fact)
     } else{
-        interact.stor[i, ] <- NA
+        interact.stor[i, ] <- NA # if only one species has the id or 3+ have the id it gets skipped, can add to statment to see what Ids and how to include 
+        #make a new loop for multiple int, could add coln to the matrix --> creates a ragged array, vect with diff sizes, could make empty list, for eac element give it all interacting pairs, work w/ this below in place of the matrix, for i in 1:length(list) -- then sample based on these elements
     }
 }
 interact.stor <- interact.stor[complete.cases(interact.stor), ]
 ## Create table of random interactions
-random.stor <- matrix(NA, ncol = 2, nrow = nrow(interact.stor))
+random.stor <- matrix(NA, ncol = 2, nrow = nrow(interact.stor)) # if a list - change from matrix, syntax the same
 for(i in 1:nrow(interact.stor)){
-    random.stor[i, ] <-  sample(x = hk$species.fact, size = 2, replace = FALSE)
+    random.stor[i, ] <-  sample(x = unique(hk$species.fact), size = 2, replace = FALSE) # fills in stor, want same number of random int, fill row with a sample of species ids, x= pool sampled from, samples not the same
+    # adding unique so it is not weighted by the number of entries, this removes the effects of longer studies
 }
 
 ## Extract posteriors from stan object
-fit.post <- extract(mdl)
+fit.post <- rstan::extract(mdl)
 
 ## Response to climate change is parameter b, so we subtract b's for random and interacting pair of species
-n.postsamples <- 1000 # do 100 subtractions for each pairing
-random.responses <- dim(nrow(interact.stor) * n.postsamples)
+n.postsamples <- 1000 # do 1000 subtractions for each pairing - from each pairing from the posterior
+random.responses <- dim(nrow(interact.stor) * n.postsamples) # just creating an empty vector of this size
 interact.responses <- dim(nrow(interact.stor) * n.postsamples)
 for(i in 1:nrow(interact.stor)){
-    temp.random1 <- sample(x = fit.post$b[, random.stor[i, 1]], size = n.postsamples, replace = TRUE)
+    temp.random1 <- sample(x = fit.post$b[, random.stor[i, 1]], size = n.postsamples, replace = TRUE) # for each row getting sampples, this first sample = sampled from the extracted slopes, fit.post$b = rows are iteractions, columns are levels, coln we want is the coln in the random.stor - slopes here are organized by sp id, i = first entry, sample from this coln, want 1000 sampels (ie n.postsampeles), repalce=T bc want a fresh sample each time
     temp.random2 <- sample(x = fit.post$b[, random.stor[i, 2]], size = n.postsamples, replace = TRUE)
     temp.interact1 <- sample(x = fit.post$b[, interact.stor[i, 1]], size = n.postsamples, replace = TRUE)
     temp.interact2 <- sample(x = fit.post$b[, interact.stor[i, 2]], size = n.postsamples, replace = TRUE)
@@ -254,16 +267,26 @@ for(i in 1:nrow(interact.stor)){
     interact.responses[(((i - 1) * n.postsamples) + 1):(i * n.postsamples)] <- temp.interact1 - temp.interact2
 }
 
-## Plotting
+#[(((i - 1) * n.postsamples) + 1):(i * n.postsamples)] here we are indexing -- 255 and 256 - created a huge vector, now segmenting the very long vectors and ensuring the first entries corresp to first of interact.stor
+# eg. first run i=1, so this becomes i-1=0, so assigning the first element all the way to 1000, assigning all these to temp 1-temp 2, if i=2, get 2-1 get 1001, 2*1000 so 1001 to 2000 get assigned a new 
+#alt. could also make a matrix and populate the different columns of the matrix, with each column being a unique species pair
+#note segmentation is need for certain stan models, an advantage of one big vect = can deal with different sized data, could have a different number for different pairings. 
+print(random.stor[i,1])
+print(random.stor[i,2])
+# can mannually check if the columns are what you expect 
+
+## Plotting - the range is the range of values and esti the density, fitting line to hist of data from xmin to xmax
 plot.param <- list(
-    xmin = -3,
-    xmax = 3,
+    xmin = -5, 
+    xmax = 5,
+    ymin = 0,
+    ymax = 0.5,
     n = 1024)
-plot(density(random.responses, from = plot.param[["xmin"]], to = plot.param[["xmax"]], n = plot.param[["n"]]), main = "Random vs interacting pairs", col = "blue", lwd = 2, xlab = "Difference in slopes")
+plot(density(random.responses, from = plot.param[["xmin"]], to = plot.param[["xmax"]], n = plot.param[["n"]]), main = "Random vs interacting pairs", col = "blue", lwd = 2, xlab = "Difference in slopes", ylim= c(plot.param[["ymin"]], plot.param[["ymax"]]))
 points(density(interact.responses, from = plot.param[["xmin"]], to = plot.param[["xmax"]], n = plot.param[["n"]]), col = "red", type = "l", lwd = 2)
 abline(v = mean(random.responses), col = "blue")
 abline(v = mean(interact.responses), col = "red")
-legend("topright", c("Random", "Interacting"), col = c("red", "blue"), lty = "solid", lwd = 2)
+legend("topright", c("Random", "Interacting"), col = c( "blue","red"), lty = "solid", lwd = 2)
 
 
 ##########################################################
@@ -340,7 +363,7 @@ specieschar.hin.cohen<- aggregate(co["doy"], co[c("studyid", "species")], FUN=le
 
 datalistcohen<-with(co,
                list( N=nrow(co),
-                     Nspp =nrow(specieschar.hin),
+                     Nspp =nrow(specieschar.hin.cohen),
                      ypred = doy,
                      species =species.fact,
                      year = yr1981
@@ -359,9 +382,9 @@ Imat <- diag(1, nVars)
 # running stan model, model still a work in progress, but currently it has random slopes and intercepts for species
 mdlco<-stan("Stan/singlesp_randslopes_goo.stan",
           data= datalistcohen
-          ,iter=2000, chains=4, seed=1235)
+          ,iter=2000, chains=1, seed=1235)
 
-print(mdlco, pars = c("mu_b_sp","sigma_b_sp", "sigma_y", "mu_a", "b", "sigma_a")) 
+print(mdlco, pars = c("mu_b","sigma_b", "sigma_y", "mu_a", "b", "sigma_a")) 
 
 pairs(mdlco, pars=c("mu_a","mu_b_sp","sigma_a","sigma_b_sp","sigma_y", "a[1]","b[1]"))
 
