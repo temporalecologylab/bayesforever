@@ -1,0 +1,2285 @@
+"","year","doy","species","phenophase","studyid","datasource","yr1981","intid","species.fact"
+"34354",1951,225.074,"Acartia hudsonica","senescence","HMK035","kharouba",0,192,1
+"34355",1973,210.966,"Acartia hudsonica","senescence","HMK035","kharouba",0,192,1
+"34356",1976,192.231,"Acartia hudsonica","senescence","HMK035","kharouba",0,192,1
+"34357",2000,185.721,"Acartia hudsonica","senescence","HMK035","kharouba",19,192,1
+"34358",2001,184.835,"Acartia hudsonica","senescence","HMK035","kharouba",20,192,1
+"34359",2002,169.546,"Acartia hudsonica","senescence","HMK035","kharouba",21,192,1
+"34360",2003,196.668,"Acartia hudsonica","senescence","HMK035","kharouba",22,192,1
+"34361",2004,183.075,"Acartia hudsonica","senescence","HMK035","kharouba",23,192,1
+"33314",1951,154.875,"Acartia tonsa","first appearance","EMW001","kharouba",0,1,2
+"33315",1972,176,"Acartia tonsa","first appearance","EMW001","kharouba",0,1,2
+"33316",1973,173.083,"Acartia tonsa","first appearance","EMW001","kharouba",0,1,2
+"33317",1976,178.875,"Acartia tonsa","first appearance","EMW001","kharouba",0,1,2
+"33318",1983,177.875,"Acartia tonsa","first appearance","EMW001","kharouba",2,1,2
+"33319",2002,169.25,"Acartia tonsa","first appearance","EMW001","kharouba",21,1,2
+"35042",1985,85.0816,"Accipiter nisus","reproduction","HMK048","kharouba",4,214,3
+"35075",1985,85.0816,"Accipiter nisus","reproduction","HMK048","kharouba",4,215,3
+"35127",1985,85.0816,"Accipiter nisus","reproduction","HMK048","kharouba",4,216,3
+"35142",1985,85.0816,"Accipiter nisus","reproduction","HMK048","kharouba",4,217,3
+"35043",1986,84.4399,"Accipiter nisus","reproduction","HMK048","kharouba",5,214,3
+"35074",1986,84.4399,"Accipiter nisus","reproduction","HMK048","kharouba",5,215,3
+"35128",1986,84.4399,"Accipiter nisus","reproduction","HMK048","kharouba",5,216,3
+"35138",1986,84.4399,"Accipiter nisus","reproduction","HMK048","kharouba",5,217,3
+"35044",1987,81.1664,"Accipiter nisus","reproduction","HMK048","kharouba",6,214,3
+"35087",1987,81.1664,"Accipiter nisus","reproduction","HMK048","kharouba",6,215,3
+"35106",1987,81.1664,"Accipiter nisus","reproduction","HMK048","kharouba",6,216,3
+"35140",1987,81.1664,"Accipiter nisus","reproduction","HMK048","kharouba",6,217,3
+"35045",1988,80.5268,"Accipiter nisus","reproduction","HMK048","kharouba",7,214,3
+"35088",1988,80.5268,"Accipiter nisus","reproduction","HMK048","kharouba",7,215,3
+"35107",1988,80.5268,"Accipiter nisus","reproduction","HMK048","kharouba",7,216,3
+"35141",1988,80.5268,"Accipiter nisus","reproduction","HMK048","kharouba",7,217,3
+"35046",1989,74.2925,"Accipiter nisus","reproduction","HMK048","kharouba",8,214,3
+"35076",1989,74.2925,"Accipiter nisus","reproduction","HMK048","kharouba",8,215,3
+"35108",1989,74.2925,"Accipiter nisus","reproduction","HMK048","kharouba",8,216,3
+"35145",1989,74.2925,"Accipiter nisus","reproduction","HMK048","kharouba",8,217,3
+"35047",1990,79.5703,"Accipiter nisus","reproduction","HMK048","kharouba",9,214,3
+"35077",1990,79.5703,"Accipiter nisus","reproduction","HMK048","kharouba",9,215,3
+"35109",1990,79.5703,"Accipiter nisus","reproduction","HMK048","kharouba",9,216,3
+"35139",1990,79.5703,"Accipiter nisus","reproduction","HMK048","kharouba",9,217,3
+"35048",1992,79.2758,"Accipiter nisus","reproduction","HMK048","kharouba",11,214,3
+"35078",1992,79.2758,"Accipiter nisus","reproduction","HMK048","kharouba",11,215,3
+"35110",1992,79.2758,"Accipiter nisus","reproduction","HMK048","kharouba",11,216,3
+"35153",1992,79.2758,"Accipiter nisus","reproduction","HMK048","kharouba",11,217,3
+"35049",1996,82.3036,"Accipiter nisus","reproduction","HMK048","kharouba",15,214,3
+"35079",1996,82.3036,"Accipiter nisus","reproduction","HMK048","kharouba",15,215,3
+"35111",1996,82.3036,"Accipiter nisus","reproduction","HMK048","kharouba",15,216,3
+"35150",1996,82.3036,"Accipiter nisus","reproduction","HMK048","kharouba",15,217,3
+"35050",1997,79.6861,"Accipiter nisus","reproduction","HMK048","kharouba",16,214,3
+"35080",1997,79.6861,"Accipiter nisus","reproduction","HMK048","kharouba",16,215,3
+"35112",1997,79.6861,"Accipiter nisus","reproduction","HMK048","kharouba",16,216,3
+"35151",1997,79.6861,"Accipiter nisus","reproduction","HMK048","kharouba",16,217,3
+"35051",1998,81.3492,"Accipiter nisus","reproduction","HMK048","kharouba",17,214,3
+"35081",1998,81.3492,"Accipiter nisus","reproduction","HMK048","kharouba",17,215,3
+"35122",1998,81.3492,"Accipiter nisus","reproduction","HMK048","kharouba",17,216,3
+"35152",1998,81.3492,"Accipiter nisus","reproduction","HMK048","kharouba",17,217,3
+"35052",1999,78.4026,"Accipiter nisus","reproduction","HMK048","kharouba",18,214,3
+"35082",1999,78.4026,"Accipiter nisus","reproduction","HMK048","kharouba",18,215,3
+"35123",1999,78.4026,"Accipiter nisus","reproduction","HMK048","kharouba",18,216,3
+"35167",1999,78.4026,"Accipiter nisus","reproduction","HMK048","kharouba",18,217,3
+"35053",2000,80.3948,"Accipiter nisus","reproduction","HMK048","kharouba",19,214,3
+"35096",2000,80.3948,"Accipiter nisus","reproduction","HMK048","kharouba",19,215,3
+"35124",2000,80.3948,"Accipiter nisus","reproduction","HMK048","kharouba",19,216,3
+"35156",2000,80.3948,"Accipiter nisus","reproduction","HMK048","kharouba",19,217,3
+"35054",2001,82.7138,"Accipiter nisus","reproduction","HMK048","kharouba",20,214,3
+"35097",2001,82.7138,"Accipiter nisus","reproduction","HMK048","kharouba",20,215,3
+"35125",2001,82.7138,"Accipiter nisus","reproduction","HMK048","kharouba",20,216,3
+"35157",2001,82.7138,"Accipiter nisus","reproduction","HMK048","kharouba",20,217,3
+"35055",2002,85.3619,"Accipiter nisus","reproduction","HMK048","kharouba",21,214,3
+"35098",2002,85.3619,"Accipiter nisus","reproduction","HMK048","kharouba",21,215,3
+"35113",2002,85.3619,"Accipiter nisus","reproduction","HMK048","kharouba",21,216,3
+"35158",2002,85.3619,"Accipiter nisus","reproduction","HMK048","kharouba",21,217,3
+"35056",2003,87.683,"Accipiter nisus","reproduction","HMK048","kharouba",22,214,3
+"35099",2003,87.683,"Accipiter nisus","reproduction","HMK048","kharouba",22,215,3
+"35114",2003,87.683,"Accipiter nisus","reproduction","HMK048","kharouba",22,216,3
+"35159",2003,87.683,"Accipiter nisus","reproduction","HMK048","kharouba",22,217,3
+"35057",2004,81.4487,"Accipiter nisus","reproduction","HMK048","kharouba",23,214,3
+"35100",2004,81.4487,"Accipiter nisus","reproduction","HMK048","kharouba",23,215,3
+"35115",2004,81.4487,"Accipiter nisus","reproduction","HMK048","kharouba",23,216,3
+"35160",2004,81.4487,"Accipiter nisus","reproduction","HMK048","kharouba",23,217,3
+"34876",1973,137.748,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",0,207,4
+"34877",1974,136.192,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",0,207,4
+"34878",1975,133.863,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",0,207,4
+"34879",1976,133.848,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",0,207,4
+"34880",1977,127.272,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",0,207,4
+"34881",1978,132.278,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",0,207,4
+"34882",1979,139.214,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",0,207,4
+"34883",1980,138.431,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",0,207,4
+"34884",1981,133.783,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",0,207,4
+"34885",1982,133,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",1,207,4
+"34886",1984,134.131,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",3,207,4
+"34887",1985,137.981,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",4,207,4
+"34888",1986,136.035,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",5,207,4
+"34889",1987,136.023,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",6,207,4
+"34890",1988,131.377,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",7,207,4
+"34891",1989,135.611,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",8,207,4
+"34892",1990,132.122,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",9,207,4
+"34893",1991,141.377,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",10,207,4
+"34894",1992,134.027,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",11,207,4
+"34895",1993,132.083,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",12,207,4
+"34896",1994,127.825,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",13,207,4
+"34897",1995,129.741,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",14,207,4
+"34898",1996,140.926,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",15,207,4
+"34899",1997,130.875,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",16,207,4
+"34900",1998,131.247,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",17,207,4
+"34901",1999,134.71,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",18,207,4
+"34902",2000,131.605,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",19,207,4
+"34903",2001,126.961,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",20,207,4
+"34904",2003,133.499,"Acrocephalus arundinaceus","reproduction","HMK042","kharouba",22,207,4
+"34905",1973,148.163,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",0,207,5
+"34906",1974,142.278,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",0,207,5
+"34907",1975,143.832,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",0,207,5
+"34908",1976,144.21,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",0,207,5
+"34909",1977,141.847,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",0,207,5
+"34910",1978,138.704,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",0,207,5
+"34911",1979,146.127,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",0,207,5
+"34912",1980,140.243,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",0,207,5
+"34913",1981,136.708,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",0,207,5
+"34914",1982,141.002,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",1,207,5
+"34915",1984,144.886,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",3,207,5
+"34916",1985,142.134,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",4,207,5
+"34917",1986,141.729,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",5,207,5
+"34918",1987,146.804,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",6,207,5
+"34919",1988,137.01,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",7,207,5
+"34920",1989,140.517,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",8,207,5
+"34921",1990,136.981,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",9,207,5
+"34922",1991,145.185,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",10,207,5
+"34923",1992,138.521,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",11,207,5
+"34924",1993,136.552,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",12,207,5
+"34925",1994,133.408,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",13,207,5
+"34926",1995,138.873,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",14,207,5
+"34927",1996,145.121,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",15,207,5
+"34928",1997,140.021,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",16,207,5
+"34929",1998,139.615,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",17,207,5
+"34930",1999,138.821,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",18,207,5
+"34931",2000,130.981,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",19,207,5
+"34932",2001,121.577,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",20,207,5
+"34933",2003,127.42,"Acrocephalus scirpaceus","reproduction","HMK042","kharouba",22,207,5
+"35440",1983,176.5561,"Alca torda","population growth","SET005","kharouba",2,231,6
+"35441",1984,175.8386,"Alca torda","population growth","SET005","kharouba",3,231,6
+"35442",1985,173.5366,"Alca torda","population growth","SET005","kharouba",4,231,6
+"35443",1986,178.1077,"Alca torda","population growth","SET005","kharouba",5,231,6
+"35444",1987,173.6529,"Alca torda","population growth","SET005","kharouba",6,231,6
+"35445",1988,172.4872,"Alca torda","population growth","SET005","kharouba",7,231,6
+"35446",1989,169.0077,"Alca torda","population growth","SET005","kharouba",8,231,6
+"35447",1990,173.5089,"Alca torda","population growth","SET005","kharouba",9,231,6
+"35448",1991,172.0553,"Alca torda","population growth","SET005","kharouba",10,231,6
+"35449",1992,169.7929,"Alca torda","population growth","SET005","kharouba",11,231,6
+"35450",1993,172.3492,"Alca torda","population growth","SET005","kharouba",12,231,6
+"35451",1994,177.191,"Alca torda","population growth","SET005","kharouba",13,231,6
+"35452",1995,177.3347,"Alca torda","population growth","SET005","kharouba",14,231,6
+"35453",1996,184.1898,"Alca torda","population growth","SET005","kharouba",15,231,6
+"35454",1997,168.656,"Alca torda","population growth","SET005","kharouba",16,231,6
+"35455",1998,179.9814,"Alca torda","population growth","SET005","kharouba",17,231,6
+"35456",1999,177.1558,"Alca torda","population growth","SET005","kharouba",18,231,6
+"35457",2000,175.6529,"Alca torda","population growth","SET005","kharouba",19,231,6
+"35458",2001,176.4672,"Alca torda","population growth","SET005","kharouba",20,231,6
+"35459",2002,172.767,"Alca torda","population growth","SET005","kharouba",21,231,6
+"35460",2003,171.5128,"Alca torda","population growth","SET005","kharouba",22,231,6
+"35461",2004,181.9512,"Alca torda","population growth","SET005","kharouba",23,231,6
+"35462",2005,181.2529,"Alca torda","population growth","SET005","kharouba",24,231,6
+"35463",2006,179.6053,"Alca torda","population growth","SET005","kharouba",25,231,6
+"35464",1983,151.633,"Ammodytes marinus","population growth","SET005","kharouba",2,231,7
+"35488",1983,151.633,"Ammodytes marinus","population growth","SET005","kharouba",2,232,7
+"35552",1983,151.633,"Ammodytes marinus","population growth","SET005","kharouba",2,233,7
+"35589",1983,151.633,"Ammodytes marinus","population growth","SET005","kharouba",2,234,7
+"35640",1983,151.633,"Ammodytes marinus","population growth","SET005","kharouba",2,235,7
+"35465",1984,140.454,"Ammodytes marinus","population growth","SET005","kharouba",3,231,7
+"35489",1984,140.454,"Ammodytes marinus","population growth","SET005","kharouba",3,232,7
+"35553",1984,140.454,"Ammodytes marinus","population growth","SET005","kharouba",3,233,7
+"35590",1984,140.454,"Ammodytes marinus","population growth","SET005","kharouba",3,234,7
+"35641",1984,140.454,"Ammodytes marinus","population growth","SET005","kharouba",3,235,7
+"35466",1985,150.152,"Ammodytes marinus","population growth","SET005","kharouba",4,231,7
+"35490",1985,150.152,"Ammodytes marinus","population growth","SET005","kharouba",4,232,7
+"35554",1985,150.152,"Ammodytes marinus","population growth","SET005","kharouba",4,233,7
+"35591",1985,150.152,"Ammodytes marinus","population growth","SET005","kharouba",4,234,7
+"35642",1985,150.152,"Ammodytes marinus","population growth","SET005","kharouba",4,235,7
+"35467",1986,165.8,"Ammodytes marinus","population growth","SET005","kharouba",5,231,7
+"35491",1986,165.8,"Ammodytes marinus","population growth","SET005","kharouba",5,232,7
+"35555",1986,165.8,"Ammodytes marinus","population growth","SET005","kharouba",5,233,7
+"35584",1986,165.8,"Ammodytes marinus","population growth","SET005","kharouba",5,234,7
+"35643",1986,165.8,"Ammodytes marinus","population growth","SET005","kharouba",5,235,7
+"35468",1987,158.576,"Ammodytes marinus","population growth","SET005","kharouba",6,231,7
+"35492",1987,158.576,"Ammodytes marinus","population growth","SET005","kharouba",6,232,7
+"35556",1987,158.576,"Ammodytes marinus","population growth","SET005","kharouba",6,233,7
+"35588",1987,158.576,"Ammodytes marinus","population growth","SET005","kharouba",6,234,7
+"35644",1987,158.576,"Ammodytes marinus","population growth","SET005","kharouba",6,235,7
+"35469",1988,162.641,"Ammodytes marinus","population growth","SET005","kharouba",7,231,7
+"35493",1988,162.641,"Ammodytes marinus","population growth","SET005","kharouba",7,232,7
+"35557",1988,162.641,"Ammodytes marinus","population growth","SET005","kharouba",7,233,7
+"35585",1988,162.641,"Ammodytes marinus","population growth","SET005","kharouba",7,234,7
+"35645",1988,162.641,"Ammodytes marinus","population growth","SET005","kharouba",7,235,7
+"35470",1989,148.7,"Ammodytes marinus","population growth","SET005","kharouba",8,231,7
+"35494",1989,148.7,"Ammodytes marinus","population growth","SET005","kharouba",8,232,7
+"35558",1989,148.7,"Ammodytes marinus","population growth","SET005","kharouba",8,233,7
+"35586",1989,148.7,"Ammodytes marinus","population growth","SET005","kharouba",8,234,7
+"35646",1989,148.7,"Ammodytes marinus","population growth","SET005","kharouba",8,235,7
+"35471",1990,146.432,"Ammodytes marinus","population growth","SET005","kharouba",9,231,7
+"35495",1990,146.432,"Ammodytes marinus","population growth","SET005","kharouba",9,232,7
+"35559",1990,146.432,"Ammodytes marinus","population growth","SET005","kharouba",9,233,7
+"35587",1990,146.432,"Ammodytes marinus","population growth","SET005","kharouba",9,234,7
+"35647",1990,146.432,"Ammodytes marinus","population growth","SET005","kharouba",9,235,7
+"35472",1991,156.363,"Ammodytes marinus","population growth","SET005","kharouba",10,231,7
+"35496",1991,156.363,"Ammodytes marinus","population growth","SET005","kharouba",10,232,7
+"35560",1991,156.363,"Ammodytes marinus","population growth","SET005","kharouba",10,233,7
+"35624",1991,156.363,"Ammodytes marinus","population growth","SET005","kharouba",10,234,7
+"35648",1991,156.363,"Ammodytes marinus","population growth","SET005","kharouba",10,235,7
+"35473",1992,154.716,"Ammodytes marinus","population growth","SET005","kharouba",11,231,7
+"35497",1992,154.716,"Ammodytes marinus","population growth","SET005","kharouba",11,232,7
+"35561",1992,154.716,"Ammodytes marinus","population growth","SET005","kharouba",11,233,7
+"35625",1992,154.716,"Ammodytes marinus","population growth","SET005","kharouba",11,234,7
+"35649",1992,154.716,"Ammodytes marinus","population growth","SET005","kharouba",11,235,7
+"35474",1993,162.503,"Ammodytes marinus","population growth","SET005","kharouba",12,231,7
+"35498",1993,162.503,"Ammodytes marinus","population growth","SET005","kharouba",12,232,7
+"35562",1993,162.503,"Ammodytes marinus","population growth","SET005","kharouba",12,233,7
+"35626",1993,162.503,"Ammodytes marinus","population growth","SET005","kharouba",12,234,7
+"35650",1993,162.503,"Ammodytes marinus","population growth","SET005","kharouba",12,235,7
+"35475",1994,165.191,"Ammodytes marinus","population growth","SET005","kharouba",13,231,7
+"35499",1994,165.191,"Ammodytes marinus","population growth","SET005","kharouba",13,232,7
+"35563",1994,165.191,"Ammodytes marinus","population growth","SET005","kharouba",13,233,7
+"35627",1994,165.191,"Ammodytes marinus","population growth","SET005","kharouba",13,234,7
+"35651",1994,165.191,"Ammodytes marinus","population growth","SET005","kharouba",13,235,7
+"35476",1995,177.027,"Ammodytes marinus","population growth","SET005","kharouba",14,231,7
+"35500",1995,177.027,"Ammodytes marinus","population growth","SET005","kharouba",14,232,7
+"35564",1995,177.027,"Ammodytes marinus","population growth","SET005","kharouba",14,233,7
+"35628",1995,177.027,"Ammodytes marinus","population growth","SET005","kharouba",14,234,7
+"35652",1995,177.027,"Ammodytes marinus","population growth","SET005","kharouba",14,235,7
+"35477",1996,162.036,"Ammodytes marinus","population growth","SET005","kharouba",15,231,7
+"35501",1996,162.036,"Ammodytes marinus","population growth","SET005","kharouba",15,232,7
+"35565",1996,162.036,"Ammodytes marinus","population growth","SET005","kharouba",15,233,7
+"35616",1996,162.036,"Ammodytes marinus","population growth","SET005","kharouba",15,234,7
+"35653",1996,162.036,"Ammodytes marinus","population growth","SET005","kharouba",15,235,7
+"35478",1997,136.656,"Ammodytes marinus","population growth","SET005","kharouba",16,231,7
+"35502",1997,136.656,"Ammodytes marinus","population growth","SET005","kharouba",16,232,7
+"35566",1997,136.656,"Ammodytes marinus","population growth","SET005","kharouba",16,233,7
+"35617",1997,136.656,"Ammodytes marinus","population growth","SET005","kharouba",16,234,7
+"35654",1997,136.656,"Ammodytes marinus","population growth","SET005","kharouba",16,235,7
+"35479",1998,171.366,"Ammodytes marinus","population growth","SET005","kharouba",17,231,7
+"35503",1998,171.366,"Ammodytes marinus","population growth","SET005","kharouba",17,232,7
+"35567",1998,171.366,"Ammodytes marinus","population growth","SET005","kharouba",17,233,7
+"35618",1998,171.366,"Ammodytes marinus","population growth","SET005","kharouba",17,234,7
+"35655",1998,171.366,"Ammodytes marinus","population growth","SET005","kharouba",17,235,7
+"35480",1999,171.002,"Ammodytes marinus","population growth","SET005","kharouba",18,231,7
+"35504",1999,171.002,"Ammodytes marinus","population growth","SET005","kharouba",18,232,7
+"35536",1999,171.002,"Ammodytes marinus","population growth","SET005","kharouba",18,233,7
+"35592",1999,171.002,"Ammodytes marinus","population growth","SET005","kharouba",18,234,7
+"35633",1999,171.002,"Ammodytes marinus","population growth","SET005","kharouba",18,235,7
+"35481",2000,144.576,"Ammodytes marinus","population growth","SET005","kharouba",19,231,7
+"35505",2000,144.576,"Ammodytes marinus","population growth","SET005","kharouba",19,232,7
+"35537",2000,144.576,"Ammodytes marinus","population growth","SET005","kharouba",19,233,7
+"35593",2000,144.576,"Ammodytes marinus","population growth","SET005","kharouba",19,234,7
+"35634",2000,144.576,"Ammodytes marinus","population growth","SET005","kharouba",19,235,7
+"35482",2001,157.698,"Ammodytes marinus","population growth","SET005","kharouba",20,231,7
+"35506",2001,157.698,"Ammodytes marinus","population growth","SET005","kharouba",20,232,7
+"35538",2001,157.698,"Ammodytes marinus","population growth","SET005","kharouba",20,233,7
+"35594",2001,157.698,"Ammodytes marinus","population growth","SET005","kharouba",20,234,7
+"35635",2001,157.698,"Ammodytes marinus","population growth","SET005","kharouba",20,235,7
+"35483",2002,160.767,"Ammodytes marinus","population growth","SET005","kharouba",21,231,7
+"35507",2002,160.767,"Ammodytes marinus","population growth","SET005","kharouba",21,232,7
+"35544",2002,160.767,"Ammodytes marinus","population growth","SET005","kharouba",21,233,7
+"35595",2002,160.767,"Ammodytes marinus","population growth","SET005","kharouba",21,234,7
+"35632",2002,160.767,"Ammodytes marinus","population growth","SET005","kharouba",21,235,7
+"35484",2003,165.359,"Ammodytes marinus","population growth","SET005","kharouba",22,231,7
+"35508",2003,165.359,"Ammodytes marinus","population growth","SET005","kharouba",22,232,7
+"35545",2003,165.359,"Ammodytes marinus","population growth","SET005","kharouba",22,233,7
+"35596",2003,165.359,"Ammodytes marinus","population growth","SET005","kharouba",22,234,7
+"35637",2003,165.359,"Ammodytes marinus","population growth","SET005","kharouba",22,235,7
+"35485",2004,215.182,"Ammodytes marinus","population growth","SET005","kharouba",23,231,7
+"35509",2004,215.182,"Ammodytes marinus","population growth","SET005","kharouba",23,232,7
+"35546",2004,215.182,"Ammodytes marinus","population growth","SET005","kharouba",23,233,7
+"35597",2004,215.182,"Ammodytes marinus","population growth","SET005","kharouba",23,234,7
+"35638",2004,215.182,"Ammodytes marinus","population growth","SET005","kharouba",23,235,7
+"35486",2005,182.176,"Ammodytes marinus","population growth","SET005","kharouba",24,231,7
+"35510",2005,182.176,"Ammodytes marinus","population growth","SET005","kharouba",24,232,7
+"35547",2005,182.176,"Ammodytes marinus","population growth","SET005","kharouba",24,233,7
+"35598",2005,182.176,"Ammodytes marinus","population growth","SET005","kharouba",24,234,7
+"35639",2005,182.176,"Ammodytes marinus","population growth","SET005","kharouba",24,235,7
+"35487",2006,187.913,"Ammodytes marinus","population growth","SET005","kharouba",25,231,7
+"35511",2006,187.913,"Ammodytes marinus","population growth","SET005","kharouba",25,232,7
+"35548",2006,187.913,"Ammodytes marinus","population growth","SET005","kharouba",25,233,7
+"35599",2006,187.913,"Ammodytes marinus","population growth","SET005","kharouba",25,234,7
+"35636",2006,187.913,"Ammodytes marinus","population growth","SET005","kharouba",25,235,7
+"34236",1956,139.8299,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34237",1958,139.8397,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34238",1959,140.0924,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34239",1961,147.0287,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34240",1962,133.1806,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34241",1964,153.9692,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34242",1965,140.1225,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34243",1966,147.0525,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34244",1967,126.0336,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34245",1969,147.0672,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34246",1970,140.1477,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34247",1971,146.8285,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34248",1973,147.336,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34249",1974,154.0175,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34250",1975,132.9986,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34251",1977,147.3549,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34252",1978,111.9867,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34253",1980,125.8495,"Asterionella spp.","senescence","HMK032","kharouba",0,189,8
+"34254",1982,111.7606,"Asterionella spp.","senescence","HMK032","kharouba",1,189,8
+"34255",1984,133.0427,"Asterionella spp.","senescence","HMK032","kharouba",3,189,8
+"34256",1985,139.9734,"Asterionella spp.","senescence","HMK032","kharouba",4,189,8
+"34257",1986,154.3248,"Asterionella spp.","senescence","HMK032","kharouba",5,189,8
+"34258",1987,140.231,"Asterionella spp.","senescence","HMK032","kharouba",6,189,8
+"34259",1988,118.9643,"Asterionella spp.","senescence","HMK032","kharouba",7,189,8
+"34260",1989,133.315,"Asterionella spp.","senescence","HMK032","kharouba",8,189,8
+"34261",1990,126.147,"Asterionella spp.","senescence","HMK032","kharouba",9,189,8
+"34988",1976,166.5244,"Beroe gracilis","abundance","HMK043","kharouba",0,209,9
+"34989",1978,185.6869,"Beroe gracilis","abundance","HMK043","kharouba",0,209,9
+"34990",1979,186.9294,"Beroe gracilis","abundance","HMK043","kharouba",0,209,9
+"34991",1981,172.5108,"Beroe gracilis","abundance","HMK043","kharouba",0,209,9
+"34992",1982,174.713,"Beroe gracilis","abundance","HMK043","kharouba",1,209,9
+"34993",1983,170.66,"Beroe gracilis","abundance","HMK043","kharouba",2,209,9
+"34994",1984,187.586,"Beroe gracilis","abundance","HMK043","kharouba",3,209,9
+"34995",1985,189.8225,"Beroe gracilis","abundance","HMK043","kharouba",4,209,9
+"34996",1986,210.9492,"Beroe gracilis","abundance","HMK043","kharouba",5,209,9
+"34997",1987,135.4766,"Beroe gracilis","abundance","HMK043","kharouba",6,209,9
+"34998",1988,144.0026,"Beroe gracilis","abundance","HMK043","kharouba",7,209,9
+"34999",1989,127.3475,"Beroe gracilis","abundance","HMK043","kharouba",8,209,9
+"35000",1990,123.2945,"Beroe gracilis","abundance","HMK043","kharouba",9,209,9
+"35001",1991,175.9359,"Beroe gracilis","abundance","HMK043","kharouba",10,209,9
+"35002",1992,138.2339,"Beroe gracilis","abundance","HMK043","kharouba",11,209,9
+"35003",1993,182.4746,"Beroe gracilis","abundance","HMK043","kharouba",12,209,9
+"35004",1994,109.1139,"Beroe gracilis","abundance","HMK043","kharouba",13,209,9
+"35005",1995,161.7441,"Beroe gracilis","abundance","HMK043","kharouba",14,209,9
+"35006",1996,220.6631,"Beroe gracilis","abundance","HMK043","kharouba",15,209,9
+"35007",1997,233.4234,"Beroe gracilis","abundance","HMK043","kharouba",16,209,9
+"35008",1998,155.8396,"Beroe gracilis","abundance","HMK043","kharouba",17,209,9
+"35009",1999,134.9614,"Beroe gracilis","abundance","HMK043","kharouba",18,209,9
+"35010",2000,156.0888,"Beroe gracilis","abundance","HMK043","kharouba",19,209,9
+"35011",2001,204.5295,"Beroe gracilis","abundance","HMK043","kharouba",20,209,9
+"35012",2002,154.2485,"Beroe gracilis","abundance","HMK043","kharouba",21,209,9
+"35013",2003,160.6738,"Beroe gracilis","abundance","HMK043","kharouba",22,209,9
+"35014",2004,154.532,"Beroe gracilis","abundance","HMK043","kharouba",23,209,9
+"33764",1999,115.5,"Bombus spp.","first appearance","HMK023","kharouba",18,175,10
+"33765",2000,121,"Bombus spp.","first appearance","HMK023","kharouba",19,175,10
+"33766",2001,116,"Bombus spp.","first appearance","HMK023","kharouba",20,175,10
+"33767",2002,111,"Bombus spp.","first appearance","HMK023","kharouba",21,175,10
+"33768",2003,115,"Bombus spp.","first appearance","HMK023","kharouba",22,175,10
+"33769",2004,116,"Bombus spp.","first appearance","HMK023","kharouba",23,175,10
+"33770",2005,121,"Bombus spp.","first appearance","HMK023","kharouba",24,175,10
+"33771",2006,120.5,"Bombus spp.","first appearance","HMK023","kharouba",25,175,10
+"33772",2007,115,"Bombus spp.","first appearance","HMK023","kharouba",26,175,10
+"33773",2008,114,"Bombus spp.","first appearance","HMK023","kharouba",27,175,10
+"33774",2009,116.5,"Bombus spp.","first appearance","HMK023","kharouba",28,175,10
+"33775",2010,116,"Bombus spp.","first appearance","HMK023","kharouba",29,175,10
+"33776",2011,124.5,"Bombus spp.","first appearance","HMK023","kharouba",30,175,10
+"33777",2012,123,"Bombus spp.","first appearance","HMK023","kharouba",31,175,10
+"33340",1984,105.7056,"Castilleja tenuiflora","reproduction","HMK008","kharouba",3,144,11
+"33341",1985,124.386,"Castilleja tenuiflora","reproduction","HMK008","kharouba",4,144,11
+"33342",1986,81.53372,"Castilleja tenuiflora","reproduction","HMK008","kharouba",5,144,11
+"33343",1987,110.7054,"Castilleja tenuiflora","reproduction","HMK008","kharouba",6,144,11
+"33344",1988,109.9014,"Castilleja tenuiflora","reproduction","HMK008","kharouba",7,144,11
+"33345",1989,125.3521,"Castilleja tenuiflora","reproduction","HMK008","kharouba",8,144,11
+"33346",1991,110.7233,"Castilleja tenuiflora","reproduction","HMK008","kharouba",10,144,11
+"33347",1992,116.1188,"Castilleja tenuiflora","reproduction","HMK008","kharouba",11,144,11
+"33348",1993,117.1447,"Castilleja tenuiflora","reproduction","HMK008","kharouba",12,144,11
+"33349",1994,87.76914,"Castilleja tenuiflora","reproduction","HMK008","kharouba",13,144,11
+"33350",1995,97.9382,"Castilleja tenuiflora","reproduction","HMK008","kharouba",14,144,11
+"33351",1997,130.9093,"Castilleja tenuiflora","reproduction","HMK008","kharouba",16,144,11
+"33352",1999,143.1043,"Castilleja tenuiflora","reproduction","HMK008","kharouba",18,144,11
+"33353",2001,124.7273,"Castilleja tenuiflora","reproduction","HMK008","kharouba",20,144,11
+"33354",2003,102.1519,"Castilleja tenuiflora","reproduction","HMK008","kharouba",22,144,11
+"33355",2007,114.1644,"Castilleja tenuiflora","reproduction","HMK008","kharouba",26,144,11
+"33356",2008,106.7565,"Castilleja tenuiflora","reproduction","HMK008","kharouba",27,144,11
+"33357",2009,111.4213,"Castilleja tenuiflora","reproduction","HMK008","kharouba",28,144,11
+"33358",2010,109.1358,"Castilleja tenuiflora","reproduction","HMK008","kharouba",29,144,11
+"33792",1961,105.172,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33793",1963,121.983,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33794",1964,121.983,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33795",1965,128.707,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33796",1967,119.655,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33797",1968,118.621,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33798",1969,124.828,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33799",1970,125.086,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33800",1972,117.845,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33801",1973,120.69,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33802",1974,102.328,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33803",1975,123.793,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33804",1976,122.5,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33805",1977,119.655,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33806",1978,126.897,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33807",1979,124.569,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33808",1980,132.845,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33809",1981,117.845,"Caterpillar_a spp.","first appearance","HMK027","kharouba",0,177,12
+"33810",1982,124.828,"Caterpillar_a spp.","first appearance","HMK027","kharouba",1,177,12
+"33811",1983,118.103,"Caterpillar_a spp.","first appearance","HMK027","kharouba",2,177,12
+"33812",1984,122.759,"Caterpillar_a spp.","first appearance","HMK027","kharouba",3,177,12
+"33813",1985,124.052,"Caterpillar_a spp.","first appearance","HMK027","kharouba",4,177,12
+"33814",1986,120.431,"Caterpillar_a spp.","first appearance","HMK027","kharouba",5,177,12
+"33815",1988,118.621,"Caterpillar_a spp.","first appearance","HMK027","kharouba",7,177,12
+"33816",1989,107.5,"Caterpillar_a spp.","first appearance","HMK027","kharouba",8,177,12
+"33817",1990,108.276,"Caterpillar_a spp.","first appearance","HMK027","kharouba",9,177,12
+"33818",1991,118.362,"Caterpillar_a spp.","first appearance","HMK027","kharouba",10,177,12
+"33819",1993,119.138,"Caterpillar_a spp.","first appearance","HMK027","kharouba",12,177,12
+"33820",1994,111.897,"Caterpillar_a spp.","first appearance","HMK027","kharouba",13,177,12
+"33821",1995,118.621,"Caterpillar_a spp.","first appearance","HMK027","kharouba",14,177,12
+"33822",1997,123.017,"Caterpillar_a spp.","first appearance","HMK027","kharouba",16,177,12
+"33823",1999,109.31,"Caterpillar_a spp.","first appearance","HMK027","kharouba",18,177,12
+"33824",2000,114.741,"Caterpillar_a spp.","first appearance","HMK027","kharouba",19,177,12
+"33825",2002,106.983,"Caterpillar_a spp.","first appearance","HMK027","kharouba",21,177,12
+"33826",2003,116.293,"Caterpillar_a spp.","first appearance","HMK027","kharouba",22,177,12
+"33827",2004,115.5175,"Caterpillar_a spp.","first appearance","HMK027","kharouba",23,177,12
+"33909",1962,123.017,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33910",1965,128.707,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33911",1966,119.138,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33912",1968,118.621,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33913",1969,124.828,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33914",1970,125.086,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33915",1971,119.655,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33916",1972,117.845,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33917",1973,120.69,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33918",1974,102.328,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33919",1975,123.793,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33920",1976,122.5,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33921",1977,119.655,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33922",1978,126.897,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33923",1980,132.845,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33924",1981,117.845,"Caterpillar_b spp.","first appearance","HMK027","kharouba",0,178,13
+"33925",1982,124.828,"Caterpillar_b spp.","first appearance","HMK027","kharouba",1,178,13
+"33864",1983,118.103,"Caterpillar_b spp.","first appearance","HMK027","kharouba",2,178,13
+"33867",1984,122.759,"Caterpillar_b spp.","first appearance","HMK027","kharouba",3,178,13
+"33868",1986,120.431,"Caterpillar_b spp.","first appearance","HMK027","kharouba",5,178,13
+"33865",1988,118.621,"Caterpillar_b spp.","first appearance","HMK027","kharouba",7,178,13
+"33866",1989,107.5,"Caterpillar_b spp.","first appearance","HMK027","kharouba",8,178,13
+"33890",1990,108.276,"Caterpillar_b spp.","first appearance","HMK027","kharouba",9,178,13
+"33891",1991,118.362,"Caterpillar_b spp.","first appearance","HMK027","kharouba",10,178,13
+"33892",1994,111.897,"Caterpillar_b spp.","first appearance","HMK027","kharouba",13,178,13
+"33893",1995,118.621,"Caterpillar_b spp.","first appearance","HMK027","kharouba",14,178,13
+"33894",1997,123.017,"Caterpillar_b spp.","first appearance","HMK027","kharouba",16,178,13
+"33895",1998,115.776,"Caterpillar_b spp.","first appearance","HMK027","kharouba",17,178,13
+"33896",2000,114.741,"Caterpillar_b spp.","first appearance","HMK027","kharouba",19,178,13
+"33897",2001,114.224,"Caterpillar_b spp.","first appearance","HMK027","kharouba",20,178,13
+"33898",2002,106.983,"Caterpillar_b spp.","first appearance","HMK027","kharouba",21,178,13
+"33899",2003,116.293,"Caterpillar_b spp.","first appearance","HMK027","kharouba",22,178,13
+"33900",2004,115.5175,"Caterpillar_b spp.","first appearance","HMK027","kharouba",23,178,13
+"33901",2006,118.103,"Caterpillar_b spp.","first appearance","HMK027","kharouba",25,178,13
+"33942",1961,105.172,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33943",1962,123.017,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33944",1964,121.983,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33945",1965,128.707,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33946",1968,118.621,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33947",1970,125.086,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33948",1971,119.655,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33949",1972,117.845,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33950",1973,120.69,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33951",1974,102.328,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33952",1975,123.793,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33953",1976,122.5,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33954",1977,119.655,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33955",1978,126.897,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33956",1979,124.569,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33957",1980,132.845,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33958",1981,117.845,"Caterpillar_c spp.","first appearance","HMK027","kharouba",0,179,14
+"33959",1982,124.828,"Caterpillar_c spp.","first appearance","HMK027","kharouba",1,179,14
+"33960",1983,118.103,"Caterpillar_c spp.","first appearance","HMK027","kharouba",2,179,14
+"33961",1984,122.759,"Caterpillar_c spp.","first appearance","HMK027","kharouba",3,179,14
+"33962",1986,120.431,"Caterpillar_c spp.","first appearance","HMK027","kharouba",5,179,14
+"33963",1988,118.621,"Caterpillar_c spp.","first appearance","HMK027","kharouba",7,179,14
+"33964",1989,107.5,"Caterpillar_c spp.","first appearance","HMK027","kharouba",8,179,14
+"33965",1991,118.362,"Caterpillar_c spp.","first appearance","HMK027","kharouba",10,179,14
+"33939",1993,119.138,"Caterpillar_c spp.","first appearance","HMK027","kharouba",12,179,14
+"33940",1994,111.897,"Caterpillar_c spp.","first appearance","HMK027","kharouba",13,179,14
+"33941",1995,118.621,"Caterpillar_c spp.","first appearance","HMK027","kharouba",14,179,14
+"33933",1997,123.017,"Caterpillar_c spp.","first appearance","HMK027","kharouba",16,179,14
+"33934",1998,115.776,"Caterpillar_c spp.","first appearance","HMK027","kharouba",17,179,14
+"33932",2000,114.741,"Caterpillar_c spp.","first appearance","HMK027","kharouba",19,179,14
+"33936",2002,106.983,"Caterpillar_c spp.","first appearance","HMK027","kharouba",21,179,14
+"33937",2004,115.5175,"Caterpillar_c spp.","first appearance","HMK027","kharouba",23,179,14
+"33938",2006,118.103,"Caterpillar_c spp.","first appearance","HMK027","kharouba",25,179,14
+"33935",2007,106.724,"Caterpillar_c spp.","first appearance","HMK027","kharouba",26,179,14
+"35332",1988,49.0541,"Caterpillar2 spp.","abundance","HMK048","kharouba",7,222,15
+"35333",1989,50.0676,"Caterpillar2 spp.","abundance","HMK048","kharouba",8,222,15
+"35334",1990,50.7432,"Caterpillar2 spp.","abundance","HMK048","kharouba",9,222,15
+"35335",1992,57.1622,"Caterpillar2 spp.","abundance","HMK048","kharouba",11,222,15
+"35336",1993,45,"Caterpillar2 spp.","abundance","HMK048","kharouba",12,222,15
+"35337",1994,49.3919,"Caterpillar2 spp.","abundance","HMK048","kharouba",13,222,15
+"35338",1995,51.7568,"Caterpillar2 spp.","abundance","HMK048","kharouba",14,222,15
+"35339",1996,60.8784,"Caterpillar2 spp.","abundance","HMK048","kharouba",15,222,15
+"35340",1997,51.4189,"Caterpillar2 spp.","abundance","HMK048","kharouba",16,222,15
+"35354",1998,45.6757,"Caterpillar2 spp.","abundance","HMK048","kharouba",17,222,15
+"35329",1999,44.3243,"Caterpillar2 spp.","abundance","HMK048","kharouba",18,222,15
+"35341",2000,40.2703,"Caterpillar2 spp.","abundance","HMK048","kharouba",19,222,15
+"35342",2001,50.0676,"Caterpillar2 spp.","abundance","HMK048","kharouba",20,222,15
+"35343",2002,49.7297,"Caterpillar2 spp.","abundance","HMK048","kharouba",21,222,15
+"35331",2003,45.3378,"Caterpillar2 spp.","abundance","HMK048","kharouba",22,222,15
+"35328",2004,46.3514,"Caterpillar2 spp.","abundance","HMK048","kharouba",23,222,15
+"35330",2005,42.973,"Caterpillar2 spp.","abundance","HMK048","kharouba",24,222,15
+"35172",1985,60.2027,"Caterpillar2a spp.","abundance","HMK048","kharouba",4,218,16
+"35229",1985,60.2027,"Caterpillar2a spp.","abundance","HMK048","kharouba",4,219,16
+"35249",1985,60.2027,"Caterpillar2a spp.","abundance","HMK048","kharouba",4,220,16
+"35309",1985,60.2027,"Caterpillar2a spp.","abundance","HMK048","kharouba",4,221,16
+"35173",1986,65.2703,"Caterpillar2a spp.","abundance","HMK048","kharouba",5,218,16
+"35230",1986,65.2703,"Caterpillar2a spp.","abundance","HMK048","kharouba",5,219,16
+"35250",1986,65.2703,"Caterpillar2a spp.","abundance","HMK048","kharouba",5,220,16
+"35310",1986,65.2703,"Caterpillar2a spp.","abundance","HMK048","kharouba",5,221,16
+"35170",1987,61.8919,"Caterpillar2a spp.","abundance","HMK048","kharouba",6,218,16
+"35231",1987,61.8919,"Caterpillar2a spp.","abundance","HMK048","kharouba",6,219,16
+"35251",1987,61.8919,"Caterpillar2a spp.","abundance","HMK048","kharouba",6,220,16
+"35311",1987,61.8919,"Caterpillar2a spp.","abundance","HMK048","kharouba",6,221,16
+"35175",1988,49.0541,"Caterpillar2a spp.","abundance","HMK048","kharouba",7,218,16
+"35232",1988,49.0541,"Caterpillar2a spp.","abundance","HMK048","kharouba",7,219,16
+"35252",1988,49.0541,"Caterpillar2a spp.","abundance","HMK048","kharouba",7,220,16
+"35312",1988,49.0541,"Caterpillar2a spp.","abundance","HMK048","kharouba",7,221,16
+"35176",1989,50.0676,"Caterpillar2a spp.","abundance","HMK048","kharouba",8,218,16
+"35233",1989,50.0676,"Caterpillar2a spp.","abundance","HMK048","kharouba",8,219,16
+"35253",1989,50.0676,"Caterpillar2a spp.","abundance","HMK048","kharouba",8,220,16
+"35313",1989,50.0676,"Caterpillar2a spp.","abundance","HMK048","kharouba",8,221,16
+"35177",1990,50.7432,"Caterpillar2a spp.","abundance","HMK048","kharouba",9,218,16
+"35234",1990,50.7432,"Caterpillar2a spp.","abundance","HMK048","kharouba",9,219,16
+"35254",1990,50.7432,"Caterpillar2a spp.","abundance","HMK048","kharouba",9,220,16
+"35314",1990,50.7432,"Caterpillar2a spp.","abundance","HMK048","kharouba",9,221,16
+"35174",1992,57.1622,"Caterpillar2a spp.","abundance","HMK048","kharouba",11,218,16
+"35235",1992,57.1622,"Caterpillar2a spp.","abundance","HMK048","kharouba",11,219,16
+"35248",1992,57.1622,"Caterpillar2a spp.","abundance","HMK048","kharouba",11,220,16
+"35291",1992,57.1622,"Caterpillar2a spp.","abundance","HMK048","kharouba",11,221,16
+"35188",1993,45,"Caterpillar2a spp.","abundance","HMK048","kharouba",12,218,16
+"35236",1993,45,"Caterpillar2a spp.","abundance","HMK048","kharouba",12,219,16
+"35255",1993,45,"Caterpillar2a spp.","abundance","HMK048","kharouba",12,220,16
+"35288",1993,45,"Caterpillar2a spp.","abundance","HMK048","kharouba",12,221,16
+"35189",1994,49.3919,"Caterpillar2a spp.","abundance","HMK048","kharouba",13,218,16
+"35237",1994,49.3919,"Caterpillar2a spp.","abundance","HMK048","kharouba",13,219,16
+"35256",1994,49.3919,"Caterpillar2a spp.","abundance","HMK048","kharouba",13,220,16
+"35289",1994,49.3919,"Caterpillar2a spp.","abundance","HMK048","kharouba",13,221,16
+"35238",1995,51.7568,"Caterpillar2a spp.","abundance","HMK048","kharouba",14,219,16
+"35257",1995,51.7568,"Caterpillar2a spp.","abundance","HMK048","kharouba",14,220,16
+"35290",1995,51.7568,"Caterpillar2a spp.","abundance","HMK048","kharouba",14,221,16
+"35190",1996,60.8784,"Caterpillar2a spp.","abundance","HMK048","kharouba",15,218,16
+"35239",1996,60.8784,"Caterpillar2a spp.","abundance","HMK048","kharouba",15,219,16
+"35258",1996,60.8784,"Caterpillar2a spp.","abundance","HMK048","kharouba",15,220,16
+"35295",1996,60.8784,"Caterpillar2a spp.","abundance","HMK048","kharouba",15,221,16
+"35178",1997,51.4189,"Caterpillar2a spp.","abundance","HMK048","kharouba",16,218,16
+"35227",1997,51.4189,"Caterpillar2a spp.","abundance","HMK048","kharouba",16,219,16
+"35259",1997,51.4189,"Caterpillar2a spp.","abundance","HMK048","kharouba",16,220,16
+"35292",1997,51.4189,"Caterpillar2a spp.","abundance","HMK048","kharouba",16,221,16
+"35179",1998,45.6757,"Caterpillar2a spp.","abundance","HMK048","kharouba",17,218,16
+"35241",1998,45.6757,"Caterpillar2a spp.","abundance","HMK048","kharouba",17,219,16
+"35260",1998,45.6757,"Caterpillar2a spp.","abundance","HMK048","kharouba",17,220,16
+"35293",1998,45.6757,"Caterpillar2a spp.","abundance","HMK048","kharouba",17,221,16
+"35171",1999,44.3243,"Caterpillar2a spp.","abundance","HMK048","kharouba",18,218,16
+"35242",1999,44.3243,"Caterpillar2a spp.","abundance","HMK048","kharouba",18,219,16
+"35261",1999,44.3243,"Caterpillar2a spp.","abundance","HMK048","kharouba",18,220,16
+"35294",1999,44.3243,"Caterpillar2a spp.","abundance","HMK048","kharouba",18,221,16
+"35196",2000,40.2703,"Caterpillar2a spp.","abundance","HMK048","kharouba",19,218,16
+"35243",2000,40.2703,"Caterpillar2a spp.","abundance","HMK048","kharouba",19,219,16
+"35262",2000,40.2703,"Caterpillar2a spp.","abundance","HMK048","kharouba",19,220,16
+"35308",2000,40.2703,"Caterpillar2a spp.","abundance","HMK048","kharouba",19,221,16
+"35193",2001,50.0676,"Caterpillar2a spp.","abundance","HMK048","kharouba",20,218,16
+"35210",2001,50.0676,"Caterpillar2a spp.","abundance","HMK048","kharouba",20,219,16
+"35263",2001,50.0676,"Caterpillar2a spp.","abundance","HMK048","kharouba",20,220,16
+"35296",2001,50.0676,"Caterpillar2a spp.","abundance","HMK048","kharouba",20,221,16
+"35198",2002,49.7297,"Caterpillar2a spp.","abundance","HMK048","kharouba",21,218,16
+"35209",2002,49.7297,"Caterpillar2a spp.","abundance","HMK048","kharouba",21,219,16
+"35264",2002,49.7297,"Caterpillar2a spp.","abundance","HMK048","kharouba",21,220,16
+"35297",2002,49.7297,"Caterpillar2a spp.","abundance","HMK048","kharouba",21,221,16
+"35199",2003,45.3378,"Caterpillar2a spp.","abundance","HMK048","kharouba",22,218,16
+"35214",2003,45.3378,"Caterpillar2a spp.","abundance","HMK048","kharouba",22,219,16
+"35265",2003,45.3378,"Caterpillar2a spp.","abundance","HMK048","kharouba",22,220,16
+"35298",2003,45.3378,"Caterpillar2a spp.","abundance","HMK048","kharouba",22,221,16
+"35187",2004,46.3514,"Caterpillar2a spp.","abundance","HMK048","kharouba",23,218,16
+"35215",2004,46.3514,"Caterpillar2a spp.","abundance","HMK048","kharouba",23,219,16
+"35266",2004,46.3514,"Caterpillar2a spp.","abundance","HMK048","kharouba",23,220,16
+"35299",2004,46.3514,"Caterpillar2a spp.","abundance","HMK048","kharouba",23,221,16
+"35207",2005,42.973,"Caterpillar2a spp.","abundance","HMK048","kharouba",24,218,16
+"35244",2005,42.973,"Caterpillar2a spp.","abundance","HMK048","kharouba",24,219,16
+"35267",2005,42.973,"Caterpillar2a spp.","abundance","HMK048","kharouba",24,220,16
+"35300",2005,42.973,"Caterpillar2a spp.","abundance","HMK048","kharouba",24,221,16
+"35362",1996,88.6245,"Caterpillar4a spp.","abundance","HMK051","kharouba",15,236,17
+"35363",1997,100.987,"Caterpillar4a spp.","abundance","HMK051","kharouba",16,236,17
+"35364",1998,86.7986,"Caterpillar4a spp.","abundance","HMK051","kharouba",17,236,17
+"35365",1999,78.3426,"Caterpillar4a spp.","abundance","HMK051","kharouba",18,236,17
+"35366",2000,75.6193,"Caterpillar4a spp.","abundance","HMK051","kharouba",19,236,17
+"35367",2001,90.6977,"Caterpillar4a spp.","abundance","HMK051","kharouba",20,236,17
+"35368",2002,73.795,"Caterpillar4a spp.","abundance","HMK051","kharouba",21,236,17
+"35369",2003,78.9173,"Caterpillar4a spp.","abundance","HMK051","kharouba",22,236,17
+"35370",2004,70.4597,"Caterpillar4a spp.","abundance","HMK051","kharouba",23,236,17
+"35371",2005,84.6346,"Caterpillar4a spp.","abundance","HMK051","kharouba",24,236,17
+"35372",2006,76.782,"Caterpillar4a spp.","abundance","HMK051","kharouba",25,236,17
+"35373",2007,75.5673,"Caterpillar4a spp.","abundance","HMK051","kharouba",26,236,17
+"35374",2008,80.6889,"Caterpillar4a spp.","abundance","HMK051","kharouba",27,236,17
+"35375",2009,78.2681,"Caterpillar4a spp.","abundance","HMK051","kharouba",28,236,17
+"35376",2010,77.6569,"Caterpillar4a spp.","abundance","HMK051","kharouba",29,236,17
+"35377",2011,76.744,"Caterpillar4a spp.","abundance","HMK051","kharouba",30,236,17
+"35418",1998,86.7986,"Caterpillar4b spp.","abundance","HMK051","kharouba",17,237,18
+"35419",1999,78.3426,"Caterpillar4b spp.","abundance","HMK051","kharouba",18,237,18
+"35420",2000,75.6193,"Caterpillar4b spp.","abundance","HMK051","kharouba",19,237,18
+"35421",2001,90.6977,"Caterpillar4b spp.","abundance","HMK051","kharouba",20,237,18
+"35395",2002,73.795,"Caterpillar4b spp.","abundance","HMK051","kharouba",21,237,18
+"35396",2003,78.9173,"Caterpillar4b spp.","abundance","HMK051","kharouba",22,237,18
+"35397",2004,70.4597,"Caterpillar4b spp.","abundance","HMK051","kharouba",23,237,18
+"35398",2005,84.6346,"Caterpillar4b spp.","abundance","HMK051","kharouba",24,237,18
+"35399",2006,76.782,"Caterpillar4b spp.","abundance","HMK051","kharouba",25,237,18
+"35400",2007,75.5673,"Caterpillar4b spp.","abundance","HMK051","kharouba",26,237,18
+"35401",2008,80.6889,"Caterpillar4b spp.","abundance","HMK051","kharouba",27,237,18
+"35402",2009,78.2681,"Caterpillar4b spp.","abundance","HMK051","kharouba",28,237,18
+"35403",2010,77.6569,"Caterpillar4b spp.","abundance","HMK051","kharouba",29,237,18
+"35404",2011,76.744,"Caterpillar4b spp.","abundance","HMK051","kharouba",30,237,18
+"33522",1993,143.258,"Cerorhinca monocerata","reproduction","HMK016","kharouba",12,165,19
+"33523",1995,139.568,"Cerorhinca monocerata","reproduction","HMK016","kharouba",14,165,19
+"33524",1996,147.521,"Cerorhinca monocerata","reproduction","HMK016","kharouba",15,165,19
+"33525",1997,153.142,"Cerorhinca monocerata","reproduction","HMK016","kharouba",16,165,19
+"33526",1998,145.695,"Cerorhinca monocerata","reproduction","HMK016","kharouba",17,165,19
+"33527",1999,155.515,"Cerorhinca monocerata","reproduction","HMK016","kharouba",18,165,19
+"33528",2000,149.935,"Cerorhinca monocerata","reproduction","HMK016","kharouba",19,165,19
+"33529",2001,156.489,"Cerorhinca monocerata","reproduction","HMK016","kharouba",20,165,19
+"33530",2002,136.909,"Cerorhinca monocerata","reproduction","HMK016","kharouba",21,165,19
+"33531",2005,149.105,"Cerorhinca monocerata","reproduction","HMK016","kharouba",24,165,19
+"33532",2006,153.321,"Cerorhinca monocerata","reproduction","HMK016","kharouba",25,165,19
+"35422",2005,19.5,"Clamator glandarius","reproduction","HMK052","kharouba",24,238,20
+"35423",2006,19,"Clamator glandarius","reproduction","HMK052","kharouba",25,238,20
+"35424",2007,30,"Clamator glandarius","reproduction","HMK052","kharouba",26,238,20
+"35425",2008,30,"Clamator glandarius","reproduction","HMK052","kharouba",27,238,20
+"35426",2009,27,"Clamator glandarius","reproduction","HMK052","kharouba",28,238,20
+"35427",2010,25,"Clamator glandarius","reproduction","HMK052","kharouba",29,238,20
+"35428",2011,19,"Clamator glandarius","reproduction","HMK052","kharouba",30,238,20
+"35429",2012,21,"Clamator glandarius","reproduction","HMK052","kharouba",31,238,20
+"35430",2013,29,"Clamator glandarius","reproduction","HMK052","kharouba",32,238,20
+"34370",1975,125.5891,"Copepod1 spp.","abundance","HMK036","kharouba",0,193,21
+"34371",1976,118.188,"Copepod1 spp.","abundance","HMK036","kharouba",0,193,21
+"34372",1977,132.5079,"Copepod1 spp.","abundance","HMK036","kharouba",0,193,21
+"34373",1978,111.8684,"Copepod1 spp.","abundance","HMK036","kharouba",0,193,21
+"34374",1979,139.9566,"Copepod1 spp.","abundance","HMK036","kharouba",0,193,21
+"34375",1980,104.4869,"Copepod1 spp.","abundance","HMK036","kharouba",0,193,21
+"34376",1981,132.58,"Copepod1 spp.","abundance","HMK036","kharouba",0,193,21
+"34377",1982,97.6353,"Copepod1 spp.","abundance","HMK036","kharouba",1,193,21
+"34378",1983,118.8369,"Copepod1 spp.","abundance","HMK036","kharouba",2,193,21
+"34379",1984,105.0868,"Copepod1 spp.","abundance","HMK036","kharouba",3,193,21
+"34380",1985,125.7606,"Copepod1 spp.","abundance","HMK036","kharouba",4,193,21
+"34381",1986,153.3245,"Copepod1 spp.","abundance","HMK036","kharouba",5,193,21
+"34382",1987,133.2121,"Copepod1 spp.","abundance","HMK036","kharouba",6,193,21
+"34383",1988,118.9342,"Copepod1 spp.","abundance","HMK036","kharouba",7,193,21
+"34384",1989,126.3626,"Copepod1 spp.","abundance","HMK036","kharouba",8,193,21
+"34385",1990,98.3045,"Copepod1 spp.","abundance","HMK036","kharouba",9,193,21
+"34386",1991,112.0952,"Copepod1 spp.","abundance","HMK036","kharouba",10,193,21
+"34387",1992,90.923,"Copepod1 spp.","abundance","HMK036","kharouba",11,193,21
+"34388",1993,112.1295,"Copepod1 spp.","abundance","HMK036","kharouba",12,193,21
+"34389",1994,112.147,"Copepod1 spp.","abundance","HMK036","kharouba",13,193,21
+"34390",1995,104.7508,"Copepod1 spp.","abundance","HMK036","kharouba",14,193,21
+"34391",1996,132.8439,"Copepod1 spp.","abundance","HMK036","kharouba",15,193,21
+"34392",1997,91.0098,"Copepod1 spp.","abundance","HMK036","kharouba",16,193,21
+"34393",1998,105.3325,"Copepod1 spp.","abundance","HMK036","kharouba",17,193,21
+"34394",1999,112.2366,"Copepod1 spp.","abundance","HMK036","kharouba",18,193,21
+"34395",2000,105.3703,"Copepod1 spp.","abundance","HMK036","kharouba",19,193,21
+"34396",2001,126.042,"Copepod1 spp.","abundance","HMK036","kharouba",20,193,21
+"34397",2002,84.2107,"Copepod1 spp.","abundance","HMK036","kharouba",21,193,21
+"34398",2003,104.8873,"Copepod1 spp.","abundance","HMK036","kharouba",22,193,21
+"34399",2004,105.4347,"Copepod1 spp.","abundance","HMK036","kharouba",23,193,21
+"34947",1976,144.1174,"Copepod2 spp.","abundance","HMK043","kharouba",0,208,22
+"34934",1977,144.1174,"Copepod2 spp.","abundance","HMK043","kharouba",0,208,22
+"34935",1978,150.2942,"Copepod2 spp.","abundance","HMK043","kharouba",0,208,22
+"34936",1979,146.1768,"Copepod2 spp.","abundance","HMK043","kharouba",0,208,22
+"34937",1981,154.4116,"Copepod2 spp.","abundance","HMK043","kharouba",0,208,22
+"34938",1982,137.9413,"Copepod2 spp.","abundance","HMK043","kharouba",1,208,22
+"34939",1983,133.8232,"Copepod2 spp.","abundance","HMK043","kharouba",2,208,22
+"34940",1984,127.6471,"Copepod2 spp.","abundance","HMK043","kharouba",3,208,22
+"34941",1985,144.1174,"Copepod2 spp.","abundance","HMK043","kharouba",4,208,22
+"34942",1986,154.4116,"Copepod2 spp.","abundance","HMK043","kharouba",5,208,22
+"34943",1987,137.9413,"Copepod2 spp.","abundance","HMK043","kharouba",6,208,22
+"34944",1988,144.1174,"Copepod2 spp.","abundance","HMK043","kharouba",7,208,22
+"34945",1989,150.2942,"Copepod2 spp.","abundance","HMK043","kharouba",8,208,22
+"34946",1990,121.4703,"Copepod2 spp.","abundance","HMK043","kharouba",9,208,22
+"34961",1991,127.6471,"Copepod2 spp.","abundance","HMK043","kharouba",10,208,22
+"34962",1992,111.1768,"Copepod2 spp.","abundance","HMK043","kharouba",11,208,22
+"34963",1993,129.7058,"Copepod2 spp.","abundance","HMK043","kharouba",12,208,22
+"34964",1994,140,"Copepod2 spp.","abundance","HMK043","kharouba",13,208,22
+"34965",1995,133.8232,"Copepod2 spp.","abundance","HMK043","kharouba",14,208,22
+"34966",1996,150.2942,"Copepod2 spp.","abundance","HMK043","kharouba",15,208,22
+"34967",1997,98.8232,"Copepod2 spp.","abundance","HMK043","kharouba",16,208,22
+"34968",1998,127.6471,"Copepod2 spp.","abundance","HMK043","kharouba",17,208,22
+"34969",1999,134.8529,"Copepod2 spp.","abundance","HMK043","kharouba",18,208,22
+"34970",2000,154.4116,"Copepod2 spp.","abundance","HMK043","kharouba",19,208,22
+"34971",2001,88.5297,"Copepod2 spp.","abundance","HMK043","kharouba",20,208,22
+"34972",2002,115.2942,"Copepod2 spp.","abundance","HMK043","kharouba",21,208,22
+"34973",2003,150.2942,"Copepod2 spp.","abundance","HMK043","kharouba",22,208,22
+"33778",1999,113,"Corydalis ambigua","reproduction","HMK023","kharouba",18,175,23
+"33779",2000,121,"Corydalis ambigua","reproduction","HMK023","kharouba",19,175,23
+"33780",2001,116,"Corydalis ambigua","reproduction","HMK023","kharouba",20,175,23
+"33781",2002,104,"Corydalis ambigua","reproduction","HMK023","kharouba",21,175,23
+"33782",2003,111,"Corydalis ambigua","reproduction","HMK023","kharouba",22,175,23
+"33783",2004,111,"Corydalis ambigua","reproduction","HMK023","kharouba",23,175,23
+"33784",2005,118,"Corydalis ambigua","reproduction","HMK023","kharouba",24,175,23
+"33785",2006,117,"Corydalis ambigua","reproduction","HMK023","kharouba",25,175,23
+"33786",2007,115,"Corydalis ambigua","reproduction","HMK023","kharouba",26,175,23
+"33787",2008,109,"Corydalis ambigua","reproduction","HMK023","kharouba",27,175,23
+"33788",2009,117,"Corydalis ambigua","reproduction","HMK023","kharouba",28,175,23
+"33789",2010,125,"Corydalis ambigua","reproduction","HMK023","kharouba",29,175,23
+"33790",2011,124.5,"Corydalis ambigua","reproduction","HMK023","kharouba",30,175,23
+"33791",2012,122,"Corydalis ambigua","reproduction","HMK023","kharouba",31,175,23
+"34326",1974,127.7585,"Cyclops vicinus","abundance","HMK034","kharouba",0,191,24
+"34327",1975,141.724,"Cyclops vicinus","abundance","HMK034","kharouba",0,191,24
+"34328",1977,131.379,"Cyclops vicinus","abundance","HMK034","kharouba",0,191,24
+"34329",1978,144.828,"Cyclops vicinus","abundance","HMK034","kharouba",0,191,24
+"34330",1980,136.552,"Cyclops vicinus","abundance","HMK034","kharouba",0,191,24
+"34331",1981,127.241,"Cyclops vicinus","abundance","HMK034","kharouba",0,191,24
+"34332",1983,133.448,"Cyclops vicinus","abundance","HMK034","kharouba",2,191,24
+"34333",1984,176.897,"Cyclops vicinus","abundance","HMK034","kharouba",3,191,24
+"34334",1986,137.586,"Cyclops vicinus","abundance","HMK034","kharouba",5,191,24
+"34335",1988,125.172,"Cyclops vicinus","abundance","HMK034","kharouba",7,191,24
+"34336",1991,112.759,"Cyclops vicinus","abundance","HMK034","kharouba",10,191,24
+"34337",1992,131.379,"Cyclops vicinus","abundance","HMK034","kharouba",11,191,24
+"34338",1993,117.931,"Cyclops vicinus","abundance","HMK034","kharouba",12,191,24
+"34339",1994,129.31,"Cyclops vicinus","abundance","HMK034","kharouba",13,191,24
+"34262",1956,140.0553,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34263",1958,153.9902,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34264",1959,140.07035,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34265",1961,136.7527,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34266",1962,133.063,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34267",1964,133.0679,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34268",1965,147.1232,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34269",1966,147.3745,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34270",1967,150.83145,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34271",1969,154.2905,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34272",1970,154.2954,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34273",1971,154.17885,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34274",1973,154.0637,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34275",1974,140.3906,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34276",1975,147.4228,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34277",1977,126.231,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34278",1978,147.18935,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34279",1980,143.871,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",0,189,25
+"34280",1982,143.6344,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",1,189,25
+"34281",1984,147.4648,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",3,189,25
+"34282",1985,147.4697,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",4,189,25
+"34283",1986,133.4235,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",5,189,25
+"34284",1987,133.1827,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",6,189,25
+"34285",1988,126.2856,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",7,189,25
+"34286",1989,126.2912,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",8,189,25
+"34287",1990,143.79715,"Daphnia hyalina-galeata","abundance","HMK032","kharouba",9,189,25
+"34064",1977,126.851,"Daphnia pulicaria","abundance","HMK029","kharouba",0,181,26
+"34065",1978,118.432,"Daphnia pulicaria","abundance","HMK029","kharouba",0,181,26
+"34066",1979,157.692,"Daphnia pulicaria","abundance","HMK029","kharouba",0,181,26
+"34067",1980,182.636,"Daphnia pulicaria","abundance","HMK029","kharouba",0,181,26
+"34068",1981,148.253,"Daphnia pulicaria","abundance","HMK029","kharouba",0,181,26
+"34069",1982,159.965,"Daphnia pulicaria","abundance","HMK029","kharouba",1,181,26
+"34070",1983,139.886,"Daphnia pulicaria","abundance","HMK029","kharouba",2,181,26
+"34071",1984,157.949,"Daphnia pulicaria","abundance","HMK029","kharouba",3,181,26
+"34072",1985,137.876,"Daphnia pulicaria","abundance","HMK029","kharouba",4,181,26
+"34073",1986,154.873,"Daphnia pulicaria","abundance","HMK029","kharouba",5,181,26
+"34074",1987,140.628,"Daphnia pulicaria","abundance","HMK029","kharouba",6,181,26
+"34075",1988,140.685,"Daphnia pulicaria","abundance","HMK029","kharouba",7,181,26
+"34076",1989,159.272,"Daphnia pulicaria","abundance","HMK029","kharouba",8,181,26
+"34077",1990,152.973,"Daphnia pulicaria","abundance","HMK029","kharouba",9,181,26
+"34078",1991,156.726,"Daphnia pulicaria","abundance","HMK029","kharouba",10,181,26
+"34079",1992,154.129,"Daphnia pulicaria","abundance","HMK029","kharouba",11,181,26
+"34080",1993,134.062,"Daphnia pulicaria","abundance","HMK029","kharouba",12,181,26
+"34081",1994,173.309,"Daphnia pulicaria","abundance","HMK029","kharouba",13,181,26
+"34082",1995,146.349,"Daphnia pulicaria","abundance","HMK029","kharouba",14,181,26
+"34083",1996,170.233,"Daphnia pulicaria","abundance","HMK029","kharouba",15,181,26
+"34084",1998,126.909,"Daphnia pulicaria","abundance","HMK029","kharouba",17,181,26
+"34085",1999,194.769,"Daphnia pulicaria","abundance","HMK029","kharouba",18,181,26
+"34086",2000,165.16,"Daphnia pulicaria","abundance","HMK029","kharouba",19,181,26
+"34087",2001,151.432,"Daphnia pulicaria","abundance","HMK029","kharouba",20,181,26
+"34088",2002,159.442,"Daphnia pulicaria","abundance","HMK029","kharouba",21,181,26
+"34142",1979,181.5723,"Daphnia1 spp.","abundance","HMK031","kharouba",0,185,27
+"34143",1980,182.4893,"Daphnia1 spp.","abundance","HMK031","kharouba",0,185,27
+"34134",1981,153.1439,"Daphnia1 spp.","abundance","HMK031","kharouba",0,185,27
+"34135",1982,168.7336,"Daphnia1 spp.","abundance","HMK031","kharouba",1,185,27
+"34136",1983,153.1439,"Daphnia1 spp.","abundance","HMK031","kharouba",2,185,27
+"34137",1984,153.1439,"Daphnia1 spp.","abundance","HMK031","kharouba",3,185,27
+"34138",1985,159.5636,"Daphnia1 spp.","abundance","HMK031","kharouba",4,185,27
+"34139",1986,154.0609,"Daphnia1 spp.","abundance","HMK031","kharouba",5,185,27
+"34140",1987,167.8166,"Daphnia1 spp.","abundance","HMK031","kharouba",6,185,27
+"34141",1988,154.0609,"Daphnia1 spp.","abundance","HMK031","kharouba",7,185,27
+"34152",1989,187.9913,"Daphnia1 spp.","abundance","HMK031","kharouba",8,185,27
+"34153",1990,139.3889,"Daphnia1 spp.","abundance","HMK031","kharouba",9,185,27
+"34154",1991,153.1439,"Daphnia1 spp.","abundance","HMK031","kharouba",10,185,27
+"34155",1992,146.7249,"Daphnia1 spp.","abundance","HMK031","kharouba",11,185,27
+"34156",1993,132.9692,"Daphnia1 spp.","abundance","HMK031","kharouba",12,185,27
+"34157",1994,147.6419,"Daphnia1 spp.","abundance","HMK031","kharouba",13,185,27
+"34158",1995,139.3889,"Daphnia1 spp.","abundance","HMK031","kharouba",14,185,27
+"34159",1996,154.0609,"Daphnia1 spp.","abundance","HMK031","kharouba",15,185,27
+"34160",1997,146.7249,"Daphnia1 spp.","abundance","HMK031","kharouba",16,185,27
+"34161",1998,132.9692,"Daphnia1 spp.","abundance","HMK031","kharouba",17,185,27
+"34162",1999,140.3059,"Daphnia1 spp.","abundance","HMK031","kharouba",18,185,27
+"34163",2000,140.3059,"Daphnia1 spp.","abundance","HMK031","kharouba",19,185,27
+"34164",2001,147.6419,"Daphnia1 spp.","abundance","HMK031","kharouba",20,185,27
+"34165",2002,145.8079,"Daphnia1 spp.","abundance","HMK031","kharouba",21,185,27
+"34166",2003,166.8996,"Daphnia1 spp.","abundance","HMK031","kharouba",22,185,27
+"34430",1976,173.066,"Daphnia2 spp.","abundance","HMK037","kharouba",0,194,28
+"34431",1977,164.008,"Daphnia2 spp.","abundance","HMK037","kharouba",0,194,28
+"34432",1978,171.446,"Daphnia2 spp.","abundance","HMK037","kharouba",0,194,28
+"34433",1979,155.331,"Daphnia2 spp.","abundance","HMK037","kharouba",0,194,28
+"34434",1980,161.289,"Daphnia2 spp.","abundance","HMK037","kharouba",0,194,28
+"34435",1981,146.033,"Daphnia2 spp.","abundance","HMK037","kharouba",0,194,28
+"34436",1982,157.81,"Daphnia2 spp.","abundance","HMK037","kharouba",1,194,28
+"34437",1983,136.736,"Daphnia2 spp.","abundance","HMK037","kharouba",2,194,28
+"34438",1984,182.983,"Daphnia2 spp.","abundance","HMK037","kharouba",3,194,28
+"34439",1985,134.876,"Daphnia2 spp.","abundance","HMK037","kharouba",4,194,28
+"34440",1986,146.033,"Daphnia2 spp.","abundance","HMK037","kharouba",5,194,28
+"34441",1987,137.975,"Daphnia2 spp.","abundance","HMK037","kharouba",6,194,28
+"34442",1988,138.975,"Daphnia2 spp.","abundance","HMK037","kharouba",7,194,28
+"34443",1989,156.57,"Daphnia2 spp.","abundance","HMK037","kharouba",8,194,28
+"34444",1990,162.769,"Daphnia2 spp.","abundance","HMK037","kharouba",9,194,28
+"34445",1991,180.744,"Daphnia2 spp.","abundance","HMK037","kharouba",10,194,28
+"34446",1992,133.397,"Daphnia2 spp.","abundance","HMK037","kharouba",11,194,28
+"34447",1993,156.57,"Daphnia2 spp.","abundance","HMK037","kharouba",12,194,28
+"34448",1994,136.116,"Daphnia2 spp.","abundance","HMK037","kharouba",13,194,28
+"34449",1995,150.372,"Daphnia2 spp.","abundance","HMK037","kharouba",14,194,28
+"34450",1996,168.107,"Daphnia2 spp.","abundance","HMK037","kharouba",15,194,28
+"34451",1997,165.868,"Daphnia2 spp.","abundance","HMK037","kharouba",16,194,28
+"34452",1998,124.339,"Daphnia2 spp.","abundance","HMK037","kharouba",17,194,28
+"34453",1999,192.521,"Daphnia2 spp.","abundance","HMK037","kharouba",18,194,28
+"34454",2000,163.149,"Daphnia2 spp.","abundance","HMK037","kharouba",19,194,28
+"34455",2001,148.512,"Daphnia2 spp.","abundance","HMK037","kharouba",20,194,28
+"34456",2002,156.57,"Daphnia2 spp.","abundance","HMK037","kharouba",21,194,28
+"33618",1969,160.305,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33619",1970,153.324,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33620",1971,124.8365,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33621",1972,140.054,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33622",1973,137.4605,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33623",1974,134.959,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33624",1975,131.047,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33625",1976,142.5315,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33626",1977,134.2885,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33627",1978,147.44,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33628",1979,141.25,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33629",1980,125.4055,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33630",1981,132.068,"Daphnia3 spp.","population growth","HMK019","kharouba",0,170,29
+"33631",1982,123.4645,"Daphnia3 spp.","population growth","HMK019","kharouba",1,170,29
+"33632",1983,149.2905,"Daphnia3 spp.","population growth","HMK019","kharouba",2,170,29
+"33633",1984,121.607,"Daphnia3 spp.","population growth","HMK019","kharouba",3,170,29
+"33634",1986,143.5115,"Daphnia3 spp.","population growth","HMK019","kharouba",5,170,29
+"33635",1987,129.6225,"Daphnia3 spp.","population growth","HMK019","kharouba",6,170,29
+"33636",1988,129.632,"Daphnia3 spp.","population growth","HMK019","kharouba",7,170,29
+"33637",1989,155.9275,"Daphnia3 spp.","population growth","HMK019","kharouba",8,170,29
+"33638",1990,123.2625,"Daphnia3 spp.","population growth","HMK019","kharouba",9,170,29
+"33639",1991,126.391,"Daphnia3 spp.","population growth","HMK019","kharouba",10,170,29
+"33640",1992,121.4005,"Daphnia3 spp.","population growth","HMK019","kharouba",11,170,29
+"33641",1993,123.8035,"Daphnia3 spp.","population growth","HMK019","kharouba",12,170,29
+"33642",1994,125.1545,"Daphnia3 spp.","population growth","HMK019","kharouba",13,170,29
+"33643",1995,131.477,"Daphnia3 spp.","population growth","HMK019","kharouba",14,170,29
+"33644",1996,139.5085,"Daphnia3 spp.","population growth","HMK019","kharouba",15,170,29
+"33645",1997,110.5725,"Daphnia3 spp.","population growth","HMK019","kharouba",16,170,29
+"33646",1998,136.25,"Daphnia3 spp.","population growth","HMK019","kharouba",17,170,29
+"33647",1999,133.19,"Daphnia3 spp.","population growth","HMK019","kharouba",18,170,29
+"33648",2000,121.22,"Daphnia3 spp.","population growth","HMK019","kharouba",19,170,29
+"33649",2001,132.4685,"Daphnia3 spp.","population growth","HMK019","kharouba",20,170,29
+"33650",2002,113.75,"Daphnia3 spp.","population growth","HMK019","kharouba",21,170,29
+"33651",2003,100.91875,"Daphnia3 spp.","population growth","HMK019","kharouba",22,170,29
+"33652",2005,107.881,"Daphnia3 spp.","population growth","HMK019","kharouba",24,170,29
+"33653",2006,123.75,"Daphnia3 spp.","population growth","HMK019","kharouba",25,170,29
+"33654",2008,119.17,"Daphnia3 spp.","population growth","HMK019","kharouba",27,170,29
+"33378",1975,170.8556,"Delphinium nuttallianum","reproduction","HMK008","kharouba",0,145,30
+"33381",1979,163.5027,"Delphinium nuttallianum","reproduction","HMK008","kharouba",0,145,30
+"33382",1980,166.0428,"Delphinium nuttallianum","reproduction","HMK008","kharouba",0,145,30
+"33379",1981,151.8075,"Delphinium nuttallianum","reproduction","HMK008","kharouba",0,145,30
+"33380",1982,159.2941,"Delphinium nuttallianum","reproduction","HMK008","kharouba",1,145,30
+"33390",1983,170.9893,"Delphinium nuttallianum","reproduction","HMK008","kharouba",2,145,30
+"33391",1984,169.385,"Delphinium nuttallianum","reproduction","HMK008","kharouba",3,145,30
+"33392",1985,155.8182,"Delphinium nuttallianum","reproduction","HMK008","kharouba",4,145,30
+"33393",1986,151.8075,"Delphinium nuttallianum","reproduction","HMK008","kharouba",5,145,30
+"33394",1987,152.8075,"Delphinium nuttallianum","reproduction","HMK008","kharouba",6,145,30
+"33395",1988,151.738,"Delphinium nuttallianum","reproduction","HMK008","kharouba",7,145,30
+"33383",1989,148.4652,"Delphinium nuttallianum","reproduction","HMK008","kharouba",8,145,30
+"33384",1991,160.8289,"Delphinium nuttallianum","reproduction","HMK008","kharouba",10,145,30
+"33385",1993,169.5882,"Delphinium nuttallianum","reproduction","HMK008","kharouba",12,145,30
+"33386",1995,177.0053,"Delphinium nuttallianum","reproduction","HMK008","kharouba",14,145,30
+"33387",1996,155.8824,"Delphinium nuttallianum","reproduction","HMK008","kharouba",15,145,30
+"33388",1997,153.6791,"Delphinium nuttallianum","reproduction","HMK008","kharouba",16,145,30
+"33389",1998,146.3262,"Delphinium nuttallianum","reproduction","HMK008","kharouba",17,145,30
+"33417",1999,160.0267,"Delphinium nuttallianum","reproduction","HMK008","kharouba",18,145,30
+"33418",2000,150,"Delphinium nuttallianum","reproduction","HMK008","kharouba",19,145,30
+"33419",2001,152.3422,"Delphinium nuttallianum","reproduction","HMK008","kharouba",20,145,30
+"33420",2002,137.5027,"Delphinium nuttallianum","reproduction","HMK008","kharouba",21,145,30
+"33421",2003,150,"Delphinium nuttallianum","reproduction","HMK008","kharouba",22,145,30
+"33422",2004,136.9679,"Delphinium nuttallianum","reproduction","HMK008","kharouba",23,145,30
+"33423",2005,149.8021,"Delphinium nuttallianum","reproduction","HMK008","kharouba",24,145,30
+"33424",2006,141.5134,"Delphinium nuttallianum","reproduction","HMK008","kharouba",25,145,30
+"33425",2007,138.5027,"Delphinium nuttallianum","reproduction","HMK008","kharouba",26,145,30
+"33426",2008,163.9037,"Delphinium nuttallianum","reproduction","HMK008","kharouba",27,145,30
+"33427",2009,147.3957,"Delphinium nuttallianum","reproduction","HMK008","kharouba",28,145,30
+"33428",2010,150.4706,"Delphinium nuttallianum","reproduction","HMK008","kharouba",29,145,30
+"34089",1977,119.576,"Diatom1 spp.","abundance","HMK029","kharouba",0,181,31
+"34090",1978,102.489,"Diatom1 spp.","abundance","HMK029","kharouba",0,181,31
+"34091",1979,121.586,"Diatom1 spp.","abundance","HMK029","kharouba",0,181,31
+"34092",1980,119.278,"Diatom1 spp.","abundance","HMK029","kharouba",0,181,31
+"34093",1981,141.723,"Diatom1 spp.","abundance","HMK029","kharouba",0,181,31
+"34094",1982,131.296,"Diatom1 spp.","abundance","HMK029","kharouba",1,181,31
+"34095",1983,117.083,"Diatom1 spp.","abundance","HMK029","kharouba",2,181,31
+"34096",1984,108.084,"Diatom1 spp.","abundance","HMK029","kharouba",3,181,31
+"34097",1985,102.426,"Diatom1 spp.","abundance","HMK029","kharouba",4,181,31
+"34098",1986,99.1578,"Diatom1 spp.","abundance","HMK029","kharouba",5,181,31
+"34099",1987,111.595,"Diatom1 spp.","abundance","HMK029","kharouba",6,181,31
+"34100",1988,124.985,"Diatom1 spp.","abundance","HMK029","kharouba",7,181,31
+"34101",1989,124.566,"Diatom1 spp.","abundance","HMK029","kharouba",8,181,31
+"34102",1990,108.44,"Diatom1 spp.","abundance","HMK029","kharouba",9,181,31
+"34103",1991,114.219,"Diatom1 spp.","abundance","HMK029","kharouba",10,181,31
+"34104",1992,91.4108,"Diatom1 spp.","abundance","HMK029","kharouba",11,181,31
+"34105",1993,95.2851,"Diatom1 spp.","abundance","HMK029","kharouba",12,181,31
+"34106",1994,112.493,"Diatom1 spp.","abundance","HMK029","kharouba",13,181,31
+"34107",1995,109.684,"Diatom1 spp.","abundance","HMK029","kharouba",14,181,31
+"34108",1996,118.107,"Diatom1 spp.","abundance","HMK029","kharouba",15,181,31
+"34109",1998,87.0052,"Diatom1 spp.","abundance","HMK029","kharouba",17,181,31
+"34110",1999,112.776,"Diatom1 spp.","abundance","HMK029","kharouba",18,181,31
+"34111",2000,95.2219,"Diatom1 spp.","abundance","HMK029","kharouba",19,181,31
+"34112",2001,100.049,"Diatom1 spp.","abundance","HMK029","kharouba",20,181,31
+"34113",2002,92.9543,"Diatom1 spp.","abundance","HMK029","kharouba",21,181,31
+"34167",1979,138.4719,"Diatom2a spp.","abundance","HMK031","kharouba",0,185,32
+"34168",1980,138.4719,"Diatom2a spp.","abundance","HMK031","kharouba",0,185,32
+"34169",1981,138.4719,"Diatom2a spp.","abundance","HMK031","kharouba",0,185,32
+"34170",1982,118.2972,"Diatom2a spp.","abundance","HMK031","kharouba",1,185,32
+"34171",1983,117.3802,"Diatom2a spp.","abundance","HMK031","kharouba",2,185,32
+"34172",1984,104.5415,"Diatom2a spp.","abundance","HMK031","kharouba",3,185,32
+"34173",1985,111.8775,"Diatom2a spp.","abundance","HMK031","kharouba",4,185,32
+"34174",1986,117.3802,"Diatom2a spp.","abundance","HMK031","kharouba",5,185,32
+"34175",1987,145.8079,"Diatom2a spp.","abundance","HMK031","kharouba",6,185,32
+"34176",1988,90.7858,"Diatom2a spp.","abundance","HMK031","kharouba",7,185,32
+"34177",1989,76.1138,"Diatom2a spp.","abundance","HMK031","kharouba",8,185,32
+"34178",1990,61.44103,"Diatom2a spp.","abundance","HMK031","kharouba",9,185,32
+"34179",1991,104.5415,"Diatom2a spp.","abundance","HMK031","kharouba",10,185,32
+"34180",1992,103.6245,"Diatom2a spp.","abundance","HMK031","kharouba",11,185,32
+"34181",1993,111.8775,"Diatom2a spp.","abundance","HMK031","kharouba",12,185,32
+"34182",1994,110.9605,"Diatom2a spp.","abundance","HMK031","kharouba",13,185,32
+"34183",1995,61.44103,"Diatom2a spp.","abundance","HMK031","kharouba",14,185,32
+"34144",1996,124.7162,"Diatom2a spp.","abundance","HMK031","kharouba",15,185,32
+"34145",1997,119.2142,"Diatom2a spp.","abundance","HMK031","kharouba",16,185,32
+"34146",1998,111.8775,"Diatom2a spp.","abundance","HMK031","kharouba",17,185,32
+"34147",1999,90.7858,"Diatom2a spp.","abundance","HMK031","kharouba",18,185,32
+"34148",2000,110.0435,"Diatom2a spp.","abundance","HMK031","kharouba",19,185,32
+"34149",2001,110.9605,"Diatom2a spp.","abundance","HMK031","kharouba",20,185,32
+"34150",2002,96.2885,"Diatom2a spp.","abundance","HMK031","kharouba",21,185,32
+"34151",2003,131.1352,"Diatom2a spp.","abundance","HMK031","kharouba",22,185,32
+"34214",1985,111.8775,"Diatom2b spp.","abundance","HMK031","kharouba",4,188,33
+"34215",1986,117.3802,"Diatom2b spp.","abundance","HMK031","kharouba",5,188,33
+"34216",1987,145.8079,"Diatom2b spp.","abundance","HMK031","kharouba",6,188,33
+"34217",1989,76.1138,"Diatom2b spp.","abundance","HMK031","kharouba",8,188,33
+"34218",1990,61.44103,"Diatom2b spp.","abundance","HMK031","kharouba",9,188,33
+"34206",1991,104.5415,"Diatom2b spp.","abundance","HMK031","kharouba",10,188,33
+"34207",1993,111.8775,"Diatom2b spp.","abundance","HMK031","kharouba",12,188,33
+"34208",1994,110.9605,"Diatom2b spp.","abundance","HMK031","kharouba",13,188,33
+"34209",1995,61.44103,"Diatom2b spp.","abundance","HMK031","kharouba",14,188,33
+"34210",1996,124.7162,"Diatom2b spp.","abundance","HMK031","kharouba",15,188,33
+"34211",1997,119.2142,"Diatom2b spp.","abundance","HMK031","kharouba",16,188,33
+"34212",1998,111.8775,"Diatom2b spp.","abundance","HMK031","kharouba",17,188,33
+"34213",2000,110.0435,"Diatom2b spp.","abundance","HMK031","kharouba",19,188,33
+"34227",2001,110.9605,"Diatom2b spp.","abundance","HMK031","kharouba",20,188,33
+"34228",2002,96.2885,"Diatom2b spp.","abundance","HMK031","kharouba",21,188,33
+"34229",2003,131.1352,"Diatom2b spp.","abundance","HMK031","kharouba",22,188,33
+"34400",1975,43.9024,"Diatom3 spp.","abundance","HMK036","kharouba",0,193,34
+"34401",1976,66.3415,"Diatom3 spp.","abundance","HMK036","kharouba",0,193,34
+"34402",1977,60.9756,"Diatom3 spp.","abundance","HMK036","kharouba",0,193,34
+"34403",1978,53.1707,"Diatom3 spp.","abundance","HMK036","kharouba",0,193,34
+"34404",1979,68.2927,"Diatom3 spp.","abundance","HMK036","kharouba",0,193,34
+"34405",1980,81.9512,"Diatom3 spp.","abundance","HMK036","kharouba",0,193,34
+"34406",1981,47.8049,"Diatom3 spp.","abundance","HMK036","kharouba",0,193,34
+"34407",1982,81.9512,"Diatom3 spp.","abundance","HMK036","kharouba",1,193,34
+"34408",1983,75.6098,"Diatom3 spp.","abundance","HMK036","kharouba",2,193,34
+"34409",1984,44.878,"Diatom3 spp.","abundance","HMK036","kharouba",3,193,34
+"34410",1985,77.561,"Diatom3 spp.","abundance","HMK036","kharouba",4,193,34
+"34411",1986,55.6098,"Diatom3 spp.","abundance","HMK036","kharouba",5,193,34
+"34412",1987,67.3171,"Diatom3 spp.","abundance","HMK036","kharouba",6,193,34
+"34413",1988,68.2927,"Diatom3 spp.","abundance","HMK036","kharouba",7,193,34
+"34414",1989,55.122,"Diatom3 spp.","abundance","HMK036","kharouba",8,193,34
+"34415",1990,62.9268,"Diatom3 spp.","abundance","HMK036","kharouba",9,193,34
+"34416",1991,69.7561,"Diatom3 spp.","abundance","HMK036","kharouba",10,193,34
+"34417",1992,58.0488,"Diatom3 spp.","abundance","HMK036","kharouba",11,193,34
+"34418",1993,71.7073,"Diatom3 spp.","abundance","HMK036","kharouba",12,193,34
+"34419",1994,55.6098,"Diatom3 spp.","abundance","HMK036","kharouba",13,193,34
+"34420",1995,51.2195,"Diatom3 spp.","abundance","HMK036","kharouba",14,193,34
+"34421",1996,84.3902,"Diatom3 spp.","abundance","HMK036","kharouba",15,193,34
+"34422",1997,65.8537,"Diatom3 spp.","abundance","HMK036","kharouba",16,193,34
+"34423",1998,50.2439,"Diatom3 spp.","abundance","HMK036","kharouba",17,193,34
+"34424",1999,69.2683,"Diatom3 spp.","abundance","HMK036","kharouba",18,193,34
+"34425",2000,58.5366,"Diatom3 spp.","abundance","HMK036","kharouba",19,193,34
+"34426",2001,74.6341,"Diatom3 spp.","abundance","HMK036","kharouba",20,193,34
+"34427",2002,48.2927,"Diatom3 spp.","abundance","HMK036","kharouba",21,193,34
+"34428",2003,61.4634,"Diatom3 spp.","abundance","HMK036","kharouba",22,193,34
+"34429",2004,61.4634,"Diatom3 spp.","abundance","HMK036","kharouba",23,193,34
+"34484",1963,133.271,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34485",1964,125.938,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34556",1964,125.938,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34486",1965,124.938,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34557",1965,124.938,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34487",1966,129.625,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34558",1966,129.625,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34488",1967,129.104,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34559",1967,129.104,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34489",1968,136.354,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34560",1968,136.354,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34490",1969,125.979,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34561",1969,125.979,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34491",1970,132.75,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34562",1970,132.75,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34492",1971,131.188,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34563",1971,131.188,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34493",1972,125.417,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34564",1972,125.417,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34494",1973,105.667,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34565",1973,105.667,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34495",1974,132.229,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34566",1974,132.229,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34496",1975,118.167,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34567",1975,118.167,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34457",1976,93.6458,"Diatom4 spp.","abundance","HMK037","kharouba",0,194,35
+"34497",1976,93.6458,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34568",1976,93.6458,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34458",1977,112.438,"Diatom4 spp.","abundance","HMK037","kharouba",0,194,35
+"34498",1977,112.438,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34569",1977,112.438,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34459",1978,87.4375,"Diatom4 spp.","abundance","HMK037","kharouba",0,194,35
+"34499",1978,87.4375,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34570",1978,87.4375,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34460",1979,120.25,"Diatom4 spp.","abundance","HMK037","kharouba",0,194,35
+"34500",1979,120.25,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34571",1979,120.25,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34461",1980,77.5,"Diatom4 spp.","abundance","HMK037","kharouba",0,194,35
+"34572",1980,77.5,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34462",1981,140.042,"Diatom4 spp.","abundance","HMK037","kharouba",0,194,35
+"34501",1981,140.042,"Diatom4 spp.","abundance","HMK037","kharouba",0,195,35
+"34573",1981,140.042,"Diatom4 spp.","abundance","HMK037","kharouba",0,196,35
+"34463",1982,134.313,"Diatom4 spp.","abundance","HMK037","kharouba",1,194,35
+"34502",1982,134.313,"Diatom4 spp.","abundance","HMK037","kharouba",1,195,35
+"34574",1982,134.313,"Diatom4 spp.","abundance","HMK037","kharouba",1,196,35
+"34464",1983,115.563,"Diatom4 spp.","abundance","HMK037","kharouba",2,194,35
+"34503",1983,115.563,"Diatom4 spp.","abundance","HMK037","kharouba",2,195,35
+"34575",1983,115.563,"Diatom4 spp.","abundance","HMK037","kharouba",2,196,35
+"34465",1984,109.271,"Diatom4 spp.","abundance","HMK037","kharouba",3,194,35
+"34504",1984,109.271,"Diatom4 spp.","abundance","HMK037","kharouba",3,195,35
+"34576",1984,109.271,"Diatom4 spp.","abundance","HMK037","kharouba",3,196,35
+"34466",1985,121.292,"Diatom4 spp.","abundance","HMK037","kharouba",4,194,35
+"34505",1985,121.292,"Diatom4 spp.","abundance","HMK037","kharouba",4,195,35
+"34577",1985,121.292,"Diatom4 spp.","abundance","HMK037","kharouba",4,196,35
+"34467",1986,96.8125,"Diatom4 spp.","abundance","HMK037","kharouba",5,194,35
+"34506",1986,96.8125,"Diatom4 spp.","abundance","HMK037","kharouba",5,195,35
+"34578",1986,96.8125,"Diatom4 spp.","abundance","HMK037","kharouba",5,196,35
+"34468",1987,109.833,"Diatom4 spp.","abundance","HMK037","kharouba",6,194,35
+"34507",1987,109.833,"Diatom4 spp.","abundance","HMK037","kharouba",6,195,35
+"34579",1987,109.833,"Diatom4 spp.","abundance","HMK037","kharouba",6,196,35
+"34469",1988,124.896,"Diatom4 spp.","abundance","HMK037","kharouba",7,194,35
+"34508",1988,124.896,"Diatom4 spp.","abundance","HMK037","kharouba",7,195,35
+"34580",1988,124.896,"Diatom4 spp.","abundance","HMK037","kharouba",7,196,35
+"34470",1989,107.75,"Diatom4 spp.","abundance","HMK037","kharouba",8,194,35
+"34509",1989,107.75,"Diatom4 spp.","abundance","HMK037","kharouba",8,195,35
+"34581",1989,107.75,"Diatom4 spp.","abundance","HMK037","kharouba",8,196,35
+"34471",1990,98.8958,"Diatom4 spp.","abundance","HMK037","kharouba",9,194,35
+"34510",1990,98.8958,"Diatom4 spp.","abundance","HMK037","kharouba",9,195,35
+"34582",1990,98.8958,"Diatom4 spp.","abundance","HMK037","kharouba",9,196,35
+"34472",1991,111.917,"Diatom4 spp.","abundance","HMK037","kharouba",10,194,35
+"34511",1991,111.917,"Diatom4 spp.","abundance","HMK037","kharouba",10,195,35
+"34583",1991,111.917,"Diatom4 spp.","abundance","HMK037","kharouba",10,196,35
+"34473",1992,69.1667,"Diatom4 spp.","abundance","HMK037","kharouba",11,194,35
+"34512",1992,69.1667,"Diatom4 spp.","abundance","HMK037","kharouba",11,195,35
+"34584",1992,69.1667,"Diatom4 spp.","abundance","HMK037","kharouba",11,196,35
+"34474",1993,93.1667,"Diatom4 spp.","abundance","HMK037","kharouba",12,194,35
+"34513",1993,93.1667,"Diatom4 spp.","abundance","HMK037","kharouba",12,195,35
+"34549",1993,93.1667,"Diatom4 spp.","abundance","HMK037","kharouba",12,196,35
+"34475",1994,110.354,"Diatom4 spp.","abundance","HMK037","kharouba",13,194,35
+"34514",1994,110.354,"Diatom4 spp.","abundance","HMK037","kharouba",13,195,35
+"34550",1994,110.354,"Diatom4 spp.","abundance","HMK037","kharouba",13,196,35
+"34476",1995,107.229,"Diatom4 spp.","abundance","HMK037","kharouba",14,194,35
+"34515",1995,107.229,"Diatom4 spp.","abundance","HMK037","kharouba",14,195,35
+"34477",1996,107.188,"Diatom4 spp.","abundance","HMK037","kharouba",15,194,35
+"34551",1996,107.188,"Diatom4 spp.","abundance","HMK037","kharouba",15,196,35
+"34478",1997,120.771,"Diatom4 spp.","abundance","HMK037","kharouba",16,194,35
+"34548",1997,120.771,"Diatom4 spp.","abundance","HMK037","kharouba",16,196,35
+"34479",1998,84.3125,"Diatom4 spp.","abundance","HMK037","kharouba",17,194,35
+"34553",1998,84.3125,"Diatom4 spp.","abundance","HMK037","kharouba",17,196,35
+"34480",1999,109.833,"Diatom4 spp.","abundance","HMK037","kharouba",18,194,35
+"34554",1999,109.833,"Diatom4 spp.","abundance","HMK037","kharouba",18,196,35
+"34481",2000,94.1667,"Diatom4 spp.","abundance","HMK037","kharouba",19,194,35
+"34555",2000,94.1667,"Diatom4 spp.","abundance","HMK037","kharouba",19,196,35
+"34482",2001,100.458,"Diatom4 spp.","abundance","HMK037","kharouba",20,194,35
+"34483",2002,100.458,"Diatom4 spp.","abundance","HMK037","kharouba",21,194,35
+"34552",2002,100.458,"Diatom4 spp.","abundance","HMK037","kharouba",21,196,35
+"33533",1993,165.259,"Engraulis japonicus","switch date","HMK016","kharouba",12,165,36
+"33534",1995,171.541,"Engraulis japonicus","switch date","HMK016","kharouba",14,165,36
+"33535",1996,180.839,"Engraulis japonicus","switch date","HMK016","kharouba",15,165,36
+"33536",1997,214.747,"Engraulis japonicus","switch date","HMK016","kharouba",16,165,36
+"33537",1998,136.361,"Engraulis japonicus","switch date","HMK016","kharouba",17,165,36
+"33538",1999,157.962,"Engraulis japonicus","switch date","HMK016","kharouba",18,165,36
+"33539",2000,162.641,"Engraulis japonicus","switch date","HMK016","kharouba",19,165,36
+"33540",2001,145.798,"Engraulis japonicus","switch date","HMK016","kharouba",20,165,36
+"33541",2002,110.476,"Engraulis japonicus","switch date","HMK016","kharouba",21,165,36
+"33542",2005,169.134,"Engraulis japonicus","switch date","HMK016","kharouba",24,165,36
+"33543",2006,175.361,"Engraulis japonicus","switch date","HMK016","kharouba",25,165,36
+"33494",1996,180.4596,"Epirrita autumnata","abundance","HMK011","kharouba",15,155,37
+"33495",1997,192.649,"Epirrita autumnata","abundance","HMK011","kharouba",16,155,37
+"33496",1998,178.8317,"Epirrita autumnata","abundance","HMK011","kharouba",17,155,37
+"33497",1999,169.9526,"Epirrita autumnata","abundance","HMK011","kharouba",18,155,37
+"33498",2000,166.9974,"Epirrita autumnata","abundance","HMK011","kharouba",19,155,37
+"33499",2001,182.1512,"Epirrita autumnata","abundance","HMK011","kharouba",20,155,37
+"33500",2002,165.3688,"Epirrita autumnata","abundance","HMK011","kharouba",21,155,37
+"33501",2003,170.6461,"Epirrita autumnata","abundance","HMK011","kharouba",22,155,37
+"33502",2004,162.4261,"Epirrita autumnata","abundance","HMK011","kharouba",23,155,37
+"33503",2005,176.9202,"Epirrita autumnata","abundance","HMK011","kharouba",24,155,37
+"33504",2006,168.3689,"Epirrita autumnata","abundance","HMK011","kharouba",25,155,37
+"33505",2007,167.391,"Epirrita autumnata","abundance","HMK011","kharouba",26,155,37
+"33506",2008,172.6669,"Epirrita autumnata","abundance","HMK011","kharouba",27,155,37
+"33507",2009,170.7021,"Epirrita autumnata","abundance","HMK011","kharouba",28,155,37
+"33438",1975,159.6556,"Erythronium grandiflorum","reproduction","HMK008","kharouba",0,146,38
+"33439",1979,157.6076,"Erythronium grandiflorum","reproduction","HMK008","kharouba",0,146,38
+"33444",1980,160.4089,"Erythronium grandiflorum","reproduction","HMK008","kharouba",0,146,38
+"33445",1981,139.7202,"Erythronium grandiflorum","reproduction","HMK008","kharouba",0,146,38
+"33446",1983,161.5833,"Erythronium grandiflorum","reproduction","HMK008","kharouba",2,146,38
+"33447",1984,161.1712,"Erythronium grandiflorum","reproduction","HMK008","kharouba",3,146,38
+"33448",1986,149.8429,"Erythronium grandiflorum","reproduction","HMK008","kharouba",5,146,38
+"33449",1987,135.0378,"Erythronium grandiflorum","reproduction","HMK008","kharouba",6,146,38
+"33450",1988,141.1858,"Erythronium grandiflorum","reproduction","HMK008","kharouba",7,146,38
+"33451",1989,139.9067,"Erythronium grandiflorum","reproduction","HMK008","kharouba",8,146,38
+"33452",1991,150.7944,"Erythronium grandiflorum","reproduction","HMK008","kharouba",10,146,38
+"33440",1993,157.8061,"Erythronium grandiflorum","reproduction","HMK008","kharouba",12,146,38
+"33441",1995,169.6281,"Erythronium grandiflorum","reproduction","HMK008","kharouba",14,146,38
+"33442",1996,145.7895,"Erythronium grandiflorum","reproduction","HMK008","kharouba",15,146,38
+"33443",1997,151.3391,"Erythronium grandiflorum","reproduction","HMK008","kharouba",16,146,38
+"33457",1998,141.8244,"Erythronium grandiflorum","reproduction","HMK008","kharouba",17,146,38
+"33458",1999,149.7765,"Erythronium grandiflorum","reproduction","HMK008","kharouba",18,146,38
+"33459",2000,141.3323,"Erythronium grandiflorum","reproduction","HMK008","kharouba",19,146,38
+"33460",2001,139.786,"Erythronium grandiflorum","reproduction","HMK008","kharouba",20,146,38
+"33461",2002,124.6497,"Erythronium grandiflorum","reproduction","HMK008","kharouba",21,146,38
+"33462",2003,143.712,"Erythronium grandiflorum","reproduction","HMK008","kharouba",22,146,38
+"33463",2004,135.2674,"Erythronium grandiflorum","reproduction","HMK008","kharouba",23,146,38
+"33464",2005,145.1012,"Erythronium grandiflorum","reproduction","HMK008","kharouba",24,146,38
+"33465",2006,134.6481,"Erythronium grandiflorum","reproduction","HMK008","kharouba",25,146,38
+"33453",2008,155.1748,"Erythronium grandiflorum","reproduction","HMK008","kharouba",27,146,38
+"33454",2009,136.2264,"Erythronium grandiflorum","reproduction","HMK008","kharouba",28,146,38
+"33455",2010,138.0888,"Erythronium grandiflorum","reproduction","HMK008","kharouba",29,146,38
+"33456",2011,155.3492,"Erythronium grandiflorum","reproduction","HMK008","kharouba",30,146,38
+"35181",1985,62.126,"Ficedula hypoleuca","reproduction","HMK048","kharouba",4,218,39
+"35182",1986,59.7638,"Ficedula hypoleuca","reproduction","HMK048","kharouba",5,218,39
+"35183",1987,60.9449,"Ficedula hypoleuca","reproduction","HMK048","kharouba",6,218,39
+"35184",1988,59.3701,"Ficedula hypoleuca","reproduction","HMK048","kharouba",7,218,39
+"35185",1989,62.9134,"Ficedula hypoleuca","reproduction","HMK048","kharouba",8,218,39
+"35186",1990,57.0079,"Ficedula hypoleuca","reproduction","HMK048","kharouba",9,218,39
+"35197",1992,55.8268,"Ficedula hypoleuca","reproduction","HMK048","kharouba",11,218,39
+"35201",1993,54.6457,"Ficedula hypoleuca","reproduction","HMK048","kharouba",12,218,39
+"35202",1994,56.2205,"Ficedula hypoleuca","reproduction","HMK048","kharouba",13,218,39
+"35191",1996,58.189,"Ficedula hypoleuca","reproduction","HMK048","kharouba",15,218,39
+"35192",1997,54.6457,"Ficedula hypoleuca","reproduction","HMK048","kharouba",16,218,39
+"35180",1998,53.8583,"Ficedula hypoleuca","reproduction","HMK048","kharouba",17,218,39
+"35194",1999,55.0394,"Ficedula hypoleuca","reproduction","HMK048","kharouba",18,218,39
+"35195",2000,49.9213,"Ficedula hypoleuca","reproduction","HMK048","kharouba",19,218,39
+"35204",2001,57.0079,"Ficedula hypoleuca","reproduction","HMK048","kharouba",20,218,39
+"35205",2002,55.0394,"Ficedula hypoleuca","reproduction","HMK048","kharouba",21,218,39
+"35203",2003,49.9213,"Ficedula hypoleuca","reproduction","HMK048","kharouba",22,218,39
+"35200",2004,53.0709,"Ficedula hypoleuca","reproduction","HMK048","kharouba",23,218,39
+"35206",2005,53.8583,"Ficedula hypoleuca","reproduction","HMK048","kharouba",24,218,39
+"35060",1985,62.126,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",4,214,40
+"35061",1986,59.7638,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",5,214,40
+"35062",1987,60.9449,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",6,214,40
+"35063",1988,59.3701,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",7,214,40
+"35064",1989,62.9134,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",8,214,40
+"35065",1990,57.0079,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",9,214,40
+"35066",1992,55.8268,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",11,214,40
+"35067",1996,58.189,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",15,214,40
+"35068",1997,54.6457,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",16,214,40
+"35069",1998,53.8583,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",17,214,40
+"35070",1999,55.0394,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",18,214,40
+"35058",2000,49.9213,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",19,214,40
+"35059",2001,57.0079,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",20,214,40
+"35072",2002,55.0394,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",21,214,40
+"35073",2003,49.9213,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",22,214,40
+"35071",2004,53.0709,"Ficedula_a hypoleuca","reproduction","HMK048","kharouba",23,214,40
+"33931",1962,118.154,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33929",1965,125.6155,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33930",1966,118.385,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33926",1968,124.077,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33927",1969,121.308,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33928",1970,125.615,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33902",1971,120.846,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33903",1972,117.308,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33904",1973,122.692,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33905",1974,120.231,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33906",1975,122.846,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33907",1976,123.923,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33908",1977,118.692,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33869",1978,120.077,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33870",1980,129.769,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33871",1981,111.308,"Ficedula1 albicollis","reproduction","HMK027","kharouba",0,178,41
+"33872",1982,128.077,"Ficedula1 albicollis","reproduction","HMK027","kharouba",1,178,41
+"33873",1983,116.538,"Ficedula1 albicollis","reproduction","HMK027","kharouba",2,178,41
+"33874",1984,121.923,"Ficedula1 albicollis","reproduction","HMK027","kharouba",3,178,41
+"33875",1986,117.462,"Ficedula1 albicollis","reproduction","HMK027","kharouba",5,178,41
+"33876",1988,122.538,"Ficedula1 albicollis","reproduction","HMK027","kharouba",7,178,41
+"33877",1989,108.538,"Ficedula1 albicollis","reproduction","HMK027","kharouba",8,178,41
+"33878",1990,119.154,"Ficedula1 albicollis","reproduction","HMK027","kharouba",9,178,41
+"33879",1991,121,"Ficedula1 albicollis","reproduction","HMK027","kharouba",10,178,41
+"33880",1994,114.385,"Ficedula1 albicollis","reproduction","HMK027","kharouba",13,178,41
+"33881",1995,117.154,"Ficedula1 albicollis","reproduction","HMK027","kharouba",14,178,41
+"33882",1997,122.846,"Ficedula1 albicollis","reproduction","HMK027","kharouba",16,178,41
+"33883",1998,115.308,"Ficedula1 albicollis","reproduction","HMK027","kharouba",17,178,41
+"33884",2000,113.462,"Ficedula1 albicollis","reproduction","HMK027","kharouba",19,178,41
+"33885",2001,118.692,"Ficedula1 albicollis","reproduction","HMK027","kharouba",20,178,41
+"33886",2002,115.846,"Ficedula1 albicollis","reproduction","HMK027","kharouba",21,178,41
+"33887",2003,116.077,"Ficedula1 albicollis","reproduction","HMK027","kharouba",22,178,41
+"33888",2004,116.231,"Ficedula1 albicollis","reproduction","HMK027","kharouba",23,178,41
+"33889",2006,108.538,"Ficedula1 albicollis","reproduction","HMK027","kharouba",25,178,41
+"34622",1980,138.636,"Ficedula2 albicollis","reproduction","HMK038","kharouba",0,197,42
+"34623",1981,134.773,"Ficedula2 albicollis","reproduction","HMK038","kharouba",0,197,42
+"34624",1982,138.182,"Ficedula2 albicollis","reproduction","HMK038","kharouba",1,197,42
+"34625",1983,127.955,"Ficedula2 albicollis","reproduction","HMK038","kharouba",2,197,42
+"34626",1984,136.364,"Ficedula2 albicollis","reproduction","HMK038","kharouba",3,197,42
+"34627",1985,132.955,"Ficedula2 albicollis","reproduction","HMK038","kharouba",4,197,42
+"34628",1986,131.364,"Ficedula2 albicollis","reproduction","HMK038","kharouba",5,197,42
+"34629",1987,134.091,"Ficedula2 albicollis","reproduction","HMK038","kharouba",6,197,42
+"34630",1988,130.909,"Ficedula2 albicollis","reproduction","HMK038","kharouba",7,197,42
+"34631",1989,130.227,"Ficedula2 albicollis","reproduction","HMK038","kharouba",8,197,42
+"34632",1990,132.955,"Ficedula2 albicollis","reproduction","HMK038","kharouba",9,197,42
+"34633",1991,134.773,"Ficedula2 albicollis","reproduction","HMK038","kharouba",10,197,42
+"34634",1992,130.682,"Ficedula2 albicollis","reproduction","HMK038","kharouba",11,197,42
+"34635",1993,126.364,"Ficedula2 albicollis","reproduction","HMK038","kharouba",12,197,42
+"34636",1994,125.227,"Ficedula2 albicollis","reproduction","HMK038","kharouba",13,197,42
+"34637",1995,130.227,"Ficedula2 albicollis","reproduction","HMK038","kharouba",14,197,42
+"34638",1996,129.545,"Ficedula2 albicollis","reproduction","HMK038","kharouba",15,197,42
+"34639",1997,130.682,"Ficedula2 albicollis","reproduction","HMK038","kharouba",16,197,42
+"34640",1998,129.091,"Ficedula2 albicollis","reproduction","HMK038","kharouba",17,197,42
+"34641",1999,129.545,"Ficedula2 albicollis","reproduction","HMK038","kharouba",18,197,42
+"34642",2000,126.364,"Ficedula2 albicollis","reproduction","HMK038","kharouba",19,197,42
+"34643",2001,126.818,"Ficedula2 albicollis","reproduction","HMK038","kharouba",20,197,42
+"34644",2002,127.045,"Ficedula2 albicollis","reproduction","HMK038","kharouba",21,197,42
+"34645",2003,126.818,"Ficedula2 albicollis","reproduction","HMK038","kharouba",22,197,42
+"34646",2004,128.409,"Ficedula2 albicollis","reproduction","HMK038","kharouba",23,197,42
+"34647",2005,130.682,"Ficedula2 albicollis","reproduction","HMK038","kharouba",24,197,42
+"35531",1983,169.187,"Fratercula arctica","population growth","SET005","kharouba",2,232,43
+"35528",1984,169.5907,"Fratercula arctica","population growth","SET005","kharouba",3,232,43
+"35529",1985,167.706,"Fratercula arctica","population growth","SET005","kharouba",4,232,43
+"35530",1986,172.7784,"Fratercula arctica","population growth","SET005","kharouba",5,232,43
+"35535",1987,170.0868,"Fratercula arctica","population growth","SET005","kharouba",6,232,43
+"35532",1988,176.6698,"Fratercula arctica","population growth","SET005","kharouba",7,232,43
+"35533",1989,169.2755,"Fratercula arctica","population growth","SET005","kharouba",8,232,43
+"35534",1990,172.5471,"Fratercula arctica","population growth","SET005","kharouba",9,232,43
+"35512",1991,164.8522,"Fratercula arctica","population growth","SET005","kharouba",10,232,43
+"35513",1992,169.2484,"Fratercula arctica","population growth","SET005","kharouba",11,232,43
+"35514",1993,170.9922,"Fratercula arctica","population growth","SET005","kharouba",12,232,43
+"35515",1994,168.1406,"Fratercula arctica","population growth","SET005","kharouba",13,232,43
+"35516",1995,175.4443,"Fratercula arctica","population growth","SET005","kharouba",14,232,43
+"35517",1996,179.0864,"Fratercula arctica","population growth","SET005","kharouba",15,232,43
+"35518",1997,163.7783,"Fratercula arctica","population growth","SET005","kharouba",16,232,43
+"35519",1998,179.8552,"Fratercula arctica","population growth","SET005","kharouba",17,232,43
+"35520",1999,168.4121,"Fratercula arctica","population growth","SET005","kharouba",18,232,43
+"35521",2000,166.1587,"Fratercula arctica","population growth","SET005","kharouba",19,232,43
+"35522",2001,172.734,"Fratercula arctica","population growth","SET005","kharouba",20,232,43
+"35523",2002,172.7814,"Fratercula arctica","population growth","SET005","kharouba",21,232,43
+"35524",2003,170.8266,"Fratercula arctica","population growth","SET005","kharouba",22,232,43
+"35525",2004,171.8007,"Fratercula arctica","population growth","SET005","kharouba",23,232,43
+"35526",2005,186.1328,"Fratercula arctica","population growth","SET005","kharouba",24,232,43
+"35527",2006,180.2871,"Fratercula arctica","population growth","SET005","kharouba",25,232,43
+"34648",1980,158.314,"Glis glis","first appearance","HMK038","kharouba",0,197,44
+"34674",1980,158.314,"Glis glis","first appearance","HMK038","kharouba",0,198,44
+"34726",1980,158.314,"Glis glis","first appearance","HMK038","kharouba",0,199,44
+"34779",1980,158.314,"Glis glis","first appearance","HMK038","kharouba",0,200,44
+"34649",1981,160.831,"Glis glis","first appearance","HMK038","kharouba",0,197,44
+"34675",1981,160.831,"Glis glis","first appearance","HMK038","kharouba",0,198,44
+"34727",1981,160.831,"Glis glis","first appearance","HMK038","kharouba",0,199,44
+"34780",1981,160.831,"Glis glis","first appearance","HMK038","kharouba",0,200,44
+"34650",1982,137.909,"Glis glis","first appearance","HMK038","kharouba",1,197,44
+"34676",1982,137.909,"Glis glis","first appearance","HMK038","kharouba",1,198,44
+"34728",1982,137.909,"Glis glis","first appearance","HMK038","kharouba",1,199,44
+"34781",1982,137.909,"Glis glis","first appearance","HMK038","kharouba",1,200,44
+"34651",1983,145.28,"Glis glis","first appearance","HMK038","kharouba",2,197,44
+"34677",1983,145.28,"Glis glis","first appearance","HMK038","kharouba",2,198,44
+"34729",1983,145.28,"Glis glis","first appearance","HMK038","kharouba",2,199,44
+"34782",1983,145.28,"Glis glis","first appearance","HMK038","kharouba",2,200,44
+"34652",1984,148.299,"Glis glis","first appearance","HMK038","kharouba",3,197,44
+"34678",1984,148.299,"Glis glis","first appearance","HMK038","kharouba",3,198,44
+"34730",1984,148.299,"Glis glis","first appearance","HMK038","kharouba",3,199,44
+"34783",1984,148.299,"Glis glis","first appearance","HMK038","kharouba",3,200,44
+"34653",1985,151.988,"Glis glis","first appearance","HMK038","kharouba",4,197,44
+"34679",1985,151.988,"Glis glis","first appearance","HMK038","kharouba",4,198,44
+"34731",1985,151.988,"Glis glis","first appearance","HMK038","kharouba",4,199,44
+"34784",1985,151.988,"Glis glis","first appearance","HMK038","kharouba",4,200,44
+"34654",1986,146.806,"Glis glis","first appearance","HMK038","kharouba",5,197,44
+"34680",1986,146.806,"Glis glis","first appearance","HMK038","kharouba",5,198,44
+"34732",1986,146.806,"Glis glis","first appearance","HMK038","kharouba",5,199,44
+"34785",1986,146.806,"Glis glis","first appearance","HMK038","kharouba",5,200,44
+"34655",1987,150.662,"Glis glis","first appearance","HMK038","kharouba",6,197,44
+"34681",1987,150.662,"Glis glis","first appearance","HMK038","kharouba",6,198,44
+"34733",1987,150.662,"Glis glis","first appearance","HMK038","kharouba",6,199,44
+"34786",1987,150.662,"Glis glis","first appearance","HMK038","kharouba",6,200,44
+"34656",1988,141.129,"Glis glis","first appearance","HMK038","kharouba",7,197,44
+"34682",1988,141.129,"Glis glis","first appearance","HMK038","kharouba",7,198,44
+"34734",1988,141.129,"Glis glis","first appearance","HMK038","kharouba",7,199,44
+"34787",1988,141.129,"Glis glis","first appearance","HMK038","kharouba",7,200,44
+"34657",1989,151.177,"Glis glis","first appearance","HMK038","kharouba",8,197,44
+"34683",1989,151.177,"Glis glis","first appearance","HMK038","kharouba",8,198,44
+"34735",1989,151.177,"Glis glis","first appearance","HMK038","kharouba",8,199,44
+"34788",1989,151.177,"Glis glis","first appearance","HMK038","kharouba",8,200,44
+"34658",1990,145.829,"Glis glis","first appearance","HMK038","kharouba",9,197,44
+"34684",1990,145.829,"Glis glis","first appearance","HMK038","kharouba",9,198,44
+"34736",1990,145.829,"Glis glis","first appearance","HMK038","kharouba",9,199,44
+"34789",1990,145.829,"Glis glis","first appearance","HMK038","kharouba",9,200,44
+"34659",1991,152.697,"Glis glis","first appearance","HMK038","kharouba",10,197,44
+"34685",1991,152.697,"Glis glis","first appearance","HMK038","kharouba",10,198,44
+"34737",1991,152.697,"Glis glis","first appearance","HMK038","kharouba",10,199,44
+"34790",1991,152.697,"Glis glis","first appearance","HMK038","kharouba",10,200,44
+"34660",1992,145.507,"Glis glis","first appearance","HMK038","kharouba",11,197,44
+"34686",1992,145.507,"Glis glis","first appearance","HMK038","kharouba",11,198,44
+"34752",1992,145.507,"Glis glis","first appearance","HMK038","kharouba",11,199,44
+"34778",1992,145.507,"Glis glis","first appearance","HMK038","kharouba",11,200,44
+"34661",1993,138.485,"Glis glis","first appearance","HMK038","kharouba",12,197,44
+"34687",1993,138.485,"Glis glis","first appearance","HMK038","kharouba",12,198,44
+"34753",1993,138.485,"Glis glis","first appearance","HMK038","kharouba",12,199,44
+"34792",1993,138.485,"Glis glis","first appearance","HMK038","kharouba",12,200,44
+"34662",1994,144.852,"Glis glis","first appearance","HMK038","kharouba",13,197,44
+"34688",1994,144.852,"Glis glis","first appearance","HMK038","kharouba",13,198,44
+"34754",1994,144.852,"Glis glis","first appearance","HMK038","kharouba",13,199,44
+"34793",1994,144.852,"Glis glis","first appearance","HMK038","kharouba",13,200,44
+"34663",1995,149.544,"Glis glis","first appearance","HMK038","kharouba",14,197,44
+"34689",1995,149.544,"Glis glis","first appearance","HMK038","kharouba",14,198,44
+"34755",1995,149.544,"Glis glis","first appearance","HMK038","kharouba",14,199,44
+"34794",1995,149.544,"Glis glis","first appearance","HMK038","kharouba",14,200,44
+"34664",1996,153.401,"Glis glis","first appearance","HMK038","kharouba",15,197,44
+"34690",1996,153.401,"Glis glis","first appearance","HMK038","kharouba",15,198,44
+"34756",1996,153.401,"Glis glis","first appearance","HMK038","kharouba",15,199,44
+"34795",1996,153.401,"Glis glis","first appearance","HMK038","kharouba",15,200,44
+"34665",1997,140.017,"Glis glis","first appearance","HMK038","kharouba",16,197,44
+"34691",1997,140.017,"Glis glis","first appearance","HMK038","kharouba",16,198,44
+"34757",1997,140.017,"Glis glis","first appearance","HMK038","kharouba",16,199,44
+"34796",1997,140.017,"Glis glis","first appearance","HMK038","kharouba",16,200,44
+"34666",1998,140.861,"Glis glis","first appearance","HMK038","kharouba",17,197,44
+"34692",1998,140.861,"Glis glis","first appearance","HMK038","kharouba",17,198,44
+"34758",1998,140.861,"Glis glis","first appearance","HMK038","kharouba",17,199,44
+"34797",1998,140.861,"Glis glis","first appearance","HMK038","kharouba",17,200,44
+"34667",1999,136.349,"Glis glis","first appearance","HMK038","kharouba",18,197,44
+"34693",1999,136.349,"Glis glis","first appearance","HMK038","kharouba",18,198,44
+"34759",1999,136.349,"Glis glis","first appearance","HMK038","kharouba",18,199,44
+"34798",1999,136.349,"Glis glis","first appearance","HMK038","kharouba",18,200,44
+"34668",2000,142.716,"Glis glis","first appearance","HMK038","kharouba",19,197,44
+"34694",2000,142.716,"Glis glis","first appearance","HMK038","kharouba",19,198,44
+"34760",2000,142.716,"Glis glis","first appearance","HMK038","kharouba",19,199,44
+"34799",2000,142.716,"Glis glis","first appearance","HMK038","kharouba",19,200,44
+"34669",2001,136.363,"Glis glis","first appearance","HMK038","kharouba",20,197,44
+"34695",2001,136.363,"Glis glis","first appearance","HMK038","kharouba",20,198,44
+"34761",2001,136.363,"Glis glis","first appearance","HMK038","kharouba",20,199,44
+"34800",2001,136.363,"Glis glis","first appearance","HMK038","kharouba",20,200,44
+"34670",2002,135.198,"Glis glis","first appearance","HMK038","kharouba",21,197,44
+"34696",2002,135.198,"Glis glis","first appearance","HMK038","kharouba",21,198,44
+"34762",2002,135.198,"Glis glis","first appearance","HMK038","kharouba",21,199,44
+"34801",2002,135.198,"Glis glis","first appearance","HMK038","kharouba",21,200,44
+"34671",2003,128.008,"Glis glis","first appearance","HMK038","kharouba",22,197,44
+"34697",2003,128.008,"Glis glis","first appearance","HMK038","kharouba",22,198,44
+"34763",2003,128.008,"Glis glis","first appearance","HMK038","kharouba",22,199,44
+"34802",2003,128.008,"Glis glis","first appearance","HMK038","kharouba",22,200,44
+"34672",2004,137.052,"Glis glis","first appearance","HMK038","kharouba",23,197,44
+"34698",2004,137.052,"Glis glis","first appearance","HMK038","kharouba",23,198,44
+"34764",2004,137.052,"Glis glis","first appearance","HMK038","kharouba",23,199,44
+"34803",2004,137.052,"Glis glis","first appearance","HMK038","kharouba",23,200,44
+"34673",2005,130.699,"Glis glis","first appearance","HMK038","kharouba",24,197,44
+"34699",2005,130.699,"Glis glis","first appearance","HMK038","kharouba",24,198,44
+"34765",2005,130.699,"Glis glis","first appearance","HMK038","kharouba",24,199,44
+"34791",2005,130.699,"Glis glis","first appearance","HMK038","kharouba",24,200,44
+"34830",1973,132.631,"Guillemots spp.","reproduction","HMK039","kharouba",0,201,45
+"34831",1974,123.205,"Guillemots spp.","reproduction","HMK039","kharouba",0,201,45
+"34832",1975,128.779,"Guillemots spp.","reproduction","HMK039","kharouba",0,201,45
+"34833",1976,130.822,"Guillemots spp.","reproduction","HMK039","kharouba",0,201,45
+"34834",1977,125.808,"Guillemots spp.","reproduction","HMK039","kharouba",0,201,45
+"34835",1978,141.087,"Guillemots spp.","reproduction","HMK039","kharouba",0,201,45
+"34836",1979,138.425,"Guillemots spp.","reproduction","HMK039","kharouba",0,201,45
+"34837",1980,133.116,"Guillemots spp.","reproduction","HMK039","kharouba",0,201,45
+"34838",1981,138.396,"Guillemots spp.","reproduction","HMK039","kharouba",0,201,45
+"34839",1982,131.616,"Guillemots spp.","reproduction","HMK039","kharouba",1,201,45
+"34840",1983,134.837,"Guillemots spp.","reproduction","HMK039","kharouba",2,201,45
+"34841",1984,137.469,"Guillemots spp.","reproduction","HMK039","kharouba",3,201,45
+"34842",1985,140.102,"Guillemots spp.","reproduction","HMK039","kharouba",4,201,45
+"34843",1986,135.675,"Guillemots spp.","reproduction","HMK039","kharouba",5,201,45
+"34844",1987,145.955,"Guillemots spp.","reproduction","HMK039","kharouba",6,201,45
+"34845",1988,134.763,"Guillemots spp.","reproduction","HMK039","kharouba",7,201,45
+"34846",1989,134.161,"Guillemots spp.","reproduction","HMK039","kharouba",8,201,45
+"34847",1990,128.851,"Guillemots spp.","reproduction","HMK039","kharouba",9,201,45
+"34848",1991,134.131,"Guillemots spp.","reproduction","HMK039","kharouba",10,201,45
+"34849",1992,136.764,"Guillemots spp.","reproduction","HMK039","kharouba",11,201,45
+"34850",1993,137.926,"Guillemots spp.","reproduction","HMK039","kharouba",12,201,45
+"34851",1994,135.557,"Guillemots spp.","reproduction","HMK039","kharouba",13,201,45
+"34852",1995,140.543,"Guillemots spp.","reproduction","HMK039","kharouba",14,201,45
+"34545",1963,148.636,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34546",1964,156.455,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34547",1965,145.909,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34516",1966,158.182,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34517",1967,136.364,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34518",1968,135.318,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34519",1969,140.455,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34520",1970,167.045,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34521",1971,129.545,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34522",1972,138.045,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34523",1973,106.364,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34524",1974,128.864,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34525",1975,141.818,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34526",1976,141.136,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34527",1977,117.273,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34528",1978,99.5455,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34529",1979,113.864,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34530",1981,139.773,"Keratella2 cochlearis","abundance","HMK037","kharouba",0,195,46
+"34531",1982,145.227,"Keratella2 cochlearis","abundance","HMK037","kharouba",1,195,46
+"34532",1983,128.864,"Keratella2 cochlearis","abundance","HMK037","kharouba",2,195,46
+"34533",1984,127.818,"Keratella2 cochlearis","abundance","HMK037","kharouba",3,195,46
+"34534",1985,128.182,"Keratella2 cochlearis","abundance","HMK037","kharouba",4,195,46
+"34535",1986,132.273,"Keratella2 cochlearis","abundance","HMK037","kharouba",5,195,46
+"34536",1987,109.091,"Keratella2 cochlearis","abundance","HMK037","kharouba",6,195,46
+"34537",1988,123.045,"Keratella2 cochlearis","abundance","HMK037","kharouba",7,195,46
+"34538",1989,145.227,"Keratella2 cochlearis","abundance","HMK037","kharouba",8,195,46
+"34539",1990,134.318,"Keratella2 cochlearis","abundance","HMK037","kharouba",9,195,46
+"34540",1991,139.773,"Keratella2 cochlearis","abundance","HMK037","kharouba",10,195,46
+"34541",1992,96.4545,"Keratella2 cochlearis","abundance","HMK037","kharouba",11,195,46
+"34542",1993,122.045,"Keratella2 cochlearis","abundance","HMK037","kharouba",12,195,46
+"34543",1994,129.545,"Keratella2 cochlearis","abundance","HMK037","kharouba",13,195,46
+"34544",1995,128.864,"Keratella2 cochlearis","abundance","HMK037","kharouba",14,195,46
+"34585",1964,155.643,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34586",1965,125.179,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34587",1966,136.786,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34588",1967,123.393,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34589",1968,122.607,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34590",1969,140.357,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34591",1970,119.821,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34592",1971,126.071,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34593",1972,131.536,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34594",1973,130.536,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34595",1974,121.607,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34596",1975,118.929,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34597",1976,126.179,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34598",1977,116.25,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34599",1978,122.5,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34600",1979,108.214,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34601",1980,120.821,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34602",1981,125.179,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",0,196,47
+"34603",1982,158.214,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",1,196,47
+"34604",1983,136.786,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",2,196,47
+"34605",1984,113.679,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",3,196,47
+"34606",1985,97.5,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",4,196,47
+"34607",1986,146.607,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",5,196,47
+"34608",1987,67.1429,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",6,196,47
+"34609",1988,109.214,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",7,196,47
+"34610",1989,93.9286,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",8,196,47
+"34611",1990,91.25,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",9,196,47
+"34612",1991,139.464,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",10,196,47
+"34613",1992,125.286,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",11,196,47
+"34614",1993,108.214,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",12,196,47
+"34615",1994,135.893,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",13,196,47
+"34616",1996,133.321,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",15,196,47
+"34617",1997,153.75,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",16,196,47
+"34618",1998,95.7143,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",17,196,47
+"34619",1999,138.571,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",18,196,47
+"34620",2000,106.536,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",19,196,47
+"34621",2002,156.429,"Leptodiaptomus ashlandi","abundance","HMK037","kharouba",21,196,47
+"33320",1951,206.625,"Mnemiopsis1 leidyi","first appearance","EMW001","kharouba",0,1,48
+"33321",1972,188.458,"Mnemiopsis1 leidyi","first appearance","EMW001","kharouba",0,1,48
+"33322",1973,197.042,"Mnemiopsis1 leidyi","first appearance","EMW001","kharouba",0,1,48
+"33323",1976,207.625,"Mnemiopsis1 leidyi","first appearance","EMW001","kharouba",0,1,48
+"33324",1983,226.75,"Mnemiopsis1 leidyi","first appearance","EMW001","kharouba",2,1,48
+"33325",2002,106.958,"Mnemiopsis1 leidyi","first appearance","EMW001","kharouba",21,1,48
+"34362",1951,217.44,"Mnemiopsis2 leidyi","first appearance","HMK035","kharouba",0,192,49
+"34363",1973,194.85,"Mnemiopsis2 leidyi","first appearance","HMK035","kharouba",0,192,49
+"34364",1976,207.656,"Mnemiopsis2 leidyi","first appearance","HMK035","kharouba",0,192,49
+"34365",2000,175.688,"Mnemiopsis2 leidyi","first appearance","HMK035","kharouba",19,192,49
+"34366",2001,171.263,"Mnemiopsis2 leidyi","first appearance","HMK035","kharouba",20,192,49
+"34367",2002,138.1635,"Mnemiopsis2 leidyi","first appearance","HMK035","kharouba",21,192,49
+"34368",2003,164.859,"Mnemiopsis2 leidyi","first appearance","HMK035","kharouba",22,192,49
+"34369",2004,158.628,"Mnemiopsis2 leidyi","first appearance","HMK035","kharouba",23,192,49
+"34000",1961,140.5084,"Operophtera brumata","abundance","HMK028","kharouba",0,180,50
+"34001",1962,165.6977,"Operophtera brumata","abundance","HMK028","kharouba",0,180,50
+"34002",1963,159.5276,"Operophtera brumata","abundance","HMK028","kharouba",0,180,50
+"34003",1964,201.3834,"Operophtera brumata","abundance","HMK028","kharouba",0,180,50
+"34004",1965,149.6574,"Operophtera brumata","abundance","HMK028","kharouba",0,180,50
+"34005",1966,155.5865,"Operophtera brumata","abundance","HMK028","kharouba",0,180,50
+"34006",1967,157.5645,"Operophtera brumata","abundance","HMK028","kharouba",0,180,50
+"34007",1968,159.4319,"Operophtera brumata","abundance","HMK028","kharouba",0,180,50
+"34008",1969,159.4228,"Operophtera brumata","abundance","HMK028","kharouba",0,180,50
+"34009",1970,156.5864,"Operophtera brumata","abundance","HMK028","kharouba",0,180,50
+"34010",1971,156.5891,"Operophtera brumata","abundance","HMK028","kharouba",0,180,50
+"34011",1975,159.5639,"Operophtera brumata","abundance","HMK028","kharouba",0,180,50
+"34012",1983,162.9218,"Operophtera brumata","abundance","HMK028","kharouba",2,180,50
+"34013",1984,162.5678,"Operophtera brumata","abundance","HMK028","kharouba",3,180,50
+"34014",1985,157.7434,"Operophtera brumata","abundance","HMK028","kharouba",4,180,50
+"34015",1986,165.6478,"Operophtera brumata","abundance","HMK028","kharouba",5,180,50
+"34016",1987,152.688,"Operophtera brumata","abundance","HMK028","kharouba",6,180,50
+"34017",1988,153.6916,"Operophtera brumata","abundance","HMK028","kharouba",7,180,50
+"34018",1993,150.3609,"Operophtera brumata","abundance","HMK028","kharouba",12,180,50
+"34019",1994,152.339,"Operophtera brumata","abundance","HMK028","kharouba",13,180,50
+"34020",1995,145.3051,"Operophtera brumata","abundance","HMK028","kharouba",14,180,50
+"34021",1996,163.3453,"Operophtera brumata","abundance","HMK028","kharouba",15,180,50
+"34022",1997,142.348,"Operophtera brumata","abundance","HMK028","kharouba",16,180,50
+"34023",1998,147.2886,"Operophtera brumata","abundance","HMK028","kharouba",17,180,50
+"34024",1999,145.1934,"Operophtera brumata","abundance","HMK028","kharouba",18,180,50
+"34025",2000,146.3201,"Operophtera brumata","abundance","HMK028","kharouba",19,180,50
+"34026",2001,153.3475,"Operophtera brumata","abundance","HMK028","kharouba",20,180,50
+"34027",2002,143.2277,"Operophtera brumata","abundance","HMK028","kharouba",21,180,50
+"34028",2003,142.2436,"Operophtera brumata","abundance","HMK028","kharouba",22,180,50
+"34029",2004,147.3204,"Operophtera brumata","abundance","HMK028","kharouba",23,180,50
+"34030",2005,147.3108,"Operophtera brumata","abundance","HMK028","kharouba",24,180,50
+"34031",2006,150.277,"Operophtera brumata","abundance","HMK028","kharouba",25,180,50
+"35240",1985,40.6349,"Parus ater","reproduction","HMK048","kharouba",4,219,51
+"35245",1986,50.9524,"Parus ater","reproduction","HMK048","kharouba",5,219,51
+"35246",1987,41.0317,"Parus ater","reproduction","HMK048","kharouba",6,219,51
+"35247",1988,39.0476,"Parus ater","reproduction","HMK048","kharouba",7,219,51
+"35208",1989,33.4921,"Parus ater","reproduction","HMK048","kharouba",8,219,51
+"35212",1990,27.5397,"Parus ater","reproduction","HMK048","kharouba",9,219,51
+"35211",1992,34.2857,"Parus ater","reproduction","HMK048","kharouba",11,219,51
+"35223",1993,31.5079,"Parus ater","reproduction","HMK048","kharouba",12,219,51
+"35224",1994,38.254,"Parus ater","reproduction","HMK048","kharouba",13,219,51
+"35225",1995,39.0476,"Parus ater","reproduction","HMK048","kharouba",14,219,51
+"35226",1996,44.2063,"Parus ater","reproduction","HMK048","kharouba",15,219,51
+"35213",1997,30.7143,"Parus ater","reproduction","HMK048","kharouba",16,219,51
+"35228",1998,33.8889,"Parus ater","reproduction","HMK048","kharouba",17,219,51
+"35216",1999,34.6825,"Parus ater","reproduction","HMK048","kharouba",18,219,51
+"35217",2000,27.5397,"Parus ater","reproduction","HMK048","kharouba",19,219,51
+"35218",2001,41.8254,"Parus ater","reproduction","HMK048","kharouba",20,219,51
+"35219",2002,33.4921,"Parus ater","reproduction","HMK048","kharouba",21,219,51
+"35220",2003,35.0794,"Parus ater","reproduction","HMK048","kharouba",22,219,51
+"35221",2004,35.4762,"Parus ater","reproduction","HMK048","kharouba",23,219,51
+"35222",2005,31.9048,"Parus ater","reproduction","HMK048","kharouba",24,219,51
+"34712",1980,119.318,"Parus caeruleus","reproduction","HMK038","kharouba",0,198,52
+"34700",1981,110,"Parus caeruleus","reproduction","HMK038","kharouba",0,198,52
+"34701",1982,122.273,"Parus caeruleus","reproduction","HMK038","kharouba",1,198,52
+"34702",1983,117.045,"Parus caeruleus","reproduction","HMK038","kharouba",2,198,52
+"34703",1984,117.273,"Parus caeruleus","reproduction","HMK038","kharouba",3,198,52
+"34704",1985,112.273,"Parus caeruleus","reproduction","HMK038","kharouba",4,198,52
+"34705",1986,116.818,"Parus caeruleus","reproduction","HMK038","kharouba",5,198,52
+"34706",1987,117.273,"Parus caeruleus","reproduction","HMK038","kharouba",6,198,52
+"34707",1988,115,"Parus caeruleus","reproduction","HMK038","kharouba",7,198,52
+"34708",1989,109.773,"Parus caeruleus","reproduction","HMK038","kharouba",8,198,52
+"34709",1990,106.136,"Parus caeruleus","reproduction","HMK038","kharouba",9,198,52
+"34710",1991,110,"Parus caeruleus","reproduction","HMK038","kharouba",10,198,52
+"34711",1992,111.818,"Parus caeruleus","reproduction","HMK038","kharouba",11,198,52
+"34725",1993,116.591,"Parus caeruleus","reproduction","HMK038","kharouba",12,198,52
+"34713",1994,110.455,"Parus caeruleus","reproduction","HMK038","kharouba",13,198,52
+"34714",1995,119.091,"Parus caeruleus","reproduction","HMK038","kharouba",14,198,52
+"34715",1996,119.091,"Parus caeruleus","reproduction","HMK038","kharouba",15,198,52
+"34716",1997,118.182,"Parus caeruleus","reproduction","HMK038","kharouba",16,198,52
+"34717",1998,113.864,"Parus caeruleus","reproduction","HMK038","kharouba",17,198,52
+"34718",1999,107.273,"Parus caeruleus","reproduction","HMK038","kharouba",18,198,52
+"34719",2000,110.455,"Parus caeruleus","reproduction","HMK038","kharouba",19,198,52
+"34720",2001,115.227,"Parus caeruleus","reproduction","HMK038","kharouba",20,198,52
+"34721",2002,111.364,"Parus caeruleus","reproduction","HMK038","kharouba",21,198,52
+"34722",2003,116.364,"Parus caeruleus","reproduction","HMK038","kharouba",22,198,52
+"34723",2004,111.364,"Parus caeruleus","reproduction","HMK038","kharouba",23,198,52
+"34724",2005,109.773,"Parus caeruleus","reproduction","HMK038","kharouba",24,198,52
+"35083",1985,40.6349,"Parus_a ater","reproduction","HMK048","kharouba",4,215,53
+"35084",1986,50.9524,"Parus_a ater","reproduction","HMK048","kharouba",5,215,53
+"35085",1987,41.0317,"Parus_a ater","reproduction","HMK048","kharouba",6,215,53
+"35086",1988,39.0476,"Parus_a ater","reproduction","HMK048","kharouba",7,215,53
+"35101",1989,33.4921,"Parus_a ater","reproduction","HMK048","kharouba",8,215,53
+"35089",1990,27.5397,"Parus_a ater","reproduction","HMK048","kharouba",9,215,53
+"35090",1992,34.2857,"Parus_a ater","reproduction","HMK048","kharouba",11,215,53
+"35091",1996,44.2063,"Parus_a ater","reproduction","HMK048","kharouba",15,215,53
+"35092",1997,30.7143,"Parus_a ater","reproduction","HMK048","kharouba",16,215,53
+"35093",1998,33.8889,"Parus_a ater","reproduction","HMK048","kharouba",17,215,53
+"35094",1999,34.6825,"Parus_a ater","reproduction","HMK048","kharouba",18,215,53
+"35095",2000,27.5397,"Parus_a ater","reproduction","HMK048","kharouba",19,215,53
+"35105",2001,41.8254,"Parus_a ater","reproduction","HMK048","kharouba",20,215,53
+"35102",2002,33.4921,"Parus_a ater","reproduction","HMK048","kharouba",21,215,53
+"35103",2003,35.0794,"Parus_a ater","reproduction","HMK048","kharouba",22,215,53
+"35104",2004,35.4762,"Parus_a ater","reproduction","HMK048","kharouba",23,215,53
+"33850",1961,93.9847,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33851",1963,109.746,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33852",1964,108.713,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33853",1965,109.93,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33854",1967,105.435,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33855",1968,98.5127,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33856",1969,112.715,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33857",1970,109.949,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33845",1972,99.7395,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33846",1973,109.613,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33847",1974,92.4743,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33848",1975,108.755,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33849",1976,106.161,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33859",1977,93.8708,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33860",1978,106.688,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33861",1979,105.999,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33858",1980,109.986,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33862",1981,96.656,"Parus1 major","reproduction","HMK027","kharouba",0,177,54
+"33863",1982,102.028,"Parus1 major","reproduction","HMK027","kharouba",1,177,54
+"33828",1983,101.165,"Parus1 major","reproduction","HMK027","kharouba",2,177,54
+"33829",1984,107.923,"Parus1 major","reproduction","HMK027","kharouba",3,177,54
+"33830",1985,100.48,"Parus1 major","reproduction","HMK027","kharouba",4,177,54
+"33831",1986,108.103,"Parus1 major","reproduction","HMK027","kharouba",5,177,54
+"33832",1988,102.05,"Parus1 major","reproduction","HMK027","kharouba",7,177,54
+"33833",1989,92.7025,"Parus1 major","reproduction","HMK027","kharouba",8,177,54
+"33834",1990,91.321,"Parus1 major","reproduction","HMK027","kharouba",9,177,54
+"33835",1991,97.0387,"Parus1 major","reproduction","HMK027","kharouba",10,177,54
+"33836",1993,103.627,"Parus1 major","reproduction","HMK027","kharouba",12,177,54
+"33837",1994,91.5091,"Parus1 major","reproduction","HMK027","kharouba",13,177,54
+"33838",1995,105.019,"Parus1 major","reproduction","HMK027","kharouba",14,177,54
+"33839",1997,99.8313,"Parus1 major","reproduction","HMK027","kharouba",16,177,54
+"33840",1999,96.376,"Parus1 major","reproduction","HMK027","kharouba",18,177,54
+"33841",2000,101.921,"Parus1 major","reproduction","HMK027","kharouba",19,177,54
+"33842",2002,94.6556,"Parus1 major","reproduction","HMK027","kharouba",21,177,54
+"33843",2003,105.049,"Parus1 major","reproduction","HMK027","kharouba",22,177,54
+"33844",2004,98.4726,"Parus1 major","reproduction","HMK027","kharouba",23,177,54
+"35282",1985,51.8275,"Parus2 caeruleus","reproduction","HMK048","kharouba",4,220,55
+"35283",1986,58.0211,"Parus2 caeruleus","reproduction","HMK048","kharouba",5,220,55
+"35284",1987,48.6836,"Parus2 caeruleus","reproduction","HMK048","kharouba",6,220,55
+"35285",1988,49.0491,"Parus2 caeruleus","reproduction","HMK048","kharouba",7,220,55
+"35286",1989,45.1485,"Parus2 caeruleus","reproduction","HMK048","kharouba",8,220,55
+"35274",1990,38.9149,"Parus2 caeruleus","reproduction","HMK048","kharouba",9,220,55
+"35275",1992,45.0885,"Parus2 caeruleus","reproduction","HMK048","kharouba",11,220,55
+"35276",1993,44.6802,"Parus2 caeruleus","reproduction","HMK048","kharouba",12,220,55
+"35277",1994,45.8252,"Parus2 caeruleus","reproduction","HMK048","kharouba",13,220,55
+"35278",1995,46.9703,"Parus2 caeruleus","reproduction","HMK048","kharouba",14,220,55
+"35279",1996,49.6716,"Parus2 caeruleus","reproduction","HMK048","kharouba",15,220,55
+"35280",1997,44.9943,"Parus2 caeruleus","reproduction","HMK048","kharouba",16,220,55
+"35281",1998,44.9714,"Parus2 caeruleus","reproduction","HMK048","kharouba",17,220,55
+"35287",1999,42.6214,"Parus2 caeruleus","reproduction","HMK048","kharouba",18,220,55
+"35268",2000,41.0508,"Parus2 caeruleus","reproduction","HMK048","kharouba",19,220,55
+"35269",2001,48.0183,"Parus2 caeruleus","reproduction","HMK048","kharouba",20,220,55
+"35270",2002,42.9497,"Parus2 caeruleus","reproduction","HMK048","kharouba",21,220,55
+"35271",2003,40.9909,"Parus2 caeruleus","reproduction","HMK048","kharouba",22,220,55
+"35272",2004,41.7476,"Parus2 caeruleus","reproduction","HMK048","kharouba",23,220,55
+"35273",2005,38.2324,"Parus2 caeruleus","reproduction","HMK048","kharouba",24,220,55
+"34032",1961,112.7814,"Parus2 major","reproduction","HMK028","kharouba",0,180,56
+"34033",1962,123.9555,"Parus2 major","reproduction","HMK028","kharouba",0,180,56
+"34034",1963,119.9474,"Parus2 major","reproduction","HMK028","kharouba",0,180,56
+"34035",1964,125.8057,"Parus2 major","reproduction","HMK028","kharouba",0,180,56
+"34036",1965,121.0405,"Parus2 major","reproduction","HMK028","kharouba",0,180,56
+"34037",1966,125.8988,"Parus2 major","reproduction","HMK028","kharouba",0,180,56
+"34038",1967,120.3117,"Parus2 major","reproduction","HMK028","kharouba",0,180,56
+"34039",1968,122.6478,"Parus2 major","reproduction","HMK028","kharouba",0,180,56
+"34040",1969,126.0202,"Parus2 major","reproduction","HMK028","kharouba",0,180,56
+"34041",1970,126.5061,"Parus2 major","reproduction","HMK028","kharouba",0,180,56
+"34042",1971,125.0486,"Parus2 major","reproduction","HMK028","kharouba",0,180,56
+"34043",1975,123.4696,"Parus2 major","reproduction","HMK028","kharouba",0,180,56
+"34044",1983,120.5547,"Parus2 major","reproduction","HMK028","kharouba",2,180,56
+"34045",1984,129.9352,"Parus2 major","reproduction","HMK028","kharouba",3,180,56
+"34046",1985,116.9109,"Parus2 major","reproduction","HMK028","kharouba",4,180,56
+"34047",1986,130.1498,"Parus2 major","reproduction","HMK028","kharouba",5,180,56
+"34048",1987,113.6316,"Parus2 major","reproduction","HMK028","kharouba",6,180,56
+"34049",1988,124.7126,"Parus2 major","reproduction","HMK028","kharouba",7,180,56
+"34050",1993,112.5385,"Parus2 major","reproduction","HMK028","kharouba",12,180,56
+"34051",1994,118.6113,"Parus2 major","reproduction","HMK028","kharouba",13,180,56
+"34052",1995,109.9879,"Parus2 major","reproduction","HMK028","kharouba",14,180,56
+"34053",1996,121.4332,"Parus2 major","reproduction","HMK028","kharouba",15,180,56
+"34054",1997,104.5223,"Parus2 major","reproduction","HMK028","kharouba",16,180,56
+"34055",1998,116.9109,"Parus2 major","reproduction","HMK028","kharouba",17,180,56
+"34056",1999,114.1174,"Parus2 major","reproduction","HMK028","kharouba",18,180,56
+"34057",2000,117.5466,"Parus2 major","reproduction","HMK028","kharouba",19,180,56
+"34058",2001,122.9838,"Parus2 major","reproduction","HMK028","kharouba",20,180,56
+"34059",2002,104.8866,"Parus2 major","reproduction","HMK028","kharouba",21,180,56
+"34060",2003,115.0891,"Parus2 major","reproduction","HMK028","kharouba",22,180,56
+"34061",2004,111.2308,"Parus2 major","reproduction","HMK028","kharouba",23,180,56
+"34062",2005,113.996,"Parus2 major","reproduction","HMK028","kharouba",24,180,56
+"34063",2006,117.0324,"Parus2 major","reproduction","HMK028","kharouba",25,180,56
+"35394",1998,41.8417,"Parus3 caeruleus","reproduction","HMK051","kharouba",17,237,57
+"35406",1999,39.7219,"Parus3 caeruleus","reproduction","HMK051","kharouba",18,237,57
+"35407",2000,40.3183,"Parus3 caeruleus","reproduction","HMK051","kharouba",19,237,57
+"35408",2001,41.2158,"Parus3 caeruleus","reproduction","HMK051","kharouba",20,237,57
+"35409",2002,35.1743,"Parus3 caeruleus","reproduction","HMK051","kharouba",21,237,57
+"35410",2003,44.2183,"Parus3 caeruleus","reproduction","HMK051","kharouba",22,237,57
+"35411",2004,37.5726,"Parus3 caeruleus","reproduction","HMK051","kharouba",23,237,57
+"35412",2005,40.2803,"Parus3 caeruleus","reproduction","HMK051","kharouba",24,237,57
+"35413",2006,38.1613,"Parus3 caeruleus","reproduction","HMK051","kharouba",25,237,57
+"35414",2007,40.5658,"Parus3 caeruleus","reproduction","HMK051","kharouba",26,237,57
+"35415",2008,38.145,"Parus3 caeruleus","reproduction","HMK051","kharouba",27,237,57
+"35416",2009,43.2673,"Parus3 caeruleus","reproduction","HMK051","kharouba",28,237,57
+"35417",2010,45.3716,"Parus3 caeruleus","reproduction","HMK051","kharouba",29,237,57
+"35405",2011,41.4407,"Parus3 caeruleus","reproduction","HMK051","kharouba",30,237,57
+"34738",1980,122.045,"Parus3 major","reproduction","HMK038","kharouba",0,199,58
+"34739",1981,110.455,"Parus3 major","reproduction","HMK038","kharouba",0,199,58
+"34740",1982,123.636,"Parus3 major","reproduction","HMK038","kharouba",1,199,58
+"34741",1983,113.636,"Parus3 major","reproduction","HMK038","kharouba",2,199,58
+"34742",1984,122.727,"Parus3 major","reproduction","HMK038","kharouba",3,199,58
+"34743",1985,117.5,"Parus3 major","reproduction","HMK038","kharouba",4,199,58
+"34744",1986,117.273,"Parus3 major","reproduction","HMK038","kharouba",5,199,58
+"34745",1987,115.909,"Parus3 major","reproduction","HMK038","kharouba",6,199,58
+"34746",1988,119.318,"Parus3 major","reproduction","HMK038","kharouba",7,199,58
+"34747",1989,112.273,"Parus3 major","reproduction","HMK038","kharouba",8,199,58
+"34748",1990,107.5,"Parus3 major","reproduction","HMK038","kharouba",9,199,58
+"34749",1991,118.182,"Parus3 major","reproduction","HMK038","kharouba",10,199,58
+"34750",1992,113.182,"Parus3 major","reproduction","HMK038","kharouba",11,199,58
+"34751",1993,118.182,"Parus3 major","reproduction","HMK038","kharouba",12,199,58
+"34766",1994,112.727,"Parus3 major","reproduction","HMK038","kharouba",13,199,58
+"34767",1995,119.091,"Parus3 major","reproduction","HMK038","kharouba",14,199,58
+"34768",1996,116.818,"Parus3 major","reproduction","HMK038","kharouba",15,199,58
+"34769",1997,122.045,"Parus3 major","reproduction","HMK038","kharouba",16,199,58
+"34770",1998,116.136,"Parus3 major","reproduction","HMK038","kharouba",17,199,58
+"34771",1999,107.955,"Parus3 major","reproduction","HMK038","kharouba",18,199,58
+"34772",2000,111.591,"Parus3 major","reproduction","HMK038","kharouba",19,199,58
+"34773",2001,117.955,"Parus3 major","reproduction","HMK038","kharouba",20,199,58
+"34774",2002,114.545,"Parus3 major","reproduction","HMK038","kharouba",21,199,58
+"34775",2003,117.955,"Parus3 major","reproduction","HMK038","kharouba",22,199,58
+"34776",2004,111.136,"Parus3 major","reproduction","HMK038","kharouba",23,199,58
+"34777",2005,110.227,"Parus3 major","reproduction","HMK038","kharouba",24,199,58
+"35315",1985,46.155,"Parus4a major","reproduction","HMK048","kharouba",4,221,59
+"35316",1986,55.8982,"Parus4a major","reproduction","HMK048","kharouba",5,221,59
+"35317",1987,45.3316,"Parus4a major","reproduction","HMK048","kharouba",6,221,59
+"35318",1988,48.4397,"Parus4a major","reproduction","HMK048","kharouba",7,221,59
+"35319",1989,44.9016,"Parus4a major","reproduction","HMK048","kharouba",8,221,59
+"35320",1990,41.757,"Parus4a major","reproduction","HMK048","kharouba",9,221,59
+"35321",1992,40.5486,"Parus4a major","reproduction","HMK048","kharouba",11,221,59
+"35322",1993,45.9976,"Parus4a major","reproduction","HMK048","kharouba",12,221,59
+"35323",1994,43.6314,"Parus4a major","reproduction","HMK048","kharouba",13,221,59
+"35324",1995,48.302,"Parus4a major","reproduction","HMK048","kharouba",14,221,59
+"35325",1996,48.2852,"Parus4a major","reproduction","HMK048","kharouba",15,221,59
+"35326",1997,42.0127,"Parus4a major","reproduction","HMK048","kharouba",16,221,59
+"35327",1998,43.5527,"Parus4a major","reproduction","HMK048","kharouba",17,221,59
+"35301",1999,41.5799,"Parus4a major","reproduction","HMK048","kharouba",18,221,59
+"35302",2000,38.8315,"Parus4a major","reproduction","HMK048","kharouba",19,221,59
+"35303",2001,50.1371,"Parus4a major","reproduction","HMK048","kharouba",20,221,59
+"35304",2002,43.8675,"Parus4a major","reproduction","HMK048","kharouba",21,221,59
+"35305",2003,41.1134,"Parus4a major","reproduction","HMK048","kharouba",22,221,59
+"35306",2004,41.4816,"Parus4a major","reproduction","HMK048","kharouba",23,221,59
+"35307",2005,36.3894,"Parus4a major","reproduction","HMK048","kharouba",24,221,59
+"35154",1985,46.155,"Parus4b major","reproduction","HMK048","kharouba",4,217,60
+"35155",1986,55.8982,"Parus4b major","reproduction","HMK048","kharouba",5,217,60
+"35143",1987,45.3316,"Parus4b major","reproduction","HMK048","kharouba",6,217,60
+"35144",1988,48.4397,"Parus4b major","reproduction","HMK048","kharouba",7,217,60
+"35149",1989,44.9016,"Parus4b major","reproduction","HMK048","kharouba",8,217,60
+"35146",1990,41.757,"Parus4b major","reproduction","HMK048","kharouba",9,217,60
+"35147",1992,40.5486,"Parus4b major","reproduction","HMK048","kharouba",11,217,60
+"35148",1996,48.2852,"Parus4b major","reproduction","HMK048","kharouba",15,217,60
+"35163",1997,42.0127,"Parus4b major","reproduction","HMK048","kharouba",16,217,60
+"35164",1998,43.5527,"Parus4b major","reproduction","HMK048","kharouba",17,217,60
+"35161",1999,41.5799,"Parus4b major","reproduction","HMK048","kharouba",18,217,60
+"35162",2000,38.8315,"Parus4b major","reproduction","HMK048","kharouba",19,217,60
+"35166",2001,50.1371,"Parus4b major","reproduction","HMK048","kharouba",20,217,60
+"35165",2002,43.8675,"Parus4b major","reproduction","HMK048","kharouba",21,217,60
+"35168",2003,41.1134,"Parus4b major","reproduction","HMK048","kharouba",22,217,60
+"35169",2004,41.4816,"Parus4b major","reproduction","HMK048","kharouba",23,217,60
+"35392",1996,46.9047,"Parus6 major","reproduction","HMK051","kharouba",15,236,61
+"35393",1997,59.4296,"Parus6 major","reproduction","HMK051","kharouba",16,236,61
+"35382",1998,47.8076,"Parus6 major","reproduction","HMK051","kharouba",17,236,61
+"35383",1999,47.1877,"Parus6 major","reproduction","HMK051","kharouba",18,236,61
+"35384",2000,48.0969,"Parus6 major","reproduction","HMK051","kharouba",19,236,61
+"35385",2001,43.8103,"Parus6 major","reproduction","HMK051","kharouba",20,236,61
+"35386",2002,39.523,"Parus6 major","reproduction","HMK051","kharouba",21,236,61
+"35387",2003,46.8514,"Parus6 major","reproduction","HMK051","kharouba",22,236,61
+"35388",2004,40.4244,"Parus6 major","reproduction","HMK051","kharouba",23,236,61
+"35389",2005,45.3074,"Parus6 major","reproduction","HMK051","kharouba",24,236,61
+"35390",2006,40.4095,"Parus6 major","reproduction","HMK051","kharouba",25,236,61
+"35391",2007,44.3762,"Parus6 major","reproduction","HMK051","kharouba",26,236,61
+"35378",2008,41.3108,"Parus6 major","reproduction","HMK051","kharouba",27,236,61
+"35379",2009,46.5003,"Parus6 major","reproduction","HMK051","kharouba",28,236,61
+"35380",2010,46.7981,"Parus6 major","reproduction","HMK051","kharouba",29,236,61
+"35381",2011,43.4278,"Parus6 major","reproduction","HMK051","kharouba",30,236,61
+"33731",1969,146.943,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33732",1970,142.4035,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33733",1971,139.977,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33734",1972,143.5655,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33735",1973,142.2105,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33736",1974,138.198,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33737",1975,140.177,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33738",1976,142.6785,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33739",1977,148.327,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33740",1978,145.719,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33741",1979,143.0605,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33742",1980,132.825,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33743",1981,141.7125,"Perca fluviatillis","population growth","HMK019","kharouba",0,171,62
+"33744",1982,131.427,"Perca fluviatillis","population growth","HMK019","kharouba",1,171,62
+"33745",1983,137.11,"Perca fluviatillis","population growth","HMK019","kharouba",2,171,62
+"33746",1984,130.015,"Perca fluviatillis","population growth","HMK019","kharouba",3,171,62
+"33747",1986,139.4585,"Perca fluviatillis","population growth","HMK019","kharouba",5,171,62
+"33748",1987,129.187,"Perca fluviatillis","population growth","HMK019","kharouba",6,171,62
+"33749",1989,133.715,"Perca fluviatillis","population growth","HMK019","kharouba",8,171,62
+"33750",1990,129.6245,"Perca fluviatillis","population growth","HMK019","kharouba",9,171,62
+"33751",1991,134.485,"Perca fluviatillis","population growth","HMK019","kharouba",10,171,62
+"33752",1992,131.457,"Perca fluviatillis","population growth","HMK019","kharouba",11,171,62
+"33753",1993,127.515,"Perca fluviatillis","population growth","HMK019","kharouba",12,171,62
+"33754",1994,129.112,"Perca fluviatillis","population growth","HMK019","kharouba",13,171,62
+"33755",1995,128.683,"Perca fluviatillis","population growth","HMK019","kharouba",14,171,62
+"33756",1996,140.108,"Perca fluviatillis","population growth","HMK019","kharouba",15,171,62
+"33757",1997,129.181,"Perca fluviatillis","population growth","HMK019","kharouba",16,171,62
+"33758",1998,128.187,"Perca fluviatillis","population growth","HMK019","kharouba",17,171,62
+"33759",1999,125.8805,"Perca fluviatillis","population growth","HMK019","kharouba",18,171,62
+"33760",2000,126.424,"Perca fluviatillis","population growth","HMK019","kharouba",19,171,62
+"33761",2001,135.3075,"Perca fluviatillis","population growth","HMK019","kharouba",20,171,62
+"33762",2002,124.3945,"Perca fluviatillis","population growth","HMK019","kharouba",21,171,62
+"33763",2003,130.897,"Perca fluviatillis","population growth","HMK019","kharouba",22,171,62
+"33724",2005,126.7665,"Perca fluviatillis","population growth","HMK019","kharouba",24,171,62
+"33725",2006,130.5205,"Perca fluviatillis","population growth","HMK019","kharouba",25,171,62
+"33726",2008,126.487,"Perca fluviatillis","population growth","HMK019","kharouba",27,171,62
+"35568",1983,167.6403,"Phalacrocorax aristotelis","population growth","SET005","kharouba",2,233,63
+"35569",1984,185.146,"Phalacrocorax aristotelis","population growth","SET005","kharouba",3,233,63
+"35570",1985,211.44,"Phalacrocorax aristotelis","population growth","SET005","kharouba",4,233,63
+"35571",1986,198.3641,"Phalacrocorax aristotelis","population growth","SET005","kharouba",5,233,63
+"35572",1987,173.4949,"Phalacrocorax aristotelis","population growth","SET005","kharouba",6,233,63
+"35573",1988,201.2084,"Phalacrocorax aristotelis","population growth","SET005","kharouba",7,233,63
+"35574",1989,184.2241,"Phalacrocorax aristotelis","population growth","SET005","kharouba",8,233,63
+"35575",1990,198.553,"Phalacrocorax aristotelis","population growth","SET005","kharouba",9,233,63
+"35549",1991,194.867,"Phalacrocorax aristotelis","population growth","SET005","kharouba",10,233,63
+"35550",1992,178.0927,"Phalacrocorax aristotelis","population growth","SET005","kharouba",11,233,63
+"35551",1993,230.175,"Phalacrocorax aristotelis","population growth","SET005","kharouba",12,233,63
+"35539",1994,199.6049,"Phalacrocorax aristotelis","population growth","SET005","kharouba",13,233,63
+"35540",1995,156.5325,"Phalacrocorax aristotelis","population growth","SET005","kharouba",14,233,63
+"35541",1996,176.7685,"Phalacrocorax aristotelis","population growth","SET005","kharouba",15,233,63
+"35542",1997,156.4065,"Phalacrocorax aristotelis","population growth","SET005","kharouba",16,233,63
+"35543",1998,186.0628,"Phalacrocorax aristotelis","population growth","SET005","kharouba",17,233,63
+"35580",1999,197.2594,"Phalacrocorax aristotelis","population growth","SET005","kharouba",18,233,63
+"35581",2000,183.4031,"Phalacrocorax aristotelis","population growth","SET005","kharouba",19,233,63
+"35582",2001,178.8799,"Phalacrocorax aristotelis","population growth","SET005","kharouba",20,233,63
+"35579",2002,175.3825,"Phalacrocorax aristotelis","population growth","SET005","kharouba",21,233,63
+"35583",2003,157.2935,"Phalacrocorax aristotelis","population growth","SET005","kharouba",22,233,63
+"35576",2004,185.9462,"Phalacrocorax aristotelis","population growth","SET005","kharouba",23,233,63
+"35577",2005,201.7639,"Phalacrocorax aristotelis","population growth","SET005","kharouba",24,233,63
+"35578",2006,185.829,"Phalacrocorax aristotelis","population growth","SET005","kharouba",25,233,63
+"33687",1969,109.8085,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33684",1970,124.352,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33685",1971,100.53485,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33686",1972,109.654,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33691",1973,76.8018,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33688",1974,86.52195,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33689",1975,98.84105,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33690",1976,82.2223,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33655",1977,94.9844,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33656",1978,107.708,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33657",1979,108.8071,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33658",1980,94.99155,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33659",1981,98.415,"Phytoplankton1 spp.","population growth","HMK019","kharouba",0,170,64
+"33660",1982,102.1298,"Phytoplankton1 spp.","population growth","HMK019","kharouba",1,170,64
+"33661",1983,100.1954,"Phytoplankton1 spp.","population growth","HMK019","kharouba",2,170,64
+"33662",1984,104.29995,"Phytoplankton1 spp.","population growth","HMK019","kharouba",3,170,64
+"33663",1986,79.49615,"Phytoplankton1 spp.","population growth","HMK019","kharouba",5,170,64
+"33664",1987,100.87045,"Phytoplankton1 spp.","population growth","HMK019","kharouba",6,170,64
+"33665",1988,94.3999,"Phytoplankton1 spp.","population growth","HMK019","kharouba",7,170,64
+"33666",1989,102.39595,"Phytoplankton1 spp.","population growth","HMK019","kharouba",8,170,64
+"33667",1990,76.9364,"Phytoplankton1 spp.","population growth","HMK019","kharouba",9,170,64
+"33668",1991,73.9246,"Phytoplankton1 spp.","population growth","HMK019","kharouba",10,170,64
+"33669",1992,93.1373,"Phytoplankton1 spp.","population growth","HMK019","kharouba",11,170,64
+"33670",1993,67.89555,"Phytoplankton1 spp.","population growth","HMK019","kharouba",12,170,64
+"33671",1994,84.0984,"Phytoplankton1 spp.","population growth","HMK019","kharouba",13,170,64
+"33672",1995,100.27695,"Phytoplankton1 spp.","population growth","HMK019","kharouba",14,170,64
+"33673",1996,101.441,"Phytoplankton1 spp.","population growth","HMK019","kharouba",15,170,64
+"33674",1997,73.538,"Phytoplankton1 spp.","population growth","HMK019","kharouba",16,170,64
+"33675",1998,89.07065,"Phytoplankton1 spp.","population growth","HMK019","kharouba",17,170,64
+"33676",1999,92.10455,"Phytoplankton1 spp.","population growth","HMK019","kharouba",18,170,64
+"33677",2000,84.13685,"Phytoplankton1 spp.","population growth","HMK019","kharouba",19,170,64
+"33678",2001,96.441,"Phytoplankton1 spp.","population growth","HMK019","kharouba",20,170,64
+"33679",2002,86.2943,"Phytoplankton1 spp.","population growth","HMK019","kharouba",21,170,64
+"33680",2003,85.219,"Phytoplankton1 spp.","population growth","HMK019","kharouba",22,170,64
+"33681",2005,83.508,"Phytoplankton1 spp.","population growth","HMK019","kharouba",24,170,64
+"33682",2006,83.95085,"Phytoplankton1 spp.","population growth","HMK019","kharouba",25,170,64
+"33683",2008,83.10485,"Phytoplankton1 spp.","population growth","HMK019","kharouba",27,170,64
+"34340",1974,117.931,"Phytoplankton2 spp.","population growth","HMK034","kharouba",0,191,65
+"34341",1975,100.345,"Phytoplankton2 spp.","population growth","HMK034","kharouba",0,191,65
+"34342",1977,106.5515,"Phytoplankton2 spp.","population growth","HMK034","kharouba",0,191,65
+"34343",1978,114.828,"Phytoplankton2 spp.","population growth","HMK034","kharouba",0,191,65
+"34344",1980,108.621,"Phytoplankton2 spp.","population growth","HMK034","kharouba",0,191,65
+"34345",1981,95.1724,"Phytoplankton2 spp.","population growth","HMK034","kharouba",0,191,65
+"34346",1983,102.414,"Phytoplankton2 spp.","population growth","HMK034","kharouba",2,191,65
+"34347",1984,121.034,"Phytoplankton2 spp.","population growth","HMK034","kharouba",3,191,65
+"34348",1986,116.897,"Phytoplankton2 spp.","population growth","HMK034","kharouba",5,191,65
+"34349",1988,93.1034,"Phytoplankton2 spp.","population growth","HMK034","kharouba",7,191,65
+"34350",1991,92.069,"Phytoplankton2 spp.","population growth","HMK034","kharouba",10,191,65
+"34351",1992,101.379,"Phytoplankton2 spp.","population growth","HMK034","kharouba",11,191,65
+"34352",1993,88.9655,"Phytoplankton2 spp.","population growth","HMK034","kharouba",12,191,65
+"34353",1994,87.931,"Phytoplankton2 spp.","population growth","HMK034","kharouba",13,191,65
+"35431",2005,19,"Pica pica","reproduction","HMK052","kharouba",24,238,66
+"35432",2006,22,"Pica pica","reproduction","HMK052","kharouba",25,238,66
+"35433",2007,21.5,"Pica pica","reproduction","HMK052","kharouba",26,238,66
+"35434",2008,12,"Pica pica","reproduction","HMK052","kharouba",27,238,66
+"35435",2009,16,"Pica pica","reproduction","HMK052","kharouba",28,238,66
+"35436",2010,26,"Pica pica","reproduction","HMK052","kharouba",29,238,66
+"35437",2011,18,"Pica pica","reproduction","HMK052","kharouba",30,238,66
+"35438",2012,18,"Pica pica","reproduction","HMK052","kharouba",31,238,66
+"35439",2013,20,"Pica pica","reproduction","HMK052","kharouba",32,238,66
+"34114",2002,157.228,"Plant2 spp.","first appearance","HMK030","kharouba",21,183,67
+"34115",2003,156.581,"Plant2 spp.","first appearance","HMK030","kharouba",22,183,67
+"34116",2004,156.441,"Plant2 spp.","first appearance","HMK030","kharouba",23,183,67
+"34117",2005,158.199,"Plant2 spp.","first appearance","HMK030","kharouba",24,183,67
+"34118",2006,144.767,"Plant2 spp.","first appearance","HMK030","kharouba",25,183,67
+"34119",2007,154.626,"Plant2 spp.","first appearance","HMK030","kharouba",26,183,67
+"34120",2008,144.739,"Plant2 spp.","first appearance","HMK030","kharouba",27,183,67
+"34121",2009,152.319,"Plant2 spp.","first appearance","HMK030","kharouba",28,183,67
+"34122",2010,139.014,"Plant2 spp.","first appearance","HMK030","kharouba",29,183,67
+"34123",2011,147.101,"Plant2 spp.","first appearance","HMK030","kharouba",30,183,67
+"34288",1992,148.901,"Plant3 spp.","reproduction","HMK033","kharouba",11,190,68
+"34289",1993,170.207,"Plant3 spp.","reproduction","HMK033","kharouba",12,190,68
+"34290",1994,155.959,"Plant3 spp.","reproduction","HMK033","kharouba",13,190,68
+"34291",1995,204.697,"Plant3 spp.","reproduction","HMK033","kharouba",14,190,68
+"34292",1996,158.957,"Plant3 spp.","reproduction","HMK033","kharouba",15,190,68
+"34293",1997,176.201,"Plant3 spp.","reproduction","HMK033","kharouba",16,190,68
+"34294",1998,163.985,"Plant3 spp.","reproduction","HMK033","kharouba",17,190,68
+"34295",1999,165.993,"Plant3 spp.","reproduction","HMK033","kharouba",18,190,68
+"34296",2000,148.189,"Plant3 spp.","reproduction","HMK033","kharouba",19,190,68
+"34297",2001,150.703,"Plant3 spp.","reproduction","HMK033","kharouba",20,190,68
+"34298",2003,167.922,"Plant3 spp.","reproduction","HMK033","kharouba",22,190,68
+"34299",2004,172.975,"Plant3 spp.","reproduction","HMK033","kharouba",23,190,68
+"34300",2005,174.475,"Plant3 spp.","reproduction","HMK033","kharouba",24,190,68
+"34301",2006,149.56,"Plant3 spp.","reproduction","HMK033","kharouba",25,190,68
+"34302",2007,137.343,"Plant3 spp.","reproduction","HMK033","kharouba",26,190,68
+"34303",2008,175.922,"Plant3 spp.","reproduction","HMK033","kharouba",27,190,68
+"34304",2009,154.056,"Plant3 spp.","reproduction","HMK033","kharouba",28,190,68
+"34305",2010,158.6,"Plant3 spp.","reproduction","HMK033","kharouba",29,190,68
+"34306",2011,187.527,"Plant3 spp.","reproduction","HMK033","kharouba",30,190,68
+"34974",1976,140,"Pleurobrachia pileus","abundance","HMK043","kharouba",0,208,69
+"34975",1977,140,"Pleurobrachia pileus","abundance","HMK043","kharouba",0,208,69
+"34976",1978,123.2,"Pleurobrachia pileus","abundance","HMK043","kharouba",0,208,69
+"34977",1979,132.65,"Pleurobrachia pileus","abundance","HMK043","kharouba",0,208,69
+"34978",1981,151.55,"Pleurobrachia pileus","abundance","HMK043","kharouba",0,208,69
+"34979",1982,125.3,"Pleurobrachia pileus","abundance","HMK043","kharouba",1,208,69
+"34980",1983,129.5,"Pleurobrachia pileus","abundance","HMK043","kharouba",2,208,69
+"34981",1984,158.9,"Pleurobrachia pileus","abundance","HMK043","kharouba",3,208,69
+"34982",1985,144.2,"Pleurobrachia pileus","abundance","HMK043","kharouba",4,208,69
+"34983",1986,156.8,"Pleurobrachia pileus","abundance","HMK043","kharouba",5,208,69
+"34984",1987,167.3,"Pleurobrachia pileus","abundance","HMK043","kharouba",6,208,69
+"34985",1988,106.4,"Pleurobrachia pileus","abundance","HMK043","kharouba",7,208,69
+"34986",1989,91.7,"Pleurobrachia pileus","abundance","HMK043","kharouba",8,208,69
+"34987",1990,74.9,"Pleurobrachia pileus","abundance","HMK043","kharouba",9,208,69
+"34948",1991,114.8,"Pleurobrachia pileus","abundance","HMK043","kharouba",10,208,69
+"34949",1992,85.4,"Pleurobrachia pileus","abundance","HMK043","kharouba",11,208,69
+"34950",1993,79.1,"Pleurobrachia pileus","abundance","HMK043","kharouba",12,208,69
+"34951",1994,112.7,"Pleurobrachia pileus","abundance","HMK043","kharouba",13,208,69
+"34952",1995,125.3,"Pleurobrachia pileus","abundance","HMK043","kharouba",14,208,69
+"34953",1996,144.2,"Pleurobrachia pileus","abundance","HMK043","kharouba",15,208,69
+"34954",1997,110.6,"Pleurobrachia pileus","abundance","HMK043","kharouba",16,208,69
+"34955",1998,106.4,"Pleurobrachia pileus","abundance","HMK043","kharouba",17,208,69
+"34956",1999,110.6,"Pleurobrachia pileus","abundance","HMK043","kharouba",18,208,69
+"34957",2000,68.6,"Pleurobrachia pileus","abundance","HMK043","kharouba",19,208,69
+"34958",2001,81.2,"Pleurobrachia pileus","abundance","HMK043","kharouba",20,208,69
+"34959",2002,70.7,"Pleurobrachia pileus","abundance","HMK043","kharouba",21,208,69
+"34960",2003,106.4,"Pleurobrachia pileus","abundance","HMK043","kharouba",22,208,69
+"35016",1976,140,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",0,209,70
+"35017",1978,123.2,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",0,209,70
+"35018",1979,132.65,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",0,209,70
+"35019",1981,151.55,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",0,209,70
+"35020",1982,125.3,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",1,209,70
+"35021",1983,129.5,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",2,209,70
+"35022",1984,158.9,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",3,209,70
+"35023",1985,144.2,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",4,209,70
+"35024",1986,156.8,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",5,209,70
+"35025",1987,167.3,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",6,209,70
+"35026",1988,106.4,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",7,209,70
+"35027",1989,91.7,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",8,209,70
+"35028",1990,74.9,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",9,209,70
+"35029",1991,114.8,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",10,209,70
+"35030",1992,85.4,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",11,209,70
+"35031",1993,79.1,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",12,209,70
+"35032",1994,112.7,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",13,209,70
+"35033",1995,125.3,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",14,209,70
+"35034",1996,144.2,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",15,209,70
+"35035",1997,110.6,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",16,209,70
+"35036",1998,106.4,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",17,209,70
+"35037",1999,110.6,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",18,209,70
+"35038",2000,68.6,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",19,209,70
+"35039",2001,81.2,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",20,209,70
+"35040",2002,70.7,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",21,209,70
+"35041",2003,106.4,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",22,209,70
+"35015",2004,108.5,"Pleurobrachia_a pileus","abundance","HMK043","kharouba",23,209,70
+"33508",1996,130.7477,"Poecile montanus","reproduction","HMK011","kharouba",15,155,71
+"33509",1997,139.6457,"Poecile montanus","reproduction","HMK011","kharouba",16,155,71
+"33510",1998,135.3756,"Poecile montanus","reproduction","HMK011","kharouba",17,155,71
+"33511",1999,130.4458,"Poecile montanus","reproduction","HMK011","kharouba",18,155,71
+"33512",2000,132.758,"Poecile montanus","reproduction","HMK011","kharouba",19,155,71
+"33513",2001,133.1005,"Poecile montanus","reproduction","HMK011","kharouba",20,155,71
+"33514",2002,127.8414,"Poecile montanus","reproduction","HMK011","kharouba",21,155,71
+"33515",2003,136.0817,"Poecile montanus","reproduction","HMK011","kharouba",22,155,71
+"33516",2004,129.8321,"Poecile montanus","reproduction","HMK011","kharouba",23,155,71
+"33517",2005,131.4894,"Poecile montanus","reproduction","HMK011","kharouba",24,155,71
+"33518",2006,129.8518,"Poecile montanus","reproduction","HMK011","kharouba",25,155,71
+"33519",2007,131.5084,"Poecile montanus","reproduction","HMK011","kharouba",26,155,71
+"33520",2008,130.859,"Poecile montanus","reproduction","HMK011","kharouba",27,155,71
+"33521",2009,133.5005,"Poecile montanus","reproduction","HMK011","kharouba",28,155,71
+"33567",1991,126,"Pygoscelis adeliae","reproduction","HMK018","kharouba",10,168,72
+"33564",1992,124,"Pygoscelis adeliae","reproduction","HMK018","kharouba",11,168,72
+"33565",1993,118,"Pygoscelis adeliae","reproduction","HMK018","kharouba",12,168,72
+"33566",1994,128,"Pygoscelis adeliae","reproduction","HMK018","kharouba",13,168,72
+"33571",1995,120,"Pygoscelis adeliae","reproduction","HMK018","kharouba",14,168,72
+"33572",1996,120,"Pygoscelis adeliae","reproduction","HMK018","kharouba",15,168,72
+"33544",1997,120,"Pygoscelis adeliae","reproduction","HMK018","kharouba",16,167,72
+"33573",1997,120,"Pygoscelis adeliae","reproduction","HMK018","kharouba",16,168,72
+"33545",1998,120,"Pygoscelis adeliae","reproduction","HMK018","kharouba",17,167,72
+"33574",1998,120,"Pygoscelis adeliae","reproduction","HMK018","kharouba",17,168,72
+"33546",1999,122,"Pygoscelis adeliae","reproduction","HMK018","kharouba",18,167,72
+"33575",1999,122,"Pygoscelis adeliae","reproduction","HMK018","kharouba",18,168,72
+"33547",2000,121,"Pygoscelis adeliae","reproduction","HMK018","kharouba",19,167,72
+"33576",2000,121,"Pygoscelis adeliae","reproduction","HMK018","kharouba",19,168,72
+"33548",2001,117,"Pygoscelis adeliae","reproduction","HMK018","kharouba",20,167,72
+"33577",2001,117,"Pygoscelis adeliae","reproduction","HMK018","kharouba",20,168,72
+"33549",2002,125,"Pygoscelis adeliae","reproduction","HMK018","kharouba",21,167,72
+"33578",2002,125,"Pygoscelis adeliae","reproduction","HMK018","kharouba",21,168,72
+"33550",2003,121,"Pygoscelis adeliae","reproduction","HMK018","kharouba",22,167,72
+"33579",2003,121,"Pygoscelis adeliae","reproduction","HMK018","kharouba",22,168,72
+"33551",2004,119,"Pygoscelis adeliae","reproduction","HMK018","kharouba",23,167,72
+"33580",2004,119,"Pygoscelis adeliae","reproduction","HMK018","kharouba",23,168,72
+"33552",2005,126.5,"Pygoscelis adeliae","reproduction","HMK018","kharouba",24,167,72
+"33568",2005,126.5,"Pygoscelis adeliae","reproduction","HMK018","kharouba",24,168,72
+"33553",2006,127,"Pygoscelis adeliae","reproduction","HMK018","kharouba",25,167,72
+"33569",2006,127,"Pygoscelis adeliae","reproduction","HMK018","kharouba",25,168,72
+"33570",2007,135,"Pygoscelis adeliae","reproduction","HMK018","kharouba",26,168,72
+"33558",1997,146,"Pygoscelis antarcticus","reproduction","HMK018","kharouba",16,167,73
+"33555",1998,142,"Pygoscelis antarcticus","reproduction","HMK018","kharouba",17,167,73
+"33556",1999,141,"Pygoscelis antarcticus","reproduction","HMK018","kharouba",18,167,73
+"33557",2000,142,"Pygoscelis antarcticus","reproduction","HMK018","kharouba",19,167,73
+"33562",2001,141,"Pygoscelis antarcticus","reproduction","HMK018","kharouba",20,167,73
+"33559",2002,146,"Pygoscelis antarcticus","reproduction","HMK018","kharouba",21,167,73
+"33560",2003,143,"Pygoscelis antarcticus","reproduction","HMK018","kharouba",22,167,73
+"33561",2004,146,"Pygoscelis antarcticus","reproduction","HMK018","kharouba",23,167,73
+"33563",2005,140,"Pygoscelis antarcticus","reproduction","HMK018","kharouba",24,167,73
+"33554",2006,138,"Pygoscelis antarcticus","reproduction","HMK018","kharouba",25,167,73
+"33591",1991,137,"Pygoscelis papua","reproduction","HMK018","kharouba",10,168,74
+"33592",1992,133,"Pygoscelis papua","reproduction","HMK018","kharouba",11,168,74
+"33593",1993,125,"Pygoscelis papua","reproduction","HMK018","kharouba",12,168,74
+"33581",1994,138,"Pygoscelis papua","reproduction","HMK018","kharouba",13,168,74
+"33582",1995,121,"Pygoscelis papua","reproduction","HMK018","kharouba",14,168,74
+"33583",1996,126,"Pygoscelis papua","reproduction","HMK018","kharouba",15,168,74
+"33584",1997,125,"Pygoscelis papua","reproduction","HMK018","kharouba",16,168,74
+"33608",1997,125,"Pygoscelis papua","reproduction","HMK018","kharouba",16,169,74
+"33585",1998,133,"Pygoscelis papua","reproduction","HMK018","kharouba",17,168,74
+"33609",1998,133,"Pygoscelis papua","reproduction","HMK018","kharouba",17,169,74
+"33586",1999,131.5,"Pygoscelis papua","reproduction","HMK018","kharouba",18,168,74
+"33610",1999,131.5,"Pygoscelis papua","reproduction","HMK018","kharouba",18,169,74
+"33587",2000,131.5,"Pygoscelis papua","reproduction","HMK018","kharouba",19,168,74
+"33611",2000,131.5,"Pygoscelis papua","reproduction","HMK018","kharouba",19,169,74
+"33588",2001,123,"Pygoscelis papua","reproduction","HMK018","kharouba",20,168,74
+"33612",2001,123,"Pygoscelis papua","reproduction","HMK018","kharouba",20,169,74
+"33589",2002,140.5,"Pygoscelis papua","reproduction","HMK018","kharouba",21,168,74
+"33613",2002,140.5,"Pygoscelis papua","reproduction","HMK018","kharouba",21,169,74
+"33590",2003,134.5,"Pygoscelis papua","reproduction","HMK018","kharouba",22,168,74
+"33614",2003,134.5,"Pygoscelis papua","reproduction","HMK018","kharouba",22,169,74
+"33595",2004,133,"Pygoscelis papua","reproduction","HMK018","kharouba",23,168,74
+"33615",2004,133,"Pygoscelis papua","reproduction","HMK018","kharouba",23,169,74
+"33596",2005,130.5,"Pygoscelis papua","reproduction","HMK018","kharouba",24,168,74
+"33616",2005,130.5,"Pygoscelis papua","reproduction","HMK018","kharouba",24,169,74
+"33597",2006,125,"Pygoscelis papua","reproduction","HMK018","kharouba",25,168,74
+"33617",2006,125,"Pygoscelis papua","reproduction","HMK018","kharouba",25,169,74
+"33594",2007,141,"Pygoscelis papua","reproduction","HMK018","kharouba",26,168,74
+"33326",1982,99.6054,"Quercus spp.","population growth","HMK004","kharouba",1,19,75
+"33327",1983,92.7749,"Quercus spp.","population growth","HMK004","kharouba",2,19,75
+"33328",1984,100.0908,"Quercus spp.","population growth","HMK004","kharouba",3,19,75
+"33329",1985,107.67,"Quercus spp.","population growth","HMK004","kharouba",4,19,75
+"33330",1986,92.4126,"Quercus spp.","population growth","HMK004","kharouba",5,19,75
+"33331",1987,115.786,"Quercus spp.","population growth","HMK004","kharouba",6,19,75
+"33332",1988,95.9811,"Quercus spp.","population growth","HMK004","kharouba",7,19,75
+"33966",1961,96.0599,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33967",1962,112.912,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33968",1964,117.151,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33969",1965,105.852,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33970",1968,114.039,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33971",1970,110.115,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33972",1971,103.553,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33973",1972,115.669,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33974",1973,95.6802,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33975",1974,113.848,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33976",1975,111.229,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33977",1976,112.294,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33978",1977,115.724,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33979",1978,111.791,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33980",1979,121.276,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33981",1980,99.1814,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33982",1981,111.032,"Quercus2 robur","population growth","HMK027","kharouba",0,179,76
+"33983",1982,109.994,"Quercus2 robur","population growth","HMK027","kharouba",1,179,76
+"33984",1983,113.163,"Quercus2 robur","population growth","HMK027","kharouba",2,179,76
+"33985",1984,110.543,"Quercus2 robur","population growth","HMK027","kharouba",3,179,76
+"33986",1986,112.934,"Quercus2 robur","population growth","HMK027","kharouba",5,179,76
+"33987",1988,101.376,"Quercus2 robur","population growth","HMK027","kharouba",7,179,76
+"33988",1989,93.2322,"Quercus2 robur","population growth","HMK027","kharouba",8,179,76
+"33989",1991,106.67,"Quercus2 robur","population growth","HMK027","kharouba",10,179,76
+"33990",1993,106.167,"Quercus2 robur","population growth","HMK027","kharouba",12,179,76
+"33991",1994,107.232,"Quercus2 robur","population growth","HMK027","kharouba",13,179,76
+"33992",1995,112.901,"Quercus2 robur","population growth","HMK027","kharouba",14,179,76
+"33993",1997,105.427,"Quercus2 robur","population growth","HMK027","kharouba",16,179,76
+"33994",1998,99.9133,"Quercus2 robur","population growth","HMK027","kharouba",17,179,76
+"33995",2000,103.6155,"Quercus2 robur","population growth","HMK027","kharouba",19,179,76
+"33996",2002,101.66475,"Quercus2 robur","population growth","HMK027","kharouba",21,179,76
+"33997",2004,106.425,"Quercus2 robur","population growth","HMK027","kharouba",23,179,76
+"33998",2006,109.994,"Quercus2 robur","population growth","HMK027","kharouba",25,179,76
+"33999",2007,99.743,"Quercus2 robur","population growth","HMK027","kharouba",26,179,76
+"35357",1988,33.2699,"Quercus3 robur","population growth","HMK048","kharouba",7,222,77
+"35358",1989,25.5849,"Quercus3 robur","population growth","HMK048","kharouba",8,222,77
+"35346",1990,27.8998,"Quercus3 robur","population growth","HMK048","kharouba",9,222,77
+"35347",1992,40.8691,"Quercus3 robur","population growth","HMK048","kharouba",11,222,77
+"35348",1993,25.1861,"Quercus3 robur","population growth","HMK048","kharouba",12,222,77
+"35349",1994,30.1677,"Quercus3 robur","population growth","HMK048","kharouba",13,222,77
+"35350",1995,29.82,"Quercus3 robur","population growth","HMK048","kharouba",14,222,77
+"35351",1996,38.135,"Quercus3 robur","population growth","HMK048","kharouba",15,222,77
+"35352",1997,35.1186,"Quercus3 robur","population growth","HMK048","kharouba",16,222,77
+"35353",1998,30.4356,"Quercus3 robur","population growth","HMK048","kharouba",17,222,77
+"35359",1999,26.4192,"Quercus3 robur","population growth","HMK048","kharouba",18,222,77
+"35360",2000,29.0695,"Quercus3 robur","population growth","HMK048","kharouba",19,222,77
+"35361",2001,37.0532,"Quercus3 robur","population growth","HMK048","kharouba",20,222,77
+"35355",2002,30.3701,"Quercus3 robur","population growth","HMK048","kharouba",21,222,77
+"35356",2003,26.3538,"Quercus3 robur","population growth","HMK048","kharouba",22,222,77
+"35344",2004,25.3374,"Quercus3 robur","population growth","HMK048","kharouba",23,222,77
+"35345",2005,26.319,"Quercus3 robur","population growth","HMK048","kharouba",24,222,77
+"34124",2002,159.115,"Rangifer2 tarandus","reproduction","HMK030","kharouba",21,183,78
+"34125",2003,155.301,"Rangifer2 tarandus","reproduction","HMK030","kharouba",22,183,78
+"34126",2004,159.354,"Rangifer2 tarandus","reproduction","HMK030","kharouba",23,183,78
+"34127",2005,155.539,"Rangifer2 tarandus","reproduction","HMK030","kharouba",24,183,78
+"34128",2006,157.435,"Rangifer2 tarandus","reproduction","HMK030","kharouba",25,183,78
+"34129",2007,156.793,"Rangifer2 tarandus","reproduction","HMK030","kharouba",26,183,78
+"34130",2008,152.851,"Rangifer2 tarandus","reproduction","HMK030","kharouba",27,183,78
+"34131",2009,155.001,"Rangifer2 tarandus","reproduction","HMK030","kharouba",28,183,78
+"34132",2010,157.405,"Rangifer2 tarandus","reproduction","HMK030","kharouba",29,183,78
+"34133",2011,156.381,"Rangifer2 tarandus","reproduction","HMK030","kharouba",30,183,78
+"34853",1973,135.867,"Rissa1 tridactyla","reproduction","HMK039","kharouba",0,201,79
+"34854",1974,128.205,"Rissa1 tridactyla","reproduction","HMK039","kharouba",0,201,79
+"34855",1975,124.072,"Rissa1 tridactyla","reproduction","HMK039","kharouba",0,201,79
+"34856",1976,128.763,"Rissa1 tridactyla","reproduction","HMK039","kharouba",0,201,79
+"34857",1977,123.455,"Rissa1 tridactyla","reproduction","HMK039","kharouba",0,201,79
+"34858",1978,143.146,"Rissa1 tridactyla","reproduction","HMK039","kharouba",0,201,79
+"34859",1979,139.896,"Rissa1 tridactyla","reproduction","HMK039","kharouba",0,201,79
+"34860",1980,134.587,"Rissa1 tridactyla","reproduction","HMK039","kharouba",0,201,79
+"34861",1981,146.925,"Rissa1 tridactyla","reproduction","HMK039","kharouba",0,201,79
+"34862",1982,133.676,"Rissa1 tridactyla","reproduction","HMK039","kharouba",1,201,79
+"34863",1983,140.132,"Rissa1 tridactyla","reproduction","HMK039","kharouba",2,201,79
+"34864",1984,140.705,"Rissa1 tridactyla","reproduction","HMK039","kharouba",3,201,79
+"34865",1985,143.631,"Rissa1 tridactyla","reproduction","HMK039","kharouba",4,201,79
+"34866",1986,158.617,"Rissa1 tridactyla","reproduction","HMK039","kharouba",5,201,79
+"34867",1987,161.544,"Rissa1 tridactyla","reproduction","HMK039","kharouba",6,201,79
+"34868",1988,136.823,"Rissa1 tridactyla","reproduction","HMK039","kharouba",7,201,79
+"34869",1989,136.807,"Rissa1 tridactyla","reproduction","HMK039","kharouba",8,201,79
+"34870",1990,128.851,"Rissa1 tridactyla","reproduction","HMK039","kharouba",9,201,79
+"34871",1991,139.72,"Rissa1 tridactyla","reproduction","HMK039","kharouba",10,201,79
+"34872",1992,138.529,"Rissa1 tridactyla","reproduction","HMK039","kharouba",11,201,79
+"34873",1993,157.044,"Rissa1 tridactyla","reproduction","HMK039","kharouba",12,201,79
+"34874",1994,157.029,"Rissa1 tridactyla","reproduction","HMK039","kharouba",13,201,79
+"34875",1995,144.661,"Rissa1 tridactyla","reproduction","HMK039","kharouba",14,201,79
+"35619",1983,188.3236,"Rissa2 tridactyla","population growth","SET005","kharouba",2,234,80
+"35620",1984,186.209,"Rissa2 tridactyla","population growth","SET005","kharouba",3,234,80
+"35621",1985,194.397,"Rissa2 tridactyla","population growth","SET005","kharouba",4,234,80
+"35622",1986,188.8935,"Rissa2 tridactyla","population growth","SET005","kharouba",5,234,80
+"35623",1987,183.1803,"Rissa2 tridactyla","population growth","SET005","kharouba",6,234,80
+"35629",1988,186.2381,"Rissa2 tridactyla","population growth","SET005","kharouba",7,234,80
+"35630",1989,177.8367,"Rissa2 tridactyla","population growth","SET005","kharouba",8,234,80
+"35631",1990,181.6119,"Rissa2 tridactyla","population growth","SET005","kharouba",9,234,80
+"35600",1991,184.9961,"Rissa2 tridactyla","population growth","SET005","kharouba",10,234,80
+"35601",1992,180.8311,"Rissa2 tridactyla","population growth","SET005","kharouba",11,234,80
+"35602",1993,183.0785,"Rissa2 tridactyla","population growth","SET005","kharouba",12,234,80
+"35603",1994,197.3493,"Rissa2 tridactyla","population growth","SET005","kharouba",13,234,80
+"35604",1995,195.5882,"Rissa2 tridactyla","population growth","SET005","kharouba",14,234,80
+"35605",1996,205.273,"Rissa2 tridactyla","population growth","SET005","kharouba",15,234,80
+"35606",1997,189.462,"Rissa2 tridactyla","population growth","SET005","kharouba",16,234,80
+"35607",1998,192.9487,"Rissa2 tridactyla","population growth","SET005","kharouba",17,234,80
+"35608",1999,195.6063,"Rissa2 tridactyla","population growth","SET005","kharouba",18,234,80
+"35609",2000,185.295,"Rissa2 tridactyla","population growth","SET005","kharouba",19,234,80
+"35610",2001,196.403,"Rissa2 tridactyla","population growth","SET005","kharouba",20,234,80
+"35611",2002,189.4001,"Rissa2 tridactyla","population growth","SET005","kharouba",21,234,80
+"35612",2003,188.9561,"Rissa2 tridactyla","population growth","SET005","kharouba",22,234,80
+"35613",2004,204.0309,"Rissa2 tridactyla","population growth","SET005","kharouba",23,234,80
+"35614",2005,211.3127,"Rissa2 tridactyla","population growth","SET005","kharouba",24,234,80
+"35615",2006,206.4742,"Rissa2 tridactyla","population growth","SET005","kharouba",25,234,80
+"33396",1975,135.0237,"Selasphorus platycercus","first appearance","HMK008","kharouba",0,145,81
+"33466",1975,135.0237,"Selasphorus platycercus","first appearance","HMK008","kharouba",0,146,81
+"33397",1979,136.4563,"Selasphorus platycercus","first appearance","HMK008","kharouba",0,145,81
+"33467",1979,136.4563,"Selasphorus platycercus","first appearance","HMK008","kharouba",0,146,81
+"33398",1980,138.321,"Selasphorus platycercus","first appearance","HMK008","kharouba",0,145,81
+"33468",1980,138.321,"Selasphorus platycercus","first appearance","HMK008","kharouba",0,146,81
+"33399",1981,133.4288,"Selasphorus platycercus","first appearance","HMK008","kharouba",0,145,81
+"33469",1981,133.4288,"Selasphorus platycercus","first appearance","HMK008","kharouba",0,146,81
+"33400",1982,135.0248,"Selasphorus platycercus","first appearance","HMK008","kharouba",1,145,81
+"33401",1983,147.6623,"Selasphorus platycercus","first appearance","HMK008","kharouba",2,145,81
+"33470",1983,147.6623,"Selasphorus platycercus","first appearance","HMK008","kharouba",2,146,81
+"33364",1984,105.56655,"Selasphorus platycercus","first appearance","HMK008","kharouba",3,144,81
+"33402",1984,105.56655,"Selasphorus platycercus","first appearance","HMK008","kharouba",3,145,81
+"33471",1984,105.56655,"Selasphorus platycercus","first appearance","HMK008","kharouba",3,146,81
+"33365",1985,111.87816,"Selasphorus platycercus","first appearance","HMK008","kharouba",4,144,81
+"33403",1985,111.87816,"Selasphorus platycercus","first appearance","HMK008","kharouba",4,145,81
+"33366",1986,117.4038,"Selasphorus platycercus","first appearance","HMK008","kharouba",5,144,81
+"33404",1986,117.4038,"Selasphorus platycercus","first appearance","HMK008","kharouba",5,145,81
+"33472",1986,117.4038,"Selasphorus platycercus","first appearance","HMK008","kharouba",5,146,81
+"33367",1987,104.1018,"Selasphorus platycercus","first appearance","HMK008","kharouba",6,144,81
+"33405",1987,104.1018,"Selasphorus platycercus","first appearance","HMK008","kharouba",6,145,81
+"33473",1987,104.1018,"Selasphorus platycercus","first appearance","HMK008","kharouba",6,146,81
+"33368",1988,137.2863,"Selasphorus platycercus","first appearance","HMK008","kharouba",7,144,81
+"33406",1988,137.2863,"Selasphorus platycercus","first appearance","HMK008","kharouba",7,145,81
+"33474",1988,137.2863,"Selasphorus platycercus","first appearance","HMK008","kharouba",7,146,81
+"33369",1989,124.44905,"Selasphorus platycercus","first appearance","HMK008","kharouba",8,144,81
+"33407",1989,124.44905,"Selasphorus platycercus","first appearance","HMK008","kharouba",8,145,81
+"33475",1989,124.44905,"Selasphorus platycercus","first appearance","HMK008","kharouba",8,146,81
+"33370",1991,118.3513,"Selasphorus platycercus","first appearance","HMK008","kharouba",10,144,81
+"33408",1991,118.3513,"Selasphorus platycercus","first appearance","HMK008","kharouba",10,145,81
+"33476",1991,118.3513,"Selasphorus platycercus","first appearance","HMK008","kharouba",10,146,81
+"33371",1992,117.2051,"Selasphorus platycercus","first appearance","HMK008","kharouba",11,144,81
+"33359",1993,125.48115,"Selasphorus platycercus","first appearance","HMK008","kharouba",12,144,81
+"33409",1993,125.48115,"Selasphorus platycercus","first appearance","HMK008","kharouba",12,145,81
+"33477",1993,125.48115,"Selasphorus platycercus","first appearance","HMK008","kharouba",12,146,81
+"33360",1994,120.24725,"Selasphorus platycercus","first appearance","HMK008","kharouba",13,144,81
+"33361",1995,122.9208,"Selasphorus platycercus","first appearance","HMK008","kharouba",14,144,81
+"33410",1995,122.9208,"Selasphorus platycercus","first appearance","HMK008","kharouba",14,145,81
+"33478",1995,122.9208,"Selasphorus platycercus","first appearance","HMK008","kharouba",14,146,81
+"33411",1996,139.1117,"Selasphorus platycercus","first appearance","HMK008","kharouba",15,145,81
+"33479",1996,139.1117,"Selasphorus platycercus","first appearance","HMK008","kharouba",15,146,81
+"33362",1997,114.09895,"Selasphorus platycercus","first appearance","HMK008","kharouba",16,144,81
+"33412",1997,114.09895,"Selasphorus platycercus","first appearance","HMK008","kharouba",16,145,81
+"33480",1997,114.09895,"Selasphorus platycercus","first appearance","HMK008","kharouba",16,146,81
+"33413",1998,134.0889,"Selasphorus platycercus","first appearance","HMK008","kharouba",17,145,81
+"33481",1998,134.0889,"Selasphorus platycercus","first appearance","HMK008","kharouba",17,146,81
+"33363",1999,134.1332,"Selasphorus platycercus","first appearance","HMK008","kharouba",18,144,81
+"33414",1999,134.1332,"Selasphorus platycercus","first appearance","HMK008","kharouba",18,145,81
+"33482",1999,134.1332,"Selasphorus platycercus","first appearance","HMK008","kharouba",18,146,81
+"33415",2000,116.26345,"Selasphorus platycercus","first appearance","HMK008","kharouba",19,145,81
+"33483",2000,116.26345,"Selasphorus platycercus","first appearance","HMK008","kharouba",19,146,81
+"33373",2001,95.23505,"Selasphorus platycercus","first appearance","HMK008","kharouba",20,144,81
+"33416",2001,95.23505,"Selasphorus platycercus","first appearance","HMK008","kharouba",20,145,81
+"33484",2001,95.23505,"Selasphorus platycercus","first appearance","HMK008","kharouba",20,146,81
+"33431",2002,125.7198,"Selasphorus platycercus","first appearance","HMK008","kharouba",21,145,81
+"33485",2002,125.7198,"Selasphorus platycercus","first appearance","HMK008","kharouba",21,146,81
+"33374",2003,126.27915,"Selasphorus platycercus","first appearance","HMK008","kharouba",22,144,81
+"33432",2003,126.27915,"Selasphorus platycercus","first appearance","HMK008","kharouba",22,145,81
+"33486",2003,126.27915,"Selasphorus platycercus","first appearance","HMK008","kharouba",22,146,81
+"33429",2004,124.6918,"Selasphorus platycercus","first appearance","HMK008","kharouba",23,145,81
+"33487",2004,124.6918,"Selasphorus platycercus","first appearance","HMK008","kharouba",23,146,81
+"33430",2005,129.1695,"Selasphorus platycercus","first appearance","HMK008","kharouba",24,145,81
+"33488",2005,129.1695,"Selasphorus platycercus","first appearance","HMK008","kharouba",24,146,81
+"33435",2006,136.8343,"Selasphorus platycercus","first appearance","HMK008","kharouba",25,145,81
+"33489",2006,136.8343,"Selasphorus platycercus","first appearance","HMK008","kharouba",25,146,81
+"33375",2007,111.7822,"Selasphorus platycercus","first appearance","HMK008","kharouba",26,144,81
+"33436",2007,111.7822,"Selasphorus platycercus","first appearance","HMK008","kharouba",26,145,81
+"33372",2008,122.6224,"Selasphorus platycercus","first appearance","HMK008","kharouba",27,144,81
+"33433",2008,122.6224,"Selasphorus platycercus","first appearance","HMK008","kharouba",27,145,81
+"33490",2008,122.6224,"Selasphorus platycercus","first appearance","HMK008","kharouba",27,146,81
+"33376",2009,107.19982,"Selasphorus platycercus","first appearance","HMK008","kharouba",28,144,81
+"33434",2009,107.19982,"Selasphorus platycercus","first appearance","HMK008","kharouba",28,145,81
+"33491",2009,107.19982,"Selasphorus platycercus","first appearance","HMK008","kharouba",28,146,81
+"33377",2010,119.7149,"Selasphorus platycercus","first appearance","HMK008","kharouba",29,144,81
+"33437",2010,119.7149,"Selasphorus platycercus","first appearance","HMK008","kharouba",29,145,81
+"33492",2010,119.7149,"Selasphorus platycercus","first appearance","HMK008","kharouba",29,146,81
+"33493",2011,140.2216,"Selasphorus platycercus","first appearance","HMK008","kharouba",30,146,81
+"34804",1980,108.409,"Sitta europaea","reproduction","HMK038","kharouba",0,200,82
+"34805",1981,102.5,"Sitta europaea","reproduction","HMK038","kharouba",0,200,82
+"34806",1982,112.5,"Sitta europaea","reproduction","HMK038","kharouba",1,200,82
+"34807",1983,102.955,"Sitta europaea","reproduction","HMK038","kharouba",2,200,82
+"34808",1984,112.045,"Sitta europaea","reproduction","HMK038","kharouba",3,200,82
+"34809",1985,107.5,"Sitta europaea","reproduction","HMK038","kharouba",4,200,82
+"34810",1986,108.636,"Sitta europaea","reproduction","HMK038","kharouba",5,200,82
+"34811",1987,104.773,"Sitta europaea","reproduction","HMK038","kharouba",6,200,82
+"34812",1988,108.409,"Sitta europaea","reproduction","HMK038","kharouba",7,200,82
+"34813",1989,106.818,"Sitta europaea","reproduction","HMK038","kharouba",8,200,82
+"34814",1990,101.818,"Sitta europaea","reproduction","HMK038","kharouba",9,200,82
+"34815",1991,109.318,"Sitta europaea","reproduction","HMK038","kharouba",10,200,82
+"34816",1992,104.318,"Sitta europaea","reproduction","HMK038","kharouba",11,200,82
+"34817",1993,107.955,"Sitta europaea","reproduction","HMK038","kharouba",12,200,82
+"34818",1994,105.909,"Sitta europaea","reproduction","HMK038","kharouba",13,200,82
+"34819",1995,111.364,"Sitta europaea","reproduction","HMK038","kharouba",14,200,82
+"34820",1996,109.545,"Sitta europaea","reproduction","HMK038","kharouba",15,200,82
+"34821",1997,114.091,"Sitta europaea","reproduction","HMK038","kharouba",16,200,82
+"34822",1998,103.409,"Sitta europaea","reproduction","HMK038","kharouba",17,200,82
+"34823",1999,101.591,"Sitta europaea","reproduction","HMK038","kharouba",18,200,82
+"34824",2000,103.409,"Sitta europaea","reproduction","HMK038","kharouba",19,200,82
+"34825",2001,106.136,"Sitta europaea","reproduction","HMK038","kharouba",20,200,82
+"34826",2002,102.273,"Sitta europaea","reproduction","HMK038","kharouba",21,200,82
+"34827",2003,115,"Sitta europaea","reproduction","HMK038","kharouba",22,200,82
+"34828",2004,100.682,"Sitta europaea","reproduction","HMK038","kharouba",23,200,82
+"34829",2005,104.318,"Sitta europaea","reproduction","HMK038","kharouba",24,200,82
+"34307",1992,161.093,"Syrphid spp.","abundance","HMK033","kharouba",11,190,83
+"34308",1993,176.813,"Syrphid spp.","abundance","HMK033","kharouba",12,190,83
+"34309",1994,159.518,"Syrphid spp.","abundance","HMK033","kharouba",13,190,83
+"34310",1995,190.476,"Syrphid spp.","abundance","HMK033","kharouba",14,190,83
+"34311",1996,169.625,"Syrphid spp.","abundance","HMK033","kharouba",15,190,83
+"34312",1997,179.252,"Syrphid spp.","abundance","HMK033","kharouba",16,190,83
+"34313",1998,175.162,"Syrphid spp.","abundance","HMK033","kharouba",17,190,83
+"34314",1999,170.056,"Syrphid spp.","abundance","HMK033","kharouba",18,190,83
+"34315",2000,154.286,"Syrphid spp.","abundance","HMK033","kharouba",19,190,83
+"34316",2001,167.465,"Syrphid spp.","abundance","HMK033","kharouba",20,190,83
+"34317",2003,168.94,"Syrphid spp.","abundance","HMK033","kharouba",22,190,83
+"34318",2004,149.613,"Syrphid spp.","abundance","HMK033","kharouba",23,190,83
+"34319",2005,169.905,"Syrphid spp.","abundance","HMK033","kharouba",24,190,83
+"34320",2006,176.99,"Syrphid spp.","abundance","HMK033","kharouba",25,190,83
+"34321",2007,150.045,"Syrphid spp.","abundance","HMK033","kharouba",26,190,83
+"34322",2008,184.05,"Syrphid spp.","abundance","HMK033","kharouba",27,190,83
+"34323",2009,161.167,"Syrphid spp.","abundance","HMK033","kharouba",28,190,83
+"34324",2010,194.132,"Syrphid spp.","abundance","HMK033","kharouba",29,190,83
+"34325",2011,173.308,"Syrphid spp.","abundance","HMK033","kharouba",30,190,83
+"34230",1985,256.6669,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",4,188,84
+"34231",1986,279.4813,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",5,188,84
+"34219",1987,262.8892,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",6,188,84
+"34220",1989,279.4813,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",8,188,84
+"34221",1990,245.25935,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",9,188,84
+"34222",1991,271.1849,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",10,188,84
+"34223",1993,287.7777,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",12,188,84
+"34224",1994,262.8892,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",13,188,84
+"34225",1995,316.8151,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",14,188,84
+"34226",1996,289.8518,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",15,188,84
+"34232",1997,287.7777,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",16,188,84
+"34233",1998,302.2964,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",17,188,84
+"34234",2000,294,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",19,188,84
+"34235",2001,271.1849,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",20,188,84
+"34204",2002,310.5928,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",21,188,84
+"34205",2003,333.4072,"Thermocyclops oithonoides","first appearance","HMK031","kharouba",22,188,84
+"33333",1982,102.261,"Tortrix viridana","reproduction","HMK004","kharouba",1,19,85
+"33334",1983,96.6617,"Tortrix viridana","reproduction","HMK004","kharouba",2,19,85
+"33335",1984,105.007,"Tortrix viridana","reproduction","HMK004","kharouba",3,19,85
+"33336",1985,109.914,"Tortrix viridana","reproduction","HMK004","kharouba",4,19,85
+"33337",1986,96.7122,"Tortrix viridana","reproduction","HMK004","kharouba",5,19,85
+"33338",1987,114.949,"Tortrix viridana","reproduction","HMK004","kharouba",6,19,85
+"33339",1988,101.514,"Tortrix viridana","reproduction","HMK004","kharouba",7,19,85
+"35656",1983,182.9503,"Uria aalge","population growth","SET005","kharouba",2,235,86
+"35657",1984,169.5155,"Uria aalge","population growth","SET005","kharouba",3,235,86
+"35658",1985,178.0308,"Uria aalge","population growth","SET005","kharouba",4,235,86
+"35659",1986,189.9808,"Uria aalge","population growth","SET005","kharouba",5,235,86
+"35660",1987,177.1568,"Uria aalge","population growth","SET005","kharouba",6,235,86
+"35661",1988,180.8006,"Uria aalge","population growth","SET005","kharouba",7,235,86
+"35662",1989,166.2404,"Uria aalge","population growth","SET005","kharouba",8,235,86
+"35663",1990,163.7301,"Uria aalge","population growth","SET005","kharouba",9,235,86
+"35664",1991,171.2611,"Uria aalge","population growth","SET005","kharouba",10,235,86
+"35665",1992,167.3352,"Uria aalge","population growth","SET005","kharouba",11,235,86
+"35666",1993,175.2203,"Uria aalge","population growth","SET005","kharouba",12,235,86
+"35667",1994,177.391,"Uria aalge","population growth","SET005","kharouba",13,235,86
+"35668",1995,188.2847,"Uria aalge","population growth","SET005","kharouba",14,235,86
+"35669",1996,173.4533,"Uria aalge","population growth","SET005","kharouba",15,235,86
+"35670",1997,144.7964,"Uria aalge","population growth","SET005","kharouba",16,235,86
+"35671",1998,177.9679,"Uria aalge","population growth","SET005","kharouba",17,235,86
+"35672",1999,177.7385,"Uria aalge","population growth","SET005","kharouba",18,235,86
+"35673",2000,149.9125,"Uria aalge","population growth","SET005","kharouba",19,235,86
+"35674",2001,161.6365,"Uria aalge","population growth","SET005","kharouba",20,235,86
+"35675",2002,164.1247,"Uria aalge","population growth","SET005","kharouba",21,235,86
+"35676",2003,164.3359,"Uria aalge","population growth","SET005","kharouba",22,235,86
+"35677",2004,207.4608,"Uria aalge","population growth","SET005","kharouba",23,235,86
+"35678",2005,173.6741,"Uria aalge","population growth","SET005","kharouba",24,235,86
+"35679",2006,151.8707,"Uria aalge","population growth","SET005","kharouba",25,235,86

@@ -40,7 +40,7 @@ set.seed(1234)
 #########################################################
 
 dat<-allnew
-#head(allnew)
+
 #allnew$studyid
 
 #removing all the extra columns for now, may want this additional information later
@@ -112,62 +112,44 @@ hk
 specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species","intid")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
 
 # specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species", "type.of.action", "spp")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
-
+hk <- hk[complete.cases(hk), ]
  datalist<-with(hk,
                list( N=nrow(hk),
                      Nspp =nrow(specieschar.hin),
                      ypred = doy,
                     species =species.fact,
                     year = yr1981
-                   # ,K=2,
-                   # Imat=matrix(c(rep(1, nrow(hk)), scale(hk$year)), ncol=2)
                     ))
-
-# For adding in the covariance matrix, also have to define the no. varibales and the covariance matrix
-# Having some issues with this, it doesn't seem to like the datalist and it is not clear to me why...
-no.Vars <- 1
-matrix<-diag(1,no.Vars)
  
- datalist_cov<-with(hk,
-                list( N = nrow(hk),
-                      y = hk$doy,
-                      J = nrow(specieschar.hin),
-                      species = hk$species.fact,
-                      year = hk$yr1981,
-                      nVars = no.Vars,
-                      Imat = matrix
-                ))
- datalist_cov$nVars
- 
-sort(unique(hk$species.fact))
 
-N <- nrow(hk)
-y <- hk$doy
-J <- nrow(specieschar.hin)
-species <- hk$species.fact
-year <- hk$yr1981
-
-nVars <-1
-Imat <- diag(1, nVars)
 ###################################################
 
 # running stan model, model still a work in progress, but currently it has random slopes and intercepts for species
-mdl<-stan("Stan/singlesp_randslopes_goo.stan",
+ mdl<-stan("Stan/singlesp_randslopes_goo.stan",
+           data= datalist
+           ,iter=2000, chains=1, seed=1235, control = list(max_treedepth = 11))
+ 
+ mdlcov<-stan("Stan/singlesp_randslopesint_goo.stan",
+              data= datalist
+              ,iter=2000, chains=1, seed=1235, control = list(max_treedepth = 11))
+ 
+mdlcov<-stan("Stan/singlesp_randslopes_goo_wcov.stan",
           data= datalist
-          ,iter=2000, chains=4, seed=1235)
+          ,iter=2000, chains=4, seed=1235, control = list(max_treedepth = 11))
 
 #I don't know why this doesn't work or what these errors mean
 #mdl_cov<- stan("Stan/synchrony1_notype_randslops_wcovar.stan", data=c("N","J","y","species","year","nVars","Imat"), iter=2000, chains=1)
 
-#Running my data files with Lizzie and Heathers code works though, so it must be a coding issue
-mdl_cov<-stan("Stan/singlesp_randslopes_goo_wcov.stan", data=datalist, iter=2000, chains=1)
 
-print(mdl, pars = c("mu_b","sigma_b", "sigma_y", "b","ypred_new"
+print(mdlcov, pars = c("mu_b","sigma_b", "sigma_y", "a","b","ypred_new"
+)) 
+
+print(mdlcov, pars = c("mu_a","sigma_a","mu_b","sigma_b", "sigma_y", "a","b","ypred_new"
                     )) 
 
-sm.sum <- summary(mdl)$summary
+sm.sum <- summary(mdlcov)$summary
 
-ssm<- as.shinystan(mdl)
+ssm<- as.shinystan(mdlcov)
 launch_shinystan(ssm)
 
 length(unique(hk$species))
@@ -176,7 +158,8 @@ length(unique(hk$species))
 pairs(mdl, pars=c("mu_a","mu_b","sigma_a","sigma_b","sigma_y", "a[1]","b[1]", "a[50]","b[50]"))
 
 # Saving the stan output
-#saveRDS(mdl, "singlesp_randslope.rds")
+saveRDS(mdl , "singlesp_randslope.rds")
+saveRDS(mdlcov, "singlesp_randslope_cov.rds")
 
 
 ########################################################################################
