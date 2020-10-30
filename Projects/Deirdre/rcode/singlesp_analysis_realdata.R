@@ -18,14 +18,15 @@ if(length(grep("deirdreloughnan", getwd())>0)) {
 } else if(length(grep("Lizzie", getwd())>0)) { 
   setwd("~/Documents/git/projects/others/deirdre/Synchrony") 
 } else{
-  setwd("~/deirdre/Synchrony") # for midge
+  setwd("~/deirdre/Synchrony") 
 }
 
 # Get the cleaned data
-source("Rcode/combiningallphenodata.R")
+#source("Rcode/combiningallphenodata.R")
 
 # Get the cleaned data (relative path version)
 #source("combiningallphenodata.R")
+
 
 
 require(rstan)
@@ -39,15 +40,14 @@ set.seed(1234)
 
 #########################################################
 
-dat<-allnew
+dat1<-read.csv("input/hk.csv")
 
 #allnew$studyid
 
 #removing all the extra columns for now, may want this additional information later
-names(dat)
-dat1 <- dat[,c("year", "doy", "species", "Trophic.level", "environment", "phenophase", "studyid", "datasource",
-    "intid",  "spp", "type.of.action")]
-head(dat1)
+# names(dat)
+# dat1 <- dat[,c("year", "doy", "species", "phenophase", "studyid", "datasource", "intid",  "spp", "type.of.action")]
+# head(dat1)
 
 
 ################################################################################
@@ -56,63 +56,63 @@ head(dat1)
 # This is code taken directly from syncmodels.R that Lizzie and Heather wrote, it is removing duplicated species
 # These species exist within the hk dataset still, but there are no additional duplicates it would seem
 
-specieschar.wdups <- aggregate(dat1["doy"],
-                               dat1[c("studyid", "species", "spp")], FUN=length)
-specieschar <- aggregate(specieschar.wdups["doy"],
-                         specieschar.wdups[c("studyid", "species")], FUN=length)
-dupspp <- subset(specieschar, doy>1) # two species
-specieschar.wdups[which(specieschar.wdups$species %in% dupspp$species),]
-# delete duplicate species as spp1 (generally the shorter timeseries)
-dat.nodups <- dat1[-(which(dat$species %in% dupspp$species &
-                                    dat1$spp=="spp1")),]
-# and order it!
-dat.nodups <- dat.nodups[with(dat.nodups, order(species, year)),]
-specieschar.formodel <- aggregate(dat.nodups["doy"],
-                                  dat.nodups[c("studyid", "species", "type.of.action")], FUN=length)
-head(dat.nodups)
-
-#####################################################################################
-
-#Studies that do have a hinge ie start before 1981, just want and idea for how many there actually are
-# This is a very round about way, I am sure there is a better way of doing this!
-pre1980studies<-subset(dat.nodups, year<1981) 
-vlong<-list(unique(pre1980studies$studyid)) # There are apparently 100 studies that has data before 1980, meaning there are 27 that do not
-
-#####################################################################################
-#Using code from Kharouba et al. 2018 and Lizzie to calculate the hinge
-dat.nodups$newyear<-dat.nodups$year
-
-dat.nodups$newyear[which(dat.nodups$newyear<=1981)]<-1981
-
-dat.nodups$yr1981 <- dat.nodups$newyear-1981
-
-# Ok, the data is good to go! 
-
-##########################################################################################
-# BUT I am only going to start by working with the Kharouba data, so I will subset it out 
-hk<-subset(dat.nodups, datasource=="kharouba")
-names(hk)
-
-specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species", "intid")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
-
-hk <- hk[,c("year", "doy", "species", "phenophase", "studyid", "datasource", "yr1981","intid")]
-unique(hk$intid)
-hkintid<-hk[order(hk$intid),]
-
-hk<-hk[complete.cases(hk),]
-
-
-##########################################################################################
-# I have to change species to a number 
-# since there is so much data,I am only starting with the kharouba data, some of this code is take right from Lizzie and Heather's code (synchmodel.R)
-
-hk$species.fact<-as.numeric(as.factor(hk$species))
-
-hk
-specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species","intid")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
-
+# specieschar.wdups <- aggregate(dat1["doy"],
+#                                dat1[c("studyid", "species", "spp")], FUN=length)
+# specieschar <- aggregate(specieschar.wdups["doy"],
+#                          specieschar.wdups[c("studyid", "species")], FUN=length)
+# dupspp <- subset(specieschar, doy>1) # two species
+# specieschar.wdups[which(specieschar.wdups$species %in% dupspp$species),]
+# # delete duplicate species as spp1 (generally the shorter timeseries)
+# dat.nodups <- dat1[-(which(dat$species %in% dupspp$species &
+#                                     dat1$spp=="spp1")),]
+# # and order it!
+# dat.nodups <- dat.nodups[with(dat.nodups, order(species, year)),]
+# specieschar.formodel <- aggregate(dat.nodups["doy"],
+#                                   dat.nodups[c("studyid", "species", "type.of.action")], FUN=length)
+# head(dat.nodups)
+# 
+# #####################################################################################
+# 
+# #Studies that do have a hinge ie start before 1981, just want and idea for how many there actually are
+# # This is a very round about way, I am sure there is a better way of doing this!
+# pre1980studies<-subset(dat.nodups, year<1981) 
+# vlong<-list(unique(pre1980studies$studyid)) # There are apparently 100 studies that has data before 1980, meaning there are 27 that do not
+# 
+# #####################################################################################
+# #Using code from Kharouba et al. 2018 and Lizzie to calculate the hinge
+# dat.nodups$newyear<-dat.nodups$year
+# 
+# dat.nodups$newyear[which(dat.nodups$newyear<=1981)]<-1981
+# 
+# dat.nodups$yr1981 <- dat.nodups$newyear-1981
+# 
+# # Ok, the data is good to go! 
+# 
+# ##########################################################################################
+# # BUT I am only going to start by working with the Kharouba data, so I will subset it out 
+# hk<-subset(dat.nodups, datasource=="kharouba")
+# names(hk)
+# 
+# specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species", "intid")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
+# 
+# hk <- hk[,c("year", "doy", "species", "phenophase", "studyid", "datasource", "yr1981","intid")]
+# unique(hk$intid)
+# hkintid<-hk[order(hk$intid),]
+# 
+# hk<-hk[complete.cases(hk),]
+# 
+# 
+# ##########################################################################################
+# # I have to change species to a number 
+# # since there is so much data,I am only starting with the kharouba data, some of this code is take right from Lizzie and Heather's code (synchmodel.R)
+# 
+# hk$species.fact<-as.numeric(as.factor(hk$species))
+# 
+# hk
+# specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species","intid")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
+# 
 # specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species", "type.of.action", "spp")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
-hk <- hk[complete.cases(hk), ]
+hk <- hk[complete.cases(dat1), ]
  datalist<-with(hk,
                list( N=nrow(hk),
                      Nspp =nrow(specieschar.hin),
@@ -125,15 +125,15 @@ hk <- hk[complete.cases(hk), ]
 ###################################################
 
 # running stan model, model still a work in progress, but currently it has random slopes and intercepts for species
- mdl<-stan("Stan/singlesp_randslopes_goo.stan",
-           data= datalist
-           ,iter=2000, chains=1, seed=1235, control = list(max_treedepth = 11))
+ #mdl<-stan("Stan/singlesp_randslopes_goo.stan",
+           # data= datalist
+           # ,iter=2000, chains=1, seed=1235, control = list(max_treedepth = 11))
  
- mdlcov<-stan("Stan/singlesp_randslopesint_goo.stan",
-              data= datalist
-              ,iter=2000, chains=1, seed=1235, control = list(max_treedepth = 11))
+# mdl<-stan("Stan/singlesp_randslopesint_goo.stan",
+              # data= datalist
+              # ,iter=2000, chains=1, seed=1235, control = list(max_treedepth = 11))
  
-mdlcov<-stan("Stan/singlesp_randslopes_goo_wcov.stan",
+mdlcov<-stan("stan/singlesp_randslopes_goo_wcov.stan",
           data= datalist
           ,iter=2000, chains=4, seed=1235, control = list(max_treedepth = 11))
 
@@ -141,8 +141,6 @@ mdlcov<-stan("Stan/singlesp_randslopes_goo_wcov.stan",
 #mdl_cov<- stan("Stan/synchrony1_notype_randslops_wcovar.stan", data=c("N","J","y","species","year","nVars","Imat"), iter=2000, chains=1)
 
 
-print(mdlcov, pars = c("mu_b","sigma_b", "sigma_y", "a","b","ypred_new"
-)) 
 
 print(mdlcov, pars = c("mu_a","sigma_a","mu_b","sigma_b", "sigma_y", "a","b","ypred_new"
                     )) 
@@ -158,7 +156,7 @@ length(unique(hk$species))
 pairs(mdl, pars=c("mu_a","mu_b","sigma_a","sigma_b","sigma_y", "a[1]","b[1]", "a[50]","b[50]"))
 
 # Saving the stan output
-saveRDS(mdl , "singlesp_randslope.rds")
+#saveRDS(mdl , "singlesp_randslope.rds")
 saveRDS(mdlcov, "singlesp_randslope_cov.rds")
 
 
