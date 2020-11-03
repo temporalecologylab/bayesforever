@@ -68,8 +68,8 @@ transformed parameters{
 // The model to be estimated. We model the output 'y' to be normally distributed with mean 'mu' and standard deviation 'sigma'.
 
 model {
-  a ~ normal(mu_a, sigma_a);// these now come out of the multi normal distribution, so they no longer need to be defined twice
-  b ~ normal(mu_b, sigma_b);
+//  a ~ normal(mu_a, sigma_a);// these now come out of the multi normal distribution, so they no longer need to be defined twice
+//  b ~ normal(mu_b, sigma_b);
 
 
     //Priors
@@ -80,7 +80,8 @@ model {
   sigma_y ~normal(0,3); 
 
   //syn_sigma ~ normal(0,5); // don't need this prior bc they are defined indiviudally
-  Rho ~ lkj_corr(2); // ljk is defining a weakly informative prior on sigma that does not give much weight to extreme correlations
+//  Rho ~ lkj_corr(2); // ljk is defining a weakly informative prior on sigma that does not give much weight to extreme correlations
+  Rho ~ lkj_corr(4);
   
   //a_b_sp ~ multi_normal_cholesky_lpdf(ab, covmatrix);  // why this distribution
   a_b_sp ~ multi_normal(mu_ab, covmatrix); 

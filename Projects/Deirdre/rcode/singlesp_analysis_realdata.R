@@ -112,7 +112,7 @@ dat1<-read.csv("input/hk.csv")
 # specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species","intid")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
 # 
 # specieschar.hin<- aggregate(hk["doy"], hk[c("studyid", "species", "type.of.action", "spp")], FUN=length) #this is just creating a list with each species for each study, type.of.action and species level
-hk <- hk[complete.cases(dat1), ]
+hk <- hk[complete.cases(hk), ]
  datalist<-with(hk,
                list( N=nrow(hk),
                      Nspp =nrow(specieschar.hin),
@@ -135,15 +135,14 @@ hk <- hk[complete.cases(dat1), ]
  
 mdlcov<-stan("stan/singlesp_randslopes_goo_wcov.stan",
           data= datalist
-          ,iter=2000, chains=4, seed=1235, control = list(max_treedepth = 11))
+          ,iter=2000, chains=4, seed=1235)
 
 #I don't know why this doesn't work or what these errors mean
 #mdl_cov<- stan("Stan/synchrony1_notype_randslops_wcovar.stan", data=c("N","J","y","species","year","nVars","Imat"), iter=2000, chains=1)
 
 
 
-print(mdlcov, pars = c("mu_a","sigma_a","mu_b","sigma_b", "sigma_y", "a","b","ypred_new"
-                    )) 
+print(mdlcov, pars = c("mu_a","sigma_a","mu_b","sigma_b", "sigma_y", "a","b","ypred_new")) 
 
 sm.sum <- summary(mdlcov)$summary
 
@@ -157,7 +156,7 @@ pairs(mdl, pars=c("mu_a","mu_b","sigma_a","sigma_b","sigma_y", "a[1]","b[1]", "a
 
 # Saving the stan output
 #saveRDS(mdl , "singlesp_randslope.rds")
-saveRDS(mdlcov, "singlesp_randslope_cov.rds")
+#saveRDS(mdlcov, "singlesp_randslope_cov.rds")
 
 
 ########################################################################################
@@ -349,14 +348,6 @@ datalistcohen<-with(co,
                      species =species.fact,
                      year = yr1981
                ))
-
-N <- nrow(co)
-y <- co$doy
-J <- nrow(specieschar.hin.cohen)
-species <- co$species.fact
-year <- co$yr1981
-nVars <-1
-Imat <- diag(1, nVars)
 
 ###################################################
 
