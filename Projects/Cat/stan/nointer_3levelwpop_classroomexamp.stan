@@ -47,8 +47,8 @@
    real<lower=0> sigma_a_pop;
    
    // Varying intercepts
-   real a_pop[n_pop];
-   real b_force_pop[n_pop];
+   real a_sppop[n_pop];
+   real b_force_sppop[n_pop];
  
    // Individual mean
    real a_sp[n_sp];
@@ -60,8 +60,8 @@
    real yhat[N];
    // Individual mean
    for(i in 1:N){
-            yhat[i] = a_pop[pop[i]] + // indexed with population
-		b_force_pop[pop[i]] * force[i];
+            yhat[i] = a_sppop[pop[i]] + // indexed with population
+		b_force_sppop[pop[i]] * force[i];
 			     	}
  }
  
@@ -72,26 +72,26 @@
    // Varying intercepts definition
    // Level-3 (10 level-3 random intercepts)
    for (k in 1:n_pop) {
-     a_pop[k] ~ normal(a_sp[sp[k]], sigma_a_pop);
+     a_sppop[k] ~ normal(a_sp[sp[k]], sigma_a_pop);
    }
    // Level-2 (100 level-2 random intercepts)
    for (j in 1:n_pop) {
-     b_force_pop[j] ~ normal(b_force[sp[j]], sigma_b_pop);
+     b_force_sppop[j] ~ normal(b_force[sp[j]], sigma_b_pop);
    }
  
    // Random effects distribution
    a_sp  ~ normal(mu_a_sp, sigma_a_sp);
    b_force ~ normal(mu_b_force_sp, sigma_b_force_sp);
    
-   mu_b_force_sp ~ normal(0, 50);
-   sigma_b_force_sp ~ student_t(3, 0, 35); 
+   mu_b_force_sp ~ normal(0, 20);
+   sigma_b_force_sp ~ normal(0, 10); 
    
    mu_a_sp ~ normal(0, 50);
-   sigma_a_sp ~ student_t(3, 0, 35);
+   sigma_a_sp ~ normal(0, 20);
    
-   sigma_a_pop ~ student_t(3, 0, 35);
-   sigma_b_pop ~ student_t(3, 0, 35);
-   sigma_y ~ student_t(3, 0, 35);
+   sigma_a_pop ~ normal(0, 20);
+   sigma_b_pop ~ normal(0, 10);
+   sigma_y ~ normal(0, 20);
  
    // Likelihood part of Bayesian inference
    // Outcome model N(mu, sigma^2) (use SD rather than Var)
