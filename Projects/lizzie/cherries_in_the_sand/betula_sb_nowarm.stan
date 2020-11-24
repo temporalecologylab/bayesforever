@@ -26,12 +26,12 @@ data {
 parameters {
   real alpha_1[Y];
   real<lower = 0> beta[Y];
-  real<lower = 0> sigma[S];
-  real gamma_0_alpha;
+  real<lower = 0> sigma[S]; 
+  // real gamma_0_alpha; // remove any trend
   // real gamma_1_alpha; // remove any trend
   real gamma_0_beta;
   real gamma_1_beta;
-  real tau_alpha;
+  // real tau_alpha;
   real tau_beta;
 }
 
@@ -52,7 +52,7 @@ model {
   }
 //allow alpha_1 and beta to change linearly over time
 for(y in 1:Y)   {
-  alpha_1[y] ~ normal(gamma_0_alpha * y, tau_alpha);
+  // alpha_1[y] ~ normal(gamma_0_alpha + gamma_1_alpha * y, tau_alpha);
   beta[y]    ~ normal(gamma_0_beta  + gamma_1_beta  * y, tau_beta);
   }
 }
