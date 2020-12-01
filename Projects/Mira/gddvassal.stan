@@ -31,9 +31,9 @@
         a_var ~ normal(mu_a,s_avar);
         b_var ~ normal(mu_b,s_bvar);
         //b_var ~ normal(0,1);
-        mu_a ~ normal(700,20);
-        mu_b ~ normal(0,0.1);
-        s_avar ~ normal(50,5);
-        s_bvar ~ normal(0,0.2);
-        sigma_y ~ normal(0,10);
+        mu_a ~ normal(700,50);
+        mu_b ~ normal(0,0.5);
+        s_avar ~ normal(80,20);
+        s_bvar ~ normal(0,0.5);
+        sigma_y ~ normal(0,50);
       }

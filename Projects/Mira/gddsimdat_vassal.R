@@ -88,29 +88,33 @@ ggplot(dat.sim, aes(x=year, y=gdd, group=variety, color = variety)) +
   geom_line()
 
 
-
+# ---------------------------------------------------------------------#
 # STAN model
 
 library(rstan)
 library(rethinking)
 
 # using simulated dataset
-x <- dat.sim$year
-y <- dat.sim$gdd
-variety <- dat.sim$variety
-N <- nrow(dat.sim)
-Nv <- nvarieties
+#x <- dat.sim$year
+#y <- dat.sim$gdd
+#variety <- dat.sim$variety
+#N <- nrow(dat.sim)
+#Nv <- nvarieties
 
 # using real dataset
-
 source("../analyses/cleaning/mergeclimpheno.R")
 # sourcing it from another file changes the wd - how can I avoid this
 if(length(grep("miragarner", getwd()))>0) { 
   setwd("~/Documents/git/vassalphen/model/")
 } else setwd("~/Documents/git/vassalphen/model/")
 
+# cutting number of varieties in half to test if variation among varieties is changing parameter estimates
+variety.names <- unique(mini$Group.2) # variety names for mini, 87
+halfv <- variety.names[1:45]
+half.mini <- mini[which(mini$Group.2 %in% halfv),]
+
 x <- mini$Group.1
-y <- mini$vrmt
+y <- mini$ave.vrmt
 variety <- as.integer(as.factor(as.character(mini$Group.2)))
 N <- nrow(mini)
 Nv <- length(unique(mini$Group.2))
@@ -118,12 +122,39 @@ Nv <- length(unique(mini$Group.2))
 # data to stan
 stan.data <- list(y=y, x=x, variety=variety, N=N, Nv=Nv)
 
-modone <- stan("gddvassal.stan", data = stan.data, iter = 3000, warmup = 2000)
+modone <- stan("gddvassal.stan", data = stan.data, iter = 8000, warmup = 7000)
 
-summo <- summary(modone)$summary
-#summo[grep("mu_", rownames(summo)),] 
-#summo[grep("s\\_", rownames(summo)),] 
-#summo[grep("sigma_y", rownames(summo)),] 
 precis(modone)
+summo <- summary(modone)$summary
+summo[grep("mu_", rownames(summo)),] 
+summo[grep("s\\_", rownames(summo)),] 
+summo[grep("sigma_y", rownames(summo)),]
+
+modslopes <- summo[grep("b_", row.names(summo)), c(1,5:7)]
+dfslopes <- as.data.frame(modslopes)
+#dfslopes <- cbind(variety.names, dfslopes) #will this give the correct order?
 
 shinystan::launch_shinystan(modone)
+
+library(ggplot2)
+library(bayesplot)
+library(rstanarm)
+quartz()
+posterior <- as.matrix(modone)
+mcmc_areas(posterior, pars = "mu_a")
+mcmc_areas(posterior, pars = "mu_b")
+mcmc_areas(posterior, pars = "s_avar")
+mcmc_areas(posterior, pars = "s_bvar")
+mcmc_areas(posterior, pars = "sigma_y")
+
+# prior distributions
+hist(rnorm(500,700,50)) #mu_a
+hist(rnorm(500,0,0.5)) #mu_b
+hist(rnorm(500,80,20)) #s_avar
+hist(rnorm(500,0,0.5)) #s_bvar
+hist(rnorm(500,0,50)) #sigma_y
+
+pairs(modone, pars = c("mu_a", "mu_b", "s_avar", "s_bvar", "sigma_y"))
+
+ggplot(dfslopes, aes(x=row.names(dfslopes), y=mean)) + 
+  geom_point() + theme(axis.text.x = element_text(angle = 90, hjust = 1))
