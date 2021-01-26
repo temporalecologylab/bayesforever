@@ -5,35 +5,9 @@
 
 set.seed(12321)
 
-# Step 1: Set up years, days per year, temperatures, sampling frequency, required GDD (fstar)
-nspps <- 10
-ninds <- 100 
-nobs <- nspps*ninds
-
-### These are our response variables
-y_dist <- 300  ### mu_a_sp in model output
-y_dist_speciessd <- 50 ### sigma_a_sp in model output
-
-## Sigma_y to be added at the end
-sigma_y <- 2 
-
-#### Incorporate Predictors 
-can_effect <- 20  ## Canadian effect, this is saying that if sites are from 1 degree north, they travel 20 fewer kms
-can_sd <- 5 ## Canadian effect sd
-
-distspp <- round(rnorm(nspps, y_dist, y_dist_speciessd), digits=0)
-df.dist <- as.data.frame(cbind(species=rep(1:nspps, each=ninds), ind=rep(1:ninds), 
-                                distspp=rep(distspp, each=ninds)))
-
-df.dist$canadian <- rbinom(nobs, 1, 0.5)
-
-df.dist$dist.can <- df.dist$canadian * rep(rnorm(n=nspps, mean=can_effect, sd=can_sd), each=ninds)
-
-df.dist$distance <- df.dist$distspp + df.dist$dist.can + rnorm(n=nobs, mean=0, sd=sigma_y)
-
-##### Clean up the data frame to prepare for analyses
-distall <- df.dist[!duplicated(df.dist),]
-
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+###### For faster analyses and better fit simulation data, let's follow Geoff's code ##### 
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
 
 #  1) Let's make the observations much higher than the actual data to build a good model.
 nsp = 10 # number of species
@@ -93,5 +67,37 @@ distall <- cbind(data.frame(species = as.vector(sapply(1:nsp, FUN = function(x) 
 modtest <- lmer(distance ~ canadian + herbivore + canadian*herbivore + (canadian + herbivore + canadian*herbivore|species), data=distall) ## Quick look looks good!
 
 
-
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### ###### 
+if(FALSE){
+  # Step 1: Set up years, days per year, temperatures, sampling frequency, required GDD (fstar)
+  nspps <- 10
+  ninds <- 100 
+  nobs <- nspps*ninds
+  
+  ### These are our response variables
+  y_dist <- 300  ### mu_a_sp in model output
+  y_dist_speciessd <- 50 ### sigma_a_sp in model output
+  
+  ## Sigma_y to be added at the end
+  sigma_y <- 2 
+  
+  #### Incorporate Predictors 
+  can_effect <- 20  ## Canadian effect, this is saying that if sites are from 1 degree north, they travel 20 fewer kms
+  can_sd <- 5 ## Canadian effect sd
+  
+  distspp <- round(rnorm(nspps, y_dist, y_dist_speciessd), digits=0)
+  df.dist <- as.data.frame(cbind(species=rep(1:nspps, each=ninds), ind=rep(1:ninds), 
+                                 distspp=rep(distspp, each=ninds)))
+  
+  df.dist$canadian <- rbinom(nobs, 1, 0.5)
+  
+  df.dist$dist.can <- df.dist$canadian * rep(rnorm(n=nspps, mean=can_effect, sd=can_sd), each=ninds)
+  
+  df.dist$distance <- df.dist$distspp + df.dist$dist.can + rnorm(n=nobs, mean=0, sd=sigma_y)
+  
+  ##### Clean up the data frame to prepare for analyses
+  distall <- df.dist[!duplicated(df.dist),]
+}
 

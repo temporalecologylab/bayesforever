@@ -28,68 +28,90 @@ setwd("~/Documents/git/bayes2020/Projects/Cat/ncp_learning/")
 
 source("simdata.R")
 
-### okay so for model 1, this is simple, no interaction and no NCP
+#### This sim code has...
+# Intercept = 300
+# mu_b_canadian_sp = 50
+# mu_b_herb_sp = -20
+# mu_b_ch_sp = 5
+# sigma_b_canadian_sp = 10
+# sigma_b_canadian_sp = 5
+# sigma_b_ch_sp = 5
+# sigma_y = 2
 
-## Check Stan speed on new comp
-library(brms)
-brmtest <- brm(distance ~ canadian + (canadian|species), data=distall)
-brmfulltest <- brm(distance ~ canadian + herbivore + canadian*herbivore + (canadian + herbivore + canadian*herbivore|species), data=distall)
-
+### Prep for all muplots
+cols <- adjustcolor("indianred3", alpha.f = 0.3) 
+my.pal <-rep(viridis_pal(option="viridis")(9),2)
+my.pch <- rep(15:18, each=10)
+alphahere = 0.4
 
 datalist.simple <- with(distall, 
                      list(y = distance, 
-                          prov = provlat, ### for simple: 
-                          leglength = leglength,
+                          canadian = canadian, ### for simple: 
+                          herbivore = herbivore,
                           sp = as.numeric(as.factor(species)),
                           N = nrow(distall),
                           n_sp = length(unique(distall$species))
                      )
 )
 
-urbmethod_fake = stan('stan/ungulates_simple.stan', data = datalist.simple,
-                      iter = 2000, warmup=1000, chains=4) ### , control=list(adapt_delta=0.99, max_treedepth=15)
 
-cols <- adjustcolor("indianred3", alpha.f = 0.3) 
-my.pal <-rep(viridis_pal(option="viridis")(9),2)
-my.pch <- rep(15:18, each=10)
-alphahere = 0.4
+##################################################################
+########## MODEL 1: simple, no NCP with interaction ##############
+##################################################################
+### okay so for model 1, this is simple, no interaction and no NCP
+simple = stan('stan/ungulates_simple.stan', data = datalist.simple,
+                      iter = 1000, warmup=500, chains=2) ### , control=list(adapt_delta=0.99, max_treedepth=15)
 
-modoutput <- summary(urbmethod_fake)$summary
-noncps <- modoutput[!grepl("_ncp", rownames(modoutput)),]
+modoutput <- summary(simple)$summary
 
-modelhere <- urbmethod_fake
-bball <- isolate(get.data()[[1]])
-spnum <- length(unique(bball$species))
-quartz()
-par(xpd=FALSE)
-par(mar=c(5,10,3,10))
-plot(x=NULL,y=NULL, xlim=c(-100,100), yaxt='n', ylim=c(0,6),
-     xlab="Model estimate change in growing degree days to budburst", ylab="")
-axis(2, at=1:6, labels=rev(c("Arboretum", "Weather Station", "Arboretum x\nWeather Station",
-                             "Sigma Arboretum", "Sigma \nWeather Station", 
-                             "Sigma Interaction")), las=1)
-abline(v=0, lty=2, col="darkgrey")
-rownameshere <- c("mu_b_urban_sp", "mu_b_method_sp", "mu_b_um_sp", "sigma_b_urban_sp",
-                  "sigma_b_method_sp", "sigma_b_um_sp")
-for(i in 1:6){
-  pos.y<-(6:1)[i]
-  pos.x<-noncps[rownameshere[i],"mean"]
-  lines(noncps[rownameshere[i],c("25%","75%")],rep(pos.y,2),col="darkgrey")
-  points(pos.x,pos.y,cex=1.5,pch=19,col="darkblue")
-  for(spsi in 1:spnum){
-    pos.sps.i<-which(grepl(paste0("[",spsi,"]"),rownames(noncps),fixed=TRUE))[2:4]
-    jitt<-(spsi/40) + 0.08
-    pos.y.sps.i<-pos.y-jitt
-    pos.x.sps.i<-noncps[pos.sps.i[i],"mean"]
-    lines(noncps[pos.sps.i[i],c("25%","75%")],rep(pos.y.sps.i,2),
-          col=alpha(my.pal[spsi], alphahere))
-    points(pos.x.sps.i,pos.y.sps.i,cex=0.8, pch=my.pch[spsi], col=alpha(my.pal[spsi], alphahere))
-    
-  }
-}
-par(xpd=TRUE) # so I can plot legend outside
-legend(120, 6, sort(unique(gsub("_", " ", bball$species))), pch=my.pch[1:spnum],
-       col=alpha(my.pal[1:spnum], alphahere),
-       cex=1, bty="n", text.font=3)
-})
-#})
+modelhere <- simple
+source("muplot.R")
+
+
+##################################################################
+################ MODEL 1: NCP, with interaction ##################
+##################################################################
+#NOTE: This model is slower... interesting! 
+ncpsimple = stan('stan/ungulates_ncp_simple.stan', data = datalist.simple,
+              iter = 1000, warmup=500, chains=2) ### , control=list(adapt_delta=0.99, max_treedepth=15)
+
+modoutput <- summary(ncpsimple)$summary
+
+modelhere <- ncpsimple
+source("muplot.R")
+
+### Uh-oh! mu plot is a mess! Those species level estimates are terribly wrong. 
+# Okay let's see if we can fix it...
+noncps <- modoutput[!grepl("_raw", rownames(modoutput)),]
+source("muplot_ncp.R")
+
+## Phew! All set now. But let's see if we can get more accurate estimates (fix the ESS issue) by adding in more priors...
+ncptweak = stan('stan/ungulates_ncp_tweak.stan', data = datalist.simple,
+                 iter = 1000, warmup=500, chains=2) ### , control=list(adapt_delta=0.99, max_treedepth=15)
+
+modoutput <- summary(ncptweak)$summary
+noncps <- modoutput[!grepl("_raw", rownames(modoutput)),]
+source("muplot_ncp.R")
+
+
+###### Cool! Well that works. But isn't kind of annoying scrolling through ALL of the yhats to see your model results?
+## Let's start playing around with the blocks
+# Sandbox 1: move yhats to model block rather than transformed parameters. A little faster!
+ncp_rmyhat = stan('stan/ungulates_ncp_yhat.stan', data = datalist.simple,
+                iter = 1000, warmup=500, chains=2) ### , control=list(adapt_delta=0.99, max_treedepth=15)
+
+modoutput <- summary(ncpyhat)$summary
+noncps <- modoutput[!grepl("_raw", rownames(modoutput)),]
+source("muplot_ncp.R")
+
+# But Wait! We really should look at those yhats for checking out our posterior predictive checks
+# Sandbox 2: Let's add a generated quantities block and remove the ncp just to keep playing
+simple_yhatmod_genquant = stan('stan/ungulates_yhat_genquant.stan', data = datalist.simple,
+                  iter = 1000, warmup=500, chains=2) ### , control=list(adapt_delta=0.99, max_treedepth=15)
+
+modoutput <- summary(ncpyhat)$summary
+noncps <- modoutput[!grepl("_raw", rownames(modoutput)),]
+source("muplot_ncp.R")
+
+
+

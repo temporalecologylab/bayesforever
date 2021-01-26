@@ -34,14 +34,18 @@ parameters {
   
   real a_sp[n_sp]; // intercept for species
   
-  vector[n_sp] b_canadian; // slope of canadian effect 
-  vector[n_sp] b_herb; // slope of herb length effect 
-  vector[n_sp] b_ch;
+  vector[n_sp] b_canadian_raw; // slope of canadian effect 
+  vector[n_sp] b_herb_raw; // slope of herb length effect 
+  vector[n_sp] b_ch_raw;
   
 	}
 
 transformed parameters {
   vector[N] yhat;
+
+  vector[n_sp] b_canadian = mu_b_canadian_sp + sigma_b_canadian_sp*b_canadian_raw; 
+  vector[n_sp] b_herb = mu_b_herb_sp + sigma_b_herb_sp*b_herb_raw; 
+  vector[n_sp] b_ch = mu_b_ch_sp + sigma_b_ch_sp*b_ch_raw;
   
   for(i in 1:N){    
     yhat[i] = a_sp[sp[i]] + // indexed with species
@@ -53,12 +57,15 @@ transformed parameters {
 }
 
 model {
+	b_canadian_raw ~ normal(0, 1);
+	b_herb_raw ~ normal(0, 1);
+	b_ch_raw ~ normal(0, 1);
+	
 	a_sp ~ normal(mu_a_sp, sigma_a_sp); 
 	
-	target += normal_lpdf(to_vector(b_canadian) | mu_b_canadian_sp, sigma_b_canadian_sp); // just another way to write normal()
-	target += normal_lpdf(to_vector(b_herb) | mu_b_herb_sp, sigma_b_herb_sp);
-	target += normal_lpdf(to_vector(b_ch) |  mu_b_ch_sp, sigma_b_ch_sp);
-	
+	/// NOTE ON NCP: since we used NCP, the b_canadian etc are assumed to be partially pooled, if we did 
+	 // b_canadian(mu_b_canadian_sp, sigma_b_canadian_sp) it would confuse the model because it would be redundant
+	      
         mu_a_sp ~ normal(400, 75);
         sigma_a_sp ~ normal(0, 50);
 
@@ -76,4 +83,3 @@ model {
 	y ~ normal(yhat, sigma_y);
 
 }
-

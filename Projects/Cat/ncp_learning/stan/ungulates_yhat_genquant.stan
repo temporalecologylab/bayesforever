@@ -40,40 +40,50 @@ parameters {
   
 	}
 
-transformed parameters {
-  vector[N] yhat;
+model {
   
+  vector[N] yhat;
+
   for(i in 1:N){    
     yhat[i] = a_sp[sp[i]] + // indexed with species
 		          b_canadian[sp[i]] * canadian[i] + 
 		          b_herb[sp[i]] * herbivore[i] +
 		          b_ch[sp[i]] *  inter_canadianherb[i];
 	      }
-	      
-}
-
-model {
+	
 	a_sp ~ normal(mu_a_sp, sigma_a_sp); 
 	
 	target += normal_lpdf(to_vector(b_canadian) | mu_b_canadian_sp, sigma_b_canadian_sp); // just another way to write normal()
 	target += normal_lpdf(to_vector(b_herb) | mu_b_herb_sp, sigma_b_herb_sp);
 	target += normal_lpdf(to_vector(b_ch) |  mu_b_ch_sp, sigma_b_ch_sp);
-	
-        mu_a_sp ~ normal(400, 75);
-        sigma_a_sp ~ normal(0, 50);
+	      
+        mu_a_sp ~ normal(300, 20);
+        sigma_a_sp ~ normal(0, 20);
 
-        mu_b_canadian_sp ~ normal(0, 75);
-        sigma_b_canadian_sp ~ normal(0, 30);
+        mu_b_canadian_sp ~ normal(0, 50);
+        sigma_b_canadian_sp ~ normal(0, 20);
         
-        mu_b_herb_sp ~ normal(0, 75);
-        sigma_b_herb_sp ~ normal(0, 30);
+        mu_b_herb_sp ~ normal(0, 30);
+        sigma_b_herb_sp ~ normal(0, 10);
         
-        mu_b_ch_sp ~ normal(0, 75);
-	      sigma_b_ch_sp ~ normal(0, 30);
+        mu_b_ch_sp ~ normal(0, 10);
+	      sigma_b_ch_sp ~ normal(0, 5);
         
-        sigma_y ~ normal(0, 100);
+        sigma_y ~ normal(0, 10);
 	      
 	y ~ normal(yhat, sigma_y);
 
 }
 
+generated quantities{ /// include if you want to look at posterior predictive checks
+   real y_ppc[N];
+   
+   for (n in 1:N)
+      y_ppc[n] = a_sp[sp[n]] + 
+		b_canadian[sp[n]] * canadian[n] +
+		b_herb[sp[n]] * herbivore[n] +
+		b_ch[sp[n]] * inter_canadianherb[n];
+    for (n in 1:N)
+      y_ppc[n] = normal_rng(y_ppc[n], sigma_y);
+
+}
