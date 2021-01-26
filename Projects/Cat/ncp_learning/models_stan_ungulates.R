@@ -5,12 +5,13 @@
 
 ### Simulation Question:
 # During peak migration season, how far do ungulates travel per day?
-# We'll use provenance latitude and leg length in cm as predictor variables
+# Predictor: 0/1 if American or Canadian. Canadian's are 1s
 
 
 # housekeeping
 rm(list=ls()) 
 options(stringsAsFactors = FALSE)
+options(mc.cores = parallel::detectCores())
 
 
 # Load Libraries
@@ -29,9 +30,9 @@ source("simdata.R")
 
 ### okay so for model 1, this is simple, no interaction and no NCP
 
-## Check stan speed on new comp
+## Check Stan speed on new comp
 library(brms)
-brmtest <- brm(distance ~ canadian + herbivore + (canadian + herbivore|species), data=distall)
+brmtest <- brm(distance ~ canadian + (canadian|species), data=distall)
 brmfulltest <- brm(distance ~ canadian + herbivore + canadian*herbivore + (canadian + herbivore + canadian*herbivore|species), data=distall)
 
 
