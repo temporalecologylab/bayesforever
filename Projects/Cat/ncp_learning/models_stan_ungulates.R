@@ -109,9 +109,49 @@ source("muplot_ncp.R")
 simple_yhatmod_genquant = stan('stan/ungulates_yhat_genquant.stan', data = datalist.simple,
                   iter = 1000, warmup=500, chains=2) ### , control=list(adapt_delta=0.99, max_treedepth=15)
 
-modoutput <- summary(ncpyhat)$summary
-noncps <- modoutput[!grepl("_raw", rownames(modoutput)),]
-source("muplot_ncp.R")
+modoutput <- summary(simple_yhatmod_genquant)$summary
+source("muplot.R")
+
+# Sandbox 3: Finally, let's just test the timing between using transformed parameter block vs generated quantities
+simple_yhatmod_transpara = stan('stan/ungulates_yhat_transpara.stan', data = datalist.simple,
+                               iter = 1000, warmup=500, chains=2) ### , control=list(adapt_delta=0.99, max_treedepth=15)
+
+modoutput <- summary(simple_yhatmod_transpara)$summary
+source("muplot.R")
+
+##### ##### ##### ##### ##### ##### ##### ##### ##### 
+##### ##### ##### ##### ##### ##### ##### ##### ##### 
+##### And the timing is...##### ##### ##### ##### ###
+##### ##### ##### ##### ##### ##### ##### ##### ##### 
 
 
+get_elapsed_time(simple)
+##warmup  sample
+#chain:1 8.21052 2.41631
+#chain:2 8.14878 1.95720
+
+get_elapsed_time(ncpsimple)
+##warmup  sample
+#chain:1 65.6045 18.7121
+#chain:2 41.0756 17.8176
+
+get_elapsed_time(ncptweak)
+##warmup  sample
+#chain:1 34.7202 21.5377
+#chain:2 24.0256 18.3064
+
+get_elapsed_time(ncp_rmyhat)
+##warmup  sample
+#chain:1 36.6496 20.7792
+#chain:2 35.7168 23.0576
+
+get_elapsed_time(simple_yhatmod_genquant)
+#warmup  sample
+#chain:1 8.75932 1.88479
+#chain:2 6.58924 1.99405
+
+get_elapsed_time(simple_yhatmod_transpara)
+## warmup  sample
+#chain:1 7.94259 2.04537
+#chain:2 7.60744 1.99668
 
