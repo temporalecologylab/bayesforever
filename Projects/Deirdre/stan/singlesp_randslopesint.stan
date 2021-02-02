@@ -46,18 +46,17 @@ transformed parameters{
 // The model to be estimated. We model the output 'y' to be normally distributed with mean 'mu' and standard deviation 'sigma'.
 
 model {
-  a ~ normal(mu_a, sigma_a);
-  b ~ normal(mu_b, sigma_b);
+a ~ normal(mu_a, sigma_a);
+b ~ normal(mu_b, sigma_b);
 
     //Priors
-  mu_a ~normal(188, 50); 
-  sigma_a ~normal(0,50);
-  mu_b ~normal(0,10); //could also be centred at zero, 10
-  sigma_b ~normal(0,10); //sigma_b 0,10
-  sigma_y ~normal(0,10); 
+mu_a ~normal(188, 50); 
+sigma_a ~normal(0,50);
+mu_b ~normal(0,10); //could also be centred at zero, 10
+sigma_b ~normal(0,10); //sigma_b 0,10
+sigma_y ~normal(0,10); 
 
-  ypred ~ normal(mu_y, sigma_y);
-  
+ypred ~ normal(mu_y, sigma_y);
 }
 
 
@@ -72,4 +71,7 @@ generated quantities { //this block is evaluated after each iteration, uses the 
    }
   // does include the partial pooling because the mu-y does this above   
 }
+
+
+
 
