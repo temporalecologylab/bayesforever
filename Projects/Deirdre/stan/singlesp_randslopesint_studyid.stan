@@ -56,23 +56,26 @@ model {
   real mu_y[N]; //individual mean
  
   for(i in 1:N){
-    mu_y[i]= mu_grand + mu_sp[species[i]] + mu_study[study[i]] + b[species[i]] * year[i];
+    mu_y[i] = mu_grand + mu_sp[species[i]] + mu_study[study[i]] + b[species[i]] * year[i];
   }
   
   sigma_y ~ normal(0,10); 
   
   //mu_a ~ normal(188, 50); 
-  mu_grand ~ normal (0, 10);
+  mu_grand ~ normal (188, 50);
   
   sigma_sp ~ normal (0, 10);
   mu_sp ~ normal(0, sigma_sp);
 
   sigma_study ~ normal(0,10);
   mu_study ~ normal(0, sigma_study);
+  
 
   mu_b ~normal(0,10); //could also be centred at zero, 10
   sigma_b ~normal(0,10); //sigma_b 0,10
-
+  
+  b ~ normal (mu_b, sigma_b);
+  
   ypred ~ normal(mu_y, sigma_y);
 }
 
@@ -80,7 +83,7 @@ generated quantities { //this block is evaluated after each iteration, uses the 
 //no point in regenerating values again, but adds effort
 //could compare a model that does both, compare the y_pred --> they should be identical
 
- real ypred_new[N];
+real ypred_new[N];
  
    for (i in 1:N) { // now over writing this with the sample dist, but this is already done for you in the transformed para block 
     ypred_new[i]= mu_grand + mu_sp[species[i]] + mu_study[study[i]] +b [species[i]] * year[i];
