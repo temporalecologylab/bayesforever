@@ -174,8 +174,8 @@ General variance
 \sigma{_y}\sim normal(0,10)
 \end{equation}
 
-
-
+\subsection{Priors on parameters made up of hyperparameters}
+I have changed the structure of Cat's model mostly in terms of priors. I think, and we should discuss this, that priors should generally go parameters that are on the right side of the equals sign. Each prior parameter then interacts with the other prior parameters to get a new combination prior distribution. For example, in the case of the study level effect on the intercept, $\alpha_{study} =  \sigma_{\alpha, study} * \alpha raw_{study}$, the priors should be on $ \sigma_{\alpha, study}$ and $\alpha raw_{study}$ rather than on $\alpha_{study} $. Theoretically you could put the prior on $\alpha_{study} $, but then how does the model know how to partisan information?
 
 \section{Model explained in words}
 
