@@ -1,0 +1,203 @@
+%document describing teh final version of ny dosse response model and what I think about its fit. Writen by Faith, started Augst 21st 2020.
+\documentclass[11pt,letter]{article}
+\usepackage[top=1.00in, bottom=1.0in, left=1.1in, right=1.1in]{geometry}
+\renewcommand{\baselinestretch}{1.1}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{textcomp}%amoung other things, it allows degrees C to be added
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc} % allow funny letters in citaions 
+\usepackage[nottoc]{tocbibind} %should add Refences to the table of contents?
+\usepackage{amsmath} % making nice equations 
+
+\def\labelitemi{--}
+\parindent=0pt
+
+\title{Cat's Ranges Model \\ A 3 level Hierarchical model with ncp}
+\date{\today}
+\author{Faith Jones}
+
+\graphicspath{ {./DoseResponse_WriteupImages/} }% tell latex where to find photos 
+
+
+\begin{document}
+%\renewcommand{\refname}{\CHead{}}%not sure what this was supposed to do 
+\renewcommand{\bibname}{References}%names reference list 
+
+
+\maketitle{}
+\tableofcontents
+
+\section{Data and question}
+This model takes what I assume is OSPREE forcing and photoperiod data for lots of studies and species. There is an additional level of variation in this data, which is the population the species comes from. I think it is possible for different species to come from the same population, but Cat you should correct me if I'm wrong. The question is whether there is greater variation within a species (in terms of variation between populations) than between species. 
+
+\section{Model}
+
+This model differs a bit from Cat's original one. Maybe we will get time to discuss how they differ at the end of the meeting. 
+
+
+\begin{equation}
+\tilde{y}_{i}\sim normal(\mu_{i},\sigma_{y})
+\end{equation}
+
+\begin{equation}
+\mu_{i} = \alpha + \alpha_{study} + \alpha_{sppop} + force_{i} * \beta _{force,sppop} + photo_{i} * \beta _{photo,sppop} 
+\end{equation}
+
+\begin{equation}
+\alpha_{study} =  \sigma_{\alpha, study} * \alpha raw_{study}
+\end{equation}
+
+\begin{equation}
+\alpha_{sppop} = \alpha_{species}  + \sigma_{\alpha force,sppop} * \alpha raw_{force,sppop}
+\end{equation}
+
+\begin{equation}
+\alpha_{species} = \sigma_{\alpha, species} + \alpha raw_{species}
+\end{equation}
+
+\begin{equation}
+\beta _{force,sppop} = \beta _{force,species} + \sigma_{\beta force,sppop} * \beta raw_{force,sppop}
+\end{equation}
+
+\begin{equation}
+\beta _{force,species} = \beta_{force} + \sigma_{beta force, species} * \beta raw_{force}
+\end{equation}
+
+\begin{equation}
+\beta _{photo,sppop} = \beta_{photo, species} + \sigma_{\beta photo,sppop} * \beta raw_{photo}
+\end{equation}
+
+\begin{equation}
+\beta_{photo,species}  = \beta_{photo} + \sigma_{beta photo, species} * \beta raw_{photo}
+\end{equation}
+
+
+\section{Priors}
+
+\begin{equation}
+\alpha_{sppop}  \sim normal(0,20)
+\end{equation}
+
+\begin{equation}
+\alpha raw _{study} \sim normal(0,1)
+\end{equation}
+
+\begin{equation}
+\alpha raw _{species}\sim normal(0,1)
+\end{equation}
+
+\begin{equation}
+\alpha raw _{sppop}\sim normal(0,1)
+\end{equation}
+
+\begin{equation}
+\beta_{photo}  \sim normal(0,20)
+\end{equation}
+
+\begin{equation}
+\beta_{force}  \sim normal(0,20)
+\end{equation}
+
+\begin{equation}
+\beta_{photo, sppop}  \sim normal(0,20)
+\end{equation}
+
+\begin{equation}
+\beta_{force, sppop}  \sim normal(0,20)
+\end{equation}
+
+\begin{equation}
+\beta raw_{photo}\sim normal(0,1)
+\end{equation}
+
+\begin{equation}
+\beta raw_{force}\sim normal(0,1)
+\end{equation}
+
+   
+\begin{equation}
+\sigma{_y}\sim normal(0,10)
+\end{equation}
+
+I think the sigma's should have priors. Mayeb thsi model is currently getting away with no sigma priors because of the priors on $\alpha_{study} $ and $\alpha_{species}$? In the original code there was also priors on $\alpha_{study} $ and $\alpha_{species}$ (see below). I am still not sure what the effect of having a prior on a parameter made up of hyperparameters is. $\alpha_{study} $ and $\alpha_{species}$ are defined by $ \sigma_{\alpha, study} * \alpha raw_{study}$ and $ \sigma_{\alpha, species} * \alpha raw_{species}$, and some these hyper parameters (the raw values) already have priors. I think priors on the $\sigma values$ might work better.  
+
+\begin{equation}
+\alpha_{study}  \sim normal(0,20)
+\end{equation}
+
+\begin{equation}
+\alpha_{species}  \sim normal(0,20)
+\end{equation}
+
+
+\section{Model explained in words}
+
+
+
+\begin{equation}
+\tilde{y}_{i}\sim normal(\mu_{i},\sigma_{y})
+\end{equation}
+
+Every $\tilde{y}_{i}$ value is centered around a mean predicted value $\mu_{i}$ with a normal distribution of width $\sigma_{y}$
+
+\begin{equation}
+\mu_{i} = \alpha + \alpha_{study} + \alpha_{sppop} + force_{i} * \beta _{force,sppop} + photo_{i} * \beta _{photo,sppop} 
+\end{equation}
+
+Each mean predicted value $\mu_{i}$ has intercept which is a combination of a grand intercept ($\alpha$), an intercept based on the study of value $i$ ($\alpha_{study}$), and intercept variation due to the species and population combination ($\alpha_{sppop}$). There are also two slopes that relate forcing ($\beta _{force,sppop} $) and photoperiod ($\beta _{photo,sppop} $) of value $i$ to it's predicted $\mu_{i}$ value. These slope values depend on the species and subpopulation of value $i$, meaning a different species and subpopulation combination may react faster or slower to forcing and photoperiod. 
+
+\begin{equation}
+\alpha_{study} = \sigma_{\alpha, study} * \alpha raw_{study}
+\end{equation}
+
+Each study deviates somewhat from the grand mean intercept $\alpha$; we call this value $\alpha_{study}$. Sometimes you might see this written as  $\alpha_{study} \sim normal(\alpha, \sigma_{apha,study})$. 
+
+\begin{equation}
+\alpha_{sppop} = \alpha_{species}  + \sigma_{\alpha force,sppop} * \alpha raw_{force,sppop}
+\end{equation}
+
+Each population deviates somewhat from it's species mean value ($\alpha_{species}$). The amount they deviate a normal distribution with a width of $\sigma_{\alpha force,sppop}$. 
+
+\begin{equation}
+\alpha_{species} = \sigma_{\alpha, species} * \alpha raw_{species}
+\end{equation}
+
+How much each species deviates from the grand mean $\alpha$ value is called $\alpha_{species} $, and is drawn from a normal distribution of width $\sigma_{\alpha, species} $. 
+
+\begin{equation}
+\beta _{force,sppop} = \beta _{force, species} + \sigma_{\beta force,sppop} * \beta raw_{force,sppop}
+\end{equation}
+
+Each population's rate of change due to an amount of forcing, that is the slope of forcing, is somewhat different. We describe this as the population values being centered around it's species mean slope $ \beta _{force, species}$ and has a distribution of width $\sigma_{\beta force,sppop} $. 
+
+\begin{equation}
+\beta _{force,species} = \beta_{force} + \sigma_{beta force, species} * \beta raw_{force}
+\end{equation}
+
+Each species's slope value for teh effect of forcing is drawn from a normal distribution centred around the grand beta slope $\beta_{force}$ and a width of $\sigma_{beta force, species}$.
+
+\begin{equation}
+\beta _{photo,sppop} = \beta_{photo,species} + \sigma_{\beta photo,sppop} * \beta raw_{photo}
+\end{equation}
+
+Each population's rate of change due to an amount of photoperiod, that is the slope of photoperiod, is somewhat different. We describe this as the population values being centered around it's species mean slope $ \beta _{force, species}$ and has a distribution of width $\sigma_{\beta force,sppop} $. 
+
+
+\begin{equation}
+\beta_{photo,species}  = \mu_{\beta photo, species} + \sigma_{beta photo, species} * \beta raw_{photo}
+\end{equation}
+
+Each species's slope value for the effect of photoperiod is drawn from a normal distribution centred around the grand beta slope $\beta_{force}$ and a width of $\sigma_{beta force, species}$.
+
+
+\bibliographystyle{/home/faith/Documents/Bibtex/styles/besjournals/besjournals}
+
+
+
+\bibliography{/home/faith/Documents/Bibtex/mendeleyStuff/library}
+
+\end{document}
+
