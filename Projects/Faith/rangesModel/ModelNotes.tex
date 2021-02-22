@@ -31,106 +31,150 @@
 \tableofcontents
 
 \section{Data and question}
-This model takes what I assume is OSPREE forcing and photoperiod data for lots of studies and species. There is an additional level of variation in this data, which is the population the species comes from. I think it is possible for different species to come from the same population, but Cat you should correct me if I'm wrong. The question is whether there is greater variation within a species (in terms of variation between populations) than between species. 
+This model takes what I assume is OSPREE forcing and photoperiod data for lots of studies and species. There is an additional level of variation in this data, which is the population the species comes from. I think it is possible for different species to come from the same population, but Cat you should correct me if I'm wrong. The question we focus on is whether there is greater variation within a species (in terms of variation between populations) than between species. 
 
 \section{Model}
 
-This model differs a bit from Cat's original one. Maybe we will get time to discuss how they differ at the end of the meeting. 
+This model differs a bit from Cat's original one. Maybe we will get time to discuss how they differ at the end of the meeting. The original code is in \textit{stan\\/nointer\_3levelwpop\_force\&photo\_ncp.stan}, and the modified code I refer to in this documents is in \textit{stan\\/nointer\_3levelwpop\_force\&photo\_ncp\_FaithExample.stan}
 
 
 \begin{equation}
 \tilde{y}_{i}\sim normal(\mu_{i},\sigma_{y})
 \end{equation}
 
+
 \begin{equation}
 \mu_{i} = \alpha + \alpha_{study} + \alpha_{sppop} + force_{i} * \beta _{force,sppop} + photo_{i} * \beta _{photo,sppop} 
 \end{equation}
 
+Study intercept 
 \begin{equation}
 \alpha_{study} =  \sigma_{\alpha, study} * \alpha raw_{study}
 \end{equation}
 
-\begin{equation}
-\alpha_{sppop} = \alpha_{species}  + \sigma_{\alpha force,sppop} * \alpha raw_{force,sppop}
-\end{equation}
-
+Species intercept
 \begin{equation}
 \alpha_{species} = \sigma_{\alpha, species} + \alpha raw_{species}
 \end{equation}
 
+Subpopulation intercept 
 \begin{equation}
-\beta _{force,sppop} = \beta _{force,species} + \sigma_{\beta force,sppop} * \beta raw_{force,sppop}
+\alpha_{sppop} = \alpha_{species}  + \sigma_{\alpha ,sppop} * \alpha raw_{sppop}
 \end{equation}
 
+Species forcing slope 
 \begin{equation}
 \beta _{force,species} = \beta_{force} + \sigma_{beta force, species} * \beta raw_{force}
 \end{equation}
 
+Subpopulation forcing slope 
 \begin{equation}
-\beta _{photo,sppop} = \beta_{photo, species} + \sigma_{\beta photo,sppop} * \beta raw_{photo}
+\beta _{force,sppop} = \beta _{force,species} + \sigma_{\beta force,sppop} * \beta raw_{force,sppop}
 \end{equation}
 
+Species photoperiod slope 
 \begin{equation}
 \beta_{photo,species}  = \beta_{photo} + \sigma_{beta photo, species} * \beta raw_{photo}
 \end{equation}
 
+Subpopulation photoperiod slope 
+\begin{equation}
+\beta _{photo,sppop} = \beta_{photo, species} + \sigma_{\beta photo,sppop} * \beta raw_{photo, sppop}
+\end{equation}
+
+
 
 \section{Priors}
 
+Grand intercept 
 \begin{equation}
-\alpha_{sppop}  \sim normal(0,20)
+\sigma_{\alpha, study} \sim normal(0,20)
+\end{equation}
+
+Study intercept 
+\begin{equation}
+\sigma_{\alpha, study} \sim normal(0,20)
 \end{equation}
 
 \begin{equation}
 \alpha raw _{study} \sim normal(0,1)
 \end{equation}
 
+
+Species intercept
 \begin{equation}
 \alpha raw _{species}\sim normal(0,1)
+\end{equation}
+
+\begin{equation}
+\sigma_{\alpha, species} \sim normal(0,20)
+\end{equation}
+
+
+Subpopulation intercept 
+\begin{equation}
+\sigma_{\alpha, sppop} \sim normal(0,20)
 \end{equation}
 
 \begin{equation}
 \alpha raw _{sppop}\sim normal(0,1)
 \end{equation}
 
-\begin{equation}
-\beta_{photo}  \sim normal(0,20)
-\end{equation}
 
+Grand forcing slope
 \begin{equation}
 \beta_{force}  \sim normal(0,20)
 \end{equation}
 
+Species forcing slope 
 \begin{equation}
-\beta_{photo, sppop}  \sim normal(0,20)
+\beta raw_{force}\sim normal(0,1)
 \end{equation}
 
 \begin{equation}
-\beta_{force, sppop}  \sim normal(0,20)
+\sigma_{\beta force,species}
+\end{equation}
+
+Subpopulation forcing slope 
+\begin{equation}
+ \sigma_{\beta force,sppop} \sim normal(0,20)
+\end{equation}
+
+\begin{equation}
+\sigma_{\beta force,sppop}
+\end{equation}
+
+Grand photoperiod slope 
+\begin{equation}
+\beta_{photo}  \sim normal(0,20)
+\end{equation}
+
+Species photoperiod slope 
+
+\begin{equation}
+\sigma_{\beta photo,species}
 \end{equation}
 
 \begin{equation}
 \beta raw_{photo}\sim normal(0,1)
 \end{equation}
 
+Subpopulation photoperiod slope 
 \begin{equation}
-\beta raw_{force}\sim normal(0,1)
+\sigma_{\beta photo,sppop}
 \end{equation}
 
-   
+\begin{equation}
+\beta raw_{photo, sppop}\sim normal(0,1)
+\end{equation}
+
+General variance 
+
 \begin{equation}
 \sigma{_y}\sim normal(0,10)
 \end{equation}
 
-I think the sigma's should have priors. Mayeb thsi model is currently getting away with no sigma priors because of the priors on $\alpha_{study} $ and $\alpha_{species}$? In the original code there was also priors on $\alpha_{study} $ and $\alpha_{species}$ (see below). I am still not sure what the effect of having a prior on a parameter made up of hyperparameters is. $\alpha_{study} $ and $\alpha_{species}$ are defined by $ \sigma_{\alpha, study} * \alpha raw_{study}$ and $ \sigma_{\alpha, species} * \alpha raw_{species}$, and some these hyper parameters (the raw values) already have priors. I think priors on the $\sigma values$ might work better.  
 
-\begin{equation}
-\alpha_{study}  \sim normal(0,20)
-\end{equation}
-
-\begin{equation}
-\alpha_{species}  \sim normal(0,20)
-\end{equation}
 
 
 \section{Model explained in words}
@@ -187,7 +231,7 @@ Each population's rate of change due to an amount of photoperiod, that is the sl
 
 
 \begin{equation}
-\beta_{photo,species}  = \mu_{\beta photo, species} + \sigma_{beta photo, species} * \beta raw_{photo}
+\beta_{photo,species}  = \mu_{\beta photo, species} + \sigma_{beta photo, species} * \beta raw_{photo, sppop}
 \end{equation}
 
 Each species's slope value for the effect of photoperiod is drawn from a normal distribution centred around the grand beta slope $\beta_{force}$ and a width of $\sigma_{beta force, species}$.
