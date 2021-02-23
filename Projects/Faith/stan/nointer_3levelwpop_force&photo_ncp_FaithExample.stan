@@ -2,6 +2,12 @@
 // 3-level model for budburst day a function of forcing temperature, chilling units, photoperiod in a meta-analysis of 100+ studies
 // Level: Species and population on INTERCEPTS and SLOPES, just forcing and photoperiod for now since chilling covarys with site
 
+//Real one can be found in ospree/analyses/ranges. Faith has added extra annotation to this one for our Stats Class 
+
+//Background: This model has 3 levels of hierarchical structure, unlike the 2 level hierarchical models we have mostly looked at. 
+
+
+
 data {
    // Define variables in data
    // Number of level-1 observations (an integer)
@@ -71,8 +77,8 @@ data {
    vector[n_sp] b_photo = mu_b_photo_sp + sigma_b_photo_sp * b_photo_raw;
    vector[n_sp] b_force = mu_b_force_sp + sigma_b_force_sp * b_force_raw;
    
-   vector[n_sp] a_sp = mu_a_sp + sigma_a_sp * a_sp_raw;
-   vector[n_study] a_study = mu_a_study + sigma_a_study * a_study_raw;
+   vector[n_sp] a_sp =  sigma_a_sp * a_sp_raw; //remove the mu vlaues because these are taken by the grand alpha 
+   vector[n_study] a_study = sigma_a_study * a_study_raw; 
 
    vector[n_pop] a_sppop0 = sigma_a_pop * a_sppop_raw; // You need to seperate out the population effect from the species effect mean to make things easier for the indexing
    vector[n_pop] a_sppop;
@@ -114,17 +120,32 @@ data {
    target += normal_lpdf(to_vector(b_photo_sppop_raw) | 0, 1);
    target += normal_lpdf(to_vector(b_force_sppop_raw) | 0, 1);
    
-   // Random effects distribution of remaining priors
-   target += normal_lpdf(to_vector(a_sp) | 0, 20);
-	 target += normal_lpdf(to_vector(a_study) | 0, 20);
-   target += normal_lpdf(to_vector(a_sppop) | 0, 20);
+   // Random effects distribution of remaining priors - I dont think these should have parameters, instead there should be parameters on the hyperparameters 
+   //target += normal_lpdf(to_vector(a_sp) | 0, 20);
+	// target += normal_lpdf(to_vector(a_study) | 0, 20);
+  // target += normal_lpdf(to_vector(a_sppop) | 0, 20);
    
-   target += normal_lpdf(to_vector(b_photo) | 0, 20);
-	 target += normal_lpdf(to_vector(b_force) | 0, 20);
-	 target += normal_lpdf(to_vector(b_photo_sppop) | 0, 20);
-   target += normal_lpdf(to_vector(b_force_sppop) | 0, 20);
+   //target += normal_lpdf(to_vector(b_photo) | 0, 20); 
+	//target += normal_lpdf(to_vector(b_force) | 0, 20);
+	// target += normal_lpdf(to_vector(b_photo_sppop) | 0, 20);
+  // target += normal_lpdf(to_vector(b_force_sppop) | 0, 20);
    
    target += normal_lpdf(sigma_y | 0, 10);
+
+   // Parameters that Faith added priors too. These are just guesse. 
+   target += normal_lpdf(mu_b_photo_sp| 0,20); 
+   target += normal_lpdf(mu_b_force_sp| 0,20); 
+   
+   target+= normal_lpdf(sigma_b_photo_sp| 0,20); 
+   target+= normal_lpdf(sigma_b_force_sp| 0,20); 
+
+   target+= normal_lpdf(sigma_b_photo_sppop| 0,20); 
+   target+= normal_lpdf(sigma_b_force_sppop| 0,20); 
+
+   target+= normal_lpdf(sigma_a_sp| 0,20);
+ 
+   target+= normal_lpdf(sigma_a_study| 0,20);
+   target+= normal_lpdf(sigma_a_pop| 0,20);
  
    // Likelihood part of Bayesian inference
    for (i in 1:N) {
