@@ -1,0 +1,35 @@
+Faith's stats questions
+
+#Priors on the derived parameter -----------------------------------------------
+I asked thsi question:
+if our ncp model is mu + tatT, where tauT is tau * Raw, (Raw is the normal distribution of -1 to 1 values), 
+I assume that tau and Raw should have separate priors. But what happens if you set a prior on tauT and Raw 
+instead of tau and Raw?  We tried this on a model, 
+mostly by mistake, and noticed it seemed to run faster. But it doesn't quite feel right...
+
+Answer: 
+Putting a prior on tauT and Raw defines a model, just not a normal hierachical model. 
+In partiuclar the two densities multiple together to somethign weird.  This would be an example of 
+"putting an prior on a derived quantity/intermediate variable".  For some more 
+discusseion see for example https://discourse.mc-stan.org/t/do-i-need-jacobian-adjustment-here/19875/19.
+
+
+#Nested models-------------------------------------------------------------------
+I have a question that has cropped up in a model I'm helping to build that has populations of organisms nested within species. I think, from
+your teaching, that I should use the nested model where each population within each species has a distribution of contexts, described by their own 
+tau value and centred around the species tau. If i am only interested in the relative contribution of population and species to the observed variation, 
+could I instead have a single distribution of population values? So 1 tau value for population, but each population is still centred around 
+their respective species tau. In case this doest make sense I tried drawing a diagram too.   
+
+Answer:
+
+Statistically that's an absolutely well-defined model, but I'm not qualified to determine whether that model is appriorate to your application!
+
+The assumption of normal population models is just an prototypical example; it can be useful in many cases but it isn't approrpiate everywhere.  At the same time letting both the location and scale parameters vary but pooling only the location parameters is another somewhat arbitrary choice that will not always be approriate.
+
+If there is domain expertise that implies that the organism variations within each species have exactly the same scale then using a single tau for all of the population models is totally appropriate.  You can then potentially validate that assumption by looking at posterior retrodictive checks based on some summary statistics senstive to the relatiive organism variation.
+
+On the other hand if the domain expertise is a bit more vague then you can always let the tau be different and see whether the posteriors for each tau are consistent with each other.  Or even better pool the tau together, for example by modeling each log tau with a normal hierarchical model, and let the hierarchial model figure out how much variation there is in both the species theta and the species tau.
+
+Really great example!
+
