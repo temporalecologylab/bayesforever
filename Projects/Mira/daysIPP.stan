@@ -28,9 +28,9 @@
         //priors
         a_var ~ normal(mu_a,s_avar);
         b_var ~ normal(mu_b,s_bvar);
-        mu_a ~ normal(65,5);
-        mu_b ~ normal(0,1);
+        mu_a ~ normal(45,10);
+        mu_b ~ normal(0,5);
         s_avar ~ normal(0,10);
-        s_bvar ~ normal(0,0.2);
+        s_bvar ~ normal(0,5);
         sigma_y ~ normal(0,10);
       }

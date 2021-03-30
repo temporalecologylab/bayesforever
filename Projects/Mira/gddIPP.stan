@@ -30,10 +30,10 @@
         //priors
         a_var ~ normal(mu_a,s_avar);
         b_var ~ normal(mu_b,s_bvar);
-        //b_var ~ normal(0,1);
+        //b_var ~ normal(0,1); // single slope
         mu_a ~ normal(700,50);
-        mu_b ~ normal(0,0.5);
+        mu_b ~ normal(0,3);
         s_avar ~ normal(80,20);
-        s_bvar ~ normal(0,0.5);
+        s_bvar ~ normal(0,3);
         sigma_y ~ normal(0,50);
       }
