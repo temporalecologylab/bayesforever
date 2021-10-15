@@ -1,0 +1,209 @@
+%%% start preambling . . .  %%%
+\documentclass{article}
+
+% required 
+\usepackage{Sweave}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{amsmath}
+% recommended! Uncomment the below line and change the path for your computer!
+% \SweaveOpts{prefix.string=/Users/Lizzie/Documents/git/teaching/demoSweave/figures/demoFig, eps=FALSE} 
+%put your figures in one place! Also, note that here 'figures' is the folder and 'demoFig' is what each 
+% figure produced will be titled plus its number or label (e.g., demoFig-nqpbetter.pdf')
+% make your captioning look better
+\usepackage[small]{caption}
+\setlength{\captionmargin}{30pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{10pt}
+
+% optional: muck with spacing
+\topmargin -1.5cm        
+\oddsidemargin 0.5cm   
+\evensidemargin 0.5cm  % same as oddsidemargin but for left-hand pages
+\textwidth 15.59cm
+\textheight 21.94cm 
+% \renewcommand{\baselinestretch}{1.5} % 1.5 lines between lines
+\parindent 0pt		  % sets leading space for paragraphs
+% optional: cute, fancy headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LO]{Summer 2021}
+\fancyhead[RO]{Temporal Ecology Lab}
+% more optionals! %
+\usepackage[hyphens]{url} % this wraps my URL versus letting it spill across the page, a bad habit LaTeX has
+
+
+
+%%% end preambling. %%%
+\graphicspath{ {../../../../ospree/analyses/traits/figures/} }% tell latex where to find photos 
+
+
+
+\begin{document}
+
+\input{MeanTraitSimulation-concordance} % For RStudio hiccups
+
+
+
+\title{Traitors modeling - phenology and mean trait values}
+\author{Faith Jones}
+\date{\today}
+\maketitle 
+
+\section{Overview}
+In this example I am trying to get the Traits phenology model working with mean trait values. We wanted to do this so:
+\begin{enumerate}
+	\item We have had problems getting the trait section of the model working. This model is a backup if we can't get the full model working
+	\item Assuming we get this model working, we can use it to sanity check the full model results.
+\end{enumerate}
+
+We have a single phenology model where we use mean trait values instead of the $\alpha_{trait,sp}$ values.
+
+\section{Model details}
+I chose priors using a combination by first looking at the Ospree priors, then tightening them until the model ran without divergences. 
+
+\begin{equation}
+y_{phenp,i} \sim N(\mu_{pheno, i},\sigma^2_{trait, y})\\
+\end{equation}
+
+\begin{equation}
+\mu_{pheno, i} = \alpha_{pheno,sp[i]} + \beta_{forcing,sp[i]}*F_i + \beta_{chill,sp[i]}*Ch_i+ \beta_{photo,sp[i]}*Ph_i\\
+\end{equation}
+
+\begin{equation}
+\alpha_{pheno,sp} \sim N(\mu_{\alpha, pheno}, \sigma_{\alpha, pheno})\\
+\end{equation}
+
+
+\begin{equation}
+\beta_{forcing,sp} = \alpha_{force,sp} + \beta_{trait x force}*\alpha_{trait, sp} \\
+\end{equation}
+
+\begin{equation}
+\beta_{chill,sp} = \alpha_{chill,sp} + \beta_{trait x chill}*\alpha_{trait, sp} \\
+\end{equation}
+
+\begin{equation}
+\beta_{photo,sp} = \alpha_{photo,sp} + \beta_{trait x photo}*\alpha_{trait, sp} \\
+\end{equation}
+
+\begin{equation}
+\alpha_{pheno,sp}\sim N(\mu_{pheno}, \sigma^2_{pheno})\\
+\end{equation}
+
+\begin{equation}
+\alpha_{force,sp}\sim N(\mu_{force}, \sigma^2_{force})\\
+\end{equation}
+
+\begin{equation}
+\alpha_{chill,sp}\sim N(\mu_{chill}, \sigma^2_{chill})\\
+\end{equation}
+
+\begin{equation}
+\alpha_{photo,sp}\sim N(\mu_{photo}, \sigma^2_{photo})\\
+\end{equation}
+
+\begin{equation}
+\sigma^2_{trait, y}\sim N(20,  5)\\
+\end{equation}
+
+\begin{equation}
+\mu_{force} \sim N(0,1)\\
+\end{equation}
+
+\begin{equation}
+\sigma^2_{force}\sim N(4,3)\\
+\end{equation}
+
+\begin{equation}
+\mu_{chill} \sim N(0,1)\\
+\end{equation}
+
+\begin{equation}
+\sigma^2_{chill} \sim N(4,3)\\
+\end{equation}
+
+\begin{equation}
+\mu_{photo} \sim N(0,1)\\
+\end{equation}
+
+\begin{equation}
+\sigma^2_{photo}\sim N(4,3)\\
+\end{equation}
+
+\begin{equation}
+\mu_{pheno}  \sim N(100,20)\\
+\end{equation}
+
+\begin{equation}
+\sigma^2_{pheno}  \sim N(0,10)\\
+\end{equation}
+
+\begin{equation}
+\beta_{trait x force} \sim N(0, 0.5)\\
+\end{equation}
+
+\begin{equation}
+\beta_{trait x chill} \sim N(0, 0.5)\\
+\end{equation}
+
+\begin{equation}
+\beta_{trait x photo} \sim N(0, 0.5)\\ 
+\end{equation}
+
+
+
+\section{Prior Predictive Check}
+
+
+\begin{figure}[h!]
+  \includegraphics[scale = 0.55]{densityYPrior.png}%This figure might be better as density for posteriors and then two boxes in a boxplot for site and genotype differences. 
+  \caption{The prior predictive check distribution of phenological date values. }
+  \label{fig:densityYPrior}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[scale = 0.55]{forcingPlotPrior.png}%This figure might be better as density for posteriors and then two boxes in a boxplot for site and genotype differences. 
+  \caption{The prior predictive check distribution of phenological date against forcing values. }
+  \label{fig:forcingPlotPrior}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[scale = 0.55]{chillingPlotPrior.png}%This figure might be better as density for posteriors and then two boxes in a boxplot for site and genotype differences. 
+  \caption{The prior predictive check distribution of phenological date against chilling values. }
+  \label{fig:chillingPlotPrior}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[scale = 0.55]{photoPlotPrior.png}%This figure might be better as density for posteriors and then two boxes in a boxplot for site and genotype differences. 
+  \caption{The prior predictive check distribution of phenological date against photoperiod values. }
+  \label{fig:photoPlotPrior}
+\end{figure}
+
+Most predicted dates are between 0 and about 220 (Figure \ref{fig:densityYPrior}) The predicted phenological dates plotted against forcing , chilling and photoperiod are in Figures \ref{fig:forcingPlotPrior}, \ref{fig:chillingPlotPrior} and \ref{fig:photoPlotPrior} respectively. I thought these values are probably OK - plants are unlikely to budburst in the autumn. Ideally I was hoping for a wider spread into the 300s though. 
+
+\section{Running the model on Simulated data.}
+
+
+\begin{figure}[h!]
+  \includegraphics[scale = 0.55]{simulatedPairs.png}%This figure might be better as density for posteriors and then two boxes in a boxplot for site and genotype differences. 
+  \caption{Posterior pairs plot for the main parameters of the Stan model using simulated data. }
+  \label{fig:simulatedPairs}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[scale = 0.55]{simPosteriorHist.png}%This figure might be better as density for posteriors and then two boxes in a boxplot for site and genotype differences. 
+  \caption{Posterior parameter estimations for each parameter. The red line represents the simulation value, and this value is repeated in the title of each panel. No red line overlaying the histogram means the simulated value was very different from the predicted value. }
+  \label{fig:simPosteriorHist}
+\end{figure}
+
+
+I then simulated data using the same structure as the Stan model, and with values similar to the real values we got when we used the real data. I know this is a bit backwards because I should not have run real data through the model without doing these checks first.\\
+
+My simulated data included 150 species and 15 repetitions. Any more repetitions that this actually lead to divergences in the model fitting. \\
+
+I ran the model with 4000 warmup and 6000 iterations. Unfortunately, although the model runs without divergent transitions or obvious posterior degeneracies that I could see (Figures \ref{fig:simulatedPairs}), it isn't doing a great job of estimating values (Figure \ref{fig:simPosteriorHist}). I think model is struggling to differentiate between trait and trait related effect on phenology, and I'm not sure what to do about it. 
+
+
+\end{document}
+
