@@ -63,7 +63,7 @@ We have a single phenology model where we use mean trait values instead of the $
 I chose priors using a combination by first looking at the Ospree priors, then tightening them until the model ran without divergences. 
 
 \begin{equation}
-y_{phenp,i} \sim N(\mu_{pheno, i},\sigma^2_{trait, y})\\
+y_{phenp,i} \sim N(\mu_{pheno, i},\sigma^2_{y})\\
 \end{equation}
 
 \begin{equation}
@@ -104,7 +104,7 @@ y_{phenp,i} \sim N(\mu_{pheno, i},\sigma^2_{trait, y})\\
 \end{equation}
 
 \begin{equation}
-\sigma^2_{trait, y}\sim N(20,  5)\\
+\sigma^2_{y}\sim N(20,  5)\\
 \end{equation}
 
 \begin{equation}
